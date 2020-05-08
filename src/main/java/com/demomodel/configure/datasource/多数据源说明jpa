@@ -1,0 +1,5 @@
+这样就相当于告诉程序，程序要用到两个数据库，于是程序就去连接这两个数据库。怎么连接呢，默认的连接已经行不通了，
+因此，对于每个数据库还需要有一个定义文件告诉程序如何去连接它。
+同样，我们在com.springboot.xxx包下新建两个数据库定义文件PrimaryConfig.java与SecondaryConfig.java，
+分别定义主数据库与从数据库。
+：https://blog.csdn.net/qq_41690306/java/article/details/79304501

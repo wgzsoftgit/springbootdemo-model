@@ -1,0 +1,6 @@
+一个学生的学习计划根据其不同的人，和学习内容有不同的结果  的设计模式
+
+
+初始化时获取有注解的方法       并存入到map中
+ApplicationContextAware      applicationContext拿到上下文  先执行
+ApplicationListener<ContextRefreshedEvent>    

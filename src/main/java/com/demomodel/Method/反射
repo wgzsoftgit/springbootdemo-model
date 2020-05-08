@@ -1,0 +1,4 @@
+在写代码的时候，发现从父类class通过getDeclaredMethod获取的Method可以调用子类的对象，而子类改写了这个方法，
+从子类class通过getDeclaredMethod也能获取到Method，这时去调用父类的对象也会报错。虽然这是很符合多态的现象，
+也符合java的动态绑定规范，但还是想弄懂java是如何实现的，就学习了下Method的源代码。 
+Method的invoke方法

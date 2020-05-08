@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html layout:decorator="fregments/layout">
+<head>
+<meta charset="UTF-8" />
+<!-- <script type="text/javascript" th:src="@{/resources/js/implicitterrorists.js}"></script> -->
+ <link type="text/css" rel="stylesheet"
+	th:href="@{/resources/css/datumb.css}"></link> 
+<link type="text/css" rel="stylesheet"
+	th:href="@{/resources/css/unlicensed-personnel.css}"></link>
+
+<script type="text/javascript"
+	th:src="@{/resources/js/unlicensed-personnel.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/api.js}"></script>
+<script type="text/javascript" th:src="@{/resources/js/aui-tab.js}"></script>
+<script type="text/javascript"
+	th:src="@{/resources/js/jquery.pagination.js}"></script>
+<title>未办证人员</title>
+<style>
+.empty-container {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.result-container {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+}
+</style>
+</head>
+<body>
+	<main layout:fragment="main">
+		<div class="body-flex2">
+			<!-- 左边 -->
+			<div class="left-div">
+				<div class="left-div-top under">查询条件</div>
+
+				<div class="left-div-top-betton">
+					<div class=" hight20 magin-top-botton">开始时间：</div>
+					<div class='input-group date hight30 datepicker floatdatepicker'>
+						<input type="text" class="form-control background"
+							style="border-radius: 0;" name="starTime" />
+						<div class="input-group-addon" style="display: none">
+							<span class="glyphicon glyphicon-th  "></span>
+						</div>
+					</div>
+
+					<div class=" hight20 magin-top-botton">结束时间：</div>
+					<div class='input-group date hight30 datepicker'>
+						<input type="text" class="form-control background"
+							style="border-radius: 0;" value="" name="endingTime" />
+						<div class="input-group-addon" style="display: none">
+							<span class="glyphicon glyphicon-th  "></span>
+						</div>
+					</div>
+
+					<!-- 姓名这里开始 -->
+					<div class=" hight20 magin-top-botton">姓名：</div>
+					<input type="text" class="background" style="height: 30px"
+						placeholder="姓名" name="name" />
+					<!-- 姓名这里结束 -->
+
+					<!--身份证号开始  -->
+					<div class="hight20 magin-top-botton">身份证号：</div>
+					<input type="text" class="background" style="height: 30px"
+						placeholder="身份证号" name="idNum" />
+					<!--身份证号结束  -->
+
+					<!-- 未办证类型 -->
+					<div class="hight20 magin-top-botton">未办证类型：</div>
+					<div id="select-div">
+						<select name="" id="lang1">
+						</select>
+						<ul id="ck1">
+							<li><label><input type="checkbox" id="check-all" />&nbsp;&nbsp;&nbsp;全选</label></li>
+							<li><label><input type="checkbox" class="check"
+									name="checked" value="1" />&nbsp;&nbsp;&nbsp;前科未办证</label></li>
+							<li><label><input type="checkbox" class="check"
+									name="checked" value="2" />&nbsp;&nbsp;&nbsp;涉案未办证</label></li>
+							<li><label><input type="checkbox" class="check"
+									name="checked" value="3" />&nbsp;&nbsp;&nbsp;网吧未办证</label></li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="displayinline-flex height50" style="padding-top: 30px;">
+					<button id="find" type="button" class="btn btn-success hight30">查询</button>
+					<button id="reset" type="button" class="btn btn-primary hight30">重置</button>
+				</div>
+
+			</div>
+			<!-- 右边 -->
+			<div class="right-div " style="width: 100%; padding-left: 10px">
+				<div id="emptyContainer" class="empty-container">
+					<img th:src="@{/resources/images/empty_result.png}" width="100"
+						height="100" />
+				</div>
+				<!-- 顶部 -->
+				<div id="resultContainer" style="display: none">
+					<div class="right-div-top displayflex " style="padding: 10px">
+					<div><!-- <button class="btn1 control-button" type="button" id="bukong">布控</button> -->
+							<span>查询结果 : </span><span id="total-count"></span> 条
+						</div>
+					</div>
+
+					<div class="right-div-botton display">
+						<!--图文混合列表 -->
+						<div class="Plate_product">
+							<ul id="warning-lists">
+
+
+
+							</ul>
+						</div>
+
+						<div class="m-style M-box3"></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-dialog modal-full" role="document">
+				<div class="modal-content" style="width: 740px;">
+					<div class="modal-header"
+						style="display: flex; justify-content: space-around;">
+
+						<h4 class="modal-title" id="myModalLabel"
+							style="text-align: center;">未办证人员详情</h4>
+						<!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">关闭</button> -->
+						<button type="button" class="btn btn-default warning-close"
+							data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+						</button>
+					</div>
+					<div class="modal-body">
+						<!-- //上 -->
+						<div class="displayflex"
+							style="display: flex; flex-direction: row; align-center: center;">
+							<div class="display" style="min-width:150px;align-content:center;justify-content:center;background-color:rgba(0,0,0,0.6);position:relative;">
+								<img alt=""  style="" id="big-images"  />
+								<div class="positionfix-big">
+									<span id="type-big"></span>
+								</div>
+							</div>
+							<div class="detailsright" 
+								style="display: flex; flex-direction: column; justify-content: space-between; padding: 10px;">
+								<div>
+									<span>姓名</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span id="name"></span>
+								</div>
+								<div>
+									<span>年龄</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span id="age"></span>
+
+
+								</div>
+								<div>
+									<span>性别</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span id="sex"></span>
+								</div>
+								<div>
+									<span>身份证号</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span id="id-card"></span>
+
+								</div>
+								<div>
+									<span>地址</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<span id="address"></span>
+								</div>
+							</div>
+							
+						</div>
+						<!-- 下 -->
+						<div class="buttonmodel" style="position: relative;">
+
+							<div class="aui-tab" id="tab">
+								<div class="aui-tab-item aui-active"
+									style="width: 30%; height: 34px">
+									<a href="javascript:;">常住旅馆&nbsp;&nbsp;(<span id="hotel-count"></span>)</a>
+								</div>
+								<div class="aui-tab-item"
+									style="width: 30%; height: 34px; border-left: 0.5px solid #CDCDCD; border-right: 0.5px solid #CDCDCD;">
+									<a href="javascript:;">常去网吧&nbsp;&nbsp;(<span id="internet-count"></span>)</a>
+								</div>
+								<div class="aui-tab-item" style="width: 40%; height: 34px">
+									<a href="javascript:;">活动轨迹</a>
+								</div>
+							</div>
+							<div class="the-details-info" id="the-hotel-info" >
+								<!-- <div
+									style="width: 100%; height: 90px; display: flex; align-items: center; padding: 10px; border-bottom: 0.5px solid #CDCDCD;">
+									<div style="width: 62px; height: 65px;">
+										<img th:src="@{/resources/images/hotel2.jpg}"
+											style="width: 100%; height: 100%;" />
+									</div>
+									<div
+										style="display: flex; flex-direction: column; height: 80px; justify-content: center; margin: 10px">
+										<span style="line-height: 30px;">富驿时尚酒店 (人民东路店)</span> <span
+											class="bottom-text">越城区人民东路1123号 0572-1223833</span>
+									</div>
+									<div class="count"
+										style="width: 60px; height: 30px; display: flex; justify-content: center; align-items: center;">
+										<span>3次</span>
+									</div>
+									<div style="margin: 20px">
+										<span class="bottom-text">最后时间 2020年4月20日 12:34</span>
+									</div>
+								</div> -->
+								
+							</div>
+							<div class="the-details-info-net" id="the-internet-info"  >
+								<!-- <div
+									style="width: 100%; height: 90px; display: flex; align-items: center; padding: 10px;">
+									<div style="width: 62px; height: 65px;">
+										<img th:src="@{/resources/images/net2.jpg}"
+											style="width: 100%; height: 100%;" />
+									</div>
+									<div
+										style="display: flex; flex-direction: column; height: 80px; justify-content: center; margin: 10px">
+										<span style="line-height: 30px;">随想网络会所 (人民东路店)</span> <span
+											class="bottom-text">越城区人民东路1123号 0572-1223833</span>
+									</div>
+									<div class="count"
+										style="width: 60px; height: 30px; display: flex; justify-content: center; align-items: center;">
+										<span>1次</span>
+									</div>
+									<div style="margin: 20px">
+										<span class="bottom-text">最后时间 2020年4月20日 12:34</span>
+									</div>
+								</div> -->
+							</div>
+							<div class="the-details-info-guiji">
+								
+								<div style="width: 100%; height: 90px; display: flex; align-items: center;justify-content: center; padding: 10px;"><span>暂无数据</span></div>
+							</div>
+							<div class="close-button"
+								style="display: flex; justify-content: center; align-items: center;">
+								<button class="btn btn-default" type="button"
+									style="width: 280px; height: 40px;" data-dismiss="modal">关闭</button>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+	</main>
+</body>
+</html>

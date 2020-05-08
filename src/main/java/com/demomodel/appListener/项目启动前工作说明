@@ -1,0 +1,4 @@
+
+ApplicationContextAware        执行1
+ApplicationListener<ContextRefreshedEvent>    优先执行2
+ApplicationListener<ApplicationEvent>  优先执行3    每次请求执行      

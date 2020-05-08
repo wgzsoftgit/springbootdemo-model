@@ -1,0 +1,7 @@
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+不配置数据源
+也可以不配置   p配置类没配置数据源就用@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)

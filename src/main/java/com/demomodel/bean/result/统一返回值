@@ -1,0 +1,4 @@
+result = Result.success(dataMap);// 成功，并返回数据和retCode和message  
+//result = Result.success();// 成功，不返回数据，只返回retCode和message  
+//result = Result.error(CodeMsg.SERVER_EXCEPTION);// 失败返回错误信息  
+//result = Result.error(CodeMsg.SERVER_EXCEPTION,e.toString());// 失败返回错误+扩展错误信息  

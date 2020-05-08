@@ -1,0 +1,13 @@
+@Primary这个注解必须要加，因为不加的话spring将分不清楚那个为主数据源（默认数据源）
+
+2、mapper的接口、xml形式以及dao层都需要两个分开，目录如图：
+3、bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(“XXXX”));mapper的xml形式文件位置必须要配置，不然将报错：no statement （这种错误也可能是mapper的xml中，namespace与项目的路径不一致导致的，具体看情况吧，注意一下就行，问题不大的）
+
+4、在service层中根据不同的业务注入不同的dao层。
+
+5、如果是主从复制- -读写分离：比如test01中负责增删改，test02中负责查询。但是需要注意的是负责增删改的数据库必须是主库（master）
+
+6、如果是分布式结构的话，不同模块操作各自的数据库就好，test01包下全是test01业务，test02全是test02业务，但是如果test01中掺杂着test02的编辑操作，这时候将会产生事务问题：即test01中的事务是没法控制test02的事务的，这个问题在之后的博客中会解决
+————————————————
+版权声明：本文为CSDN博主「一只仰望天空的菜鸟」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/tuesdayma/java/article/details/81081666

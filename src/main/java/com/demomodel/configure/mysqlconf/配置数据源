@@ -1,0 +1,34 @@
+//	展示层有三大典型技术，分别是JSP、freemaker和velocity
+//	源代码生成：Velocity 可以被用来生成 Java 代码、SQL 或者 PostScript。
+//	自动 Email：很多软件的用户注册、密码提醒或者报表都是使用 Velocity 来自动生成的
+默认支持的三种数据源
+<!-- 添加Tomcat-JDBC依赖 -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jdbc</artifactId>
+		</dependency>
+		<!-- 添加HikariCP依赖 -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+		</dependency>
+		<!-- 添加DBCP依赖 -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+		</dependency>
+		<!-- 添加DBCP2依赖 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+		</dependency>
+//https://blog.csdn.net/pengjunlee/java/article/details/80081231
+
+第三方数据源
+<!-- 添加Druid依赖 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.6</version>
+		</dependency>
+		

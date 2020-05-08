@@ -1,0 +1,26 @@
+不成功
+keytool -genkey -alias test -keypass 555555 -keyalg RSA -sigalg sha256withrsa -keysize 1024 -validity 365 -keystore d:/test.jks -storepass 555555
+keytool -genkey -alias test（别名） 
+-keypass 123123（私钥密码） 
+-keyalg RSA（算法） 
+-sigalg sha256withrsa（算法小类） 
+-keysize 1024（密钥长度） 
+-validity 365（有效期）
+-keystore d:/test.jks（生成路径） 
+-storepass 123123（主密码）
+————————————————
+版权声明：本文为CSDN博主「乔布斯在世」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/site_dave/java/article/details/90699459
+
+前端服务器收到用户登录请求，传给后台zuul网关。
+
+zuul网关把请求分发到用户服务里进行身份验证。
+
+后台用户服务验证通过，然后从账号信息抽取出id、nickName、login_method、login_time等基本信息（这些信息根据自己的需要定义）组成payload，进而组装一个JWT，把JWT放入redis(因为退出的时候无法使jwt立即作废，所以使用保存在redis中，退出的时候delete掉就可以了，鉴权的时候加一层判断jwt是否在redis里，如果不在则证明jwt已过期作废)，然后包装到json数据返回到前端服务器，这就登录成功了。
+
+前端服务器拿到 JWT，进行存储（可以存储在缓存中，也可以存储在数据库中，如果是浏览器，可以存储在 localStorage 中）在后续请求中，在 HTTP 请求头中加上 JWT(前端在每次请求时将JWT放入HTTP Header中的Authorization位,解决XSS和XSRF问题)。
+
+登录后，再访问其他微服务的时候，前端会携带jwt访问后台，后台的zuul网关添加拦截器来校验 JWT，验签通过后，进去相应的服务，然后返回相应资源和数据就可以了。
+————————————————
+版权声明：本文为CSDN博主「0x2015」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/w57685321/java/article/details/79463837

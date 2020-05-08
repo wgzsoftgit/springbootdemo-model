@@ -1,0 +1,50 @@
+#如果指定pro/dev这里就不管用了
+server:
+  port: 9090
+#prod环境spring.profiles.active=prod  dev 优先application-prod.properties配置
+spring:
+  profiles:
+    active: dev
+#多数据源
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    host: 127.0.0.1 
+    port: 6379
+    password: 
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+        min-idle: 0
+      lettuce:
+       shutdown-timeout: 0
+
+# spring.mvc:
+#    view:
+#      prefix: /view/  
+#      suffix: .jsp
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/sxxl_analysis?characterEncoding=UTF-8
+ #   username: root
+ #   password: root
+ #   driver-class-name: com.mysql.jdbc.Driver
+  
+  
+#1、com.controller.readofyml.author 测试调用成功  
+author:
+  name: 小鹏
+  csdnUrl: http://www.baidu.com
+#/2、yml 需要在 “:” 后加一个空格      com.controller.readofyml.HelloController在调用测试成功
+name: xiaoxiao
+csdnUrl: http://www.basd.dsdds
+content: "name:${name},csdnUrl:${csdnUrl}"
+upload:
+  dir: 测试路径
+#com.demomodel.appListener.contextRefreshedEvent.DahuaAuthorization2测试成功
+ip: 192.132.2.2
+port: 2332
+userName: sa
+password: sc

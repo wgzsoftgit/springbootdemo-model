@@ -1,0 +1,11 @@
+HttpServletRequest request  请求获取post内容
+	BufferedReader reader =request.getReader();//request.getReader();
+	    // 读取json数据
+	    StringBuffer buffer = new StringBuffer();
+	    String s;
+	    while ((s = reader.readLine()) != null) {
+	        buffer.append(s);
+	    }
+	  
+	    String json = buffer.toString();
+	    System.out.println("json:" + json); 

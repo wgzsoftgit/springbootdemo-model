@@ -1,0 +1,10 @@
+
+String json = new Gson().toJson(map);
+
+Map<String, Object> fromJsonMap = new Gson().fromJson(json, new TypeToken<Map<String, Object>>() {
+		}.getType());
+	
+	
+List<String> fruitList = new Gson().fromJson(json2, new TypeToken<List<String>>() {}.getType());	
+String[] fruits = new Gson().fromJson(json2, String[].class);
+Result<MyEntry> result1 = typeGson1.fromJson(typeJson1, new TypeToken<Result<MyEntry>>(){}.getType());

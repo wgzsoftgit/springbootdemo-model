@@ -1,0 +1,15 @@
+com.appListener.ContextRefreshedEvent.ApplicationContextListener  
+spring初始化完毕
+    
+    * spring初始化完成后   获取注解类   com.interfaceDesign.notes.personInfo  getBeansWithAnnotation 获取有该注解的Map<String, Object> 
+    * 反射拿到类的的公共方法    ---------反射执行方法-----------               
+   * 执行需要（初始化、第三方登录的）的方法     invoke     有
+      系统入口初始化， 
+                  获取指定类的类型的JavaBean    getApplicationContext().getBeansOfType
+      * 反射拿到类的的公共方法    ---------反射执行方法-----------               
+     * 执行需要（初始化、第三方登录的）的方法     invoke     有
+     
+     
+ com.appListener.ContextRefreshedEvent.DahuaAuthorization2       
+spring初始化完毕
+    token.properties写入内容

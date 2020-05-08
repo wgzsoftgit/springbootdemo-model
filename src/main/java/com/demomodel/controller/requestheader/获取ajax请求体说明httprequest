@@ -1,0 +1,18 @@
+请求头和请求体
+Accept=application/json ：表示客户端希望接受的数据类型是json
+content-type =application/json ：表示客户端发送的数据格式是json
+
+@RequestMapping() 
+  
+  headers = "Accept=application/json"  表示客户端希望接受的数据类型是json
+  headers = {"content-type = application/json"}  表示客户端发送的数据格式是json
+  
+  consumes="application/json"  仅处理request Content-Type为“application/json”类型的请求
+  consumes = {"application/json","application/x-www-form-urlencoded"}   //处理request Content-Type，定义的2种类型的请求1
+  consumes = {"!application/json","!application/x-www-form-urlencoded"} //处理request Content-Type中，除了以下2种类型的请求2
+ 
+ 	produces="application/json;charset=utf-8" //返回json数据 && 字符编码为utf-8
+ 
+ method = RequestMethod.POST 
+RequestMethod.POST   改请求的类型
+org.springframework.web.bind.annotation.RequestMethod

@@ -1,0 +1,113 @@
+， 但有时候我们想要自己定义一些Handler，Interceptor，ViewResolver，MessageConverter，
+该怎么做呢。在Spring Boot 1.5版本都是靠重写WebMvcConfigurerAdapter的方法来添加自定义拦截器，
+消息转换器等。SpringBoot 2.0 后，该类被标记为@Deprecated。因此我们只能靠实现WebMvcConfigurer接口来实现
+https://blog.csdn.net/She_lock/java/article/details/86241685
+
+视图. 拦截
+
+配置视图
+当到了DispatcherServlet的resolveViewName方法的时候，我们可以看到我们所配置的HttlViewResolver排在
+了InternalResourceViewResolver的后面，而对于Spring Mvc来说，视图解析器便是从viewResolvers链中按顺序一个一个往下找
+，直到找到一个能解析该视图的并不返回null的视图解析器为止。但是对于解析器InternalResourceViewResolver来说，
+不管能不能解析它都不会返回null，也就是说它拦截了所有的逻辑视图， 让后续的解析器得不到执行，所以
+正常情况下InternalResourceViewResolver必须放在最后。
+\：https://blog.csdn.net/qq906627950/java/article/details/80029683
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//将javabean转化成json字符串
+String jsonStr = JSON.toJSONString(Bean bean);
+//将json字符串转化成对应的javabean
+Bean bean = JSON.parseObject(jsonStr, Bean.class);
+FastJsonConfig处理消息转化
+
+https://www.cnblogs.com/ming-blogs/p/10288907.html
+public static void main(String[] args) {
+SpringApplication.run(SpringbootNewApplication.class, args);
+}
+/*
+* // 方法一：extends WebMvcConfigurerAdapter
+*/
+@Override
+public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+super.configureMessageConverters(converters);
+//1、先定义一个convert转换消息的对象
+FastJsonHttpMessageConverter fastConverter=new FastJsonHttpMessageConverter();
+//2、添加fastjson的配置信息，比如是否要格式化返回的json数据；
+FastJsonConfig fastJsonConfig=new FastJsonConfig();
+fastJsonConfig.setSerializerFeatures(
+//是否需要格式化
+SerializerFeature.PrettyFormat
+);
+//附加：处理中文乱码（后期添加）
+List<MediaType> mediaTypeList=new ArrayList<MediaType>();
+mediaTypeList.add(MediaType.APPLICATION_JSON_UTF8);
+fastConverter.setSupportedMediaTypes(mediaTypeList);
+//3、在convert中添加配置信息
+fastConverter.setFastJsonConfig(fastJsonConfig);
+//4、将convert添加到converters
+converters.add(fastConverter);
+}
+/*
+* 方法二：在启动类中，注入Bean：HttpMessageConverters
+*/
+@Bean
+public HttpMessageConverters fastJsonHttpMessageConverters(){
+//1、先定义一个convert转换消息的对象
+FastJsonHttpMessageConverter fastConverter=new FastJsonHttpMessageConverter();
+//2、添加fastjson的配置信息，比如是否要格式化返回的json数据；
+FastJsonConfig fastJsonConfig=new FastJsonConfig();
+fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
+//附加：处理中文乱码
+List<MediaType> fastMedisTypes = new ArrayList<MediaType>();
+fastMedisTypes.add(MediaType.APPLICATION_JSON_UTF8);
+fastConverter.setSupportedMediaTypes(fastMedisTypes);
+//3、在convert中添加配置信息
+fastConverter.setFastJsonConfig(fastJsonConfig);
+HttpMessageConverter<?> converter=fastConverter;
+return new HttpMessageConverters(converter);
+}
+下面使用@JSONField()注解在实体类中进行验证
+代码如下。
+@JSONField(format = “yyyy-MM-dd”)
+private Date birthday;
+Controller中代码如下。
+@RequestMapping(“/save”)
+public Student save(){
+Student student=new Student();
+student.setName(“婷婷”);
+student.setAge(23);
+student.setSex(“女”);
+student.setBirthday(new Date());
+studentService.save(student);
+return student;
+}
+浏览器返回结果:
+{
+“age”:23,
+“birthday”:”2018-07-10”,
+“id”:97,
+“name”:”婷婷”,
+“sex”:”女”
+}
+除此之外，我们还可以通过@JSONField(serialize = false)来决定字段的显示与否。设置如下。
+@JSONField(serialize = false)
+private Date birthday;
+如果这样设置浏览器返回结果如下，birthday将不再显示。
+{
+“age”:23,
+“id”:97,
+“name”:”婷婷”,
+“sex”:”女”
+}

@@ -1,0 +1,4 @@
+因为json有2种类型：
+
+一种是对象，object -> {key:value,key:value,...} 。
+另一种是数组，array -> [value,value,...] 。

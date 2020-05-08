@@ -1,0 +1,8 @@
+测试成功
+java端在使用jedispool 连接redis的时候，在高并发的时候经常卡死，或报连接异常，JedisConnectionException，或者getResource 异常等各种问题
+
+在使用jedispool 的时候一定要注意两点
+
+1。 在获取 jedisPool和jedis的时候加上线程同步，保证不要创建过多的jedispool 和 jedis
+
+2。 用完Jedis实例后需要返还给JedisPool

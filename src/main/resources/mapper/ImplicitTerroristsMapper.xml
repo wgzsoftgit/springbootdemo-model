@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demomodel.mysqlcontroller.mapper.ImplicitTerroristsMapper">
+  <resultMap id="BaseResultMap" type="com.demomodel.bean.master.ImplicitTerrorists">
+    <id column="id"  property="id" />
+    <result column="creation_date"  property="creationDate" />
+    <result column="district_code"  property="districtCode" />
+    <result column="name"  property="name" />
+    <result column="id_num"  property="idNum" />
+    <result column="person_type"  property="personType" />
+    <result column="is_resident"  property="isResident" />
+    <result column="gendar"  property="gendar" />
+    <result column="monitor_status"  property="monitorStatus" />
+    <result column="alert_status"  property="alertStatus" />
+    <result column="similar_percent" jdbcType="DECIMAL" property="similarPercent" />
+    <result column="face_img_url"  property="faceImgUrl" />
+    <result column="device_id"  property="deviceId" />
+    <result column="img_url"  property="imgUrl" />
+  </resultMap>
+<!-- 更新布控状态  传入数组       子查询 -->
+   <update   id="updaControlStatesByarray"   >
+      UPDATE implicit_terrorists SET monitor_status = 1 WHERE id in 
+        <foreach item="checkboxValue" collection="array" open="(" separator="," close=")">
+            #{checkboxValue}
+        </foreach>
+   </update>
+   
+   <!-- 更新数据   传对象 -->
+   <update id="update" parameterType="com.demomodel.bean.master.ImplicitTerrorists">
+     update potential_violated_people_trans_record
+    <set>
+      <if test="idNum != null">
+        id_num = #{idNum},
+      </if>
+      <if test="ticketNum != null">
+        ticket_num = #{ticketNum},
+      </if> 
+    </set>
+    where id = #{id}
+  </update>
+   
+   <!--  插入  传对象-->
+   <insert id="saveIrregularHotel" parameterType="com.demomodel.bean.master.ImplicitTerrorists">
+    insert into irregular_hotel
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="rowKey != null">
+        row_key,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id},
+      </if>
+      <if test="rowKey != null">
+        #{rowKey},
+      </if>
+    </trim>
+  </insert>
+   
+   
+   <!-- 查询类型  -->
+   <!-- 查询区域          返回List<String> -->
+  <select id="selectByRegion"   resultType="java.lang.String" >
+      SELECT distinct  district_code FROM implicit_terrorists
+  </select>
+  
+  <!--  有注解@Param("idCard") String idCard-->
+  <select id="getByTransNum" resultMap="BaseResultMap">
+  		SELECT * FROM implicit_terrorists WHERE `departure_date` LIKE CONCAT ('%',#{departureDateStr},'%') AND t.`trans_num`=#{transNum} AND t.`id_num`&lt;&gt;#{idCard};
+  </select>
+  
+  <!-- 查询涉恐的人员           List<ImplicitTerrorists>    传对象-->
+  <select   id="selectByTypeCondition"  resultMap="BaseResultMap" 
+        parameterType="com.demomodel.bean.master.ImplicitTerrorists">
+    SELECT * FROM implicit_terrorists 
+    <where>
+     <if test="starttionDate != null and starttionDate != ''">AND creation_date <![CDATA[>=]]> #{starttionDate}</if>
+     <if test="endtionDate != null and endtionDate != ''">AND creation_date <![CDATA[<=]]>#{endtionDate}</if>    
+      <if test="gendar != null and gendar!=''">
+         AND  gendar=  #{gendar}    
+      </if>
+      <if test="monitorStatus != null  and monitorStatus!=''">
+         AND  monitor_status= #{monitorStatus} 
+      </if>
+     </where>
+       order by id desc 
+  </select>
+  
+  
+  
+  <!--返回 int   传对象-->
+  <select id="totalCount" resultType="java.lang.Integer"
+		parameterType="com.demomodel.bean.master.ImplicitTerrorists"
+		>
+		SELECT count(1) FROM `unregistered_people` u
+		<where>
+		<!-- 大于 -->
+			<if test="startimeStr!=null  and startimeStr!=''">
+				AND u.`creation_date`&gt;#{startimeStr}
+			</if>
+			<!--  小于-->
+			<if test="endtimeStr!=null  and  endtimeStr!=''">
+				AND u.`creation_date`&lt;#{endtimeStr}
+			</if>
+			<if test="name!=null  and  name!=''">
+				AND u.`name` LIKE CONCAT('%',#{name},'%')
+			</if>
+			<!-- 前端多选框   查询   传一个数组    String[]  typeArr 实体类的名字  -->
+			<if test="typeArr!=null and typeArr.length>0">
+				AND u.`type` IN
+				<foreach collection="typeArr" item="item" index="index"
+					separator="," open="(" close=")">
+					#{item}
+				</foreach>
+			</if>
+		</where>
+	</select>
+</mapper>

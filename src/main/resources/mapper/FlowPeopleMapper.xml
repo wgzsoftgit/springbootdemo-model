@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demomodel.mysqlcontroller.mapper.FlowPeopleMapper">
+  <resultMap id="BaseResultMap" type="com.demomodel.bean.master.FlowPeople">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="flowcreate_time" jdbcType="TIMESTAMP" property="flowcreateTime" />
+    <result column="flow_name" jdbcType="VARCHAR" property="flowName" />
+    <result column="flow_idcard" jdbcType="VARCHAR" property="flowIdcard" />
+    <result column="flow_upodate_count" jdbcType="INTEGER" property="flowUpodateCount" />
+    <result column="flow_native_place" jdbcType="VARCHAR" property="flowNativePlace" />
+    <result column="flow_region" jdbcType="VARCHAR" property="flowRegion" />
+    <result column="flow_address" jdbcType="VARCHAR" property="flowAddress" />
+    <result column="flow_lately_update" jdbcType="TIMESTAMP" property="flowLatelyUpdate" />
+  </resultMap>
+  <!-- resultMap="BaseResultMap" parameterType="com.bayee.domain.ImplicitTerrorists" -->
+  <!-- 返回结果为对象 -->
+  <select id="flowSelectByPage" resultMap="BaseResultMap" >
+     SELECT * FROM  flow_people  limit ${startPage},${size}
+  </select>
+  
+  <select id="selectByObject" resultMap="BaseResultMap" parameterType="com.demomodel.bean.master.FlowPeople">
+     SELECT * FROM flow_people 
+     <where>
+    	<if test="starttionDate != null and starttionDate != ''">AND flowcreate_time <![CDATA[>=]]> #{starttionDate}</if>
+     	<if test="endtionDate != null and endtionDate != ''">AND flowcreate_time <![CDATA[<=]]>#{endtionDate}</if>    
+        <if test="flowName != null">
+      		AND  flow_name like CONCAT('%',#{flowName,jdbcType=VARCHAR},'%') 
+      	</if>
+      	<if test="flowIdcard != null">
+      		AND  flow_idcard like CONCAT('%',#{flowIdcard,jdbcType=VARCHAR},'%')    
+      	</if>
+      	<if test="flowUpodateCount != null">
+      		AND  flow_upodate_count= #{flowUpodateCount,jdbcType=INTEGER} 
+      	</if>
+      	   		
+    </where>
+   order by id asc
+      
+      		limit ${pagetion.begin},${pagetion.pageSize}
+      
+     
+  </select>
+    <select id="getFlowPeopleCount" resultType="java.lang.Integer" parameterType="com.demomodel.bean.master.FlowPeople">
+     select count(1) from flow_people
+     <where>
+    	<if test="starttionDate != null and starttionDate != ''">AND flowcreate_time <![CDATA[>=]]> #{starttionDate}</if>
+     	<if test="endtionDate != null and endtionDate != ''">AND flowcreate_time <![CDATA[<=]]>#{endtionDate}</if>    
+        <if test="flowName != null">
+      		AND  flow_name like CONCAT('%',#{flowName,jdbcType=VARCHAR},'%') 
+      	</if>
+      	<if test="flowIdcard != null">
+      		AND  flow_idcard like CONCAT('%',#{flowIdcard,jdbcType=VARCHAR},'%')    
+      	</if>
+      	<if test="flowUpodateCount != null">
+      		AND  flow_upodate_count= #{flowUpodateCount,jdbcType=INTEGER} 
+      	</if>
+      	   		
+    </where>
+  </select>
+</mapper>
