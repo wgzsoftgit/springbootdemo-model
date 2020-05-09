@@ -19,12 +19,12 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
-@EnableTransactionManagement
-@EnableJpaRepositories(
-		entityManagerFactoryRef="entityManagerFactoryPrimary",
-		transactionManagerRef="transactionManagerPrimary",
-		basePackages={"com.xxx.springboot.dao.mysql"})
+//@Configuration
+//@EnableTransactionManagement
+//@EnableJpaRepositories(
+//		entityManagerFactoryRef="entityManagerFactoryPrimary",
+//		transactionManagerRef="transactionManagerPrimary",
+//		basePackages={"com.demomodel.configure.doubledatasource.textdoubledatasource.master"})
 public class PrimaryDataSourceConfig {
 	@Autowired
 	@Qualifier("dataSource")
@@ -45,7 +45,8 @@ public class PrimaryDataSourceConfig {
 		return builder
 				.dataSource(dataSource)
 				.properties(getProperties()) //&&getProperties()
-				.packages("com.xxx.springboot.domain.mysql")
+				//设置实体类所在位置
+				.packages("com.demomodel.configure.doubledatasource.textdoubledatasource.master")
 				.persistenceUnit("primaryPersistentUnit")
 				.build();
 	}

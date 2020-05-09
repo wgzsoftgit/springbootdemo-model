@@ -1,4 +1,6 @@
 规范包名小写
+No qualifying bean of type 'com.demomodel.configure.doubledatasource.textdoubledatasource.master.map.DemotxtMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+错误的原因是xml配置不对   二检查mapper  service  三  @MapperScan({"com.demomodel.mysqlcontroller.mapper","com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map"}) 说明map在哪里
 
 通过@PropertySource指明properties文件的位置，然后通过@Value注入值
 @PropertySource({  

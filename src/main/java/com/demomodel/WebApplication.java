@@ -13,8 +13,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-
-@MapperScan("com.demomodel.mysqlcontroller.mapper") //扫描的mapper
+//,"com.demomodel.configure.doubledatasource.textdoubledatasource.map"
+@MapperScan({"com.demomodel.mysqlcontroller.mapper","com.demomodel.configure.doubledatasource.textdoubledatasource.master.map","com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map"}) //扫描的mapper
 @SpringBootApplication
 @ServletComponentScan
 public class WebApplication {

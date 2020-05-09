@@ -18,12 +18,12 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
-@EnableTransactionManagement
-@EnableJpaRepositories(
-		entityManagerFactoryRef="entityManagerFactoryOther",
-		transactionManagerRef="transactionManagerOther",
-	    basePackages={"com.xxx.springboot.dao.postgresql"})//指定了Repository的位置也就是dao层接口的位置
+//@Configuration
+//@EnableTransactionManagement
+//@EnableJpaRepositories(
+//		entityManagerFactoryRef="entityManagerFactoryOther",
+//		transactionManagerRef="transactionManagerOther",
+//	    basePackages={"com.demomodel.configure.doubledatasource.textdoubledatasource.secondary"})//指定了Repository的位置也就是map层接口的位置
 public class OtherDataSourceConfig {
  
 	@Autowired
@@ -45,7 +45,8 @@ public class OtherDataSourceConfig {
 				//&&   getProperties()
 				.properties(getProperties())
 				//还通过packages属性指定了各自实体类的位置。这样，数据源配置清楚了，剩下就是各自数据源对应的实体和dao,service编码
-				.packages("com.xxx.springboot.domain.postgresql")
+				.//设置实体类所在位置
+				packages("com.demomodel.configure.doubledatasource.textdoubledatasource.secondary")
 				.persistenceUnit("otherPersistentUnit")
 				.build();
 	}

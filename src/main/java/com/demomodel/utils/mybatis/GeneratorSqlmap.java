@@ -16,6 +16,7 @@ public class GeneratorSqlmap {
         boolean overwrite = true;
         // 指定配置文件
         File configFile = new File("generatorConfig.xml");
+        
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
