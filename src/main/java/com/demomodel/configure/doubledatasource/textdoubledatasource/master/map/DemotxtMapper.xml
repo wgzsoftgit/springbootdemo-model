@@ -18,6 +18,12 @@
     <include refid="Base_Column_List" />
     from demotxt
   </select>
+   <insert id="insert">
+    insert into demotxt(demo,sate,nsmre) values("20200608",1,"ssa")
+  </insert> 
+   <insert id="insert2">
+    insert into demotxt(demo,sate,nsmre) values("20200608",2222,"ssa")
+  </insert> 
   
   
   

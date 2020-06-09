@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.demomodel.utils.redis.JedisPool.conf.RedisUtil;
 import com.demomodel.utils.redis.JedisPool.util.RedisConstants;
-import com.demomodel.utils.redis.JedisPool.util.RedisUtil;
 import com.demomodel.utils.redis.JedisPool.util.StateParameter;
  
 /**
@@ -35,7 +35,7 @@ public class RedisController extends BaseController {
     @ResponseBody
     public ModelMap getRedis(){
         String set = redisUtil.set("20182018","这是一条测试数据", RedisConstants.datebase1);
-        System.err.println(set);
+        System.err.println("com.demomodel.utils.redis.JedisPool.controller.RedisController"+set);
         Long resExpire = redisUtil.expire("20182018", 6000000, RedisConstants.datebase1);//设置key过期时间
         logger.info("resExpire="+resExpire);
         String res = redisUtil.get("20182018", RedisConstants.datebase1);

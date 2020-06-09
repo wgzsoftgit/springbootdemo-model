@@ -33,7 +33,7 @@ public class getContent implements ApplicationContextAware {
 	// 获取Spring的application到该类
 	@Override
 	public void setApplicationContext(ApplicationContext arg0) throws BeansException {
-		System.err.println("com.interfaceDesign.getContent####%$$/ApplicationContextAware模式获取到的上下文applicationContext");
+		System.err.println("com.demomodel.interfaceDesign.getContent####%$$/ApplicationContextAware模式获取到的上下文applicationContext");
 		getContent.applicationContext = arg0;
 	}
  

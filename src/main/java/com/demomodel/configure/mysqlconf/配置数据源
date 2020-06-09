@@ -1,3 +1,6 @@
+DruidDataSource
+BasicDataSource
+
 //	展示层有三大典型技术，分别是JSP、freemaker和velocity
 //	源代码生成：Velocity 可以被用来生成 Java 代码、SQL 或者 PostScript。
 //	自动 Email：很多软件的用户注册、密码提醒或者报表都是使用 Velocity 来自动生成的

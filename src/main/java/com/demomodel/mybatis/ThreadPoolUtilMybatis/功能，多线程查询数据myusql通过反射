@@ -1,0 +1,14 @@
+https://blog.csdn.net/qq_36090711/article/details/79165577?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+
+ThreadPoolExecutor
+
+讲下写的时候遇见的问题
+1，我写第一个demo的时候是直接用的dao层，这导致了一个问题， 我后来想去抽离实体 泛型的时候  dao层写不了反射，
+因为我用的mybatis注解，dao层直接连接orm了，这样耦合度就有点高了
+
+2.我改用service层后。开始用反射的形式来抽离代码，发现invoke()不能成功，
+dao层显示为null， 这里我知道是没有引入spring的bean，然后改用获取ApplicationContext的形式获取class对象
+————————————————
+版权声明：本文为CSDN博主「_我在清水河边」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_36090711/java/article/details/79165577

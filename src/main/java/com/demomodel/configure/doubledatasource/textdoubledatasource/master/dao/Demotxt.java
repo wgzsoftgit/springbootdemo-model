@@ -9,6 +9,7 @@ CREATE TABLE `demotxt`  (
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = MyISAM AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+ INSERT INTO `demotxt` VALUES (1, '第一数据源', '12', 'sd', 'ds');
  * @author wgz
  * @date 创建时间：2020年5月9日 上午10:34:38
  */

@@ -1,0 +1,1 @@
+PreparedStatement对象可以防止sql注入，而Statement不能防止sql注入

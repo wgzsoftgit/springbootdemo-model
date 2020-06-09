@@ -24,7 +24,8 @@ public class initContent implements ApplicationListener<ContextRefreshedEvent> {
 		Map<String, Object> map = getContent.getMapbeanwithAnnotion(personInfo.class);
 		for (Map.Entry<String, Object> entrymap : map.entrySet()) {
 			try {
-				// 通过反射获取相关的实现类的Object
+				System.err.println("com.demomodel.interfaceDesign.initContentkey"+entrymap.getValue());
+				// 通过反射获取相关的实现类的Object            &&
 				Object object = getContent.getTarget(entrymap.getValue());
 				if (object != null) {
 					     //显现类的加入的注解
@@ -40,7 +41,7 @@ public class initContent implements ApplicationListener<ContextRefreshedEvent> {
 
 					    Object mapValue = entry.getValue();
 
-					    System.err.println(mapKey+"键值对:"+mapValue);
+					    System.err.println("com.demomodel.interfaceDesign.initContent"+mapKey+"键值对:"+mapValue);
 
 					}
 				}

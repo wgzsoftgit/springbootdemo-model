@@ -43,6 +43,18 @@ public class GetHttpServletRequest {
 	private static Logger log = LoggerFactory.getLogger(GetHttpServletRequest.class);
 	@RequestMapping("/getrequestdemo")
 	 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+           //加入判断
+		if(request.getAttribute("provinceId")!=null){
+		    //执行相应的操作 例如输出
+		    String provinceId=request.getAttribute("provinceId").toString();
+		    System.out.println(provinceId);
+		}
+	//https://blog.csdn.net/zeal9s/java/article/details/85986943
+		
+		
+		
+		
+		
 		System.err.println("11111111111s");
 	 //   Gsonutil.jsonToObject(request);  //post request获取消息的json 
 	   

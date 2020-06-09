@@ -35,7 +35,7 @@ logging:
       demomodel:
         mysqlcontroller:
           mapper : debug
-#导入其他日期配置
+#导入其他日期配置--------------------------------------------------------------------------------
 #logging:
   #config: classpath:logback-spring.xml
         

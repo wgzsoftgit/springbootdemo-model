@@ -16,6 +16,7 @@ public class CalendargetTime {
 //		2020-05-01 00:00:00
 		System.out.println(getDate6(1));//2020-04-16 16:09:09
 		getDA();
+		System.err.println("明天"+getDateToTomorrow());
 	}
 	public static void getDA() {
 		int total=0;
@@ -36,6 +37,17 @@ public class CalendargetTime {
 		
 		}
 		
+	}
+	/**
+	 * 
+	 *返回明天的日期
+	 * @return
+	 */
+	public static String getDateToTomorrow() {
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_MONTH, 1);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		return sdf.format(cal.getTime());
 	}
 /**
  * 当前时间减一个小时

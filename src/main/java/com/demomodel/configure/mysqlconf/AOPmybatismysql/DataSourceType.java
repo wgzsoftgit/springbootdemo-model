@@ -19,14 +19,14 @@ public class DataSourceType {
         if (dataBaseType == null) {
             throw new NullPointerException();
         }
-        System.err.println("[将当前数据源改为]：" + dataBaseType);
+        System.err.println("com.demomodel.configure.mysqlconf.AOPmybatismysql.DataSourceType"+"[将当前数据源改为]：" + dataBaseType);
         TYPE.set(dataBaseType);
     }
 
     // 获取数据源类型
     public static DataBaseType getDataBaseType() {
         DataBaseType dataBaseType = TYPE.get() == null ? DataBaseType.TEST01 : TYPE.get();
-        System.err.println("[获取当前数据源的类型为]：" + dataBaseType);
+        System.err.println("com.demomodel.configure.mysqlconf.AOPmybatismysql.DataSourceType"+"[获取当前数据源的类型为]：" + dataBaseType);
         return dataBaseType;
     }
 

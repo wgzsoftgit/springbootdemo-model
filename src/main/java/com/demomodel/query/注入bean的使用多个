@@ -1,0 +1,17 @@
+/    @Autowired
+    private ThreadPoolTaskScheduler threadPoolTaskScheduler; 
+    等于下面的
+//    @Bean
+//    public ThreadPoolTaskScheduler threadPoolTaskScheduler() {
+//       return new ThreadPoolTaskScheduler();
+//    } 
+
+
+	  @Autowired 
+	 // @Qualifier("test1")
+	  private ScheduledUtil scheduledUtil1;
+	 
+//    @Autowired
+//    @Qualifier("test2")
+//     ScheduledUtil scheduledUtil2;
+//

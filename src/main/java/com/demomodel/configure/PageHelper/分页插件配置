@@ -1,0 +1,5 @@
+@Override
+	public List<Messages> findFByUid(Integer page, Integer size, Integer userId) {
+		PageHelper.startPage(page,size);
+		return messagesMapper.findFByUid(userId);
+	}

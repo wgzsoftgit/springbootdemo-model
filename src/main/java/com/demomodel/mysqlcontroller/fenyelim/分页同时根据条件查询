@@ -2,3 +2,4 @@
    分页查询条数总数和原来的条件一样
    自定义分页工具   mapper取值 pagetion.begin
  
+ com.demomodel.configure.PageHelper.PageHelperConfig  分页插件配置

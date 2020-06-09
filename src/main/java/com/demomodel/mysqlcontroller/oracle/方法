@@ -1,0 +1,16 @@
+设置默认值
+   nvl(c.sing,0)  //为null就设置0
+  判断 
+   （case   when  k.js==1 
+         then    1
+         else   4
+     end ）as rk
+小数截取
+  round(nvl(c.sing,0)/c.alltotal),2) 截取两位0.023    --> 0.02
+  
+  
+  to_chart(t.kiss,'yyyymmdd')
+    to_chart(t.kiss,'yyyymmddhh24')
+    
+    最近30天
+   t.kiss>= trunc(sysdate-30) t.kiss< trunc(sysdate)

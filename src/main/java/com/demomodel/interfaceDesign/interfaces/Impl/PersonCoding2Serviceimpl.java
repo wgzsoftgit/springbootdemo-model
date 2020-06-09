@@ -29,7 +29,7 @@ public class PersonCoding2Serviceimpl implements PersonAnnotationService{
 		    System.err.println("com.demomodel.interfaceDesign.interfaces.Impl.PersonCoding2Serviceimpl##$$$"+mapKey+"键值对:"+mapValue);
 
 		}
-		return null;
+		return "ok--com.demomodel.interfaceDesign.interfaces.Impl.PersonCoding2Serviceimpl";
 	}
 		
 }

@@ -1,0 +1,11 @@
+但是要写出稳定、安全、健壮性强的锁就需要考虑很多因素了，例如：服务宕机、锁失效等
+https://blog.csdn.net/qq_32099833/article/details/103881721?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.nonecase
+
+1.使用SETNX保证设置的key是唯一存在的（如果key存在就不插入，悲观锁）
+
+2.原子操作：incr（将key的value+1）（乐观锁，获取不到就立即返回结果）
+
+
+单机用synchronized关键字  ReentrantLock显示的上锁和解锁 (双向链表一个头部head和尾部(公平锁和非公平锁,
+ 非不管队列是否有值都会抢锁为0 ,抢占成功))
+可以是对象 方法 和代码块

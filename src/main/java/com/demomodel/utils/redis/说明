@@ -1,0 +1,27 @@
+程序启动初始化集群环境
+
+1)、读取配置文件中的节点配置，无论是主从，无论多少个，只拿第一个，获取redis连接实例
+
+2)、用获取的redis连接实例执行clusterNodes()方法，实际执行redis服务端cluster nodes命令，获取主从配置信
+
+息
+
+3)、解析主从配置信息，先把所有节点存放到nodes的map集合中，key为节点的ip:port，value为当前节点的
+
+jedisPool
+
+4)、解析主节点分配的slots区间段，把slot对应的索引值作为key，第三步中拿到的jedisPool作为value，存储在
+
+slots的map集合中
+
+就实现了slot槽索引值与jedisPool的映射，这个jedisPool包含了master的节点信息，所以槽和几点是对应的，与
+
+redis服务端一致
+
+从集群环境存取值
+
+1)、把key作为参数，执行CRC16算法，获取key对应的slot值
+
+2)、通过该slot值，去slots的map集合中获取jedisPool实例
+
+3)、通过jedisPool实例获取jedis实例，最终完成redis数据存取工作

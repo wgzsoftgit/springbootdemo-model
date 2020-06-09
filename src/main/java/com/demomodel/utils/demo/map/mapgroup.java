@@ -71,7 +71,7 @@ public class mapgroup {
 		System.out.println(map3.toString());
 		listsort();
 		List<String> listtest= Arrays.asList("a", "B", "c", "d"); //初始化数组
-
+  
 		List collect =listtest.stream().map(String::toUpperCase).collect(Collectors.toList());
 		List collect2 =listtest.stream().map(String::toLowerCase).collect(Collectors.toList());
 		System.out.println(collect); //[A, B, C, D]

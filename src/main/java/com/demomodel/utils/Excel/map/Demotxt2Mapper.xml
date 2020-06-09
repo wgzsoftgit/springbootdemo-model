@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demomodel.utils.Excel.map.Demotxt2Mapper">
+  <resultMap id="BaseResultMap" type="com.demomodel.utils.Excel.bean.Demotxt2">
+    <id column="id" property="id" />
+    <result column="demo" property="demo" />
+    <result column="sate" property="sate" />
+    <result column="nsmre" property="nsmre" />
+    <result column="address" property="address" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    id, demo, sate, nsmre, address
+  </sql>
+  
+  <select id="selectALL" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from demotxt
+  </select>
+  <select id="selectById" resultType="java.lang.Integer" >
+    select
+    count(1)
+    from demotxt  where id = #{id}
+  </select>
+</mapper>

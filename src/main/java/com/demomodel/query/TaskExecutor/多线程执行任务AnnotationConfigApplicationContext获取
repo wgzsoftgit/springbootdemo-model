@@ -1,0 +1,2 @@
+  ApplicationContext context = new AnnotationConfigApplicationContext(SchedulerConfig.class);
+  获取上下文

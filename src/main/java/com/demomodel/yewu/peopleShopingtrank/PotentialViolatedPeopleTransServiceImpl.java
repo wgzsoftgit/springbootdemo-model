@@ -10,15 +10,15 @@ package com.demomodel.yewu.peopleShopingtrank;
  */
 //@Service
 public class PotentialViolatedPeopleTransServiceImpl{
-//
+
 //	@Autowired
 //	PotentialViolatedMapper potentialViolatedMapper; //调用oracle的sql
 //	@Autowired
 //	PotentialViolatedPeopleMapper potentialViolatedPeopleMapper;  //人的信息
 //	@Autowired
 //	PotentialViolatedPeopleTransRecordMapper potentialViolatedPeopleTransRecordMapper;//人买票信息
-//	
-//	
+//
+	
 //	
 //	@Override
 //	public void syncPotentialViolatedPeopleTransRecord() {

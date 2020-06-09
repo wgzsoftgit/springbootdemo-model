@@ -8,7 +8,6 @@ import java.util.Properties;
 
 import javax.servlet.ServletContext;
 
-import org.mybatis.generator.config.PropertyHolder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.context.WebServerApplicationContext;
 import org.springframework.stereotype.Component;

@@ -15,7 +15,7 @@ public class PersonCodingServiceimpl implements PersonAnnotationService{
 		// TODO Auto-generated method stub
 		System.err.println("com.demomodel.interfaceDesign.interfaces.Impl.PersonCodingServiceimpl###$$PersonCodingServiceimpl");
 		
-		return null;
+		return "ok-com.demomodel.interfaceDesign.interfaces.Impl.PersonCodingServiceimpl";
 	}
 	
 }

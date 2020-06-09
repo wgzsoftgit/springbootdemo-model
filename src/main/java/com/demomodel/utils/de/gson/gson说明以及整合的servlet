@@ -2,3 +2,36 @@
 
 一种是对象，object -> {key:value,key:value,...} 。
 另一种是数组，array -> [value,value,...] 。
+
+String json = new Gson().toJson(map);
+
+Map<String, Object> fromJsonMap = new Gson().fromJson(json, new TypeToken<Map<String, Object>>() {
+		}.getType());
+System.out.println("2 "+fromJsonMap); //{msg=aaaaaaaaaaaaa, code=1.0, u={name=name, pwd=123, age=12.0}}	
+	
+List<String> fruitList = new Gson().fromJson(json2, new TypeToken<List<String>>() {}.getType());//转集合list<String>	
+String[] fruits = new Gson().fromJson(json2, String[].class);//转数组
+Result<MyEntry> result1 = typeGson1.fromJson(typeJson1, new TypeToken<Result<MyEntry>>(){}.getType());
+//创建一个JsonParser
+		JsonParser parser = new JsonParser();
+
+//通过JsonParser对象可以把json格式的字符串解析成一个JsonElement对象
+		JsonElement el = parser.parse(string);
+
+//把JsonElement对象转换成JsonObject
+		JsonObject jsonObj = null;
+		if (el.isJsonObject()) {
+			jsonObj = el.getAsJsonObject();
+		}
+		// 1. value为string时，取出string
+			String sex = jsonObj.get("sex").getAsString();
+	  // 3. value为object时，取出object
+			JsonObject introduce = jsonObj.getAsJsonObject("introduce");
+	   // 2. value为array时，取出array
+		   JsonArray hobbies = jsonObj.getAsJsonArray("hobby"); //
+
+//把JsonElement对象转换成JsonArray
+		JsonArray jsonArray = null;
+		if (el.isJsonArray()) {
+			jsonArray = el.getAsJsonArray();
+		}

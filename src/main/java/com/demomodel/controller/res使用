@@ -1,0 +1,54 @@
+                          @QueryParam
+用于获取GET请求中的查询参数，实际上是url拼接在?后面的参数。
+注解位置：参数注解
+
+示例
+@GET 
+@Path("/user") 
+@Produces("text/plain") 
+public User getUser(@QueryParam("name") String name, 
+                    @QueryParam("age") int age) { 
+    ... 
+} 
+
+//当浏览器请求http://ip:port/user?name=rose&age=25时，name值为rose，age值为25。如果需要为参数设置默认值，可以使用@DefaultValue
+//https://blog.csdn.net/qq_22177809/java/article/details/86592660
+                     @PathParam
+配合@Path进行使用，可以获取URI中指定规则的参数。
+注解位置：参数注解
+
+示例
+@GET 
+@Path("{username"}) 
+@Produces(MediaType.APPLICATION_JSON) 
+public User getUser(@PathParam("username") String userName) { 
+    ... 
+} 
+
+// 浏览器请求http://ip:port/user/jack时，userName值为jack。 
+// 注意，这里的username并不是说Key是username, value是jack而是说/usr/后面跟着的东西就是username,这里username只是个变量 
+//https://blog.csdn.net/qq_22177809/java/article/details/86592660
+
+@DefaultValue
+配合前面的参数注解等使用，用来设置默认值，如果请求指定的参数中没有值，通过该注解给定默认值。
+注解位置：参数注解
+
+示例
+@POST
+@Path("/user/add")
+@Consumes({MediaType.APPLICATION_FORM_URLENCODED})
+@Produces({MediaType.APPLICATION_JSON})
+public Response addUser(@FormParam("username") String userName, @DefaultValue("0") @FormParam("age") int age,@DefaultValue("1") @FormParam("sex") int sex){
+    ...
+}
+1
+2
+3
+4
+5
+6
+7
+注意：DefaultValue指定的值在解析过程中出错时(@DefaultValue(“test”) @QueryParam(“age”) int age)，将返回404错误。
+————————————————
+版权声明：本文为CSDN博主「七乘563」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_22177809/java/article/details/86592660

@@ -1,0 +1,2 @@
+从报错误的信息ERR This instance has cluster support disabled很明显看得出来，是没有启动redis集群功能，
+可是我项目配置的集群的配置方式，要么修改代码为单机配置，要么修改redis为集群方式。

@@ -4,6 +4,13 @@ import java.sql.Timestamp;
 
 public class Stringutilsdemo {
 public static void main(String[] args) {
+	//1.03 转化 103
+	System.out.println(String.format("%.0f", Float.valueOf("1.03")*100));
+	//转化成百分比
+	System.out.println("百分比"+String.format("%.0f", Float.valueOf("0.03")*100)+'%');
+
+	
+	
 	String str="saSdsa saSNF .dsa";
 	System.err.println("String的长度"+str.length());  //12
 	System.err.println("转小写"+str.toLowerCase());  //sasdsa sasnf

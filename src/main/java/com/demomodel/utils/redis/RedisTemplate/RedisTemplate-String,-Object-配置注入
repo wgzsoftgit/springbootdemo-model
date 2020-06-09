@@ -1,0 +1,35 @@
+ RedisTemplate<String, Object> 
+ 
+ // 源码
+@Configuration
+@ConditionalOnClass(RedisOperations.class)
+@EnableConfigurationProperties(RedisProperties.class)
+@Import({LettuceConnectionConfiguration.class, JedisConnectionConfiguration.class})
+public class RedisAutoConfiguration {
+
+    @Bean
+    @ConditionalOnMissingBean(name = "redisTemplate")
+    public RedisTemplate<Object, Object> redisTemplate(
+            RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
+        RedisTemplate<Object, Object> template = new RedisTemplate<>();
+        template.setConnectionFactory(redisConnectionFactory);
+        return template;
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public StringRedisTemplate stringRedisTemplate(
+            RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
+        StringRedisTemplate template = new StringRedisTemplate();
+        template.setConnectionFactory(redisConnectionFactory);
+        return template;
+    }
+}
+————————————————
+版权声明：本文为CSDN博主「devp_yang」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_43365369/java/article/details/96869661
+通过源码可以看出，SpringBoot自动帮我们在容器中生成了一个RedisTemplate和一个StringRedisTemplate。但是，这个RedisTemplate的泛型是<Object,Object>，写代码不方便，需要写好多类型转换的代码；我们需要一个泛型为<String,Object>形式的RedisTemplate。并且，这个RedisTemplate没有设置数据存在Redis时，key及value的序列化方式。
+从@ConditionalOnMissingBean注解可以看出，如果Spring容器中有了RedisTemplate对象了，这个自动配置的RedisTemplate不会实例化。因此我们可以直接自己写个配置类，配置RedisTemplate。
+————————————————
+版权声明：本文为CSDN博主「devp_yang」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_43365369/java/article/details/96869661

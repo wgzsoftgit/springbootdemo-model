@@ -16,7 +16,7 @@ import com.demomodel.JwtToken.demo.JwtHelper;
 import com.demomodel.JwtToken.demo.base.AESSecretUtil;
 import com.demomodel.JwtToken.demo.base.SecretConstant;
 import com.demomodel.utils.cookies.CookiesUtil;
-import com.demomodel.utils.redis.JedisPool.util.RedisUtil;
+import com.demomodel.utils.redis.JedisPool.conf.RedisUtil;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 

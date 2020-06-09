@@ -24,7 +24,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //@EnableJpaRepositories(
 //		entityManagerFactoryRef="entityManagerFactoryPrimary",
 //		transactionManagerRef="transactionManagerPrimary",
-//		basePackages={"com.demomodel.configure.doubledatasource.textdoubledatasource.master"})
+//		basePackages={"com.demomodel.configure.doubledatasource.textdoubledatasource.master.map"})
 public class PrimaryDataSourceConfig {
 	@Autowired
 	@Qualifier("dataSource")
@@ -46,7 +46,7 @@ public class PrimaryDataSourceConfig {
 				.dataSource(dataSource)
 				.properties(getProperties()) //&&getProperties()
 				//设置实体类所在位置
-				.packages("com.demomodel.configure.doubledatasource.textdoubledatasource.master")
+				.packages("com.demomodel.configure.doubledatasource.textdoubledatasource.master.dao")
 				.persistenceUnit("primaryPersistentUnit")
 				.build();
 	}

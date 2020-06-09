@@ -33,7 +33,7 @@ public class HelloController {
 	}
 
 //路径映射，对应浏览器访问的地址，访问该路径则执行下面函数
-	@RequestMapping("/hello")
+	@RequestMapping("/hello")  
 	public String hello() {
 		return "名字：" + author.getName() + " 地址：" + author.getCsdnUrl();
 	}

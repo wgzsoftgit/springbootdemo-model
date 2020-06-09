@@ -96,7 +96,15 @@
 >    mysql> flush privileges;
 >    Query OK, 0 rows affected (0.00 sec)
 >    ~~~
+#   使用无验证模式启动mysql
 
+mysqld_safe --skip-grant-tables &
+
+看到mysql守护线程启动说明设置成功：
+
+mysqld_safe --user=mysql & 恢复正常模式。
+
+mysql -u root -p 此时需要输入-p用密码登录：
 # 有关无法远程连接问题
 
 > 安装完成后,执行相关允许远程连接命令,都无法连接

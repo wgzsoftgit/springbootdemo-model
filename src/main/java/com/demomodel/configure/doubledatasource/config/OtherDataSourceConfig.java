@@ -17,28 +17,28 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
+//通过basePackages属性指定了Repository的位置，也就是dao层接口的位置，还通过packages属性指定了各自实体类的位置
 //@Configuration
 //@EnableTransactionManagement
 //@EnableJpaRepositories(
 //		entityManagerFactoryRef="entityManagerFactoryOther",
 //		transactionManagerRef="transactionManagerOther",
-//	    basePackages={"com.demomodel.configure.doubledatasource.textdoubledatasource.secondary"})//指定了Repository的位置也就是map层接口的位置
+//	    basePackages={"com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map"})//指定了Repository的位置也就是map层接口的位置
 public class OtherDataSourceConfig {
  
-	@Autowired
-	@Qualifier("otherDataSource")
+//	@Autowired
+//	@Qualifier("otherDataSource")
 	private DataSource otherDataSource;
 	
-	@Autowired
+//	@Autowired
 	private JpaProperties jpaProperties;
 	
-	@Bean(name="entityManagerOther")
+//	@Bean(name="entityManagerOther")
 	public EntityManager entityManager(EntityManagerFactoryBuilder builder){
 		return entityManagerFactoryBean(builder).getObject().createEntityManager();
 	}
 	
-	@Bean(name="entityManagerFactoryOther")
+//	@Bean(name="entityManagerFactoryOther")
 	public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(EntityManagerFactoryBuilder builder){
 		return builder
 				.dataSource(otherDataSource)
@@ -46,7 +46,7 @@ public class OtherDataSourceConfig {
 				.properties(getProperties())
 				//还通过packages属性指定了各自实体类的位置。这样，数据源配置清楚了，剩下就是各自数据源对应的实体和dao,service编码
 				.//设置实体类所在位置
-				packages("com.demomodel.configure.doubledatasource.textdoubledatasource.secondary")
+				packages("com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.dao")
 				.persistenceUnit("otherPersistentUnit")
 				.build();
 	}
@@ -62,7 +62,7 @@ public class OtherDataSourceConfig {
 		return map;
 	}
 	
-	@Bean(name="transactionManagerOther")
+//	@Bean(name="transactionManagerOther")
 	public PlatformTransactionManager transactionManager(EntityManagerFactoryBuilder builder){
 		return new JpaTransactionManager(entityManagerFactoryBean(builder).getObject());
 	}

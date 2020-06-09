@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.demomodel.JwtToken.demo.JwtHelper;
 import com.demomodel.bean.User;
-import com.demomodel.utils.redis.JedisPool.util.RedisUtil;
+import com.demomodel.utils.redis.JedisPool.conf.RedisUtil;
 
 import redis.clients.jedis.Jedis;
 @Controller

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.demomodel.JwtToken.jksjwt.JwtHelper;
+import com.demomodel.utils.redis.JedisPool.conf.RedisUtil;
 import com.demomodel.utils.redis.JedisPool.util.RedisConstants;
-import com.demomodel.utils.redis.JedisPool.util.RedisUtil;
 import com.demomodel.utils.redis.JedisPool.util.StateParameter;
 
 @Controller
@@ -30,7 +30,7 @@ public class JwtToken {
 	    @ResponseBody
 	    public String getRedis(){
 	        String set = redisUtil.set("20182018","这是一条测试数据", RedisConstants.datebase1);
-	        System.err.println(set);
+	        System.err.println("com.demomodel.JwtToken.jksjwt.controller.JwtToken"+set);
 	        Long resExpire = redisUtil.expire("20182018", 6000000, RedisConstants.datebase1);//设置key过期时间
 	      
 	        String res = redisUtil.get("20182018", RedisConstants.datebase1);

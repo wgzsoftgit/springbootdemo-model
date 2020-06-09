@@ -1,0 +1,35 @@
+ThreadPoolExecutor executor = new ThreadPoolExecutor(5,8, 3000, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>(2000));
+LinkedBlockingQueue<Runnable> queue = (LinkedBlockingQueue<Runnable>) executor.getQueue();
+int countTool= agencyids.size();
+final CountDownLatch countDownLatch = new CountDownLatch(countTool);
+
+for(AgencyPO agency:agencyids){
+final AgencyPO po  = agency;
+final Service outService = service; //service为spring注入 
+final HashMap param = new HashMap(); //传的参数，这里一定要注意，一定要在循环里面重新建参数map，否则会导致线程里调用map有问题
+
+executor.execute(new Runnable(){
+
+public void run() {
+   
+try {
+
+param.put("agency", po.getGuid());
+List<Map<String, Object>> list = outService.getResult(param);//调用service层的一个方法
+
+
+
+} catch (Exception e) {
+
+e.printStackTrace();
+}
+countDownLatch.countDown();
+}
+});
+}
+//所有子线程 执行完成之后 主线程再继续向下 
+countDownLatch.await();
+System.out.println("------------- end---------");
+————————————————
+版权声明：本文为CSDN博主「流年轻描淡写的伤」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/lexuansweet/java/article/details/72366877

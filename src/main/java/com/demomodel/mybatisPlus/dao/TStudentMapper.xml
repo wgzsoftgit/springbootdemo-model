@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demomodel.mybatisPlus.dao.TStudentMapper">
+  <resultMap id="BaseResultMap" type="com.demomodel.mybatisPlus.bean.TStudent">
+    <result column="sid"  property="sid" />
+    <result column="sname" property="sname" />
+    <result column="sex" property="sex" />
+  </resultMap>
+    <select id="selectUserByMap" resultMap="BaseResultMap" parameterType="Map">
+     select * from t_student
+     <where>
+    	   <if test="params.sid != null">
+      	     	AND  sid =#{params.sid} 
+      	   </if>
+    </where>
+  </select>
+</mapper>

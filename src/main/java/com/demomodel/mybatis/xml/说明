@@ -1,0 +1,16 @@
+parameterType是方法参数的别名,或者完整类名,可以是包装类.数组或者集合.
+resultType定义和返回的类型.如果是集合应该使用集合内装的类型.
+resultMap外部reslutMap的引用.这是对结果集的映射
+.resultMap和resultType不能同时使用.
+flushCache将其设置为true将会在任何时候只要语句被执行,本地的缓存将被清除.
+useCache,将其设置为True,将会导致select的结果被二级缓存.
+timeOut这个设置是在抛出异常之前,驱动程序等待数据库返回请求结果的时间.
+fetchSize这个值是设置驱动程序每次批量返回的结果的行数.
+statementType ,STATMENT,PREPARED和CALLABED三种,
+分别让Mybatis使用Statement,PreparedStatement和CallableStatement.
+
+
+如果主键是数据库自动生成,insert还支持将刚生成的主键返回.
+<selectKey keyProperty="id" order="AFTER" resultType="Long">
+select last_insert_id()
+</selectKey>

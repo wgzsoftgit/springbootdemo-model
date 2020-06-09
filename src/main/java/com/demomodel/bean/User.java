@@ -47,6 +47,10 @@ public class User implements Serializable {
 	public void setJ(int j) {
 		this.j = j;
 	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", i=" + i + ", j=" + j + "]";
+	}
 	
     
 }

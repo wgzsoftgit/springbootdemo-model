@@ -22,7 +22,7 @@ public class KeepLogin extends BaseUserInfo
     public static void main(String[] args) throws Exception {
         while (true) {
             String rsp = keepAlive(ip, Integer.valueOf(port), token);
-            System.out.println(rsp);
+            System.out.println(rsp+"#############keep alive##########");
             Thread.sleep(110000);
         }
     }

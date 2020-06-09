@@ -1,0 +1,29 @@
+前言：1、利用反射机制实现。
+
+           2、通过实现SchedulingConfigurer来配置定时任务。
+
+           3、此种方式只能实现项目启动时，定时任务执行，不能再项目启动后开启、暂停任务。
+
+效果：
+
+        数据库中配置了2个任务（状态都是开启的，如果不想执行某条任务，可以将状态改为1）
+————————————————
+版权声明：本文为CSDN博主「前方太黑暗」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/xcc_2269861428/java/article/details/99996185
+
+DROP TABLE IF EXISTS `schedule_setting`;
+CREATE TABLE `schedule_setting`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `job_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `class_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `method` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `cron` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `status` int(2) NULL DEFAULT NULL COMMENT '0 代表开启，1代表关闭',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of schedule_setting
+-- ----------------------------
+INSERT INTO `schedule_setting` VALUES (3, '测试1', 'com.demomodel.query.Schedulequery.controllertext.ScheduledTaskRegistrarText', 'schedutask', '0/2 * * * * ?', 1);
+INSERT INTO `schedule_setting` VALUES (4, '测试2', 'com.demomodel.query.Schedulequery.controllertext.ScheduledTaskRegistrarText', 'schedutask2', '0/2 * * * * ?', 1);

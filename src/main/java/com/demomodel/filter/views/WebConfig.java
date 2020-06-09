@@ -20,7 +20,11 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.demomodel.filter.handlerInterceptor.ReqInterceptor;
-
+/**
+ * 配置多视图   测试ok
+ * @author wgz
+ * @date 创建时间：2020年5月28日 下午4:38:25
+ */
 @Configuration
 public class WebConfig  implements WebMvcConfigurer{
 
@@ -84,7 +88,18 @@ public class WebConfig  implements WebMvcConfigurer{
 //	}
 //----------------------------------------------------
     
-    
+	    /***
+		 * 通过注解 @Bean 初始化视图解析器  单视图
+		 * @return ViewResolver 视图解析器
+		 */
+//		@Bean(name="internalResourceViewResolver")
+//		public ViewResolver initViewResolver() {
+//			InternalResourceViewResolver viewResolver =new InternalResourceViewResolver();
+//			viewResolver.setPrefix("/WEB-INF/jsp/");
+//			viewResolver.setSuffix(".jsp");
+//			return viewResolver;
+//		}
+//https://blog.csdn.net/ykzhen2015/java/article/details/70669861
     
     
 

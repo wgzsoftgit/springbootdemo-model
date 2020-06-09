@@ -1,0 +1,4 @@
+Gson gson = new Gson();
+String resoponseResult = HttpClientUtil.doGet(theOneUrl);
+
+RealTimeResult realTimeResult = gson.fromJson(resoponseResult, RealTimeResult.class);

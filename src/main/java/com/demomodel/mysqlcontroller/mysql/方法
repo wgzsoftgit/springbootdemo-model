@@ -1,0 +1,18 @@
+设置默认值
+   IFNULL(c.sing,0)  //为null就设置0
+   判断
+   case  k.js   when   '3302'  then '杭州'
+                when   '320'   then '上海'
+                else   '广州'
+   end as  rk
+                
+小数截取
+  FORMAT(IFNULL(c.sing,0)/c.alltotal),2) 截取两位0.023    --> 0.02
+  转化成天
+  DATE_FORMAT(a.checkIN,'%m-%d')
+  最近30天
+  a.checkIn=DATE_SUB(now(),INTERVAL 30 DAY) and a.checkIn<DATE_FORMAT(now(),'%y-%m-%d %H:%i:%s')
+  
+  
+  
+  

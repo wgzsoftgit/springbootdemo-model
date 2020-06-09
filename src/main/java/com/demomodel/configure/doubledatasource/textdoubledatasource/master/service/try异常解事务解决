@@ -1,0 +1,16 @@
+　当我们需要在事务控制的service层类中使用try catch 去捕获异常后，
+就会使事务控制失效，因为该类的异常并没有抛出，就不是触发事务管理机制。
+怎样才能即使用try catch去捕获异常，而又让出现异常后spring回滚呢
+
+
+Spring boot是默认启动事务的，只需要在类或者方法上添加@Transactional注解即可，但有时候会发现事务不生效，
+具体原因可以从以下几个方面找寻：
+
+1、首先要看数据库引擎是否支持注解，mysql默认引擎INNODB是支持的，但MYISAM是不支持的；
+
+2、注解只能被应用到public方法上, 其它方法上不会报错，但不生效；
+
+3、默认情况下只会对运行期异常(java.lang.RuntimeException及其子类)和 Error 进行回滚；
+————————————————
+版权声明：本文为CSDN博主「sailor125」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/sailor125/java/article/details/90610927

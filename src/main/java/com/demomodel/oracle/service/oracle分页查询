@@ -1,0 +1,9 @@
+重写equest
+    @Override
+	public boolean equals(Object obj) {
+		if(obj==null) return false;
+		if(!(obj instanceof User)) return false;					
+		User irregularHotel=(User)obj;
+		//流水号和idnum相同为同一个用户
+		return this.getBusinessNum().equals(irregularHotel.getBusinessNum()) && this.getIdNum().equals(irregularHotel.getIdNum());
+	}

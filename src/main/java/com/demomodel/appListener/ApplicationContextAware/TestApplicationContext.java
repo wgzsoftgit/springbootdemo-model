@@ -29,7 +29,7 @@ class TestApplicationContext implements ApplicationContextAware {
         //  获取personInfo注解的类    getBeansWithAnnotation-----------------获取注解的类--------------
         Map<String, Object> beans = applicationContext.getBeansWithAnnotation(personInfo.class);
         for (Map.Entry<String, Object> entry : beans.entrySet()) {
-        	System.err.println("org.springframework.context.TestApplicationContext#############################ApplicationContextAware的上下文###########"+entry);
+        	System.err.println("com.demomodel.appListener.ApplicationContextAware.TestApplicationContext#############################ApplicationContextAware的上下文###########"+entry);
 //        	ApplicationContextAware的上下文personCoding2Serviceimpl=com.interfaceDesign.interfaces.Impl.PersonCoding2Serviceimpl@4248b963
 //        	ApplicationContextAware的上下文personCodingServiceimpl=com.interfaceDesign.interfaces.Impl.PersonCodingServiceimpl@7f08caf
             // 根据注解的属性值判断

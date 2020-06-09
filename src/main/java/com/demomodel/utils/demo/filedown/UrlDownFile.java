@@ -62,8 +62,8 @@ public class UrlDownFile {
 	public static void main(String[] args) throws Exception {  
 		//https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js
 		//https://www.echartsjs.com/zh/dist/echarts-gl.js
-		String urlsrc="https://www.hunliji.com/bai_ke/detail_11943"; //要访问的链接  
-		String outPath="D:\\echarts.min-cdn2.html"; //本地路径  
+		String urlsrc="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"; //要访问的链接  
+		String outPath="D:\\echarts.min.js"; //本地路径  
 		DownLoadPages(urlsrc,outPath);  
 	}  
 	

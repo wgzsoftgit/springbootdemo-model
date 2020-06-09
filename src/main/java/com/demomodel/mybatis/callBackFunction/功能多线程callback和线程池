@@ -1,0 +1,11 @@
+查询 数据  和多线程操作mybatis
+Callable<>去查询数据   并把查询出的结果放入池中多线程同步到自己的库中
+
+实现Callable<> 这种方式能返回查询的数据，加上Future异步获取方式，查询效率大大加快
+五百万的数据实在不适合这样查
+
+最主要的是，你的数据量大的话要相应的更改调用方法里的 num，一次性多查点，效率会高很多
+https://blog.csdn.net/dfBeautifulLive/article/details/82788830?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.nonecase
+这种方法很明显不现实，本质就是利用多线程去分页查询，
+要知道服务器增加线程的同时，数据库也相应增加查询任务，这样针对小规模数据量可以说是一种优化方案，
+但上升到大数据层面，这种方法秒秒钟会把你的服务器和数据库搞垮，这是不可行的

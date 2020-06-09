@@ -20,12 +20,27 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.demomodel.JwtToken.demo.ValidateLoginInterceptor;
+import com.demomodel.filter.SimpleCORSFilter;
 import com.demomodel.filter.handlerInterceptor.ReqInterceptor;
+import com.demomodel.filter.handlerInterceptor.SessionInterceptor;
+import com.demomodel.filter.midengFile.config.IdempotentFilter;
 
-//@Configuration
+@Configuration
 public class WebConfighander implements WebMvcConfigurer {
-
-    /**
+	/**
+	 * 配置拦截器      
+	 */      
+    @Override    
+    public void addInterceptors(InterceptorRegistry registry) {
+    	//配置拦截器   需要一个实现HandlerInterceptor接口的拦截器实例，   && 
+    //    registry.addInterceptor(new ReqInterceptor()).addPathPatterns("/**");    //登陆凭证根据业务而定    
+   //     registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/**");//仅是支持跨域
+                	   
+    	 registry.addInterceptor(new IdempotentFilter()).addPathPatterns("/**"); //注解的类  解决重复提交
+        // ValidateLoginInterceptor 配置jwt校验
+       // registry.addInterceptor(new ValidateLoginInterceptor()).addPathPatterns("/**");
+    }  
+    /**     
      * 添加类型转换器和格式化器
      * @param registry
      */
@@ -72,16 +87,7 @@ public class WebConfighander implements WebMvcConfigurer {
 
     }
     
-	/**
-	 * 配置拦截器 
-	 */
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-    	//配置拦截器   需要一个实现HandlerInterceptor接口的拦截器实例，   && 
-       // registry.addInterceptor(new ReqInterceptor()).addPathPatterns("/**");
-        
-        registry.addInterceptor(new ValidateLoginInterceptor()).addPathPatterns("/**");
-    }
+	
     /**
      * 视图控制器配置
      * 这一个配置在之前是经常被使用到的，最经常用到的就是"/"、"/index"路径请求时不通过@RequestMapping配置，
@@ -133,7 +139,7 @@ Bean bean = JSON.parseObject(jsonStr, Bean.class);
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         //1.需要定义一个convert转换消息的对象;
         FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
-        //2.添加fastJson的配置信息，比如：是否要格式化返回的json数据;
+        //2.添加fastJson的配置信息，比如：是否要格式化返回的json数据;  
         FastJsonConfig fastJsonConfig = new FastJsonConfig();
         fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat,//是否需要格式化
                 SerializerFeature.WriteMapNullValue,

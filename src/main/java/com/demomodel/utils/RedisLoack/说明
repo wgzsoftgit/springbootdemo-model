@@ -1,0 +1,21 @@
+jedisCluster.set(i + "ceshi"+i, "off", "NX", "EX", 60)
+改写为:
+jedisCluster.eval("return redis.call('set', KEYS[1],'1','nx', 'ex', '180') ", key,new ArrayList<>())
+————————————————
+版权声明：本文为CSDN博主「程序猿小学僧」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/jiebaoqianh/java/article/details/85116587
+上锁成功不返回成功
+
+
+
+
+因为 springboot2.0中默认是使用 Lettuce来集成Redis服务，spring-boot-starter-data-redis默认只引入了 Lettuce包，并没有引入 jedis包支持。所以在我们需要手动引入 jedis的包，并排除掉 lettuce的包，pom.xml配置如下:
+————————————————
+版权声明：本文为CSDN博主「thewaiting」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/thewaiting/java/article/details/89679132
+
+
+分布式锁 redission   jedis
+
+jedis,setnx+expire(可以合成一个命令)
+并且 setnx和expire(设置超时时间)不是原子操作，当setnx后，redis宕掉，则此锁无法释放掉！

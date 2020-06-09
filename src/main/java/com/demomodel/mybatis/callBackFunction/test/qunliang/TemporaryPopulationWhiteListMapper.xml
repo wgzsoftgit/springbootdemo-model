@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.TemporaryPopulationWhiteListMapper">
+  <resultMap id="BaseResultMap" type="com.TemporaryPopulationWhiteList">
+    <id column="id" property="id" />
+    
+    <result column="create_date"  property="createDate" />
+    <result column="update_date"  property="updateDate" />
+   
+  </resultMap>
+  <!--  清空表内容   void truncateTable()-->
+  <update id="truncateTable">
+  
+    truncate table tempor
+    
+  </update>
+  
+  <!-- 批量更新   -->
+  <!--  parameterType="list" 成功跑起来  -->
+  <!-- //mybatis 批量插入 void insertSave(List<TemporaryPopulationWhiteList> list); -->
+   <insert id="insertSave" parameterType="java.util.List">
+      insert into tempor (xmname, renew_count, is_update) values
+      <foreach collection="list" item="i" index="index" separator="," >
+	  		( #{i.renewCount},#{i.isUpdate}
+	  		)
+		</foreach>
+  </insert>
+
+ 
+
+  <select id="selectByObject" resultMap="BaseResultMap" parameterType="com.bayee.domain.TemporaryPopulationWhiteList">
+     SELECT * FROM temporary_population_white_list 
+     <where>
+    	<if test="starttionDate != null and starttionDate != ''">AND arrival_date &gt;= #{starttionDate}</if>
+     	<if test="endtionDate != null and endtionDate != ''">AND exp_date &lt;= #{endtionDate}</if>    
+        <if test="xmname != null and xmname != ''">
+      		AND  xmname like CONCAT('%',#{xmname},'%') 
+      	</if>
+      	<if test="renewCount != null and renewCount != ''">
+      		AND  renew_count &gt;= #{renewCount} 
+      	</if>
+      	   		
+    </where>
+group by id_num
+   order by  renew_count desc  ,arrival_date desc, exp_date desc
+
+
+      
+      		limit ${pagetion.begin},${pagetion.pageSize}
+      
+     
+  </select>
+  
+    <select id="getFlowPeopleCount" resultType="java.lang.Integer" parameterType="com.bayee.domain.TemporaryPopulationWhiteList">
+    select count(1) from (  select count(*) from temporary_population_white_list
+        <where>
+       
+    	<if test="starttionDate != null and starttionDate != ''">AND arrival_date <![CDATA[>=]]> #{starttionDate}</if>
+     	<if test="endtionDate != null and endtionDate != ''">AND exp_date <![CDATA[<=]]>#{endtionDate}</if>    
+        <if test="xmname != null">
+      		AND  xmname like CONCAT('%',#{xmname},'%') 
+      	</if>
+      	<if test="renewCount != null">
+      		AND  renew_count &gt;= #{renewCount} 
+      	</if>
+      	   		
+    </where>
+    group by id_num
+    ) c
+  </select>
+
+  <insert id="save" parameterType="com.bayee.domain.TemporaryPopulationWhiteList">
+    insert into temporary_population_white_list
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+     
+      <if test="isUpdate != null">
+        is_update,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="updateDate != null">
+        update_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+     
+      
+      <if test="isUpdate != null">
+        #{isUpdate},
+      </if>
+      <if test="createDate != null">
+        #{createDate},
+      </if>
+      <if test="updateDate != null">
+        #{updateDate},
+      </if>
+    </trim>
+  </insert>
+  <update id="update" parameterType="com.bayee.domain.TemporaryPopulationWhiteList">
+    update temporary_population_white_list
+    <set>
+      <if test="isUpdate != null">
+        is_update = #{isUpdate},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate},
+      </if>
+      <if test="updateDate != null">
+        update_date = #{updateDate},
+      </if>
+    </set>
+      <where>        
+           id = #{id}     
+      </where>
+  </update>
+</mapper>

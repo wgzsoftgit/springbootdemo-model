@@ -1,0 +1,109 @@
+老师表
+
+CREATE TABLE `tb_teacher` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `t_no` varchar(20) DEFAULT NULL,
+  `t_name` varchar(20) DEFAULT NULL,
+  `position_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+ 
+/*Data for the table `tb_teacher` */
+ 
+insert  into `tb_teacher`(`id`,`t_no`,`t_name`,`position_id`) values
+(1,'163314001','张文远',1),
+(2,'163314002','赵传智',1),
+(3,'163314003','风清扬',2),
+(4,'163314004','王汇智',2),
+(5,'163314005','汪思远',3);
+————————————————
+版权声明：本文为CSDN博主「五彩世界」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_36791569/java/article/details/81517080
+
+学生表
+
+CREATE TABLE `tb_student` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `t_stu_name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+ 
+/*Data for the table `tb_student` */
+ 
+insert  into `tb_student`(`id`,`t_stu_name`) values 
+ 
+(1,'赵依'),
+ 
+(2,'钱迩'),
+ 
+(3,'张山'),
+ 
+(4,'李石'),
+ 
+(5,'王武'),
+ 
+(6,'马柳');
+————————————————
+版权声明：本文为CSDN博主「五彩世界」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_36791569/java/article/details/81517080
+
+
+职位表
+
+CREATE TABLE `tb_position` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `t_pos_name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+ 
+/*Data for the table `tb_position` */
+ 
+insert  into `tb_position`(`id`,`t_pos_name`) values 
+ 
+(1,'教授'),
+ 
+(2,'副教授'),
+ 
+(3,'讲师');
+————————————————
+版权声明：本文为CSDN博主「五彩世界」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_36791569/java/article/details/81517080
+
+最后是教师学生关系表
+
+CREATE TABLE `tb_stu_teach` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `t_stu_id` int(11) DEFAULT NULL,
+  `t_teach_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+ 
+/*Data for the table `tb_stu_teach` */
+ 
+insert  into `tb_stu_teach`(`id`,`t_stu_id`,`t_teach_id`) values 
+ 
+(1,1,1),
+ 
+(2,1,2),
+ 
+(3,1,3),
+ 
+(4,2,2),
+ 
+(5,2,3),
+ 
+(6,2,4),
+ 
+(7,3,3),
+ 
+(8,3,4),
+ 
+(9,3,5),
+ 
+(10,4,4),
+ 
+(11,4,5),
+ 
+(12,4,1);
+
+//https://blog.csdn.net/qq_36791569/java/article/details/81517080

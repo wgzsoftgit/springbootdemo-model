@@ -1,0 +1,66 @@
+   <!--  asm  操作字节码  -->
+    <dependency>
+	    <groupId>org.ow2.asm</groupId>
+	    <artifactId>asm</artifactId>
+	    <version>7.1</version>
+      </dependency>
+
+
+ASM 是一个 Java 字节码操控框架。它能被用来动态生成类或者增强既有类的功能。
+ASM 可以直接产生二进制 class 文件，也可以在类被加载入 Java 虚拟机之前动态改变类行为。
+Java class 被存储在严格格式定义的 .class 文件里，这些类文件拥有足够的元数据来解析类中的所有元素：
+类名称、方法、属性以及 Java 字节码（指令）。ASM 从类文件中读入信息后，能够改变类行为，分析类信息，
+甚至能够根据用户要求生成新类。说白了asm是直接通过字节码来修改class文件。
+
+二、如何使用ASM
+
+　　ASM框架中的核心类有以下几个：
+
+　　①  ClassReader:该类用来解析编译过的class字节码文件。
+
+　　②  ClassWriter:该类用来重新构建编译后的类，比如说修改类名、属性以及方法，甚至可以生成新的类的字节码文件。
+
+　　③  ClassAdapter:该类也实现了ClassVisitor接口，它将对它的方法调用委托给另一个ClassVisitor对象。
+
+作者：heiheiwanne
+链接：https://www.jianshu.com/p/a1e6b3abd789
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+2.ASM 跟传说中的AOP三剑客APT、aspectJ、Javassit有什么关系？
+分别解释下这几个名词
+
+APT:APT(Annotation Processing Tool)即注解处理器，是一种处理注解的工具，
+确切的说它是javac的一个工具，它用来在编译时扫描和处理注解。注解处理器以Java代码(或者编译过的字节码)作为输入，
+生成.java文件作为输出。简单来说就是在编译期，通过注解生成.java文件
+
+aspectJ:AspectJ是一个面向切面的框架，它扩展了Java语言。AspectJ定义了AOP语法，
+所以它有一个专门的[编译器]用来生成遵守Java字节编码规范的Class文件。适合在某一个方法前后插入部分代码，
+处理某些逻辑：比如方法运行时间、插入动态权限检查等。问题会造成很多的冗余代码，产生很多代理类。
+简单来说就是在生成class时动态织入代码
+
+Javassit: Javassist是一个开源的分析、编辑和创建Java字节码的类库。
+是由东京工业大学的数学和计算机科学系的 Shigeru Chiba(千叶滋)所创建的。简单来说就是源码级别的api去修改字节码
+
+
+
+作者：heiheiwanne
+链接：https://www.jianshu.com/p/a1e6b3abd789
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
+　生成一个类的字节码文件只需要用到ClassWriter类即可，
+生成Comparable.class后用javap指令对其进行反编译：javap -c Comparable.class >test.txt 
+ ,编译后的结果如下：
+
+复制代码
+1 public interface com.asm3.Comparable extends com.asm3.Mesurable {
+2   public static final int LESS;
+3 
+4   public static final int EQUAL;
+5 
+6   public static final int GREATER;
+7 
+8   public abstract int compareTo(java.lang.Object);
+9 }
+注：一个编译后的java类不包含package和import段，因此在class文件中所有的类型都使用的是全路径。

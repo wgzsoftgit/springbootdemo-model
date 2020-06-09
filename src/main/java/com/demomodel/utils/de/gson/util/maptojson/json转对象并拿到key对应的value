@@ -3,8 +3,8 @@ String json = new Gson().toJson(map);
 
 Map<String, Object> fromJsonMap = new Gson().fromJson(json, new TypeToken<Map<String, Object>>() {
 		}.getType());
+System.out.println("2 "+fromJsonMap); //{msg=aaaaaaaaaaaaa, code=1.0, u={name=name, pwd=123, age=12.0}}	
 	
-	
-List<String> fruitList = new Gson().fromJson(json2, new TypeToken<List<String>>() {}.getType());	
-String[] fruits = new Gson().fromJson(json2, String[].class);
+List<String> fruitList = new Gson().fromJson(json2, new TypeToken<List<String>>() {}.getType());//转集合list<String>	
+String[] fruits = new Gson().fromJson(json2, String[].class);//转数组
 Result<MyEntry> result1 = typeGson1.fromJson(typeJson1, new TypeToken<Result<MyEntry>>(){}.getType());

@@ -1,0 +1,17 @@
+//反射加载类
+                    clazz = Class.forName(scheduleConfig.getClassName());
+                    String className = lowerFirstCapse(clazz.getSimpleName());//&& 下
+                    
+                    //  springboot 获取对象
+                    Object bean = (Object) ApplicationContextHelper.getBean(className);
+     /**
+     * 转换首字母小写
+     *
+     * @param str
+     * @return
+     */
+    public static String lowerFirstCapse(String str) {
+        char[] chars = str.toCharArray();
+        chars[0] += 32;
+        return String.valueOf(chars);
+    }

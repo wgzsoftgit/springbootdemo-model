@@ -1,0 +1,9 @@
+存在@Primary注解时
+
+@Resource注解指定name时，根据name来查找对应的bean
+@Autowired注解，全部都用@Primary标识的注解
+@Primary注解要求唯一（非广义的唯一性，并不是指只能用一个@Primary，具体看前面）
+不存在@Primary注解时
+
+@Resource注解指定name时，根据name来查找对应的bean
+@Autowired注解时，根据属性名去查对应的Bean，如果查不到则抛异常；如果查到，那即是它了

@@ -23,6 +23,10 @@ import org.apache.http.util.EntityUtils;
  * 
  * @author wgz
  * @date 创建时间：2020年4月19日 上午10:15:38
+ * Gson gson = new Gson();
+String resoponseResult = HttpClientUtil.doGet(theOneUrl);
+RealTimeResult realTimeResult = gson.fromJson(resoponseResult, RealTimeResult.class);
+
  */
 public class HttpClientUtil {
 

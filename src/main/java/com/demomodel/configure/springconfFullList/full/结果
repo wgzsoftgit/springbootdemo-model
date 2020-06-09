@@ -1,0 +1,19 @@
+550668305
+550668305
+class com.yourbatman.fullliteconfig.fullconfig.FullConfig$$EnhancerBySpringCGLIB$$70a94a63
+class com.yourbatman.fullliteconfig.fullconfig.FullConfig$InnerConfig
+beanName:userInner
+class com.yourbatman.fullliteconfig.User
+User{name='A哥-lite-inner', age=18}
+------------------------
+beanName:user
+class com.yourbatman.fullliteconfig.User
+User{name='A哥-lite', age=18}
+------------------------
+beanName:user2
+class com.yourbatman.fullliteconfig.User
+User{name='A哥-lite2', age=18}
+------------------------
+————————————————
+版权声明：本文为CSDN博主「YourBatman」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/f641385712/java/article/details/106127418

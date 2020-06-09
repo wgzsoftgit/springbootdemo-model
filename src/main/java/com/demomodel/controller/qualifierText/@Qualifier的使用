@@ -1,0 +1,23 @@
+https://www.cnblogs.com/yaoyuan2/p/11745441.html
+
+<bean name="article1" class="com.sss.Article">
+    <property name="text" value="Content of the 1st Article" />
+</bean>
+
+<bean name="article2" class="com.sss.Article">
+    <property name="text" value="Content of the 2nd Article" />
+</bean>
+假如只是一个简单的@Autowired，Spring根本不知道你要注入哪个bean。这就需要@Qualifier(value =“beanName”)协作.
+
+譬如,要从 com.javaedge.Article类型的bean中区分article1,article2:
+
+@Qualifier(value="article1")
+@Autowired
+private Article firstArticle;
+
+@Qualifier(value="article2")
+@Autowired
+private Article secondArticle;
+————————————————
+版权声明：本文为CSDN博主「公众号:JavaEdge」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_33589510/java/article/details/105071416

@@ -49,7 +49,7 @@ public class Gsonutil {
 				String hobby = hobbies.get(i).getAsString();
 				System.out.println("hobby:" + hobby);
 			}
-
+			
 			// 3. value为object时，取出object
 			JsonObject introduce = object.getAsJsonObject("introduce");
 			String name = introduce.get("name").getAsString();

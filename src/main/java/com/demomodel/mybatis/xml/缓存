@@ -1,0 +1,23 @@
+https://www.yuque.com/yinjianwei/vyrvkf/de0i7i
+
+MyBatis 默认开启一级缓存。一级缓存是相对于同一个 SqlSession 而言的，
+所以在参数和 SQL 完全一样的情况下，我们使用同一个 SqlSession 对象调用同一个 Mapper 的方法，
+往往只执行一次 SQL，因为使用 SqlSession 第一次查询后，MyBatis 会将其放在缓存中，
+以后再查询的时候，如果没有声明需要刷新，并且缓存没超时的情况下，SqlSession 都只会取出当前缓存的数据，
+而不会再次发送 SQL 到数据库
+/**
+ * 一级缓存
+ */
+@Test
+public void l1Cache() {
+    SqlSession sqlSession = sqlSessionFactory.openSession();
+    long startTime1 = System.currentTimeMillis();
+    sqlSession.selectList("com.yjw.demo.mybatis.biz.dao.StudentDao.listByConditions");
+    LOGGER.info("第一次查询执行时间：" + (System.currentTimeMillis() - startTime1));
+    long startTime2 = System.currentTimeMillis();
+    sqlSession.selectList("com.yjw.demo.mybatis.biz.dao.StudentDao.listByConditions");
+    LOGGER.info("第二次查询执行时间：" + (System.currentTimeMillis() - startTime2));
+    sqlSession.close();
+}
+
+

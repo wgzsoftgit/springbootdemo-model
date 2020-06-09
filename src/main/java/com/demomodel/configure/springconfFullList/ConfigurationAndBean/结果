@@ -1,0 +1,2 @@
+class com.yourbatman.fullliteconfig.User
+User{name='A哥', age=18}

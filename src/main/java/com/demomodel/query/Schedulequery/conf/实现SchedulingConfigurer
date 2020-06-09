@@ -1,0 +1,19 @@
+DROP TABLE IF EXISTS `schedule_setting`;
+CREATE TABLE `schedule_setting`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `job_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `class_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `method` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `cron` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `status` int(2) NULL DEFAULT NULL COMMENT '0 代表开启，1代表关闭',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of schedule_setting
+-- ----------------------------
+INSERT INTO `schedule_setting` VALUES (3, '测试1', 'com.demomodel.query.Schedulequery.controllertext.ScheduledTaskRegistrarText', 'schedutask', '0/2 * * * * ?', 1);
+INSERT INTO `schedule_setting` VALUES (4, '测试2', 'com.demomodel.query.Schedulequery.controllertext.ScheduledTaskRegistrarText', 'schedutask2', '0/2 * * * * ?', 1);
+
+
+需要定时器的数据库

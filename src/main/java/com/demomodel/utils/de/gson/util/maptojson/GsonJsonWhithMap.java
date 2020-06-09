@@ -1,6 +1,8 @@
 package com.demomodel.utils.de.gson.util.maptojson;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.demomodel.utils.de.gson.util.maptojson.bean.U;
@@ -15,18 +17,25 @@ public class GsonJsonWhithMap {
 		map.put("code", 1);
 		map.put("msg", "aaaaaaaaaaaaa");
 		U u = new U("name", "123", 12);
-
-		map.put("u", u);
+		U u2 = new U("name2", "1232", 122);
+   List<U> list= new ArrayList<U>();
+//   list.add(u);
+   list.add(u2);
+map.put("u", u);
 
 		String json = new Gson().toJson(map);
-		System.out.println("1 "+json);
+		System.out.println("1 "+json);  //{"msg":"aaaaaaaaaaaaa","code":1,"u":{"name":"name","pwd":"123","age":12}}
 
 		Map<String, Object> fromJsonMap = new Gson().fromJson(json, new TypeToken<Map<String, Object>>() {
 		}.getType());
 
-		System.out.println("2 "+fromJsonMap);
-		Object of=fromJsonMap.get("u");
-		System.out.println("3 "+of);
+	
+		
+		
+		System.out.println("2 "+fromJsonMap); //{msg=aaaaaaaaaaaaa, code=1.0, u={name=name, pwd=123, age=12.0}}
+		Object of=fromJsonMap.get("u");//{name=name, pwd=123, age=12.0}
+		System.out.println("3 "+of);//
+		
 		U uf=(U)of;//强制转换会报异常
 		System.out.println("4 "+uf);  //强制转换会报异常
 	}

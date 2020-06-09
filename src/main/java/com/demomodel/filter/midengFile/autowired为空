@@ -1,0 +1,12 @@
+1.在应用的Filter或Listener中使用了@Autowired ，
+
+原因：因为Filter和Listener加载顺序优先于spring容器初始化实例，所以使用@Autowired肯定为null了~~
+
+解决：用ApplicationContext根据bean名称（注意名称为实现类而不是接口）去获取bean，随便写个工具类即可
+
+2.你写的代码有问题，没加@Service注解等 ，这一类低级错误自己检查即可
+
+3.你写的@Service、@Componet、@Configuration、@Repository等Spring注解未被扫描到，例如：springboot的主类扫描规则 
+————————————————
+版权声明：本文为CSDN博主「-小末」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/u013189824/java/article/details/91579230

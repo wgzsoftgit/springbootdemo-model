@@ -1,0 +1,11 @@
+添加如下类即可取出我们在拦截器中set进去的值
+以上类是根据你定义的注解来建设的取出放在request里面的值，如果有多个就再加就行了
+
+
+
+当你开开心心的在拦截器中通过request.getInputStream();
+获取到body中的信息后，你会发现你在controller中使用了@RequestBody注解获取参数报如下错误
+拦截器和controller同时获取request.getInputStream();  报 Stream closed错误
+
+解决方案在  com.demomodel.utils.httpHelp.HttpHelper
+https://blog.csdn.net/zhibo_lv/article/details/81875705

@@ -1,1 +1,8 @@
 定时任务@Scheduled
+异步执行
+
+SchedulingConfigurer实现
+ScheduledTaskRegistrar  配置控制器，修改后
+
+
+定时任务  分  spring启动读取数据库一次    修改数据库需要更重新启动项目

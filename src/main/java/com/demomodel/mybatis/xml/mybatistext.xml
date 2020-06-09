@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demomodel.mysqlcontroller.mapper.FlowPeopleMapper">
+ <!-- 
+ 
+ 博客
+blog :  id  title  author_id 
+ 
+作者
+author:  id  username password email  bio favourite_section
+ 
+文章
+post :id  blog_id  author_id  created_on  section  subject  draft  body  
+ 
+评论
+comment : id   post_id  name  comment  
+ 
+标签
+T : id name 
+  -->
+  <!--         &&&&&&&&&&&&&一对一&&&&&&&&&&&&&&&                             -->
+  <!--  方案一    推荐-->
+<resultMap id="blogResult" type="Blog">
+     <id property="id" column="blog_id"/>
+      <result property="title" column="blog_title"/>
+      
+      <!-- 和一个用户关联,Blog 类里面  &属性& 时author,关联的 & 列 &  是原先的blog.author_id
+     javaType是property的类型，此处不可省略 &&&&&&&&&&&&*******************************
+      -->
+      
+      
+      <association property="author"  column="blog_author_id" javaType="com.bd.domain.Author"  resultMap="authorResult"/>
+ <!-- 嵌套查询：一对一级联 -->
+    <association property="studentSelfcard" column="{studentId=id}"
+                 select="com.yjw.demo.mybatis.biz.dao.StudentSelfcardDao.listByConditions" />
+<!-- 嵌套查询：一对多级联 -->
+    <collection property="studentLectures" column="{studentId=id}"
+                select="com.yjw.demo.mybatis.biz.dao.StudentLectureDao.listByConditions" />
+</resultMap>
+ 
+<resultMap id="authorResult" type="Author">
+          <id property="id" column="author_id"/>
+          <result property="username" column="author_username"/>
+          <result property="password" column="author_password"/>
+          <result property="email" column="author_email"/>
+          <result property="bio" column="author_bio"/>
+</resultMap>
+
+<!--   方案二 -->
+
+<resultMap id="blogResult" type="Blog">
+     <id property="id" column="blog_id"/>
+      <result property="title" column="blog_title"/>
+      
+      <!-- 和一个用户关联,Blog 类里面属性时author,关联的列是原先的blog.author_id-->
+      <association property="author"  column="blog_author_id" javaType="Author" >
+	          <id property="id" column="author_id"/>
+	          <result property="username" column="author_username"/>
+	          <result property="password" column="author_password"/>
+	          <result property="email" column="author_email"/>
+	          <result property="bio" column="author_bio"/>
+      </association>
+</resultMap>
+<select id="selectBlog" parameterType="int" resultMap="blogResult">
+              select 
+                  b.id as blog_id,
+                  b.title as blog_title,
+                  b.author_id as blog_author_id
+                  a.id as author_id,
+                  a.username as author_username,
+                  a.password as author_passowrd,
+                  a.email as auhtor_email,
+                  a.bio as author_bio
+               from  blog b left outer join author a on b.author_id=a.id
+                    where b.id=#{id}
+       </select>
+       
+       
+      <!-- &&&&&&&&&&&&&&&&&&&一对多   
+      集合元素的作用和关联几乎是相同的。我们来继续上面的示例，一个博客只有一个作者。但是博客有很多文章，在博客类中，这可以由下面的写法来表示：
+private List<Post> posts;
+ &&&&&&&&&&&&& --> 
+ <resultMap id="blogResult" type="Blog">
+    <id property="id" column="blog_id"/>
+    <result property="title" column="blog_title"/>
+     <!--文章集合   property实体类属性    ofType集合中的元素类型  -->  
+    <collection property="posts" ofType="com.bd.domain.Post">
+        <id property="id" column="post_id"/>
+        <result property="subject" column="post_subject"/>
+        <result property="body" column="post_body"/>
+    </collection>
+</resultMap>
+ <select id="selectBlog" parameterType="int" resultMap="blogResult">
+         select 
+             b.id as blog_id ,
+             b.title as blog_title,
+             b.author_id as blog_author_id,
+             p.id as post_id,
+             p.subject as post_subject,
+             p.body as post_body
+           from blog b
+               left outer join  post p on b.id=p.blog_id
+               where b.id=#{id}  
+</select>
+
+
+<!-- 一对多  方案二   多字段传参 -->
+        <resultMap id="BaseResultMapaddlist" type="com.domain.IrregularHotel">
+    <id column="id"  property="id" />
+    <id property="postId" column="post_id"/>
+    <!-- irregularHotel 实体来的属性      javaType传参类型       ofType就是返回的类型    -->
+     <!-- javaType是property的类型，此处可以省略 -->
+		<!-- ofType为集合中的元素类型 
+		一对多其中是放的一个集合所以这个是集合的泛型的类型，这里我们的list中放的是com.domain.IrregularHotel：
+		-->
+    <collection property="irregularHotel" javaType="java.util.ArrayList" ofType="com.domain.IrregularHotel"
+					select="com.mapper.IrregularHotelMapper.selectListByRowKey" column="{hotelCode=hotel_code,rowKey=row_key,type=type}" />
+  <collection property="list" javaType="List" ofType="com.bd.domain.Orders" autoMapping="true">
+		</collection>
+  </resultMap>
+  
+       <select id="selectListByRowKey" resultMap="BaseResultMap" >
+   <!-- select s.row_key,s.`name`,s.gender,s.id_num ,s.hotel_name,s.hotel_address FROM irregular_hotel s  WHERE s.type=1 and s.hotel_name='潜水人家' and s.row_key=122 --> 
+   select s.* FROM irregular_hotel s 
+    <where>
+    <if test="type!=null and type!=''">
+           AND  s.type = #{type}
+        </if>
+           <if test="hotelCode!=null and hotelCode!=''">
+           AND  s.hoode = #{hotelCode}
+        </if>
+        <if test="rowKey!=null and rowKey!=''">
+           AND  s.roey = #{rowKey}
+        </if>   
+    </where>
+    GROUP BY s.ium  
+ </select>
+ 
+ 
+  <!--  -->
+  <select id="getManyPeopleCheckInRoomByParam" resultMap="BaseResultMapaddlist" parameterType="com.bayee.domain.IrregularHotel">
+   <!--  select s.row_key ,s.hotel_code, s.hotel_name ,s.hotel_address,s.check_in_date,s.check_out_date from irregular_hotel s  WHERE s.type=1 and s.hotel_name='潜水人家'   GROUP BY s.row_key -->
+   select count(1) as counts, s.id,s.row_key,  s.hotel_code, s.type from irregular_hotel s  
+   where
+       s.type=1  
+       and s.row_key not IN (
+select k.row_key from (
+<!--  SUBSTR 截取字符串     date_format日期转化    年龄大于12  -->
+select a.row_key from irregular_hotel a where (date_format(now(),'%Y-%m')-SUBSTR(a.id_num FROM 7 FOR 4)) &lt;= 12
+) k
+)    
+   
+    GROUP BY s.row_key    
+   
+  </select>
+  
+  
+  
+  
+  
+  <!-- 7.四表查询 -->
+	<select id="getOrders_Four" resultMap="Orders_Four">
+		SELECT o.id as oid,o.createtime,o.paystate,o.receiverinfo,o.totalprice,
+			 u.id as uid,u.active,u.nickname,u.`password`,u.role,u.tel,
+			 i.order_id as io,i.product_id as ip,i.buynum,
+			 p.id as pid,p.category,p.description,p.imgurl,p.marketprice,p.pnum,p.pro_name
+		from orders o
+		left JOIN `user` u on o.user_id=u.id
+		left JOIN orderitem i on i.order_id=o.id
+		LEFT JOIN product p on i.product_id=p.id
+		where o.id=#{id}
+	</select>
+	<!-- Order表及其主键的对应关系 -->
+	<resultMap type="com.bd.domain.Orders" id="Orders_Four">
+		<id column="oid" property="id" />
+		
+		<!-- User表及其主键的对应关系 -->
+		<association property="user" javaType="com.bd.domain.User" autoMapping="true">
+			<id column="uid" property="id"/>
+		</association>
+		
+		<!-- Orderlist表及其主键的对应关系 -->
+		<collection property="orderitem" ofType="com.bd.domain.Orderitem" autoMapping="true">
+			<id column="io" property="order_id"/>
+			<id column="ip" property="product_id"/>
+			
+			<!-- Product表 -->
+			<association property="product" javaType="com.bd.domain.Product" autoMapping="true">	
+			</association>
+		</collection>
+	</resultMap>
+<!-- https://blog.csdn.net/qq_34082113/java/article/details/81950173 
+-->
+
+
+<!-- private List<StudentHealthMaleDO> studentHealthMales; 男生
+ private List<StudentHealthFemaleDO> studentHealthFemales; 女生
+  -->
+<!-- 联合查询：嵌套查询 -->
+<resultMap id="studentMap1" type="studentDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="TINYINT" property="sex"
+            typeHandler="com.yjw.demo.mybatis.common.type.SexEnumTypeHandler"/>
+    <result column="selfcard_no" jdbcType="BIGINT" property="selfcardNo" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <!-- 嵌套查询：一对一级联 -->
+    <association property="studentSelfcard" column="{studentId=id}"
+                 select="com.yjw.demo.mybatis.biz.dao.StudentSelfcardDao.listByConditions" />
+    
+    <!-- 嵌套查询：一对多级联 -->
+    <collection property="studentLectures" column="{studentId=id}"
+                select="com.yjw.demo.mybatis.biz.dao.StudentLectureDao.listByConditions" />
+    
+    <!-- 嵌套查询：鉴别器 -->
+    <!-- discriminator：使用结果值来决定使用哪个 resultMap   
+       它对应的列（column）是 sex，对应的 Java 类型（javaType）是 int
+   case 类似 Java 中的 switch 语句，当 sex=1（男性）时，引入的是 maleStudentMap1，当 sex=2（女性）时，
+   引入的是 femaleStudentMap1，然后我们分别对这两个 resultMap 定义。    
+       -->
+    <!-- case：基于某些值的结果映射 -->
+    <discriminator javaType="int" column="sex">
+        <case value="1" resultMap="maleStudentMap1" />
+        <case value="2" resultMap="femaleStudentMap1" />
+    </discriminator>
+</resultMap>
+
+<!-- 男 -->
+<resultMap id="maleStudentMap1" type="maleStudentDO" extends="studentMap1">
+    <collection property="studentHealthMales" column="{studentId=id}"
+                select="com.yjw.demo.mybatis.biz.dao.StudentHealthMaleDao.listByConditions" />
+</resultMap>
+
+<!-- 女 -->
+<resultMap id="femaleStudentMap1" type="femaleStudentDO" extends="studentMap1">
+    <collection property="studentHealthFemales" column="{studentId=id}"
+                select="com.yjw.demo.mybatis.biz.dao.StudentHealthFemaleDao.listByConditions" />
+</resultMap>
+
+
+
+
+
+
+<!-- 一个学生可以有多为老师、一位老师可以有多个学生、但是一个老师只能有一个职位：教授、副教授、讲师；但是一个职位可以有多个老师：例如教授可以多人
+
+这里则产生了：
+
+一对一关系，从老师角度：老师对职位一对一
+
+一对多关系，从职位角度：职位对老师一对多
+
+多对多关系：查找被教授教导的所有学生（首先职位对老师一对多，老师再对学生再对多、这里便有了一对多对多）
+https://blog.csdn.net/qq_36791569/java/article/details/81517080
+ -->
+ <!--        一对一   老师对职位
+ public List<Teacher> queryTeacherPositionResultMap();
+	
+	public Teacher queryTeacherPositionResultMapById(Integer id);
+  -->
+  
+  <resultMap type="Teacher" id="teacherPositionResultMap">
+		<id property="id" column="id"/>
+		<result property="no" column="t_no"/>
+		<result property="name" column="t_name"/>
+		<!-- association：配置的一对一属性 -->
+		<!-- property：名字
+			 javaType：类型
+		 -->
+		<association property="pos" javaType="Position">
+			<id property="id" column="id"/>
+			<result property="name" column="t_pos_name"/>
+		</association>
+	</resultMap>
+	
+	<!-- 一对一关联查询，查询老师及其对应的职位 -->
+	<!-- 注意：id不能相同，当多个值传入，比如包装类的时候，我们才能够用SQL片段的形式来做if判断，单个值是不行的 -->
+	<select id="queryTeacherPositionResultMapById" resultMap="teacherPositionResultMap" parameterType="Integer">
+		SELECT *
+		FROM tb_teacher t
+		LEFT JOIN tb_position p
+		ON t.position_id = p.id
+		where t.id = #{id}
+	</select>
+ 
+	<select id="queryTeacherPositionResultMap" resultMap="teacherPositionResultMap">
+		SELECT *
+		FROM tb_teacher t
+		LEFT JOIN tb_position p
+		ON t.`position_id` = p.id
+	</select>
+	
+	
+<!--             一对多：职位对老师
+ public Position queryPositionTeacherResultMapById(Integer id);
+	
+	public List<Position> queryPositionTeacherResultMap(); -->
+ 
+ <resultMap type="Position" id="positionTeacherResultMap">
+		<id property="id" column="id"/>
+		<result property="name" column="t_pos_name"/> <!-- t_name -->
+		<!-- 
+		property同association中的一样是属性名称(javaBean中的)；
+		javaType也同association中的是类型，
+		最后多了一个OfType，因为一对多，不像一对一是单个的！我们这里是List集合，list和List都可以。
+		一对多其中是放的一个集合所以这个是集合的泛型的类型，这里我们的list中放的是Teacher：
+		所以这里是Teacher。
+		 -->
+		<collection property="teacherList" javaType="list" ofType="Teacher" >
+			<!-- 
+				一对多出现的问题：
+					当数据库表中，主表的主键id和明细表的 ...
+					当表中的字段名相同时怎么办？多表联查？
+					
+					注意：Mybatis中做多表联查的时候，不管是
+					一对一、一对多、一对多对多：多对多：
+					都不能有字段重名的情况：不管是主键还是普通字段。
+					一旦字段重名的话，就会造成数据少自动赋值，或者覆盖，甚至重复赋值！
+					规避和解决此类问题的方法：
+						1.尽量不要表间重名，mybatis里处理起来很麻烦！id和普通字段都是。
+						但是在表多的时候，很难不会出现字段重名的情况。主键id最容易重名！
+						那么就要用以下的办法了！
+						
+						2.在mybatis中写原生SQL进行查询的时候，查的字段尽可能的少，这
+						也影响速率，强烈禁止使用*，用多少查多少！这样也能及时发现字段重
+						名的情况！
+						
+						3.最后如果真的需要查出重名的字段，并且修改数据库字段名造成的更改
+						过大，这里推荐的方式是给字段取别名，在写resultMap映射的时候，其
+						中的column属性就填写SQL语句中查出字段取的别名，这样就能解决重复
+						问题了！
+			 -->
+			<id property="id" column="t_id"/>
+			<result property="no" column="t_no"/>
+			<result property="name" column="t_name"/>	
+		</collection>
+	</resultMap>
+	
+	<select id="queryPositionTeacherResultMapById" resultMap="positionTeacherResultMap" 
+		parameterType="Integer">
+		<!-- 
+		SELECT *
+		FROM tb_position p
+		LEFT JOIN tb_teacher t
+		ON p.id = t.position_id
+		WHERE p.id = #{id}
+		-->
+		
+		SELECT 
+		p.*, 
+		t.id t_id,
+		t.t_name,
+		t.t_no
+		FROM tb_position p
+		LEFT JOIN tb_teacher t
+		ON p.id = t.position_id
+		WHERE p.id = #{id}
+	</select>
+	
+	<select id="queryPositionTeacherResultMap" resultMap="positionTeacherResultMap" >
+		<!-- 
+		SELECT *
+		FROM tb_position p
+		LEFT JOIN tb_teacher t
+		ON p.id = t.position_id
+		-->
+		
+		SELECT 
+		p.*, 
+		t.id t_id,
+		t.t_name,
+		t.t_no
+		FROM tb_position p
+		LEFT JOIN tb_teacher t
+		ON p.id = t.position_id
+		
+	</select>
+
+
+ 
+<!-- 多对多：职位是教授的老师教授的所有学生(一对多对多：只要你愿意可以一直对多下去...)
+public Position selectPositionStudentByPosId(Integer id);
+-->
+<resultMap type="Position" id="positionStudentResultMap">
+		<!-- <id property="id" column="id"/> -->
+		<result property="name" column="t_pos_name"/>
+		<collection property="teacherList" javaType="list" ofType="Teacher" >
+			<result property="name" column="t_name"/>	
+			<collection property="studentList" javaType="list" ofType="Student">
+				<result property="name" column="t_stu_name"/>
+			</collection>
+		</collection>
+	</resultMap>
+	
+	<select id="selectPositionStudentByPosId" resultMap="positionStudentResultMap" parameterType="Integer">
+		SELECT p.t_pos_name, t.t_name, s.t_stu_name
+		FROM tb_position p  -- 职位表
+		INNER JOIN tb_teacher t ON p.id = t.position_id   -- 老师表   在表中存在至少一个匹配时，INNER JOIN 关键字返回行
+		LEFT JOIN tb_stu_teach st ON st.t_teach_id = t.id  -- 教师学生关系表
+		LEFT JOIN tb_student s ON s.id = st.t_stu_id   -- 学生表
+		WHERE p.id = #{id}
+	</select>
+<!-- https://blog.csdn.net/qq_36791569/java/article/details/81517080 -->
+
+
+
+
+</mapper>

@@ -34,7 +34,7 @@ public class Gsondemo {
 	 */
 	@RequestMapping("jsonToObject")
 	public void jsonToObject(HttpServletRequest request) throws IOException {
-		System.err.println("11111111111s");	
+		System.err.println("com.demomodel.utils.de.gson.Gsondemo"+"11111111111s");	
 	    Gsonutil.jsonToObject(request);  //request.getReader(); 获取内容
 	} 
 }

@@ -19,7 +19,7 @@ public class TestController {
     @RequestMapping("/user/login1")
     @ResponseBody
     public List<User> userLogin(User user) {
-        System.out.println(user);
+        System.out.println("com.demomodel.filter.core.TestController"+user);
         ArrayList<User> users = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             users.add(user);

@@ -1,0 +1,7 @@
+spring:
+  redis:
+    host: 127.0.0.1 
+    port: 6379
+    password: 111111
+    
+利用redisson实现分布式锁简单样例已经结束

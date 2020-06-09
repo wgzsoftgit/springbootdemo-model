@@ -1,0 +1,81 @@
+autowired注入过程图片
+
+* 元注解@Target,@Retention,@Documented,@Inherited * 
+* @Target 表示该注解用于什么地方，可能的 ElemenetType 参数包括： 
+* ElemenetType.CONSTRUCTOR 构造器声明 
+* ElemenetType.FIELD 域声明（包括 enum 实例） 
+* ElemenetType.LOCAL_VARIABLE 局部变量声明 
+* ElemenetType.METHOD 方法声明 
+* ElemenetType.PACKAGE 包声明 
+* ElemenetType.PARAMETER 参数声明 
+* ElemenetType.TYPE 类，接口（包括注解类型）或enum声明 
+* 
+* @Retention 表示在什么级别保存该注解信息。可选的 RetentionPolicy 参数包括： 
+* RetentionPolicy.SOURCE 注解将被编译器丢弃 
+* RetentionPolicy.CLASS 注解在class文件中可用，但会被VM丢弃 
+* RetentionPolicy.RUNTIME VM将在运行期也保留注释，因此可以通过反射机制读取注解的信息。 
+* 
+* @Documented 将此注解包含在 javadoc 中 
+* 
+* @Inherited 允许子类继承父类中的注解
+
+
+@Target(ElementType.METHOD) 
+@Retention(RetentionPolicy.RUNTIME) 
+@Documented 
+@Inherited 
+————————————————
+版权声明：本文为CSDN博主「对明天的期待丶」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_39429962/java/article/details/83958384
+
+
+@Component表示该类对象以默认单例模式存放在spring容器框架中；
+Spring容器框架包org.springframework.stereotype下Controller注解接口源代码如下：
+
+@Target({java.lang.annotation.ElementType.TYPE})
+
+@Retention(RetentionPolicy.RUNTIME)
+
+@Documented
+
+@Component
+
+public @interface Controller
+
+{
+
+ public abstract String value();
+
+}
+
+@Target({java.lang.annotation.ElementType.Type})表是注解使用在类上；
+
+@Retention(RetentionPolicy.RUNTIME)表示注解在程序运行状态下还有效；
+
+@Component表示该类对象以默认单例模式存放在spring容器框架中；
+
+@Documented无关重要，略；
+
+ 
+
+这个注解在程序运行状态下还有效。再看其他的注解@Respository,@Ser vice等，这两个注解的源代码和Controller的源代码一样，除了接口名，都共有一个value抽象函数。
+————————————————
+版权声明：本文为CSDN博主「jack_wang001」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/jack_wang001/java/article/details/78781588
+这些所有的注解都会被component注解接口注解，所有“继承”了component注解接口的注解修饰用户的类会被spring中的注解处理器获取（getAnonations（））,判定存在component注解后，注解处理器会在spring容器框架中根据用户类的全限定名通过java的反射机制创建这个用户类的对象，并放到spring容器框架中进行管理。
+
+以上这些描述是我基于对注解系统的理解而描述的。
+       bean创建的几个重要步骤：
+
+1） 创建bean实例，也就是bean的实体化，创建过程不仅仅只有java的反射机制，还结合了动态代理的方式
+
+2） 记录创建bean的objectFactory
+
+3） 属性注入
+
+4） 初始化bean
+
+5） 注册disposablebean
+
+Spring bean的生命周期：
+//https://blog.csdn.net/jack_wang001/java/article/details/78781588

@@ -1,0 +1,14 @@
+public method() {
+    Dao1.save(Person1);
+    Dao1.save(Person2);
+
+    Dao1.save(Person2);//假如这句发生了错误，前面的两个对象会被保存到数据库中
+    Dao1.save(Person2);
+}
+————————————————
+版权声明：本文为CSDN博主「plumblum」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/c_royi/java/article/details/82221966
+期待的情况：发生错误之前的所有数据库保存操作都回滚，即不保存
+　　正常情况：前面的数据库操作会被执行，而发生数据库操作错误开始及之后的所有的数据保存操作都将失败。
+这样子应该都不是我们要的结果吧。
+　　当遇到这种情况，我们就可以使用Spring的事务解决这个问题。

@@ -1,3 +1,16 @@
+JsonParser parser = new JsonParser();
+		JsonElement element = parser.parse(json);
+		// json属于对象类型时
+		if (element.isJsonObject()) {
+			JsonObject object = element.getAsJsonObject();
+接收的字符串转对象     
+JsonObject asJsonObject = object.get("introduce").getAsJsonObject();
+JsonObject introduce = object.getAsJsonObject("introduce");
+转数组
+JsonArray hobbies = object.getAsJsonArray("hobby"); 
+得到字符串
+String hobby = hobbies.get(i).getAsString();
+
 HttpServletRequest request  请求获取post内容
 	BufferedReader reader =request.getReader();//request.getReader();
 	    // 读取json数据

@@ -7,7 +7,8 @@ import com.demomodel.bean.result.Result;
 import com.demomodel.utils.de.gson.util.maptojson.bean.MyEntry;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-
+//数组 json
+//json  直接转list<String>  或者转数组
 public class listtoObj {
 	public static void main(String[] args) {
 		String json2 = "[\"apple\", \"pear\", \"banana\"]";
@@ -20,7 +21,7 @@ public class listtoObj {
 		List<String> fruitList = gson2.fromJson(json2, new TypeToken<List<String>>() {
 		}.getType());
 		for (String string : fruitList) {
-			System.err.println("List<String>"+string);
+			System.err.println("List<String>"+string);  //apple     pear    banana
 		}
 	}
 	public static void stringToArray(String json2) {
@@ -28,7 +29,7 @@ public class listtoObj {
 		// 传入的java类型是String[].class
 		String[] fruits = gson2.fromJson(json2, String[].class);  
 		for (String string : fruits) {
-			System.err.println("String[]"+string);
+			System.err.println("String[]"+string);  //apple   pear    banana
 		}
 	}
 	public static void jsonToobj(String typeJson1) {

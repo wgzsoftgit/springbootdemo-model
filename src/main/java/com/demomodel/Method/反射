@@ -2,3 +2,13 @@
 从子类class通过getDeclaredMethod也能获取到Method，这时去调用父类的对象也会报错。虽然这是很符合多态的现象，
 也符合java的动态绑定规范，但还是想弄懂java是如何实现的，就学习了下Method的源代码。 
 Method的invoke方法
+
+
+Class.forName()方法，这里使用classLoader.loadClass()进行对比描述
+Class.forName(className)装载的class已经被实例化，
+classLoader.loadClass().则只是将信息装载给JVM。在JDBC中           
+ Class.forName(“com.mysql.jdbc.Driver”)，如果换成
+getClass().getClassLoader().loadClass(“com.mysql.jdbc.Driver”)，就不可以，
+因为它只是想JVM装载了Driver的类信息，但是没有实例化，也就不能执行相应的操作，
+因为Driver是需要被初始化才能被使用的。
+//：https://blog.csdn.net/syilt/java/article/details/90706332

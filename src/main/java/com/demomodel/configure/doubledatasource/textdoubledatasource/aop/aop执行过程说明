@@ -1,0 +1,48 @@
+execution(public int com.demomodel.configure.doubledatasource.textdoubledatasource.master.map.*(int,int))
+1）execution(* *(..)) 
+//表示匹配所有方法  
+匹配所有类public方法  execution(public * *(..))
+2）execution(public * com.example.service.*(..))  
+//表示匹配com.example.service中所有的public方法   匹配指定包下所有类方法 execution(* com.baidu.dao.*(..)) 不包含子包
+3）execution(* com. example.service..*.*(..))  
+//表示匹配com.example.service包及其子包下的所有方法  execution(* com.baidu.dao..*(..))  ..*表示包、子孙包下所有类
+匹配指定类所有方法 execution(* com.baidu.service.UserService.*(..))
+匹配实现特定接口所有类方法
+    execution(* com.baidu.dao.GenericDAO+.*(..))
+匹配所有save开头的方法 execution(* save*(..))
+
+
+execution(* com.xxx.*.*(..) 放到表格里面分解下
+从左到右依次是： 
+
+   execution(): 表达式主体。
+  第一个*号：表示返回类型，*号表示所有的类型。
+  包名：表示需要拦截的包名，后面的两个句点表示当前包和当前包的所有子包，com.sample.service.impl包、子孙包下所有类的方法，*号表示所有的类。
+   *(..):最后这个星号表示方法名，*号表示所有的方法，后面括弧里面表示方法的参数，两个句点表示任何参数。
+————————————————
+版权声明：本文为CSDN博主「qq_37749055」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_37749055/java/article/details/88823628
+————————————————
+版权声明：本文为CSDN博主「yuanboqi」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/yuanboqi/java/article/details/81068803
+————————————————
+版权声明：本文为CSDN博主「Luck_ZZ」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/Luck_ZZ/java/article/details/100047014
+
+除@Around外，每个方法里都可以加或者不加参数JoinPoint。
+JoinPoint包含了类名、被切面的方法名、参数等属性。
+@Around参数必须为ProceedingJoinPoint。
+
+
+
+execution(访问权限符 返回值类型 方法签名)
+execution(modifiers-pattern? ret-type-pattern declaring-type-pattern? name-pattern(param-pattern)throws-pattern?) 
+修饰符匹配（modifier-pattern?）
+返回值匹配（ret-type-pattern）可以为*表示任何返回值,全路径的类名等
+类路径匹配（declaring-type-pattern?）
+方法名匹配（name-pattern）可以指定方法名 或者 *代表所有, set* 代表以set开头的所有方法
+参数匹配（(param-pattern)）可以指定具体的参数类型，多个参数间用“,”隔开，各个参数也可以用“*”来表示匹配任意类型的参数，如(String)表示匹配一个String参数的方法；(*,String) 表示匹配有两个参数的方法，第一个参数可以是任意类型，而第二个参数是String类型；可以用(..)表示零个或多个任意参数
+异常类型匹配（throws-pattern?） 其中后面跟  着“?”的是可选项
+————————————————
+版权声明：本文为CSDN博主「Luck_ZZ」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/Luck_ZZ/java/article/details/100047014

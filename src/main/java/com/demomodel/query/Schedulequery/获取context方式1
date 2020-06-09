@@ -1,0 +1,6 @@
+  方拾二
+  ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig2.class);
+
+        // 配置类情况
+        System.out.println(context.getBean(FullConfig.class).getClass());
+        System.out.println(context.getBean(FullConfig.InnerConfig.class).getClass());

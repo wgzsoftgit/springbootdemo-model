@@ -1,0 +1,34 @@
+@Component  工具类里面可以@Autowired 即 工具类中需要使用@Autowired注入需用到的实例，则改工具类需用@Component注解标明  即
+@Component （把普通pojo实例化到spring容器中，相当于配置文件中的<bean id="" class=""/>）
+泛指各种组件，就是说当我们的类不属于各种归类的时候（不属于@Controller、@Services等的时候），我们就可以使用@Component来标注这个类。
+　　相对于@Autowired和@Component注解，个人理解实际用法为：
+
+　　　　如在普通类中用到需@Autowired注入实例，则需将普通类使用@Component注解标明，不然使用@Autowired注入的实例为null。
+
+　　　　一般普通类实例直接new即可，而在有上述两个注解的普通类在实例时需要使用@Autowired注入，如果直接使用new实例，则该类中使用@Autowired注入的实例为null。
+@Configuration  里面配置@bean   一般用在配置类
+@Component  工具类里面可以@Autowired 
+
+
+//    if(message == null || message.equals("")){
+//
+//    	　　throw new IllegalArgumentException("输入信息错误!");
+//
+//    	}
+//  
+//    	用Assert工具类上面的代码可以简化为：
+//
+//    	Assert.hasText(message, "输入信息错误!");
+实现类的区分  多次注入  com.demomodel.controller.qualifierText.qualifierText
+@Autowired
+    @Qualifier("menuService1")
+    private IMenuService menuService;
+存在@Primary注解时
+
+@Resource注解指定name时，根据name来查找对应的bean
+@Autowired注解，全部都用@Primary标识的注解
+@Primary注解要求唯一（非广义的唯一性，并不是指只能用一个@Primary，具体看前面）
+不存在@Primary注解时
+
+@Resource注解指定name时，根据name来查找对应的bean
+@Autowired注解时，根据属性名去查对应的Bean，如果查不到则抛异常；如果查到，那即是它了

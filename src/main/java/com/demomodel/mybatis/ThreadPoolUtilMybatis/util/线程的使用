@@ -1,0 +1,113 @@
+	new ThreadPoolExecutor(
+	
+	int coreSize,
+	
+	int maxSize,
+	
+	long time,int timeUnit,
+	
+	BlockingQueue<Runnable> taskQueue,
+	
+	ThreadFactory  threadFactory):
+	
+	参数含义如下：
+	
+	coreSize：核心线程数
+	
+	maxSize ：线程最大数
+	
+	time,timeUnit：空闲线程超时时间，超时后线程销毁
+	
+	taskQueue：存放任务的队列
+	
+	threadFactory：创建线程的线程工厂
+	
+	 
+	
+	1.当线程池中的线程数没有达到coreSize时，提交一个任务，不论此时有没有线程处于空闲状态，则会创建一个新的线程！
+	
+	2.当线程数达到coseSize时，此时在提交任务，如果有线程空闲，则执行任务，如果没有空闲，则放入taskQueue中等待被执行。
+	
+	3.当taskQueue队列中放满任务时，如果此时所有的线程都处于执行任务期间，再次提交任务，则会创建一个新线程，用于执行队列中的任务，
+	当线程数达到maxSize的时候，如果再次提交任务，如果任务队列已满，并且所有的线程处于活动期间，则提交任务失败，
+	抛出RejectExecutionException.
+	
+	 
+	总之，如果没有设置quitCore=true，核心线程不会被销毁，在线程数达到coreSize之前，每次提交任务都会创建新线程。
+	
+	线程数达到coreSize后，提交任务会使用空闲线程执行，如果没有空闲线程，则会放到任务队列taskQueue中，等待被执行！
+	
+	如果队列满了，所有coreSize线程都处于executing task的状态，则会创建一个新线程用于执行队列中的任务。
+	
+	 
+	
+	可以根据几个参数含有，设定具体场景的线程池，Executors中有几个常用的线程池如下：
+	
+	FixedThreadPool(
+	
+	          特点：1每一个线程都是核心线程，不设置quitCore=true时，每个线程都不会被销毁):
+	
+	           new ThreadPoolExecutor(threadSize,threadSize,0,TimeUnit.Seconds,new LinkedBlockingQueue<Runnable>());
+	
+	 
+	
+	 
+	
+	CachedThreadPool (
+	
+	                特点：1.没有核心线程，所有线程空闲60秒后销毁
+	
+	                           2.无边界，不管提交多少任务，都有线程去立刻执行，充分利用了SynchronousQueue容量为0的特点)
+	
+	           new ThreadPoolExecutor(0,Integer.MAX_VALUE,60L,TimeUnit.Seconds,new SynchronousQueue<Runnable>());
+	
+	 
+	
+	 
+	
+	SingleThreadPool(
+	
+	                     特点：只有一个核心线程，即按照任务提交的顺序，串行执行任务
+	
+	              new ThreadPoolExecutor(1,1,0L,TimeUnit.Seconds,new LinkedBlockingQueue<Runnable>());
+	
+	               
+	
+	 
+	
+	ScheduledThreadPool:
+	
+	          特点是：核心线程数固定，无最大边界，非核心线程空闲即销毁,可延时执行任务
+	
+	new ScheduledThreadPoolExecutor(coreSize,Integer.MAX_VALUE,0L,TimeUnit.Seconds,new DelayedWorkQueue<Runnable>());
+	#：https://blog.csdn.net/changgongcaomu/java/article/details/81585741
+	
+	主要用于存储线程池的工作状态以及池中正在运行的线程数。显然要在一个整型变量存储两个数据，只能将其一分为二。其中高3bit用于存储线程池的状态，低位的29bit用于存储正在运行的线程数。
+	
+	     线程池具有以下五种状态，当创建一个线程池时初始化状态为RUNNING
+	
+	RUNNING
+	
+	允许提交并处理任务
+	
+	SHUTDOWN
+	
+	不允许提交新的任务，但是会处理完已提交的任务
+	
+	STOP
+	
+	不允许提交新的任务，也不会处理阻塞队列中未执行的任务，并设置正在执行的线程的中断标志位
+	
+	TIDYING
+	
+	所有任务执行完毕，池中工作的线程数为0，等待执行terminated()勾子方法
+	
+	TERMINATED
+	
+	terminated()勾子方法执行完毕
+	
+	      注意，这里说的是线程池的状态而不是池中线程的状态。
+	
+	      调用线程池的shutdown方法，将线程池由RUNNING（运行状态）转换为SHUTDOWN状态。
+	
+	      调用线程池的shutdownNow方法，将线程池由RUNNING或SHUTDOWN状态转换为STOP状态。

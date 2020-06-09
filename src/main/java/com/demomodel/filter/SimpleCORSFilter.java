@@ -13,13 +13,12 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.classmate.Filter;
 
-//@Component   不起作用
-
+@Component   //不起作用
 public class SimpleCORSFilter implements Filter {
 
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain) throws IOException, ServletException {
 
-        HttpServletResponse response = (HttpServletResponse) res;
+        HttpServletResponse response = (HttpServletResponse) servletResponse;
 
         response.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -31,8 +30,15 @@ public class SimpleCORSFilter implements Filter {
 
  
 
-        chain.doFilter(req, res);
-
+       // chain.doFilter(servletRequest, servletResponse);
+       System.err.println("com.demomodel.filter.SimpleCORSFilter"+"*********************************过滤器被使用**************************");
+                try {
+                	chain.doFilter(servletRequest, servletResponse);
+                 } catch (IllegalStateException e) {
+                     servletRequest.getServletContext().removeAttribute("/rent");
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                }  
     }
 	@Override
 	public boolean include(Object element) {

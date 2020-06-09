@@ -41,6 +41,6 @@ public class VelocityTest {
         // 输出渲染后的结果
         StringWriter stringWriter = new StringWriter();
         template.merge(velocityContext, stringWriter);
-        System.out.println(stringWriter.toString());
+        System.out.println("com.demomodel.configure.mysqlconf.velo.VelocityTest"+stringWriter.toString());
     }
 }

@@ -13,11 +13,14 @@
     <result column="flow_lately_update" jdbcType="TIMESTAMP" property="flowLatelyUpdate" />
   </resultMap>
   <!-- resultMap="BaseResultMap" parameterType="com.bayee.domain.ImplicitTerrorists" -->
+ 
+ 
   <!-- 返回结果为对象 -->
   <select id="flowSelectByPage" resultMap="BaseResultMap" >
      SELECT * FROM  flow_people  limit ${startPage},${size}
   </select>
   
+  <!-- List<FlowPeople> selectByObject(FlowPeople flowPeople); -->
   <select id="selectByObject" resultMap="BaseResultMap" parameterType="com.demomodel.bean.master.FlowPeople">
      SELECT * FROM flow_people 
      <where>
@@ -37,9 +40,8 @@
    order by id asc
       
       		limit ${pagetion.begin},${pagetion.pageSize}
-      
-     
   </select>
+  <!-- Integer getFlowPeopleCount(FlowPeople flowPeople); -->
     <select id="getFlowPeopleCount" resultType="java.lang.Integer" parameterType="com.demomodel.bean.master.FlowPeople">
      select count(1) from flow_people
      <where>
@@ -57,4 +59,91 @@
       	   		
     </where>
   </select>
+  <!--  根据条件     一次更新多个
+  void  publishT00_notice(Long[] ids);  
+  -->
+  <update id="publishT00_notice" parameterType="Map">
+update test  
+set createdate = #{createdate},
+creator = #{creator}
+where id in 
+<foreach collection="ids" item="ids" separator="," open="(" close=")">
+#{ids}
+</foreach>
+</update>
+
+<!--
+传map类型
+HashMap<String,Object> map = new HashMap<String, Object>();
+map.put("creator", "creator");
+map.put("createdate", "createdate");
+ 
+String[] ids = {"1","2"};
+map.put("ids", ids )
+
+ List<WeixinUserLocationList> findweixinUserLocations(@Param("params") Map<String, Object> map);
+  -->
+<select id="">
+<if test="params.accountId!=null">
+            and a.accountid=#{params.accountId}
+        </if>
+        <if test="params.nickname!=null and params.nickname !=''">
+            and a.nickname like '%${params.nickname}%'
+        </if>
+        <if test="params.beginDate!=null and params.beginDate!=''">
+            and date_format(a.createtime,'%Y-%m-%d') &gt;= ${params.beginDate}
+        </if>
+        <if test="params.endDate!=null and params.endDate!=''">
+        <![CDATA[    and date_format(a.createtime,'%Y-%m-%d')<=${params.endDate}  ]]>     
+        </if>
+
+</select>
+<!--listModelInsert(List<T> list)   批量插入-->
+<insert id="listModelInsert" parameterType="java.util.List">
+        INSERT INTO NM_DEVICE_DATA
+        (ID, DEVICE_ID, TARGET, VALUE, CREATE_TIME,DETAIL) values
+        <foreach collection="list" item="model"  index="index" separator="union all">
+            select #{model.id},#{model.deviceId}, #{model.target},#{model.value},sysdate,
+            <if test="model.detail == null">
+                '' from dual
+            </if>
+            <if test="model.detail != null">
+            #{model.detail}  from dual
+            </if>
+        </foreach>
+    </insert>
+<insert id="batchInsert" parameterType="java.util.List">
+    insert into USER (id, name) values
+    <foreach collection="list" item="model" index="index" separator=","> 
+        (#{model.id}, #{model.name})
+    </foreach>
+</insert>
+<!-- //https://blog.csdn.net/huanghanqian/java/article/details/83177178 -->
+   <resultMap id="BaseResultMap2" type="com.demomodel.bean.master.FlowPeople" >
+   <result column="counts"  property="counts" />
+      <result column="creation_date"  property="creationDate" />
+    <result column="up_time_date"  property="upTimeDate" /> 
+    <collection property="irregularHotel" javaType="java.util.ArrayList" ofType="com.bayee.domain.IrregularHotel"
+					select="com.bayee.mapper.IrregularHotelMapper.selectListByRowKey" column="{hotel1Code=hotel_code,rowKeys=row_key,type1=type}" />
+  </resultMap>
+   <select id="selectListByRowKey" resultMap="BaseResultMap" >
+   <!-- select s.row_key,s.`name`,s.gender,s.id_num ,s.hotel_name,s.hotel_address FROM irregular_hotel s  WHERE s.type=1 and s.hotel_name='潜水人家' and s.row_key=122 --> 
+   select s.id FROM irysds s 
+    <where>
+    <if test="type!=null and type!=''">
+           AND  s.ds = #{type1}
+        </if>
+           <if test="hotelCode!=null and hotelCode!=''">
+           AND  s.dsfsdf = #{hotel1Code}
+        </if>
+        <if test="rowKey!=null and rowKey!=''">
+           AND  s.dddsfd = #{rowKeys}
+        </if>   
+    </where>
+    GROUP BY s.id_num  
+ </select>
+ <select id="seelee" resultMap="BaseResultMap2"   parameterType="com.IrregularHotel">
+  SELECT * FROM flow_people 
+ </select>
+
 </mapper>

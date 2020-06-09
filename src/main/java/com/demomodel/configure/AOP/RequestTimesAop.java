@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.concurrent.TimeUnit;
 
 //使用@Aspect注解将一个java类定义为切面类
-@Aspect
-@Component
+@Aspect    //告诉spring容器，LogUtils是一个切面类
+@Component   //声明LogUtils是一个spring bean组件
 public class RequestTimesAop {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
     //切面范围
-    @Pointcut("execution(public * com.mzd.redis_springboot_mybatis_mysql.controller.*.*(..))")
+    @Pointcut("execution(public * com.demomodel.configure.AOP.*.*(..))")
     public void WebPointCut() {
     }
 
@@ -58,9 +58,11 @@ public class RequestTimesAop {
             String key = "ifovertimes".concat(url).concat(ip);
             //访问次数加一
             long count = redisTemplate.opsForValue().increment(key, 1);
+            System.err.println(ip+"&"+url+"&"+key);
             //如果是第一次，则设置过期时间
             if (count == 1) {
-                redisTemplate.expire(key, times.time(), TimeUnit.MILLISECONDS);
+            	//TimeUnit.SECONDS（5）线程等待五秒    TimeUnit.MILLISECONDS(5000)线程等待五秒. 内部都是Thread.sleep实现
+                redisTemplate.expire(key, times.time(), TimeUnit.MILLISECONDS);//TimeUnit.MILLISECONDS
             }
             if (count > times.count()) {
                 request.setAttribute("ifovertimes", "true");
