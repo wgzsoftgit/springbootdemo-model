@@ -1,0 +1,23 @@
+可以在一个方法的多次对Redis增删该查中，始终使用同一个连接。但是，即使使用了同样的连接，
+没有进行connection.multi()和connection.exec()，依然是无法启用事务的。
+
+我没有仔细的查阅代码，但是可以知道的是，Spring已经对这个，给了我们一个更好的支持：@Transactional 
+
+在调用RedisTempalte中的execute()方法的地方，加入这个注解(是spring包下面提供的，不要引用成rt包下的注解)，
+能让这个方法中的所有execute，自动加入multi()以及异常的回滚或者是正常运行时候的提交！
+
+
+如果设置了RedisTemplate启用事务（设置 redisTemplate.setEnableTransactionSupport(true)）时
+，如果在使用中不加@Transaction注解，会造成Redis连接不会释放的问题。
+
+
+如果一定要使用spring提供的注解式事务，建议初始化两个RedisTemplate Bean，
+分别设置enableTransactionSupport属性为true和false。针对需要事务和不需要事务的操作使用不同的template。
+从个人角度，我不建议使用redis事务，因为redis对于事务的支持并不是关系型数据库那样满足ACID。Redis事务只能
+保证ACID中的隔离性和一致性，无法保证原子性和持久性。而我们使用事务最重要的一个理由就是原子性，这一点无法保证，
+事务的意义就去掉一大半了。所以事务的场景可以尝试通过业务代码来实现。
+
+作者：空挡
+链接：https://www.jianshu.com/p/c9f5718e58f0
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

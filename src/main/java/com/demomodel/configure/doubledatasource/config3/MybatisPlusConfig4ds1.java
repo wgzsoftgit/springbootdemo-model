@@ -87,7 +87,7 @@ public class MybatisPlusConfig4ds1 {
 //	         return configurer;
 //	     }
 
-    /**
+    /**  配置事务管理器
      * 向spring容器注入PlatformTransactionManager事务管理器他是一个接口类需要通过
      * 他的实现类DataSourceTransactionManager获取到实例
      * @param dataSource

@@ -5,6 +5,7 @@ import org.apache.commons.lang3.SystemUtils;
  
 import java.net.Inet4Address;
 import java.net.UnknownHostException;
+import java.util.UUID;
  
 /**  雪花算法
  * Twitter_Snowflake<br>
@@ -189,7 +190,9 @@ public class SnowflakeIdWorker {
         for (int i = 0; i < 50000; i++) {
             long id = SnowflakeIdWorker.generateId();
             System.out.println(id);
+            System.err.println( UUID.randomUUID().toString());
         }
         System.out.println((System.nanoTime()-startTime)/1000000+"ms");
+        System.err.println( UUID.randomUUID().toString());
     }
 }

@@ -8,7 +8,11 @@ import redis.clients.jedis.exceptions.JedisException;
 
 import java.util.Collections;
 import java.util.Objects;
-
+/**
+ * 
+ * @author wgz
+ * @date 创建时间：2020年6月10日 下午3:03:49
+ */
 public class JedisUtil {
 
     private static final Long UNLOCK_SUCCESS = 1L;
@@ -49,7 +53,13 @@ public class JedisUtil {
         }
         return flag;
     }
-
+/**
+ * 不推荐使用
+ * @param jedisPool
+ * @param key
+ * @param value
+ * @return
+ */
     @Deprecated
     public static long setnx(JedisPool jedisPool, String key, String value) {
         Jedis jedis = null;

@@ -19,6 +19,11 @@
 //    	用Assert工具类上面的代码可以简化为：
 //
 //    	Assert.hasText(message, "输入信息错误!");
+
+ if (token != null && !token.equals("")) {
+            log.info("tokenName:{},tokenValue:{}",token);
+            
+        }
 实现类的区分  多次注入  com.demomodel.controller.qualifierText.qualifierText
 @Autowired
     @Qualifier("menuService1")

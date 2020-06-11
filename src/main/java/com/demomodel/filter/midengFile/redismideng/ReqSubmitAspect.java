@@ -51,9 +51,13 @@ public class ReqSubmitAspect {
         HttpServletRequest request = attributes.getRequest();
         
        //  AssertUtils.notNull(request, "request can not null");
-
+//request.getParameter("token_value")
         // 获取请求的凭证，本项目中使用的JWT,可对应修改
         String token = request.getHeader("Token");
+        if (token != null && !token.equals("")) {
+            log.info("tokenName:{},tokenValue:{}",token);
+            
+        }
         String requestURI = request.getRequestURI();
 
         String key = getIdeKey(token, requestURI);

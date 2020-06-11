@@ -19,3 +19,5 @@ jedisCluster.eval("return redis.call('set', KEYS[1],'1','nx', 'ex', '180') ", ke
 
 jedis,setnx+expire(可以合成一个命令)
 并且 setnx和expire(设置超时时间)不是原子操作，当setnx后，redis宕掉，则此锁无法释放掉！
+分布式锁中不直接使用setnx+expire来设置分布式锁，而使用set(key,value,"NX","PX",过期时间)来做分布式锁，
+因为你鬼知道它在执行setnx的时候是不是刚好系统崩溃了，这样expire就未执行
