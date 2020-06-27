@@ -120,10 +120,11 @@ map.put("ids", ids )
 </insert>
 <!-- //https://blog.csdn.net/huanghanqian/java/article/details/83177178 -->
    <resultMap id="BaseResultMap2" type="com.demomodel.bean.master.FlowPeople" >
-   <result column="counts"  property="counts" />
+      <result column="counts"  property="counts" />
       <result column="creation_date"  property="creationDate" />
-    <result column="up_time_date"  property="upTimeDate" /> 
-    <collection property="irregularHotel" javaType="java.util.ArrayList" ofType="com.bayee.domain.IrregularHotel"
+      <result column="up_time_date"  property="upTimeDate" /> 
+     <collection property="irregularHotel" javaType="java.util.ArrayList" 
+             ofType="com.bayee.domain.IrregularHotel"
 					select="com.bayee.mapper.IrregularHotelMapper.selectListByRowKey" column="{hotel1Code=hotel_code,rowKeys=row_key,type1=type}" />
   </resultMap>
    <select id="selectListByRowKey" resultMap="BaseResultMap" >

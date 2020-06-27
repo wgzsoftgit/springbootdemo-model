@@ -43,7 +43,7 @@ public class IdempotentFilter extends HandlerInterceptorAdapter {
 	            return true;
 	        }
 		 
-		logger.info("request请求地址path[{}] uri[{}]", request.getServletPath(), request.getRequestURI());
+		logger.info("com.demomodel.filter.midengFile.config.IdempotentFilterrequest请求地址path[{}] uri[{}]", request.getServletPath(), request.getRequestURI());
 //--------------------------
 		HandlerMethod handlerMethod = (HandlerMethod) handler;
 		Method method = handlerMethod.getMethod();

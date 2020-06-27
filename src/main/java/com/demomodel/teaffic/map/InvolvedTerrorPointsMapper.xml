@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demomodel.teaffic.map.InvolvedTerrorPointsMapper">
+  <resultMap id="BaseResultMap" type="com.demomodel.teaffic.dao.InvolvedTerrorPoints">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="id_num" jdbcType="VARCHAR" property="idNum" />
+    <result column="birth_place" jdbcType="VARCHAR" property="birthPlace" />
+    <result column="high_out_and_in_counts" jdbcType="INTEGER" property="highOutAndInCounts" />
+    <result column="high_total_points" jdbcType="INTEGER" property="highTotalPoints" />
+    <result column="high_risk_place" jdbcType="INTEGER" property="highRiskPlace" />
+    <result column="high_risk_place_points" jdbcType="INTEGER" property="highRiskPlacePoints" />
+    <result column="temple_out_and_in_counts" jdbcType="INTEGER" property="templeOutAndInCounts" />
+    <result column="temple_total_points" jdbcType="INTEGER" property="templeTotalPoints" />
+    <result column="temple_double_access_count" jdbcType="INTEGER" property="templeDoubleAccessCount" />
+    <result column="temple__double_access_points" jdbcType="INTEGER" property="templeDoubleAccessPoints" />
+    <result column="peers_out_and_in_counts" jdbcType="INTEGER" property="peersOutAndInCounts" />
+    <result column="peers_total_points" jdbcType="INTEGER" property="peersTotalPoints" />
+    <result column="peers_with_terror_counts" jdbcType="INTEGER" property="peersWithTerrorCounts" />
+    <result column="peers_with_terror_points" jdbcType="INTEGER" property="peersWithTerrorPoints" />
+    <result column="peers_with_train_terror_counts" jdbcType="INTEGER" property="peersWithTrainTerrorCounts" />
+    <result column="peers_with_train_terror_points" jdbcType="INTEGER" property="peersWithTrainTerrorPoints" />
+    <result column="peers_with_plane_terror_counts" jdbcType="INTEGER" property="peersWithPlaneTerrorCounts" />
+    <result column="peers_with_plane_terror_points" jdbcType="INTEGER" property="peersWithPlaneTerrorPoints" />
+    <result column="peers_with_car_terror_counts" jdbcType="INTEGER" property="peersWithCarTerrorCounts" />
+    <result column="peers_with_car_terror_points" jdbcType="INTEGER" property="peersWithCarTerrorPoints" />
+    <result column="telephone_points" jdbcType="INTEGER" property="telephonePoints" />
+    <result column="telephone_total_points" jdbcType="INTEGER" property="telephoneTotalPoints" />
+    <result column="phone_has_terror_message_counts" jdbcType="INTEGER" property="phoneHasTerrorMessageCounts" />
+    <result column="phone_in_terror_existence_counts" jdbcType="INTEGER" property="phoneInTerrorExistenceCounts" />
+    <result column="phone_in_terror_contact_counts" jdbcType="INTEGER" property="phoneInTerrorContactCounts" />
+    <result column="phone_has_terror_call_counts" jdbcType="INTEGER" property="phoneHasTerrorCallCounts" />
+    <result column="wechat_has_terror_contact_counts" jdbcType="INTEGER" property="wechatHasTerrorContactCounts" />
+    <result column="wechat_in_terror_group_counts" jdbcType="INTEGER" property="wechatInTerrorGroupCounts" />
+    <result column="internetbar_out_and_in_points" jdbcType="INTEGER" property="internetbarOutAndInPoints" />
+    <result column="internetbar_total_points" jdbcType="INTEGER" property="internetbarTotalPoints" />
+    <result column="terror_with_narcotics_counts" jdbcType="INTEGER" property="terrorWithNarcoticsCounts" />
+    <result column="terror_with_narcotics_points" jdbcType="INTEGER" property="terrorWithNarcoticsPoints" />
+    <result column="internetbar_last_time_counts" jdbcType="INTEGER" property="internetbarLastTimeCounts" />
+    <result column="internetbar_last_time_points" jdbcType="INTEGER" property="internetbarLastTimePoints" />
+    <result column="total_points" jdbcType="INTEGER" property="totalPoints" />
+    <result column="creation_date" jdbcType="TIMESTAMP" property="creationDate" />
+    <result column="up_time_date" jdbcType="TIMESTAMP" property="upTimeDate" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, gender, nation, birthday, id_num, birth_place, high_out_and_in_counts, 
+    high_total_points, high_risk_place, high_risk_place_points, temple_out_and_in_counts, 
+    temple_total_points, temple_double_access_count, temple__double_access_points, peers_out_and_in_counts, 
+    peers_total_points, peers_with_terror_counts, peers_with_terror_points, peers_with_train_terror_counts, 
+    peers_with_train_terror_points, peers_with_plane_terror_counts, peers_with_plane_terror_points, 
+    peers_with_car_terror_counts, peers_with_car_terror_points, telephone_points, telephone_total_points, 
+    phone_has_terror_message_counts, phone_in_terror_existence_counts, phone_in_terror_contact_counts, 
+    phone_has_terror_call_counts, wechat_has_terror_contact_counts, wechat_in_terror_group_counts, 
+    internetbar_out_and_in_points, internetbar_total_points, terror_with_narcotics_counts, 
+    terror_with_narcotics_points, internetbar_last_time_counts, internetbar_last_time_points, 
+    total_points, creation_date, up_time_date
+  </sql>
+  <select id="selectByExample" parameterType="com.demomodel.teaffic.dao.InvolvedTerrorPointsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from involved_terror_points
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.demomodel.teaffic.dao.InvolvedTerrorPointsExample">
+    delete from involved_terror_points
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.demomodel.teaffic.dao.InvolvedTerrorPoints">
+    insert into involved_terror_points (id, name, gender, 
+      nation, birthday, id_num, 
+      birth_place, high_out_and_in_counts, high_total_points, 
+      high_risk_place, high_risk_place_points, temple_out_and_in_counts, 
+      temple_total_points, temple_double_access_count, 
+      temple__double_access_points, peers_out_and_in_counts, 
+      peers_total_points, peers_with_terror_counts, 
+      peers_with_terror_points, peers_with_train_terror_counts, 
+      peers_with_train_terror_points, peers_with_plane_terror_counts, 
+      peers_with_plane_terror_points, peers_with_car_terror_counts, 
+      peers_with_car_terror_points, telephone_points, 
+      telephone_total_points, phone_has_terror_message_counts, 
+      phone_in_terror_existence_counts, phone_in_terror_contact_counts, 
+      phone_has_terror_call_counts, wechat_has_terror_contact_counts, 
+      wechat_in_terror_group_counts, internetbar_out_and_in_points, 
+      internetbar_total_points, terror_with_narcotics_counts, 
+      terror_with_narcotics_points, internetbar_last_time_counts, 
+      internetbar_last_time_points, total_points, 
+      creation_date, up_time_date)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{nation,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, #{idNum,jdbcType=VARCHAR}, 
+      #{birthPlace,jdbcType=VARCHAR}, #{highOutAndInCounts,jdbcType=INTEGER}, #{highTotalPoints,jdbcType=INTEGER}, 
+      #{highRiskPlace,jdbcType=INTEGER}, #{highRiskPlacePoints,jdbcType=INTEGER}, #{templeOutAndInCounts,jdbcType=INTEGER}, 
+      #{templeTotalPoints,jdbcType=INTEGER}, #{templeDoubleAccessCount,jdbcType=INTEGER}, 
+      #{templeDoubleAccessPoints,jdbcType=INTEGER}, #{peersOutAndInCounts,jdbcType=INTEGER}, 
+      #{peersTotalPoints,jdbcType=INTEGER}, #{peersWithTerrorCounts,jdbcType=INTEGER}, 
+      #{peersWithTerrorPoints,jdbcType=INTEGER}, #{peersWithTrainTerrorCounts,jdbcType=INTEGER}, 
+      #{peersWithTrainTerrorPoints,jdbcType=INTEGER}, #{peersWithPlaneTerrorCounts,jdbcType=INTEGER}, 
+      #{peersWithPlaneTerrorPoints,jdbcType=INTEGER}, #{peersWithCarTerrorCounts,jdbcType=INTEGER}, 
+      #{peersWithCarTerrorPoints,jdbcType=INTEGER}, #{telephonePoints,jdbcType=INTEGER}, 
+      #{telephoneTotalPoints,jdbcType=INTEGER}, #{phoneHasTerrorMessageCounts,jdbcType=INTEGER}, 
+      #{phoneInTerrorExistenceCounts,jdbcType=INTEGER}, #{phoneInTerrorContactCounts,jdbcType=INTEGER}, 
+      #{phoneHasTerrorCallCounts,jdbcType=INTEGER}, #{wechatHasTerrorContactCounts,jdbcType=INTEGER}, 
+      #{wechatInTerrorGroupCounts,jdbcType=INTEGER}, #{internetbarOutAndInPoints,jdbcType=INTEGER}, 
+      #{internetbarTotalPoints,jdbcType=INTEGER}, #{terrorWithNarcoticsCounts,jdbcType=INTEGER}, 
+      #{terrorWithNarcoticsPoints,jdbcType=INTEGER}, #{internetbarLastTimeCounts,jdbcType=INTEGER}, 
+      #{internetbarLastTimePoints,jdbcType=INTEGER}, #{totalPoints,jdbcType=INTEGER}, 
+      #{creationDate,jdbcType=TIMESTAMP}, #{upTimeDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demomodel.teaffic.dao.InvolvedTerrorPoints">
+    insert into involved_terror_points
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="nation != null">
+        nation,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="idNum != null">
+        id_num,
+      </if>
+      <if test="birthPlace != null">
+        birth_place,
+      </if>
+      <if test="highOutAndInCounts != null">
+        high_out_and_in_counts,
+      </if>
+      <if test="highTotalPoints != null">
+        high_total_points,
+      </if>
+      <if test="highRiskPlace != null">
+        high_risk_place,
+      </if>
+      <if test="highRiskPlacePoints != null">
+        high_risk_place_points,
+      </if>
+      <if test="templeOutAndInCounts != null">
+        temple_out_and_in_counts,
+      </if>
+      <if test="templeTotalPoints != null">
+        temple_total_points,
+      </if>
+      <if test="templeDoubleAccessCount != null">
+        temple_double_access_count,
+      </if>
+      <if test="templeDoubleAccessPoints != null">
+        temple__double_access_points,
+      </if>
+      <if test="peersOutAndInCounts != null">
+        peers_out_and_in_counts,
+      </if>
+      <if test="peersTotalPoints != null">
+        peers_total_points,
+      </if>
+      <if test="peersWithTerrorCounts != null">
+        peers_with_terror_counts,
+      </if>
+      <if test="peersWithTerrorPoints != null">
+        peers_with_terror_points,
+      </if>
+      <if test="peersWithTrainTerrorCounts != null">
+        peers_with_train_terror_counts,
+      </if>
+      <if test="peersWithTrainTerrorPoints != null">
+        peers_with_train_terror_points,
+      </if>
+      <if test="peersWithPlaneTerrorCounts != null">
+        peers_with_plane_terror_counts,
+      </if>
+      <if test="peersWithPlaneTerrorPoints != null">
+        peers_with_plane_terror_points,
+      </if>
+      <if test="peersWithCarTerrorCounts != null">
+        peers_with_car_terror_counts,
+      </if>
+      <if test="peersWithCarTerrorPoints != null">
+        peers_with_car_terror_points,
+      </if>
+      <if test="telephonePoints != null">
+        telephone_points,
+      </if>
+      <if test="telephoneTotalPoints != null">
+        telephone_total_points,
+      </if>
+      <if test="phoneHasTerrorMessageCounts != null">
+        phone_has_terror_message_counts,
+      </if>
+      <if test="phoneInTerrorExistenceCounts != null">
+        phone_in_terror_existence_counts,
+      </if>
+      <if test="phoneInTerrorContactCounts != null">
+        phone_in_terror_contact_counts,
+      </if>
+      <if test="phoneHasTerrorCallCounts != null">
+        phone_has_terror_call_counts,
+      </if>
+      <if test="wechatHasTerrorContactCounts != null">
+        wechat_has_terror_contact_counts,
+      </if>
+      <if test="wechatInTerrorGroupCounts != null">
+        wechat_in_terror_group_counts,
+      </if>
+      <if test="internetbarOutAndInPoints != null">
+        internetbar_out_and_in_points,
+      </if>
+      <if test="internetbarTotalPoints != null">
+        internetbar_total_points,
+      </if>
+      <if test="terrorWithNarcoticsCounts != null">
+        terror_with_narcotics_counts,
+      </if>
+      <if test="terrorWithNarcoticsPoints != null">
+        terror_with_narcotics_points,
+      </if>
+      <if test="internetbarLastTimeCounts != null">
+        internetbar_last_time_counts,
+      </if>
+      <if test="internetbarLastTimePoints != null">
+        internetbar_last_time_points,
+      </if>
+      <if test="totalPoints != null">
+        total_points,
+      </if>
+      <if test="creationDate != null">
+        creation_date,
+      </if>
+      <if test="upTimeDate != null">
+        up_time_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="idNum != null">
+        #{idNum,jdbcType=VARCHAR},
+      </if>
+      <if test="birthPlace != null">
+        #{birthPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="highOutAndInCounts != null">
+        #{highOutAndInCounts,jdbcType=INTEGER},
+      </if>
+      <if test="highTotalPoints != null">
+        #{highTotalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="highRiskPlace != null">
+        #{highRiskPlace,jdbcType=INTEGER},
+      </if>
+      <if test="highRiskPlacePoints != null">
+        #{highRiskPlacePoints,jdbcType=INTEGER},
+      </if>
+      <if test="templeOutAndInCounts != null">
+        #{templeOutAndInCounts,jdbcType=INTEGER},
+      </if>
+      <if test="templeTotalPoints != null">
+        #{templeTotalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="templeDoubleAccessCount != null">
+        #{templeDoubleAccessCount,jdbcType=INTEGER},
+      </if>
+      <if test="templeDoubleAccessPoints != null">
+        #{templeDoubleAccessPoints,jdbcType=INTEGER},
+      </if>
+      <if test="peersOutAndInCounts != null">
+        #{peersOutAndInCounts,jdbcType=INTEGER},
+      </if>
+      <if test="peersTotalPoints != null">
+        #{peersTotalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="peersWithTerrorCounts != null">
+        #{peersWithTerrorCounts,jdbcType=INTEGER},
+      </if>
+      <if test="peersWithTerrorPoints != null">
+        #{peersWithTerrorPoints,jdbcType=INTEGER},
+      </if>
+      <if test="peersWithTrainTerrorCounts != null">
+        #{peersWithTrainTerrorCounts,jdbcType=INTEGER},
+      </if>
+      <if test="peersWithTrainTerrorPoints != null">
+        #{peersWithTrainTerrorPoints,jdbcType=INTEGER},
+      </if>
+      <if test="peersWithPlaneTerrorCounts != null">
+        #{peersWithPlaneTerrorCounts,jdbcType=INTEGER},
+      </if>
+      <if test="peersWithPlaneTerrorPoints != null">
+        #{peersWithPlaneTerrorPoints,jdbcType=INTEGER},
+      </if>
+      <if test="peersWithCarTerrorCounts != null">
+        #{peersWithCarTerrorCounts,jdbcType=INTEGER},
+      </if>
+      <if test="peersWithCarTerrorPoints != null">
+        #{peersWithCarTerrorPoints,jdbcType=INTEGER},
+      </if>
+      <if test="telephonePoints != null">
+        #{telephonePoints,jdbcType=INTEGER},
+      </if>
+      <if test="telephoneTotalPoints != null">
+        #{telephoneTotalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="phoneHasTerrorMessageCounts != null">
+        #{phoneHasTerrorMessageCounts,jdbcType=INTEGER},
+      </if>
+      <if test="phoneInTerrorExistenceCounts != null">
+        #{phoneInTerrorExistenceCounts,jdbcType=INTEGER},
+      </if>
+      <if test="phoneInTerrorContactCounts != null">
+        #{phoneInTerrorContactCounts,jdbcType=INTEGER},
+      </if>
+      <if test="phoneHasTerrorCallCounts != null">
+        #{phoneHasTerrorCallCounts,jdbcType=INTEGER},
+      </if>
+      <if test="wechatHasTerrorContactCounts != null">
+        #{wechatHasTerrorContactCounts,jdbcType=INTEGER},
+      </if>
+      <if test="wechatInTerrorGroupCounts != null">
+        #{wechatInTerrorGroupCounts,jdbcType=INTEGER},
+      </if>
+      <if test="internetbarOutAndInPoints != null">
+        #{internetbarOutAndInPoints,jdbcType=INTEGER},
+      </if>
+      <if test="internetbarTotalPoints != null">
+        #{internetbarTotalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="terrorWithNarcoticsCounts != null">
+        #{terrorWithNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="terrorWithNarcoticsPoints != null">
+        #{terrorWithNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="internetbarLastTimeCounts != null">
+        #{internetbarLastTimeCounts,jdbcType=INTEGER},
+      </if>
+      <if test="internetbarLastTimePoints != null">
+        #{internetbarLastTimePoints,jdbcType=INTEGER},
+      </if>
+      <if test="totalPoints != null">
+        #{totalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="creationDate != null">
+        #{creationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="upTimeDate != null">
+        #{upTimeDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.demomodel.teaffic.dao.InvolvedTerrorPointsExample" resultType="java.lang.Long">
+    select count(*) from involved_terror_points
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update involved_terror_points
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gender != null">
+        gender = #{record.gender,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nation != null">
+        nation = #{record.nation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthday != null">
+        birthday = #{record.birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idNum != null">
+        id_num = #{record.idNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthPlace != null">
+        birth_place = #{record.birthPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.highOutAndInCounts != null">
+        high_out_and_in_counts = #{record.highOutAndInCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.highTotalPoints != null">
+        high_total_points = #{record.highTotalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.highRiskPlace != null">
+        high_risk_place = #{record.highRiskPlace,jdbcType=INTEGER},
+      </if>
+      <if test="record.highRiskPlacePoints != null">
+        high_risk_place_points = #{record.highRiskPlacePoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.templeOutAndInCounts != null">
+        temple_out_and_in_counts = #{record.templeOutAndInCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.templeTotalPoints != null">
+        temple_total_points = #{record.templeTotalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.templeDoubleAccessCount != null">
+        temple_double_access_count = #{record.templeDoubleAccessCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.templeDoubleAccessPoints != null">
+        temple__double_access_points = #{record.templeDoubleAccessPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.peersOutAndInCounts != null">
+        peers_out_and_in_counts = #{record.peersOutAndInCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.peersTotalPoints != null">
+        peers_total_points = #{record.peersTotalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.peersWithTerrorCounts != null">
+        peers_with_terror_counts = #{record.peersWithTerrorCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.peersWithTerrorPoints != null">
+        peers_with_terror_points = #{record.peersWithTerrorPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.peersWithTrainTerrorCounts != null">
+        peers_with_train_terror_counts = #{record.peersWithTrainTerrorCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.peersWithTrainTerrorPoints != null">
+        peers_with_train_terror_points = #{record.peersWithTrainTerrorPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.peersWithPlaneTerrorCounts != null">
+        peers_with_plane_terror_counts = #{record.peersWithPlaneTerrorCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.peersWithPlaneTerrorPoints != null">
+        peers_with_plane_terror_points = #{record.peersWithPlaneTerrorPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.peersWithCarTerrorCounts != null">
+        peers_with_car_terror_counts = #{record.peersWithCarTerrorCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.peersWithCarTerrorPoints != null">
+        peers_with_car_terror_points = #{record.peersWithCarTerrorPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.telephonePoints != null">
+        telephone_points = #{record.telephonePoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.telephoneTotalPoints != null">
+        telephone_total_points = #{record.telephoneTotalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.phoneHasTerrorMessageCounts != null">
+        phone_has_terror_message_counts = #{record.phoneHasTerrorMessageCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.phoneInTerrorExistenceCounts != null">
+        phone_in_terror_existence_counts = #{record.phoneInTerrorExistenceCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.phoneInTerrorContactCounts != null">
+        phone_in_terror_contact_counts = #{record.phoneInTerrorContactCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.phoneHasTerrorCallCounts != null">
+        phone_has_terror_call_counts = #{record.phoneHasTerrorCallCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.wechatHasTerrorContactCounts != null">
+        wechat_has_terror_contact_counts = #{record.wechatHasTerrorContactCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.wechatInTerrorGroupCounts != null">
+        wechat_in_terror_group_counts = #{record.wechatInTerrorGroupCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.internetbarOutAndInPoints != null">
+        internetbar_out_and_in_points = #{record.internetbarOutAndInPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.internetbarTotalPoints != null">
+        internetbar_total_points = #{record.internetbarTotalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.terrorWithNarcoticsCounts != null">
+        terror_with_narcotics_counts = #{record.terrorWithNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.terrorWithNarcoticsPoints != null">
+        terror_with_narcotics_points = #{record.terrorWithNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.internetbarLastTimeCounts != null">
+        internetbar_last_time_counts = #{record.internetbarLastTimeCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.internetbarLastTimePoints != null">
+        internetbar_last_time_points = #{record.internetbarLastTimePoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.totalPoints != null">
+        total_points = #{record.totalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.creationDate != null">
+        creation_date = #{record.creationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.upTimeDate != null">
+        up_time_date = #{record.upTimeDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update involved_terror_points
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      gender = #{record.gender,jdbcType=VARCHAR},
+      nation = #{record.nation,jdbcType=VARCHAR},
+      birthday = #{record.birthday,jdbcType=VARCHAR},
+      id_num = #{record.idNum,jdbcType=VARCHAR},
+      birth_place = #{record.birthPlace,jdbcType=VARCHAR},
+      high_out_and_in_counts = #{record.highOutAndInCounts,jdbcType=INTEGER},
+      high_total_points = #{record.highTotalPoints,jdbcType=INTEGER},
+      high_risk_place = #{record.highRiskPlace,jdbcType=INTEGER},
+      high_risk_place_points = #{record.highRiskPlacePoints,jdbcType=INTEGER},
+      temple_out_and_in_counts = #{record.templeOutAndInCounts,jdbcType=INTEGER},
+      temple_total_points = #{record.templeTotalPoints,jdbcType=INTEGER},
+      temple_double_access_count = #{record.templeDoubleAccessCount,jdbcType=INTEGER},
+      temple__double_access_points = #{record.templeDoubleAccessPoints,jdbcType=INTEGER},
+      peers_out_and_in_counts = #{record.peersOutAndInCounts,jdbcType=INTEGER},
+      peers_total_points = #{record.peersTotalPoints,jdbcType=INTEGER},
+      peers_with_terror_counts = #{record.peersWithTerrorCounts,jdbcType=INTEGER},
+      peers_with_terror_points = #{record.peersWithTerrorPoints,jdbcType=INTEGER},
+      peers_with_train_terror_counts = #{record.peersWithTrainTerrorCounts,jdbcType=INTEGER},
+      peers_with_train_terror_points = #{record.peersWithTrainTerrorPoints,jdbcType=INTEGER},
+      peers_with_plane_terror_counts = #{record.peersWithPlaneTerrorCounts,jdbcType=INTEGER},
+      peers_with_plane_terror_points = #{record.peersWithPlaneTerrorPoints,jdbcType=INTEGER},
+      peers_with_car_terror_counts = #{record.peersWithCarTerrorCounts,jdbcType=INTEGER},
+      peers_with_car_terror_points = #{record.peersWithCarTerrorPoints,jdbcType=INTEGER},
+      telephone_points = #{record.telephonePoints,jdbcType=INTEGER},
+      telephone_total_points = #{record.telephoneTotalPoints,jdbcType=INTEGER},
+      phone_has_terror_message_counts = #{record.phoneHasTerrorMessageCounts,jdbcType=INTEGER},
+      phone_in_terror_existence_counts = #{record.phoneInTerrorExistenceCounts,jdbcType=INTEGER},
+      phone_in_terror_contact_counts = #{record.phoneInTerrorContactCounts,jdbcType=INTEGER},
+      phone_has_terror_call_counts = #{record.phoneHasTerrorCallCounts,jdbcType=INTEGER},
+      wechat_has_terror_contact_counts = #{record.wechatHasTerrorContactCounts,jdbcType=INTEGER},
+      wechat_in_terror_group_counts = #{record.wechatInTerrorGroupCounts,jdbcType=INTEGER},
+      internetbar_out_and_in_points = #{record.internetbarOutAndInPoints,jdbcType=INTEGER},
+      internetbar_total_points = #{record.internetbarTotalPoints,jdbcType=INTEGER},
+      terror_with_narcotics_counts = #{record.terrorWithNarcoticsCounts,jdbcType=INTEGER},
+      terror_with_narcotics_points = #{record.terrorWithNarcoticsPoints,jdbcType=INTEGER},
+      internetbar_last_time_counts = #{record.internetbarLastTimeCounts,jdbcType=INTEGER},
+      internetbar_last_time_points = #{record.internetbarLastTimePoints,jdbcType=INTEGER},
+      total_points = #{record.totalPoints,jdbcType=INTEGER},
+      creation_date = #{record.creationDate,jdbcType=TIMESTAMP},
+      up_time_date = #{record.upTimeDate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

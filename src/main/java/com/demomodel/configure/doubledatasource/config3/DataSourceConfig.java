@@ -42,6 +42,22 @@ public class DataSourceConfig {
     public DataSource ds2DataSource(@Qualifier("ds2DataSourceProperties") DataSourceProperties dataSourceProperties) {
         return dataSourceProperties.initializeDataSourceBuilder().build();
     }
+    
+    
+    
+//    //第三个ds3数据源配置
+//    @Bean(name = "ds2DataSourcePropertiesQuart")
+//    @ConfigurationProperties(prefix = "spring.datasource.secondaryquart")
+//    public DataSourceProperties ds2DataSourcePropertiesQuart() {
+//        return new DataSourceProperties();
+//    }
+//
+//    //第三个ds2数据源
+//    @Bean("ds2DataSourceQuart")
+//    public DataSource ds2DataSourceQuart(@Qualifier("ds2DataSourcePropertiesQuart") DataSourceProperties dataSourceProperties) {
+//        return dataSourceProperties.initializeDataSourceBuilder().build();
+//    }
+
 
 }
 //https://www.jianshu.com/p/dfd5ae340011

@@ -18,6 +18,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<encoding>UTF-8</encoding>
+		 <elasticsearch.version>7.3.2</elasticsearch.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -210,6 +211,23 @@
 			<version>0.9.0</version>
 		</dependency>
 
+			<!-- 支持时间转指定类型  @JsonFormat(patter="yyyy-MM-dd HH:mm:ss",timezone="GMT+8") -->      
+	<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <exclusions>
+		        <exclusion>
+		            <groupId>com.fasterxml.jackson.core</groupId>
+		            <artifactId>jackson-annotations</artifactId>
+		        </exclusion>
+		    </exclusions>
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-annotations</artifactId>
+		    <version>2.9.8</version>
+		    <!-- 版本可以使用2.9.3、2.9.5 、2.9.8，不能忽略version属性-->
+		</dependency>
 
 	
 		<!-- lombok表达式 加速开发的工具，可以省略getset和日志类，只需要注解就可以
@@ -269,11 +287,11 @@
 			<version>1.2.2</version>
 		</dependency>
 		<!--commons相关的jar包结束 -->
-		<!-- VelocityEngineFactoryBean -->
+		<!-- VelocityEngineFactoryBean com.demomodel.configure.mysqlconf.AppConfigurationBasicDataSource-->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
-			<version>4.2.6.RELEASE</version>
+			<!-- <version>4.2.6.RELEASE</version> -->
 		</dependency>
 
 
@@ -302,7 +320,15 @@
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 		</dependency>
+       
+          <!-- HttpClient依赖 -->
         <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+        
+   <dependency>   
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-openfeign</artifactId>
     <version>2.0.2.RELEASE</version>
@@ -322,7 +348,79 @@ https://blog.csdn.net/qq_22177809/article/details/86592660  -->
       <artifactId>guava</artifactId>
       <version>25.1-jre</version>
     </dependency>
- 
+    
+     <!--kafka依赖-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+          <!--quartz依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+			
+			
+			 <!-- Spring Boot支持JSP的依赖 --> 
+				<dependency>
+					<groupId>org.apache.tomcat.embed</groupId>
+					<artifactId>tomcat-embed-jasper</artifactId>
+					<scope>provided</scope>
+			 </dependency>
+       <dependency>
+			 <groupId>javax.servlet.jsp.jstl</groupId>
+			 <artifactId>jstl-api</artifactId>
+			 <version>1.2</version>
+        </dependency>
+        <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-tomcat</artifactId>
+                <scope>provided</scope>
+	 	</dependency>
+        <dependency>
+	            <groupId>javax.servlet</groupId>
+	            <artifactId>javax.servlet-api</artifactId>
+	    </dependency>
+	     <!-- Spring Boot支持JSP的依赖 结束--> 
+	    
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.15-beta2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+        
+         <!-- Java High Level REST Client -->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>${elasticsearch.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch -->
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>${elasticsearch.version}</version>
+        </dependency>
+	  <dependency>
+			<groupId>io.searchbox</groupId>
+			<artifactId>jest</artifactId>
+		</dependency>
+        
         
 	</dependencies>
 	

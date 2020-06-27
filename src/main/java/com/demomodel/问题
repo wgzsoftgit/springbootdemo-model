@@ -1,0 +1,16 @@
+     - @org.springframework.beans.factory.annotation.Autowired(required=true)
+Consider defining a bean of type '**' in your configuration.
+配置
+@SpringBootApplication
+@MapperScan(value = "com.yxf.demo.dao")
+@Configuration @Bean
+InitializingBean 初始化
+拦截器配置
+
+
+SpringBoot容器里读到了我们配置的 @EnableWebMvc 注解，它通过 @Import 
+导入了 WebMvcConfigurationSupport 类，从而导致了 WebMvcAutoConfiguration 类没有生效，
+此时我的问题找到了! 最后我又在Spring的官网找到了对应的解释
+————————————————
+版权声明：本文为CSDN博主「小七_Ape」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_34369569/java/article/details/99292925

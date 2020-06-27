@@ -64,10 +64,10 @@ public class mapgroup {
 		map4.put("3",new User(5, 2) );
 		System.out.println("请空前"+map4.toString());
 
-		map4.clear();//清空map
+	//	map4.clear();//清空map
 		System.out.println("请空后"+map4.toString());
 		list2.add(map4);
-		Map<String, List<Map<String, Object>>> map3= transition(list2);
+		Map<String, List<Map<String, Object>>> map3= transition(list2);//分组排序
 		System.out.println(map3.toString());
 		listsort();
 		List<String> listtest= Arrays.asList("a", "B", "c", "d"); //初始化数组
@@ -163,3 +163,27 @@ public class mapgroup {
 
 
 }
+/**
+return Arrays.stream(rp.getHits().getHits()).map(b -> {
+return b.getSourceAsMap();
+}).collect(Collectors.toList());
+{
+"_index":"suggest2",
+"_type":"folks",
+"_id":"KGpW13IBYPi_ZUEZPMmT",
+"_score":1.0,
+"_source":{
+"name":"桃子"
+}
+},
+{
+"_index":"suggest2",
+"_type":"folks",
+"_id":"kqAV2XIB9P74YTRQxbiR",
+"_score":1.0,
+"_source":{
+"name":"水中花"
+}
+}
+
+*/

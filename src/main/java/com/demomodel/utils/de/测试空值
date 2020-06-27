@@ -1,0 +1,13 @@
+List<QuartzTaskInformations> unnfrozenTasks；
+if (CollectionUtils.isEmpty(unnfrozenTasks)) 检测list是否为空
+
+
+StringUtils.isEmpty(search.getKeyword())//字符串判空
+
+判断值是否相等
+if (ResultEnum.UNFROZEN.name().equals(status)) 
+!StringUtils.equals("*", "123*")
+
+StringUtils.isBlank(sasa)
+StringUtils.isEmpty(search.getKeyword())
+StringUtils.isNotEmpty()

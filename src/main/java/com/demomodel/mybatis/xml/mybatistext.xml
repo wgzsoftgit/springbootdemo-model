@@ -403,6 +403,33 @@ public Position selectPositionStudentByPosId(Integer id);
 <!-- https://blog.csdn.net/qq_36791569/java/article/details/81517080 -->
 
 
-
-
+<!-- 关联查询多参数传递  -->
+ <resultMap id="BaseResultMap2" type="com.demomodel.bean.master.FlowPeople" >
+      <result column="counts"  property="counts" />
+      <result column="creation_date"  property="creationDate" />
+      <result column="up_time_date"  property="upTimeDate" /> 
+     <collection property="irregularHotel" javaType="java.util.ArrayList" 
+             ofType="com.bayee.domain.IrregularHotel"
+					select="com.bayee.mapper.IrregularHotelMapper.selectListByRowKey" 
+					column="{hotel1Code=hotel_code,rowKeys=row_key,type1=type}" />
+  </resultMap>
+   <select id="selectListByRowKey" resultMap="BaseResultMap" >
+   <!-- select s.row_key,s.`name`,s.gender,s.id_num ,s.hotel_name,s.hotel_address FROM irregular_hotel s  WHERE s.type=1 and s.hotel_name='潜水人家' and s.row_key=122 --> 
+   select s.id FROM irysds s 
+    <where>
+    <if test="type!=null and type!=''">
+           AND  s.ds = #{type1}
+        </if>
+           <if test="hotelCode!=null and hotelCode!=''">
+           AND  s.dsfsdf = #{hotel1Code}
+        </if>
+        <if test="rowKey!=null and rowKey!=''">
+           AND  s.dddsfd = #{rowKeys}
+        </if>   
+    </where>
+    GROUP BY s.id_num  
+ </select>
+ <select id="seelee" resultMap="BaseResultMap2"   parameterType="com.IrregularHotel">
+  SELECT * FROM flow_people 
+ </select>
 </mapper>

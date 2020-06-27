@@ -20,7 +20,9 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.google.common.util.concurrent.RateLimiter;
 
 
@@ -32,9 +34,11 @@ public class RateLimitAspect {
     private Logger log = LoggerFactory.getLogger(this.getClass());
     //用来存放不同接口的RateLimiter(key为接口名称，value为RateLimiter)
     private ConcurrentHashMap<String, RateLimiter> map = new ConcurrentHashMap<>();
- 
+
     private static ObjectMapper objectMapper = new ObjectMapper();
- 
+    
+   
+    
     private RateLimiter rateLimiter;
  
     @Autowired
@@ -98,7 +102,8 @@ public class RateLimitAspect {
     }
  
     static {
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+      
+    	objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
     }
  
 }

@@ -1,15 +1,20 @@
 package com.demomodel.Method.getClass;
 
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.Map.Entry;
+
+import org.apache.commons.io.IOUtils;
 
 import com.demomodel.Method.A;
 
 public class GetClass {
 
 	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+		
+		  System.err.println(GetClass.class.getResource("/").getPath() + "/");
 		//方式一
 		//调用Object类的getClass()方法来得到Class对象，这也是最常见的产生Class对象的方法。例如：
 	   // A x = null;

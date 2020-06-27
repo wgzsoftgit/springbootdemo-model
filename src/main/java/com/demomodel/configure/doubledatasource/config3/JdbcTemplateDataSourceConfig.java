@@ -29,5 +29,11 @@ public class JdbcTemplateDataSourceConfig {
     public JdbcTemplate ds2JdbcTemplate(@Qualifier("ds2DataSource") DataSource dataSource) {
         return new JdbcTemplate(dataSource);  
     }
+    
+//    //JdbcTemplate第三个ds2数据源  
+//    @Bean(name = "ds2JdbcTemplateQuart")
+//    public JdbcTemplate ds2JdbcTemplateQuart(@Qualifier("ds2DataSourceQuart") DataSource dataSource) {
+//        return new JdbcTemplate(dataSource);  
+//    }
 }
 //https://www.jianshu.com/p/dfd5ae340011

@@ -27,7 +27,7 @@
 		</javaTypeResolver>
  
 		<!-- targetProject:生成PO类的位置  -->
-		<javaModelGenerator targetPackage="com.demomodel.configure.doubledatasource.textdoubledatasource.dao"
+		<javaModelGenerator targetPackage="com.demomodel.teaffic.dao"
 			targetProject="tspringbootdemo">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
@@ -35,14 +35,14 @@
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
-		<sqlMapGenerator targetPackage="com.demomodel.configure.doubledatasource.textdoubledatasource.map" 
+		<sqlMapGenerator targetPackage="com.demomodel.teaffic.map" 
 			targetProject="tspringbootdemo">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
 		</sqlMapGenerator>
 		<!-- targetPackage：mapper接口生成的位置 -->
 		<javaClientGenerator type="XMLMAPPER"
-			targetPackage="com.demomodel.configure.doubledatasource.textdoubledatasource.map" 
+			targetPackage="com.demomodel.teaffic.map" 
 			targetProject="tspringbootdemo">
 			<!-- enableSubPackages:是否让schema作为包的后缀 -->
 			<property name="enableSubPackages" value="false" />
@@ -64,7 +64,7 @@
 		 <table tableName="personnel_typeandtime"></table> 
 		 <table tableName="travel_trajectory_table"></table> --> 
 		<!--  <table tableName="violatewealth_fled_people"></table> -->
-		 <table tableName="datatrend"></table>
+		 <table tableName="involved_terror_points"></table>
 		 
 	</context>
 </generatorConfiguration>

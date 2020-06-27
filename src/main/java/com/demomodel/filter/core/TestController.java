@@ -15,7 +15,7 @@ import com.demomodel.bean.User;
 public class TestController {
  
  
-    @CrossOrigin    //解决跨域问题
+    @CrossOrigin    //解决跨域问题@CrossOrigin(origins = "http://item.pinyougou.com")
     @RequestMapping("/user/login1")
     @ResponseBody
     public List<User> userLogin(User user) {

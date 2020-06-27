@@ -1,0 +1,35 @@
+<div id="but" onclick="savePay()">提交</div>
+.disable {
+	pointer-events: none;
+}
+function savePay() {
+	// 禁用点击事件
+	$("#but").addClass("disable");
+
+	// 提交业务
+
+	// 10秒后启用点击事件
+	setTimeout(function(){
+		$("#but").removeClass("disable");
+	},10000);
+}
+————————————————
+版权声明：本文为CSDN博主「齐大圣2012」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qidasheng2012/java/article/details/87930370
+
+
+<input type="button" id="but" onclick="savePay()" value="提交"/>
+function savePay() {
+	// 禁用点击事件
+	$("#but").attr("disabled",true);
+
+	// 提交业务
+
+	// 10秒后启用点击事件
+	setTimeout(function(){
+		$("#but").removeAttr("disabled");
+	},10000);
+}
+————————————————
+版权声明：本文为CSDN博主「齐大圣2012」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qidasheng2012/java/article/details/87930370

@@ -3,8 +3,17 @@ server:
   port: 9090
 #prod环境spring.profiles.active=prod  dev 优先application-prod.properties配置
 spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    enabled: true
+    encoding: UTF-8
+    mode: HTML
   profiles:
     active: dev
+#spring:
+  
 #多数据源
   main:
     allow-bean-definition-overriding: true
@@ -48,6 +57,16 @@ spring:
   jmx:
     enabled: false  
   
+# mybatis  yml配置
+#mybatis:
+#  type-aliases-package: com.quartz.cn.springbootquartzdemo.bean
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    default-fetch-size: 100
+#    default-statement-timeout: 3000
+#  mapper-locations: classpath:mapper/*.xml  
+  
+
 #1、com.controller.readofyml.author 测试调用成功  
 author:
   name: 小鹏

@@ -29,13 +29,13 @@ public class GsonTest {
 //创建一个Gson对象
 		Gson gson = new Gson();
 
-//把java对象转换成Json字符串。
+//把java对象转换成Json字符串。   map   => json
 		String jsonStr = gson.toJson(map);
 		System.out.println(jsonStr);//{"name":"nam1","age":"12"}
 
-//把集合对象转换成Json字符串
+//把集合对象转换成Json字符串    list  => json
 		jsonStr = gson.toJson(list);
-		System.out.println(jsonStr);
+		System.out.println(jsonStr);//["name","123",{"name":"nam1","age":"12"}]
 
 //创建一个JsonParser
 		JsonParser parser = new JsonParser();
@@ -47,6 +47,13 @@ public class GsonTest {
 		JsonObject jsonObj = null;
 		if (el.isJsonObject()) {
 			jsonObj = el.getAsJsonObject();
+			String sex = jsonObj.get("sex").getAsString();
+			System.out.println("sex:" + sex);
+			JsonArray hobbies = jsonObj.getAsJsonArray("hobby"); //
+			for (int i = 0; i < hobbies.size(); i++) {
+				String hobby = hobbies.get(i).getAsString();
+				System.out.println("hobby:" + hobby);
+			}
 		}
 
 //把JsonElement对象转换成JsonArray
@@ -54,7 +61,6 @@ public class GsonTest {
 		if (el.isJsonArray()) {
 			jsonArray = el.getAsJsonArray();
 		}
-
 //遍历JsonArray对象
 		MyField field = null;
 		Iterator it = jsonArray.iterator();

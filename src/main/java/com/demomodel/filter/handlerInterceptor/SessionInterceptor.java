@@ -14,7 +14,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
  * @author wgz
  * @date 创建时间：2020年5月29日 下午9:09:22
  */
-@Component
 public class SessionInterceptor extends HandlerInterceptorAdapter {
 
     

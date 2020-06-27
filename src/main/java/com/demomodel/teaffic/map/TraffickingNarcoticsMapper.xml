@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demomodel.teaffic.map.TraffickingNarcoticsMapper">
+  <resultMap id="BaseResultMap" type="com.demomodel.teaffic.dao.TraffickingNarcotics">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="id_num" jdbcType="VARCHAR" property="idNum" />
+    <result column="birth_place" jdbcType="VARCHAR" property="birthPlace" />
+    <result column="hotel_out_and_in_counts" jdbcType="INTEGER" property="hotelOutAndInCounts" />
+    <result column="hotel_points" jdbcType="INTEGER" property="hotelPoints" />
+    <result column="hotel_lasttime_room_counts" jdbcType="INTEGER" property="hotelLasttimeRoomCounts" />
+    <result column="hotel_lasttime_room_points" jdbcType="INTEGER" property="hotelLasttimeRoomPoints" />
+    <result column="hotel_share_with_narcotics_counts" jdbcType="INTEGER" property="hotelShareWithNarcoticsCounts" />
+    <result column="hotel_share_with_narcotics_points" jdbcType="INTEGER" property="hotelShareWithNarcoticsPoints" />
+    <result column="recreation_out_and_in_count" jdbcType="INTEGER" property="recreationOutAndInCount" />
+    <result column="recreation__points" jdbcType="INTEGER" property="recreationPoints" />
+    <result column="recreation_with_narcotics_counts" jdbcType="INTEGER" property="recreationWithNarcoticsCounts" />
+    <result column="recreation_with_narcotics_points" jdbcType="INTEGER" property="recreationWithNarcoticsPoints" />
+    <result column="travel_points" jdbcType="INTEGER" property="travelPoints" />
+    <result column="travel_place_points" jdbcType="INTEGER" property="travelPlacePoints" />
+    <result column="travel_with_narcotics_counts" jdbcType="INTEGER" property="travelWithNarcoticsCounts" />
+    <result column="travel_with_narcotics_points" jdbcType="INTEGER" property="travelWithNarcoticsPoints" />
+    <result column="travel_with_train_narcotics_counts" jdbcType="INTEGER" property="travelWithTrainNarcoticsCounts" />
+    <result column="travel_with_train_narcotics_points" jdbcType="INTEGER" property="travelWithTrainNarcoticsPoints" />
+    <result column="travel_with_plane_narcotics_counts" jdbcType="INTEGER" property="travelWithPlaneNarcoticsCounts" />
+    <result column="travel_with_plane_narcotics_points" jdbcType="INTEGER" property="travelWithPlaneNarcoticsPoints" />
+    <result column="travel_with_car_narcotics_counts" jdbcType="INTEGER" property="travelWithCarNarcoticsCounts" />
+    <result column="travel_with_car_narcotics_points" jdbcType="INTEGER" property="travelWithCarNarcoticsPoints" />
+    <result column="telephone_points" jdbcType="INTEGER" property="telephonePoints" />
+    <result column="telephone_total_counts" jdbcType="INTEGER" property="telephoneTotalCounts" />
+    <result column="telephone_has_narcotics_message_counts" jdbcType="INTEGER" property="telephoneHasNarcoticsMessageCounts" />
+    <result column="telephone_has_narcotics_existence_counts" jdbcType="INTEGER" property="telephoneHasNarcoticsExistenceCounts" />
+    <result column="telephone_in_narcotics_contact_counts" jdbcType="INTEGER" property="telephoneInNarcoticsContactCounts" />
+    <result column="telephone_in_narcotics_call_counts" jdbcType="INTEGER" property="telephoneInNarcoticsCallCounts" />
+    <result column="wechat_has_narcotics_contact_counts" jdbcType="INTEGER" property="wechatHasNarcoticsContactCounts" />
+    <result column="wechat_in_narcotics_group_counts" jdbcType="INTEGER" property="wechatInNarcoticsGroupCounts" />
+    <result column="internetbar_out_and_in_points" jdbcType="INTEGER" property="internetbarOutAndInPoints" />
+    <result column="internetbar_points" jdbcType="INTEGER" property="internetbarPoints" />
+    <result column="internetbar_with_narcotics_counts" jdbcType="INTEGER" property="internetbarWithNarcoticsCounts" />
+    <result column="internetbar_with_narcotics_points" jdbcType="INTEGER" property="internetbarWithNarcoticsPoints" />
+    <result column="internetbar_last_time_counts" jdbcType="INTEGER" property="internetbarLastTimeCounts" />
+    <result column="internetbar_last_time_points" jdbcType="INTEGER" property="internetbarLastTimePoints" />
+    <result column="total_points" jdbcType="INTEGER" property="totalPoints" />
+    <result column="creation_date" jdbcType="TIMESTAMP" property="creationDate" />
+    <result column="up_time_date" jdbcType="TIMESTAMP" property="upTimeDate" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, gender, nation, birthday, id_num, birth_place, hotel_out_and_in_counts, 
+    hotel_points, hotel_lasttime_room_counts, hotel_lasttime_room_points, hotel_share_with_narcotics_counts, 
+    hotel_share_with_narcotics_points, recreation_out_and_in_count, recreation__points, 
+    recreation_with_narcotics_counts, recreation_with_narcotics_points, travel_points, 
+    travel_place_points, travel_with_narcotics_counts, travel_with_narcotics_points, 
+    travel_with_train_narcotics_counts, travel_with_train_narcotics_points, travel_with_plane_narcotics_counts, 
+    travel_with_plane_narcotics_points, travel_with_car_narcotics_counts, travel_with_car_narcotics_points, 
+    telephone_points, telephone_total_counts, telephone_has_narcotics_message_counts, 
+    telephone_has_narcotics_existence_counts, telephone_in_narcotics_contact_counts, 
+    telephone_in_narcotics_call_counts, wechat_has_narcotics_contact_counts, wechat_in_narcotics_group_counts, 
+    internetbar_out_and_in_points, internetbar_points, internetbar_with_narcotics_counts, 
+    internetbar_with_narcotics_points, internetbar_last_time_counts, internetbar_last_time_points, 
+    total_points, creation_date, up_time_date
+  </sql>
+  <select id="selectByExample" parameterType="com.demomodel.teaffic.dao.TraffickingNarcoticsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from trafficking_narcotics
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.demomodel.teaffic.dao.TraffickingNarcoticsExample">
+    delete from trafficking_narcotics
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.demomodel.teaffic.dao.TraffickingNarcotics">
+    insert into trafficking_narcotics (id, name, gender, 
+      nation, birthday, id_num, 
+      birth_place, hotel_out_and_in_counts, hotel_points, 
+      hotel_lasttime_room_counts, hotel_lasttime_room_points, 
+      hotel_share_with_narcotics_counts, hotel_share_with_narcotics_points, 
+      recreation_out_and_in_count, recreation__points, 
+      recreation_with_narcotics_counts, recreation_with_narcotics_points, 
+      travel_points, travel_place_points, travel_with_narcotics_counts, 
+      travel_with_narcotics_points, travel_with_train_narcotics_counts, 
+      travel_with_train_narcotics_points, travel_with_plane_narcotics_counts, 
+      travel_with_plane_narcotics_points, travel_with_car_narcotics_counts, 
+      travel_with_car_narcotics_points, telephone_points, 
+      telephone_total_counts, telephone_has_narcotics_message_counts, 
+      telephone_has_narcotics_existence_counts, telephone_in_narcotics_contact_counts, 
+      telephone_in_narcotics_call_counts, wechat_has_narcotics_contact_counts, 
+      wechat_in_narcotics_group_counts, internetbar_out_and_in_points, 
+      internetbar_points, internetbar_with_narcotics_counts, 
+      internetbar_with_narcotics_points, internetbar_last_time_counts, 
+      internetbar_last_time_points, total_points, 
+      creation_date, up_time_date)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, 
+      #{nation,jdbcType=VARCHAR}, #{birthday,jdbcType=VARCHAR}, #{idNum,jdbcType=VARCHAR}, 
+      #{birthPlace,jdbcType=VARCHAR}, #{hotelOutAndInCounts,jdbcType=INTEGER}, #{hotelPoints,jdbcType=INTEGER}, 
+      #{hotelLasttimeRoomCounts,jdbcType=INTEGER}, #{hotelLasttimeRoomPoints,jdbcType=INTEGER}, 
+      #{hotelShareWithNarcoticsCounts,jdbcType=INTEGER}, #{hotelShareWithNarcoticsPoints,jdbcType=INTEGER}, 
+      #{recreationOutAndInCount,jdbcType=INTEGER}, #{recreationPoints,jdbcType=INTEGER}, 
+      #{recreationWithNarcoticsCounts,jdbcType=INTEGER}, #{recreationWithNarcoticsPoints,jdbcType=INTEGER}, 
+      #{travelPoints,jdbcType=INTEGER}, #{travelPlacePoints,jdbcType=INTEGER}, #{travelWithNarcoticsCounts,jdbcType=INTEGER}, 
+      #{travelWithNarcoticsPoints,jdbcType=INTEGER}, #{travelWithTrainNarcoticsCounts,jdbcType=INTEGER}, 
+      #{travelWithTrainNarcoticsPoints,jdbcType=INTEGER}, #{travelWithPlaneNarcoticsCounts,jdbcType=INTEGER}, 
+      #{travelWithPlaneNarcoticsPoints,jdbcType=INTEGER}, #{travelWithCarNarcoticsCounts,jdbcType=INTEGER}, 
+      #{travelWithCarNarcoticsPoints,jdbcType=INTEGER}, #{telephonePoints,jdbcType=INTEGER}, 
+      #{telephoneTotalCounts,jdbcType=INTEGER}, #{telephoneHasNarcoticsMessageCounts,jdbcType=INTEGER}, 
+      #{telephoneHasNarcoticsExistenceCounts,jdbcType=INTEGER}, #{telephoneInNarcoticsContactCounts,jdbcType=INTEGER}, 
+      #{telephoneInNarcoticsCallCounts,jdbcType=INTEGER}, #{wechatHasNarcoticsContactCounts,jdbcType=INTEGER}, 
+      #{wechatInNarcoticsGroupCounts,jdbcType=INTEGER}, #{internetbarOutAndInPoints,jdbcType=INTEGER}, 
+      #{internetbarPoints,jdbcType=INTEGER}, #{internetbarWithNarcoticsCounts,jdbcType=INTEGER}, 
+      #{internetbarWithNarcoticsPoints,jdbcType=INTEGER}, #{internetbarLastTimeCounts,jdbcType=INTEGER}, 
+      #{internetbarLastTimePoints,jdbcType=INTEGER}, #{totalPoints,jdbcType=INTEGER}, 
+      #{creationDate,jdbcType=TIMESTAMP}, #{upTimeDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demomodel.teaffic.dao.TraffickingNarcotics">
+    insert into trafficking_narcotics
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="nation != null">
+        nation,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="idNum != null">
+        id_num,
+      </if>
+      <if test="birthPlace != null">
+        birth_place,
+      </if>
+      <if test="hotelOutAndInCounts != null">
+        hotel_out_and_in_counts,
+      </if>
+      <if test="hotelPoints != null">
+        hotel_points,
+      </if>
+      <if test="hotelLasttimeRoomCounts != null">
+        hotel_lasttime_room_counts,
+      </if>
+      <if test="hotelLasttimeRoomPoints != null">
+        hotel_lasttime_room_points,
+      </if>
+      <if test="hotelShareWithNarcoticsCounts != null">
+        hotel_share_with_narcotics_counts,
+      </if>
+      <if test="hotelShareWithNarcoticsPoints != null">
+        hotel_share_with_narcotics_points,
+      </if>
+      <if test="recreationOutAndInCount != null">
+        recreation_out_and_in_count,
+      </if>
+      <if test="recreationPoints != null">
+        recreation__points,
+      </if>
+      <if test="recreationWithNarcoticsCounts != null">
+        recreation_with_narcotics_counts,
+      </if>
+      <if test="recreationWithNarcoticsPoints != null">
+        recreation_with_narcotics_points,
+      </if>
+      <if test="travelPoints != null">
+        travel_points,
+      </if>
+      <if test="travelPlacePoints != null">
+        travel_place_points,
+      </if>
+      <if test="travelWithNarcoticsCounts != null">
+        travel_with_narcotics_counts,
+      </if>
+      <if test="travelWithNarcoticsPoints != null">
+        travel_with_narcotics_points,
+      </if>
+      <if test="travelWithTrainNarcoticsCounts != null">
+        travel_with_train_narcotics_counts,
+      </if>
+      <if test="travelWithTrainNarcoticsPoints != null">
+        travel_with_train_narcotics_points,
+      </if>
+      <if test="travelWithPlaneNarcoticsCounts != null">
+        travel_with_plane_narcotics_counts,
+      </if>
+      <if test="travelWithPlaneNarcoticsPoints != null">
+        travel_with_plane_narcotics_points,
+      </if>
+      <if test="travelWithCarNarcoticsCounts != null">
+        travel_with_car_narcotics_counts,
+      </if>
+      <if test="travelWithCarNarcoticsPoints != null">
+        travel_with_car_narcotics_points,
+      </if>
+      <if test="telephonePoints != null">
+        telephone_points,
+      </if>
+      <if test="telephoneTotalCounts != null">
+        telephone_total_counts,
+      </if>
+      <if test="telephoneHasNarcoticsMessageCounts != null">
+        telephone_has_narcotics_message_counts,
+      </if>
+      <if test="telephoneHasNarcoticsExistenceCounts != null">
+        telephone_has_narcotics_existence_counts,
+      </if>
+      <if test="telephoneInNarcoticsContactCounts != null">
+        telephone_in_narcotics_contact_counts,
+      </if>
+      <if test="telephoneInNarcoticsCallCounts != null">
+        telephone_in_narcotics_call_counts,
+      </if>
+      <if test="wechatHasNarcoticsContactCounts != null">
+        wechat_has_narcotics_contact_counts,
+      </if>
+      <if test="wechatInNarcoticsGroupCounts != null">
+        wechat_in_narcotics_group_counts,
+      </if>
+      <if test="internetbarOutAndInPoints != null">
+        internetbar_out_and_in_points,
+      </if>
+      <if test="internetbarPoints != null">
+        internetbar_points,
+      </if>
+      <if test="internetbarWithNarcoticsCounts != null">
+        internetbar_with_narcotics_counts,
+      </if>
+      <if test="internetbarWithNarcoticsPoints != null">
+        internetbar_with_narcotics_points,
+      </if>
+      <if test="internetbarLastTimeCounts != null">
+        internetbar_last_time_counts,
+      </if>
+      <if test="internetbarLastTimePoints != null">
+        internetbar_last_time_points,
+      </if>
+      <if test="totalPoints != null">
+        total_points,
+      </if>
+      <if test="creationDate != null">
+        creation_date,
+      </if>
+      <if test="upTimeDate != null">
+        up_time_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="nation != null">
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="idNum != null">
+        #{idNum,jdbcType=VARCHAR},
+      </if>
+      <if test="birthPlace != null">
+        #{birthPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="hotelOutAndInCounts != null">
+        #{hotelOutAndInCounts,jdbcType=INTEGER},
+      </if>
+      <if test="hotelPoints != null">
+        #{hotelPoints,jdbcType=INTEGER},
+      </if>
+      <if test="hotelLasttimeRoomCounts != null">
+        #{hotelLasttimeRoomCounts,jdbcType=INTEGER},
+      </if>
+      <if test="hotelLasttimeRoomPoints != null">
+        #{hotelLasttimeRoomPoints,jdbcType=INTEGER},
+      </if>
+      <if test="hotelShareWithNarcoticsCounts != null">
+        #{hotelShareWithNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="hotelShareWithNarcoticsPoints != null">
+        #{hotelShareWithNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="recreationOutAndInCount != null">
+        #{recreationOutAndInCount,jdbcType=INTEGER},
+      </if>
+      <if test="recreationPoints != null">
+        #{recreationPoints,jdbcType=INTEGER},
+      </if>
+      <if test="recreationWithNarcoticsCounts != null">
+        #{recreationWithNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="recreationWithNarcoticsPoints != null">
+        #{recreationWithNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="travelPoints != null">
+        #{travelPoints,jdbcType=INTEGER},
+      </if>
+      <if test="travelPlacePoints != null">
+        #{travelPlacePoints,jdbcType=INTEGER},
+      </if>
+      <if test="travelWithNarcoticsCounts != null">
+        #{travelWithNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="travelWithNarcoticsPoints != null">
+        #{travelWithNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="travelWithTrainNarcoticsCounts != null">
+        #{travelWithTrainNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="travelWithTrainNarcoticsPoints != null">
+        #{travelWithTrainNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="travelWithPlaneNarcoticsCounts != null">
+        #{travelWithPlaneNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="travelWithPlaneNarcoticsPoints != null">
+        #{travelWithPlaneNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="travelWithCarNarcoticsCounts != null">
+        #{travelWithCarNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="travelWithCarNarcoticsPoints != null">
+        #{travelWithCarNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="telephonePoints != null">
+        #{telephonePoints,jdbcType=INTEGER},
+      </if>
+      <if test="telephoneTotalCounts != null">
+        #{telephoneTotalCounts,jdbcType=INTEGER},
+      </if>
+      <if test="telephoneHasNarcoticsMessageCounts != null">
+        #{telephoneHasNarcoticsMessageCounts,jdbcType=INTEGER},
+      </if>
+      <if test="telephoneHasNarcoticsExistenceCounts != null">
+        #{telephoneHasNarcoticsExistenceCounts,jdbcType=INTEGER},
+      </if>
+      <if test="telephoneInNarcoticsContactCounts != null">
+        #{telephoneInNarcoticsContactCounts,jdbcType=INTEGER},
+      </if>
+      <if test="telephoneInNarcoticsCallCounts != null">
+        #{telephoneInNarcoticsCallCounts,jdbcType=INTEGER},
+      </if>
+      <if test="wechatHasNarcoticsContactCounts != null">
+        #{wechatHasNarcoticsContactCounts,jdbcType=INTEGER},
+      </if>
+      <if test="wechatInNarcoticsGroupCounts != null">
+        #{wechatInNarcoticsGroupCounts,jdbcType=INTEGER},
+      </if>
+      <if test="internetbarOutAndInPoints != null">
+        #{internetbarOutAndInPoints,jdbcType=INTEGER},
+      </if>
+      <if test="internetbarPoints != null">
+        #{internetbarPoints,jdbcType=INTEGER},
+      </if>
+      <if test="internetbarWithNarcoticsCounts != null">
+        #{internetbarWithNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="internetbarWithNarcoticsPoints != null">
+        #{internetbarWithNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="internetbarLastTimeCounts != null">
+        #{internetbarLastTimeCounts,jdbcType=INTEGER},
+      </if>
+      <if test="internetbarLastTimePoints != null">
+        #{internetbarLastTimePoints,jdbcType=INTEGER},
+      </if>
+      <if test="totalPoints != null">
+        #{totalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="creationDate != null">
+        #{creationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="upTimeDate != null">
+        #{upTimeDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.demomodel.teaffic.dao.TraffickingNarcoticsExample" resultType="java.lang.Long">
+    select count(*) from trafficking_narcotics
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update trafficking_narcotics
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gender != null">
+        gender = #{record.gender,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nation != null">
+        nation = #{record.nation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthday != null">
+        birthday = #{record.birthday,jdbcType=VARCHAR},
+      </if>
+      <if test="record.idNum != null">
+        id_num = #{record.idNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthPlace != null">
+        birth_place = #{record.birthPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hotelOutAndInCounts != null">
+        hotel_out_and_in_counts = #{record.hotelOutAndInCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.hotelPoints != null">
+        hotel_points = #{record.hotelPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.hotelLasttimeRoomCounts != null">
+        hotel_lasttime_room_counts = #{record.hotelLasttimeRoomCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.hotelLasttimeRoomPoints != null">
+        hotel_lasttime_room_points = #{record.hotelLasttimeRoomPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.hotelShareWithNarcoticsCounts != null">
+        hotel_share_with_narcotics_counts = #{record.hotelShareWithNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.hotelShareWithNarcoticsPoints != null">
+        hotel_share_with_narcotics_points = #{record.hotelShareWithNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.recreationOutAndInCount != null">
+        recreation_out_and_in_count = #{record.recreationOutAndInCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.recreationPoints != null">
+        recreation__points = #{record.recreationPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.recreationWithNarcoticsCounts != null">
+        recreation_with_narcotics_counts = #{record.recreationWithNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.recreationWithNarcoticsPoints != null">
+        recreation_with_narcotics_points = #{record.recreationWithNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.travelPoints != null">
+        travel_points = #{record.travelPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.travelPlacePoints != null">
+        travel_place_points = #{record.travelPlacePoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.travelWithNarcoticsCounts != null">
+        travel_with_narcotics_counts = #{record.travelWithNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.travelWithNarcoticsPoints != null">
+        travel_with_narcotics_points = #{record.travelWithNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.travelWithTrainNarcoticsCounts != null">
+        travel_with_train_narcotics_counts = #{record.travelWithTrainNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.travelWithTrainNarcoticsPoints != null">
+        travel_with_train_narcotics_points = #{record.travelWithTrainNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.travelWithPlaneNarcoticsCounts != null">
+        travel_with_plane_narcotics_counts = #{record.travelWithPlaneNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.travelWithPlaneNarcoticsPoints != null">
+        travel_with_plane_narcotics_points = #{record.travelWithPlaneNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.travelWithCarNarcoticsCounts != null">
+        travel_with_car_narcotics_counts = #{record.travelWithCarNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.travelWithCarNarcoticsPoints != null">
+        travel_with_car_narcotics_points = #{record.travelWithCarNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.telephonePoints != null">
+        telephone_points = #{record.telephonePoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.telephoneTotalCounts != null">
+        telephone_total_counts = #{record.telephoneTotalCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.telephoneHasNarcoticsMessageCounts != null">
+        telephone_has_narcotics_message_counts = #{record.telephoneHasNarcoticsMessageCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.telephoneHasNarcoticsExistenceCounts != null">
+        telephone_has_narcotics_existence_counts = #{record.telephoneHasNarcoticsExistenceCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.telephoneInNarcoticsContactCounts != null">
+        telephone_in_narcotics_contact_counts = #{record.telephoneInNarcoticsContactCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.telephoneInNarcoticsCallCounts != null">
+        telephone_in_narcotics_call_counts = #{record.telephoneInNarcoticsCallCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.wechatHasNarcoticsContactCounts != null">
+        wechat_has_narcotics_contact_counts = #{record.wechatHasNarcoticsContactCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.wechatInNarcoticsGroupCounts != null">
+        wechat_in_narcotics_group_counts = #{record.wechatInNarcoticsGroupCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.internetbarOutAndInPoints != null">
+        internetbar_out_and_in_points = #{record.internetbarOutAndInPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.internetbarPoints != null">
+        internetbar_points = #{record.internetbarPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.internetbarWithNarcoticsCounts != null">
+        internetbar_with_narcotics_counts = #{record.internetbarWithNarcoticsCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.internetbarWithNarcoticsPoints != null">
+        internetbar_with_narcotics_points = #{record.internetbarWithNarcoticsPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.internetbarLastTimeCounts != null">
+        internetbar_last_time_counts = #{record.internetbarLastTimeCounts,jdbcType=INTEGER},
+      </if>
+      <if test="record.internetbarLastTimePoints != null">
+        internetbar_last_time_points = #{record.internetbarLastTimePoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.totalPoints != null">
+        total_points = #{record.totalPoints,jdbcType=INTEGER},
+      </if>
+      <if test="record.creationDate != null">
+        creation_date = #{record.creationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.upTimeDate != null">
+        up_time_date = #{record.upTimeDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update trafficking_narcotics
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      gender = #{record.gender,jdbcType=VARCHAR},
+      nation = #{record.nation,jdbcType=VARCHAR},
+      birthday = #{record.birthday,jdbcType=VARCHAR},
+      id_num = #{record.idNum,jdbcType=VARCHAR},
+      birth_place = #{record.birthPlace,jdbcType=VARCHAR},
+      hotel_out_and_in_counts = #{record.hotelOutAndInCounts,jdbcType=INTEGER},
+      hotel_points = #{record.hotelPoints,jdbcType=INTEGER},
+      hotel_lasttime_room_counts = #{record.hotelLasttimeRoomCounts,jdbcType=INTEGER},
+      hotel_lasttime_room_points = #{record.hotelLasttimeRoomPoints,jdbcType=INTEGER},
+      hotel_share_with_narcotics_counts = #{record.hotelShareWithNarcoticsCounts,jdbcType=INTEGER},
+      hotel_share_with_narcotics_points = #{record.hotelShareWithNarcoticsPoints,jdbcType=INTEGER},
+      recreation_out_and_in_count = #{record.recreationOutAndInCount,jdbcType=INTEGER},
+      recreation__points = #{record.recreationPoints,jdbcType=INTEGER},
+      recreation_with_narcotics_counts = #{record.recreationWithNarcoticsCounts,jdbcType=INTEGER},
+      recreation_with_narcotics_points = #{record.recreationWithNarcoticsPoints,jdbcType=INTEGER},
+      travel_points = #{record.travelPoints,jdbcType=INTEGER},
+      travel_place_points = #{record.travelPlacePoints,jdbcType=INTEGER},
+      travel_with_narcotics_counts = #{record.travelWithNarcoticsCounts,jdbcType=INTEGER},
+      travel_with_narcotics_points = #{record.travelWithNarcoticsPoints,jdbcType=INTEGER},
+      travel_with_train_narcotics_counts = #{record.travelWithTrainNarcoticsCounts,jdbcType=INTEGER},
+      travel_with_train_narcotics_points = #{record.travelWithTrainNarcoticsPoints,jdbcType=INTEGER},
+      travel_with_plane_narcotics_counts = #{record.travelWithPlaneNarcoticsCounts,jdbcType=INTEGER},
+      travel_with_plane_narcotics_points = #{record.travelWithPlaneNarcoticsPoints,jdbcType=INTEGER},
+      travel_with_car_narcotics_counts = #{record.travelWithCarNarcoticsCounts,jdbcType=INTEGER},
+      travel_with_car_narcotics_points = #{record.travelWithCarNarcoticsPoints,jdbcType=INTEGER},
+      telephone_points = #{record.telephonePoints,jdbcType=INTEGER},
+      telephone_total_counts = #{record.telephoneTotalCounts,jdbcType=INTEGER},
+      telephone_has_narcotics_message_counts = #{record.telephoneHasNarcoticsMessageCounts,jdbcType=INTEGER},
+      telephone_has_narcotics_existence_counts = #{record.telephoneHasNarcoticsExistenceCounts,jdbcType=INTEGER},
+      telephone_in_narcotics_contact_counts = #{record.telephoneInNarcoticsContactCounts,jdbcType=INTEGER},
+      telephone_in_narcotics_call_counts = #{record.telephoneInNarcoticsCallCounts,jdbcType=INTEGER},
+      wechat_has_narcotics_contact_counts = #{record.wechatHasNarcoticsContactCounts,jdbcType=INTEGER},
+      wechat_in_narcotics_group_counts = #{record.wechatInNarcoticsGroupCounts,jdbcType=INTEGER},
+      internetbar_out_and_in_points = #{record.internetbarOutAndInPoints,jdbcType=INTEGER},
+      internetbar_points = #{record.internetbarPoints,jdbcType=INTEGER},
+      internetbar_with_narcotics_counts = #{record.internetbarWithNarcoticsCounts,jdbcType=INTEGER},
+      internetbar_with_narcotics_points = #{record.internetbarWithNarcoticsPoints,jdbcType=INTEGER},
+      internetbar_last_time_counts = #{record.internetbarLastTimeCounts,jdbcType=INTEGER},
+      internetbar_last_time_points = #{record.internetbarLastTimePoints,jdbcType=INTEGER},
+      total_points = #{record.totalPoints,jdbcType=INTEGER},
+      creation_date = #{record.creationDate,jdbcType=TIMESTAMP},
+      up_time_date = #{record.upTimeDate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

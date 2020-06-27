@@ -22,7 +22,7 @@ import com.demomodel.interfaceDesign.notes.personInfo;
  *
  */
 
-@Component()
+//@Component()
 public class ApplicationContextListener implements ApplicationListener<ContextRefreshedEvent> {
 	private static Logger log = LoggerFactory.getLogger(ApplicationContextListener.class);
 private ServletContext servletContext;

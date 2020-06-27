@@ -24,14 +24,16 @@ public class ReqInterceptor extends HandlerInterceptorAdapter {
       System.err.println("request请求地址path[{}] uri[{}]"+request.getServletPath()+request.getRequestURI());
 		//request.getHeader(String) 从请求头中获取数据
 		//从请求头中获取用户token（登陆凭证根据业务而定）
-		Long userId= getUserId(request.getHeader("H-User-Token"));
-		if (userId != null && checkAuth(userId,request.getRequestURI())){
-			return true;
-		}
-		//这里的异常是我自定义的异常，系统抛出异常后框架捕获异常然后转为统一的格式返回给前端， 其实这里也可以返回false
-	//	throw new FastRuntimeException(20001,"No access");
-		return false;
+//		Long userId= getUserId(request.getHeader("H-User-Token"));
+//		if (userId != null && checkAuth(userId,request.getRequestURI())){
+//			return true;
+//		}
+//		//这里的异常是我自定义的异常，系统抛出异常后框架捕获异常然后转为统一的格式返回给前端， 其实这里也可以返回false
+//	//	throw new FastRuntimeException(20001,"No access");
+//		return false;
 //https://blog.csdn.net/zhibo_lv/java/article/details/81699360
+      
+      return true;
     
     }
     /**

@@ -14,11 +14,11 @@ public class DispatcherConfig extends WebMvcConfigurerAdapter {
 
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");//成功
+       registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");//成功
         registry.addResourceHandler("swagger-ui.html")
-        .addResourceLocations("classpath:/META-INF/resources/");
+       .addResourceLocations("classpath:/META-INF/resources/");
 
-    registry.addResourceHandler("/webjars/**") 
+   registry.addResourceHandler("/webjars/**") 
         .addResourceLocations("classpath:/META-INF/resources/webjars/");
         super.addResourceHandlers(registry);
     }

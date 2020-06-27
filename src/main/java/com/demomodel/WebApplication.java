@@ -28,6 +28,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.HandlerAdapter;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 
 import com.demomodel.filter.midengFile.config.IdempotentFilter;
@@ -36,14 +37,15 @@ import com.demomodel.utils.httpHelp.file.HttpServletRequestReplacedFilter;
 
 
 //,"com.demomodel.configure.doubledatasource.textdoubledatasource.master.map","com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map"
-@MapperScan({"com.demomodel.mysqlcontroller.mapper","com.demomodel.configure.doubledatasource.textdoubledatasource.master.map","com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map","com.demomodel.query.config.ScheduledUtil","com.demomodel.query.Schedulequery.dao","com.demomodel.mybatisPlus.dao","com.demomodel.utils.mybatis.programme2.txt.com.zzg.springboot.mapper","com.demomodel.utils.Excel.map"}) //扫描的mapper
+@MapperScan({"com.demomodel.mysqlcontroller.mapper","com.demomodel.configure.doubledatasource.textdoubledatasource.master.map","com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map","com.demomodel.query.config.ScheduledUtil","com.demomodel.query.Schedulequery.dao","com.demomodel.mybatisPlus.dao","com.demomodel.utils.mybatis.programme2.txt.com.zzg.springboot.mapper","com.demomodel.utils.Excel.map","com.demomodel.query.quartzdemo.dao"}) //扫描的mapper
 @EnableScheduling  //声明定时任务
 @SpringBootApplication
 @ServletComponentScan    //让@WebFilter起作用
 @EnableFeignClients   //启动fegin
-@ComponentScan(basePackages = { "com.demomodel" })
+@ComponentScan(basePackages = { "com" })
 @EnableTransactionManagement //开启事务支持
-public class WebApplication {  
+@EnableWebMvc 
+public class WebApplication {    
 
 	public static void main(String[] args) {
 		// 启动方式一：
@@ -60,41 +62,41 @@ public class WebApplication {
 //              .run(args);
 	}
 	//配置拦截器    防止流丢失的拦截器
-	@Bean
-	public FilterRegistrationBean httpServletRequestReplacedRegistration() {
-		FilterRegistrationBean registration = new FilterRegistrationBean();
-		//&&  implements Filter
-		registration.setFilter(new HttpServletRequestReplacedFilter());//&& 防止流丢失的拦截器  HttpServletRequestReplacedFilter
-		registration.addUrlPatterns("/*");
-        registration.addInitParameter("paramName", "paramValue");
-		registration.setName("httpServletRequestReplacedFilter");
-		registration.setOrder(1);
-		return registration;  
-	}
+//	@Bean
+//	public FilterRegistrationBean httpServletRequestReplacedRegistration() {
+//		FilterRegistrationBean registration = new FilterRegistrationBean();
+//		//&&  implements Filter
+//		registration.setFilter(new HttpServletRequestReplacedFilter());//&& 防止流丢失的拦截器  HttpServletRequestReplacedFilter
+//		registration.addUrlPatterns("/*");
+//        registration.addInitParameter("paramName", "paramValue");
+//		registration.setName("httpServletRequestReplacedFilter");
+//		registration.setOrder(1);
+//		return registration;  
+//	}
 	
 	
 
-	/**
+	/**   影响静态文件访问
 	 * 初始化RequestMappingHandlerAdapter，并加载Http的Json转换器
 	 * @return  RequestMappingHandlerAdapter 对象
 	 */
-	@Bean(name="requestMappingHandlerAdapter") 
-	public HandlerAdapter initRequestMappingHandlerAdapter() {
-		//创建RequestMappingHandlerAdapter适配器
-		RequestMappingHandlerAdapter rmhd = new RequestMappingHandlerAdapter();
-		// HTTP JSON转换器
-		MappingJackson2HttpMessageConverter  jsonConverter 
-	        = new MappingJackson2HttpMessageConverter();
-		//MappingJackson2HttpMessageConverter接收JSON类型消息的转换
-		MediaType mediaType = MediaType.APPLICATION_JSON_UTF8;
-		List<MediaType> mediaTypes = new ArrayList<MediaType>();
-		mediaTypes.add(mediaType);
-		//加入转换器的支持类型
-		jsonConverter.setSupportedMediaTypes(mediaTypes);
-		//往适配器加入json转换器
-		rmhd.getMessageConverters().add(jsonConverter);
-		return rmhd;
-	}
+//	@Bean(name="requestMappingHandlerAdapter") 
+//	public HandlerAdapter initRequestMappingHandlerAdapter() {
+//		//创建RequestMappingHandlerAdapter适配器
+//		RequestMappingHandlerAdapter rmhd = new RequestMappingHandlerAdapter();
+//		// HTTP JSON转换器
+//		MappingJackson2HttpMessageConverter  jsonConverter 
+//	        = new MappingJackson2HttpMessageConverter();
+//		//MappingJackson2HttpMessageConverter接收JSON类型消息的转换
+//		MediaType mediaType = MediaType.APPLICATION_JSON_UTF8;
+//		List<MediaType> mediaTypes = new ArrayList<MediaType>();
+//		mediaTypes.add(mediaType);
+//		//加入转换器的支持类型
+//		jsonConverter.setSupportedMediaTypes(mediaTypes);  
+//		//往适配器加入json转换器
+//		rmhd.getMessageConverters().add(jsonConverter);
+//		return rmhd;
+//	}
 
 //https://blog.csdn.net/ykzhen2015/java/article/details/70669861
 	

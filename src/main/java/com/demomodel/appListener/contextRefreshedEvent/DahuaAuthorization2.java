@@ -32,7 +32,7 @@ import org.springframework.web.context.support.XmlWebApplicationContext;
 //https://blog.csdn.net/zollty/java/article/details/86137380
  */
 
-@Component()
+//@Component()
 public class DahuaAuthorization2 implements ApplicationListener<ContextRefreshedEvent> {
     
 	@Value("${ip}")

@@ -15,7 +15,6 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Component;
-import org.springframework.ui.velocity.VelocityEngineFactoryBean;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 
@@ -68,15 +67,15 @@ public class AppConfigurationBasicDataSource {
 		return sqlSessionFactory.getObject();
 	}
 	
-	@Bean
-	public VelocityEngine velocityEngine() throws VelocityException, IOException {
-		VelocityEngineFactoryBean velocityEngine = new VelocityEngineFactoryBean();
-		Map<String, Object> velocityPropertiesMap = new HashMap<String, Object>();
-		velocityPropertiesMap.put("resource.loader", "class");
-		velocityPropertiesMap.put("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
-		velocityEngine.setVelocityPropertiesMap(velocityPropertiesMap);
-		return velocityEngine.createVelocityEngine();
-	}
+//	@Bean
+//	public VelocityEngine velocityEngine() throws VelocityException, IOException {
+//		VelocityEngineFactoryBean velocityEngine = new VelocityEngineFactoryBean();
+//		Map<String, Object> velocityPropertiesMap = new HashMap<String, Object>();
+//		velocityPropertiesMap.put("resource.loader", "class");
+//		velocityPropertiesMap.put("class.resource.loader.class", "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
+//		velocityEngine.setVelocityPropertiesMap(velocityPropertiesMap);
+//		return velocityEngine.createVelocityEngine();
+//	}
 	
 //	@Bean
 //    public AccountMapper accountMapper() throws Exception {

@@ -25,7 +25,7 @@ public class GaxxNewServiceImpl   {
 //		int page = totalCount % pageSize == 0 ? totalCount / pageSize : totalCount / pageSize + 1;
 //		System.out.println(": "+page);
 //		int beginSize = 0;
-//		// 0 0-5 2 5-10 3 10 -15
+//		// 0 0-5 2 5-10 3 10 -15  oracle    0,10  10,10   20,10  mysql的分页规则
 //		for (int i = 0; i < page; i++) {
 //			beginSize = pageSize * i;// 0*5 1*5 2*5
 //			System.out.println("白名单分页开始" +  DateUtils.formatDate(new Date(), "yyyy-MM-dd HH:mm:ss"));

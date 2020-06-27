@@ -64,13 +64,13 @@ public class ScheduleSetting implements SchedulingConfigurer {
             public void run() {
                 Class<?> clazz;
                 try {
-                	//反射加载类
-                    clazz = Class.forName(scheduleConfig.getClassName());
+                	//反射加载类            自定义类  
+                    clazz = Class.forName(scheduleConfig.getClassName()); //com.demomodel.query.Schedulequery.controllertext.ScheduledTaskRegistrarTex
                     String className = lowerFirstCapse(clazz.getSimpleName());//&& 下
                     
                     //  springboot 获取对象
                     Object bean = (Object) ApplicationContextHelper.getBean(className);
-                    Method method = ReflectionUtils.findMethod(bean.getClass(), scheduleConfig.getMethod());
+                    Method method = ReflectionUtils.findMethod(bean.getClass(), scheduleConfig.getMethod());//类    schedutask方法
                     ReflectionUtils.invokeMethod(method, bean);
                 } catch (ClassNotFoundException e) {
                      e.printStackTrace();

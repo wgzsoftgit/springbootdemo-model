@@ -33,7 +33,7 @@ public class SpringBeanToolutil implements ApplicationContextAware {
     }
 
     /**
-     * 通过name获取 Bean.
+     * 通过name获取 Bean.  //根据名需要类名的首字母转小写
      * @param name
      * @return
      */
@@ -41,6 +41,18 @@ public class SpringBeanToolutil implements ApplicationContextAware {
         return getApplicationContext().getBean(name);
     }
 
+    /**
+     * 转换首字母小写
+     *com.demomodel.query.Schedulequery.conf.ScheduleSetting  用过
+     * @param str
+     * @return
+     */
+//    public static String lowerFirstCapse(String str) {
+//        char[] chars = str.toCharArray();
+//        chars[0] += 32;
+//        return String.valueOf(chars);
+//    }
+    
     /**
      * 通过class获取Bean.
      * @param clazz
