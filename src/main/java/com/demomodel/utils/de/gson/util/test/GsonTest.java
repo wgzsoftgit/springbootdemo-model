@@ -12,6 +12,16 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+
+/**
+ * web 请求    汉子乱码解决方案  
+ * @RequestMapping(value = "/login",
+ * method = RequestMethod.POST,
+ * produces = "text/html;charset=UTF-8")
+ * 
+ * @author wgz
+ * @date 创建时间：2020年7月10日 下午8:20:15
+ */
 public class GsonTest {
 
 	public static void main(String[] args) {
@@ -40,13 +50,15 @@ public class GsonTest {
 //创建一个JsonParser
 		JsonParser parser = new JsonParser();
 
-//通过JsonParser对象可以把json格式的字符串解析成一个JsonElement对象
+//通过JsonParser对象可以把json格式的字符串解析成一个JsonElement对象    str--String
 		JsonElement el = parser.parse(str);
 
 //把JsonElement对象转换成JsonObject
 		JsonObject jsonObj = null;
 		if (el.isJsonObject()) {
 			jsonObj = el.getAsJsonObject();
+			//添加元素
+			jsonObj.addProperty("type","Human");
 			String sex = jsonObj.get("sex").getAsString();
 			System.out.println("sex:" + sex);
 			JsonArray hobbies = jsonObj.getAsJsonArray("hobby"); //

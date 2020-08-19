@@ -9,12 +9,15 @@ import java.util.concurrent.ThreadPoolExecutor;
 import javax.servlet.Filter;
 
 import org.springframework.boot.Banner;
+import org.apache.catalina.Context;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.tomcat.util.scan.StandardJarScanner;
 import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -61,6 +64,17 @@ public class WebApplication {
 //              .build()
 //              .run(args);
 	}
+	//启动报java.io.FileNotFoundException:
+	@Bean
+    public TomcatServletWebServerFactory tomcatFactory() {
+        return new TomcatServletWebServerFactory() {
+            @Override
+            protected void postProcessContext(Context context) {
+                ((StandardJarScanner) context.getJarScanner()).setScanManifest(false);
+            }
+        };
+    }
+//https://blog.csdn.net/yu_xinghui/java/article/details/106428519
 	//配置拦截器    防止流丢失的拦截器
 //	@Bean
 //	public FilterRegistrationBean httpServletRequestReplacedRegistration() {

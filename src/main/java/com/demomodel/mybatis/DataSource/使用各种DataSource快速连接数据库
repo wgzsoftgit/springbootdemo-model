@@ -1,0 +1,56 @@
+Apache Derby 数据库
+所需JAR包: derbyclient.jar
+
+  org.apache.derby.jdbc.ClientDataSource ds  = new org.apache.derby.jdbc.ClientDataSource();
+  ds.setServerName("localhost");
+  ds.setPortNumber(1527);
+  ds.setDatabaseName("TestDB");
+  Connection con = ds.getConnection();
+如果是只用内嵌式的则是
+
+EmbeddedDataSource dataSource = new EmbeddedDataSource();
+dataSource.setCreateDatabase("create");
+dataSource.setUser("test");
+ 
+ACCESS数据库
+在JDK1.6中自带，不需要第三方JAR包
+
+sun.jdbc.odbc.ee.DataSource ds   = new sun.jdbc.odbc.ee.DataSource();
+ ds.setDatabaseName("HY_ACCESS");
+
+MySQL数据库
+所需JAR包: mysql-connector-java-5.0.7-bin.jar
+
+com.mysql.jdbc.jdbc2.optional.MysqlDataSource ds  = new com.mysql.jdbc.jdbc2.optional.MysqlDataSource();
+  ds.setServerName("localhost");
+  ds.setPortNumber(3306);
+  ds.setDatabaseName("HerongDB");
+  ds.setUser("Herong");
+  ds.setPassword("TopSecret");
+  Connection con = ds.getConnection();
+ 
+Oracle 数据库
+所需JAR包: ojdbc14.jar
+ 
+oracle.jdbc.pool.OracleDataSource ds 
+    = new oracle.jdbc.pool.OracleDataSource();
+  ds.setDriverType("thin");
+  ds.setServerName("localhost");
+  ds.setPortNumber(1521);
+  ds.setDatabaseName("XE"); // Oracle SID
+  ds.setUser("Herong");
+  ds.setPassword("TopSecret");
+  Connection con = ds.getConnection();
+ 
+sqlserver数据库
+所需JAR包: sqljdbc.jar
+
+ 
+DataSource Example:
+  com.microsoft.sqlserver.jdbc.SQLServerDataSource  ds 
+    = new com.microsoft.sqlserver.jdbc.SQLServerDataSource();
+  ds.setServerName("localhost");
+  ds.setPortNumber(1269);
+  ds.setDatabaseName("AdventureWorksLT");
+  ds.setUser("sa");
+  Connection con = ds.getConnection();

@@ -39,6 +39,7 @@ public class Gsonutil {
 		if (element.isJsonObject()) {
 			JsonObject object = element.getAsJsonObject(); // 转化为对象
 
+			
 			// 1. value为string时，取出string
 			String sex = object.get("sex").getAsString();
 			System.out.println("sex:" + sex);

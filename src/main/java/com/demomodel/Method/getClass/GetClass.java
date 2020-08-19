@@ -17,8 +17,8 @@ public class GetClass {
 		  System.err.println(GetClass.class.getResource("/").getPath() + "/");
 		//方式一
 		//调用Object类的getClass()方法来得到Class对象，这也是最常见的产生Class对象的方法。例如：
-	   // A x = null;
-	   // Class c1 = x.getClass();
+	    A x = new A();
+	    Class c1 = x.getClass();
 	   // 2、使用Class类的中静态forName()方法获得与字符串对应的Class对象。例如： 
 	    Class c2=Class.forName("com.demomodel.Method.A");
 	   //获取Class类型对象的第三个方法非
@@ -36,7 +36,7 @@ public class GetClass {
 	  			method.setAccessible(true);
 	  	//参考com.demomodel.mybatis.ThreadPoolUtilMybatis.util.ThreadPoolUtil的使用
 	  	}
-	  		Parameter[] p =  method.getParameters();
+	  		Parameter[] p =  method.getParameters();  //获取方法的   参数
 			for (int j = 0; j < (p==null?0:p.length); j++) { //  将参数全部取出来
 				System.err.println(p[j].getName());////1.8提供的新方法可以取出参数名  
 			}

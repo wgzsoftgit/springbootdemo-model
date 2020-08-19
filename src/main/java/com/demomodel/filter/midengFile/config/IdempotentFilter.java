@@ -1,13 +1,14 @@
 package com.demomodel.filter.midengFile.config;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONException;
-import com.alibaba.fastjson.JSONObject;
-import com.demomodel.filter.midengFile.Idempotent;
-import com.demomodel.filter.midengFile.springContextUtil.SpringContextUtil;
-import com.demomodel.utils.httpHelp.HttpHelper;
-import com.demomodel.utils.httpHelp.RequestReaderHttpServletRequestWrapper;
-import com.demomodel.utils.redis.JedisPool.conf.RedisUtil;
+import java.io.IOException;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.regex.Pattern;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -17,14 +18,14 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.regex.Pattern;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONException;
+import com.alibaba.fastjson.JSONObject;
+import com.demomodel.filter.midengFile.Idempotent;
+import com.demomodel.filter.midengFile.springContextUtil.SpringContextUtil;
+import com.demomodel.utils.httpHelp.file.HttpHelper;
+import com.demomodel.utils.httpHelp.file.RequestReaderHttpServletRequestWrapper;
+import com.demomodel.utils.redis.JedisPool.conf.RedisUtil;
 
 public class IdempotentFilter extends HandlerInterceptorAdapter {
 	private final Logger logger = LoggerFactory.getLogger(IdempotentFilter.class);

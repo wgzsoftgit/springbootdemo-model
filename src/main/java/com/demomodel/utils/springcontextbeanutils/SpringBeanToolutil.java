@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import io.jsonwebtoken.lang.Assert;
 /**
  * 工具类获取
+ * Bean工具类<br>
+ * 在非spring管理的类中获取spring注册的bean
  * @author wgz
  * @date 创建时间：2020年5月7日 下午8:27:23
  */
@@ -18,17 +20,20 @@ public class SpringBeanToolutil implements ApplicationContextAware {
     /**
      * 上下文对象实例
      */
-    private ApplicationContext applicationContext;
+    private static ApplicationContext applicationContext;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
+    	   if (applicationContext == null) {
+               applicationContext = applicationContext;
+           }
+    	//this.applicationContext = applicationContext;
     }
     /**
      * 获取applicationContext
      * @return
      */
-    public ApplicationContext getApplicationContext() {
+    public static ApplicationContext getApplicationContext() {
         return applicationContext;
     }
 
@@ -59,7 +64,7 @@ public class SpringBeanToolutil implements ApplicationContextAware {
      * @param <T>
      * @return
      */
-    public <T> T getBean(Class<T> clazz){
+    public static <T> T getBean(Class<T> clazz){
         return getApplicationContext().getBean(clazz);
     }
 

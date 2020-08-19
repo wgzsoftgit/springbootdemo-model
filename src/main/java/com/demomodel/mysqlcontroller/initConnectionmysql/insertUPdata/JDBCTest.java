@@ -53,6 +53,10 @@ public class JDBCTest {
                 String uname = rs.getString("name");
                 String uemail = rs.getString("email");
                 String uhiredate = rs.getString("hiredate");
+                
+//                int studentId = resultSet.getInt(1);//第一行的第一列数据，我们知道是id，也知道是int类型，
+//                String studentName = resultSet.getString(2);//第二个数据对应name
+
                 //可以将查找到的值写入类，然后返回相应的对象 
                 //这里 先用输出的端口显示一下
                 System.out.println(uname +"\t"+ uemail +"\t"+ uhiredate);

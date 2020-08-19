@@ -36,6 +36,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.test.context.ContextConfiguration;
@@ -84,6 +85,7 @@ public class ServerControllerTest {
 
     @Test
     public void test2() throws Exception {
+    	ClassPathXmlApplicationContext Context=new ClassPathXmlApplicationContext("");
         //找不到控制器，404测试
         MvcResult result = mockMvc.perform(get("/user2/{id}", 1)) //执行请求
                 .andDo(print())

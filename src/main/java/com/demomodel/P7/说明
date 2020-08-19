@@ -1,0 +1,26 @@
+@Conditional是做什么的?
+
+@Conditional多个条件是什么逻辑关系？
+
+条件判断在什么时候执行？
+
+ConfigurationCondition和Condition有什么区别？什么时候使用ConfigurationCondition？
+
+多个Condition执行的顺序是什么样的？可以配置优先级么？
+
+可以介绍一下@Conditional常见的一些用法么？
+————————————————
+版权声明：本文为CSDN博主「路人甲Java」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/likun557/article/details/105108901
+
+Condition默认会对2个过程都有效
+
+总结：
+   @Conditional注解可以标注在spring需要处理的对象上（配置类、@Bean方法），相当于加了个条件判断，通过判断的结果，让spring觉得是否要继续处理被这个注解标注的对象
+
+	spring处理配置类大致有2个过程：解析配置类、注册bean，这两个过程中都可以使用@Conditional来进行控制spring是否需要处理这个过程
+
+	Condition默认会对2个过程都有效
+
+	ConfigurationCondition控制得更细一些，可以控制到具体那个阶段使用条件判断
+原文链接：https://blog.csdn.net/likun557/article/details/105108901

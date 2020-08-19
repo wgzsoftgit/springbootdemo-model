@@ -96,6 +96,8 @@ public class TestFastJosn {
         String jsontext = IOUtils.toString(inputStream, "utf8");
 
         JSONObject obj=JSONObject.parseObject(jsontext);//获取jsonobject对象 ***********
+       // obj.put("key", "value");
+        
         JSONObject obj1 = obj.getJSONObject("data");
         JSONArray jsonArray = obj1.getJSONArray("rows");
         System.out.println("jsonArray:"+jsonArray);

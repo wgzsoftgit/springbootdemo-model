@@ -1,0 +1,23 @@
+PostgreSQL
+
+
+	mvn install:install-file -Dfile=D:\text\lib\PROGRESS_DATADIRECT_JDBC_DRIVER_PIVOTAL_GREENPLUM_5.1.4.jar -DgroupId=com.Mpp -DartifactId=mppjdbc -Dversion=5.1.4 -Dpackaging=jar
+	
+	   <dependency>
+
+  <groupId>com.Mpp</groupId> 
+
+ <artifactId>mppjdbc</artifactId>
+
+<version>5.1.4</version>
+
+ </dependency>
+ mvn install:install-file -Dfile=D:\text\lib\greenplum-jdbc-5.1.4.jar -DgroupId=com.Mpp -DartifactId=greenplum-jdbc -Dversion=5.1.4 -Dpackaging=jar
+	
+	   <dependency>
+
+  <groupId>com.Mpp</groupId> 
+
+ <artifactId>greenplum-jdbc</artifactId>
+
+<version>5.1.4</version>

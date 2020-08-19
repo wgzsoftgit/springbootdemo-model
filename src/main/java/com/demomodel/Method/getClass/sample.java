@@ -1,6 +1,16 @@
 package com.demomodel.Method.getClass;
+
+import javax.servlet.ServletContext;
+
 public class sample{
   public static void main(String[] args){
+	 //web项目获取路径         
+//	  ServletContext servletContext;
+//	  String realPath = servletContext.getRealPath("/");  //D:\workspace-eclipse\tspringbootdemo\
+	
+//   若获取src/main/resources/conf  //需要 	realPath+"WEB-INF/classes/conf"  测试ok
+	  
+	  
     //得到类的简写名称
     System.out.println(sample.class.getSimpleName());//sample
  

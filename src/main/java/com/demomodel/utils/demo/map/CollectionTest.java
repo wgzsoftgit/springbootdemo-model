@@ -1,6 +1,7 @@
 package com.demomodel.utils.demo.map;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -10,6 +11,7 @@ import java.util.TreeSet;
 
 public class CollectionTest {
 	public static void main(String[]args){
+		List<String> listtest= Arrays.asList("a", "B", "c", "d"); //初始化数组
 		List<String> arrayList= new ArrayList<String>();
 		arrayList.add("s1");arrayList.add("s3");arrayList.add("s4");arrayList.add("s5");arrayList.add("s2");
 		System.out.print("ArrayList:==========================");

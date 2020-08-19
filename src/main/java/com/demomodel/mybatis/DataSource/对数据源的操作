@@ -1,0 +1,49 @@
+在java世界里操作数据库有很多方式，在众多方式中除了JDBC外都有DataSource对象。
+
+DataSource可以看作数据源，它封装了数据库参数，连接数据库，程序中操作DataSource对象即可对数据库进行增删改查操作。
+1，DBCP框架
+
+dbcp框架中的DataSource类是：org.apache.commons.dbcp.BasicDataSource
+
+这是commons-dbcp.jar包中的类。
+
+2，C3P0框架
+
+c3p0框架的DataSource类是：com.mchange.v2.c3p0.ComboPooledDataSource
+
+这是c3p0.jar包中的类。
+
+3，MyBatis框架
+
+MyBatis框架的DataSource类是：org.apache.ibatis.datasource.pooled.PooledDataSource
+
+这是mybatis.jar包中的类。
+
+4，Druid框架
+
+Druid框架的DataSource类是：com.alibaba.druid.pool.DruidDataSource
+
+这是druid.jar包中的类。
+
+值得注意的是：
+
+以上框架中的DataSource虽然类不同，但可以混合使用，即在MyBatis框架中可以使用DBCP中的DataSource类，也可以使用Druid框架中的DataSource类。
+Druid并不是一个独立操作数据库的框架，它只提供了DataSource，必须与其他框架配合使用。
+只所以这些DataSource对象可以通用，是因为他们都实现了同一个接口：javax.sql.DataSource。实现DataSource接口即必须重新getConnection方法，即可以获得Connection对象，有了Connection对象即可以对数据库操作。
+
+https://blog.csdn.net/fightingXia/article/details/82555999
+
+
+原生方法
+加载JDBC 驱动：
+Class.forName(driver);// mysql 数据库：“com.mysql.jdbc.Driver”
+建立数据库连接：
+Connection conn=DriverManager.getConnection(url,userName,password);
+创建 statement，用来执行SQL 语句：
+Statement statement =conn.createStatement();
+执行 SQL 语句：
+ResultSet rs =statement.executeQuery(sql);
+关闭记录集，关闭声明，关闭连接对象
+不足：
+每次使用都要创建连接，使用完毕后还必须关闭连接，操作繁琐，易出错；
+连接数据库资源不便统一管理；

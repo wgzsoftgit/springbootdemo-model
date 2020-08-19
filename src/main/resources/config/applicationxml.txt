@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+ 
+    <!--使Spring支持自动检测组件，如注解的@Controller -->
+    <context:component-scan base-package="com.parry.test.*" />
+    <bean
+        class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />
+    <bean
+        class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+                       
+    <!-- 数据库配置 -->
+    <bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+        destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver" />
+         <!-- 测试数据库 -->
+       <!--  <property name="jdbcUrl"
+            value="jdbc:mysql://127.0.0.1:3066/TESTDB?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true" /> -->
+        <property name="username" value="root" />
+        <property name="password" value="root" />
+        
+        <!-- 检查数据库连接池中空闲连接的间隔时间，单位是分，默认值：240，如果要取消则设置为0 -->
+        <property name="idleConnectionTestPeriod" value="240" />
+        <!-- 连接池中未使用的链接最大存活时间，单位是分，默认值：30，如果要永远存活设置为0 -->
+        <!-- 数据库连接池过期时间应小于等于mysql的过期时间和mycat的过期时间 -->
+        <property name="idleMaxAge" value="20" />
+        <!-- 每个分区最大的连接数 -->
+        <property name="maxConnectionsPerPartition" value="100" />
+        <!-- 每个分区最小的连接数 -->
+        <property name="minConnectionsPerPartition" value="20" />
+        <!-- 分区数 ，默认值2，最小1，推荐3-4，视应用而定 -->
+        <property name="partitionCount" value="1" />
+        <!-- 每次去拿数据库连接的时候一次性要拿几个,默认值：2 -->
+        <property name="acquireIncrement" value="2" />
+        <!-- 缓存prepared statements的大小，默认值：0 -->
+        <property name="statementsCacheSize" value="0" />
+        <property name="connectionTimeoutInMs" value="100" />
+        <!-- 每个分区释放链接助理进程的数量，默认值：3，除非你的一个数据库连接的时间内做了很多工作，不然过多的助理进程会影响你的性能 -->
+        <property name="releaseHelperThreads" value="3" />
+    </bean>
+    <!-- 配置SqlSessionFactoryBean -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:mybatis.xml" />
+        <!-- mapper和resultmap配置路径 -->
+        <property name="mapperLocations">
+            <list>
+                <!-- 表示在com.sfpay.mapper包或以下所有目录中，以-resultmap.xml结尾所有文件 -->
+                <value>classpath:com/parry/test/dao/config/*.xml</value>
+            </list>
+        </property>
+    </bean>
+    <!-- 配置mapper接口 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.cn21.calendar.dao" />
+    </bean>
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory" />
+    </bean>
+    <!-- 事务配置 -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!-- 用于持有ApplicationContext,可以使用SpringContextHolder.getBean('xxxx')的静态方法得到spring 
+        bean对象 -->
+    <bean class="com.parry.test.springcontext.SpringContextHolder"
+        lazy-init="false" />
+ 
+    <!-- 定时器 begin -->
+    <!-- 赛程 调度业务对象 -->
+    <bean id="deletePastOrderJob" class="com.parry.test.function.PublicTypeFunction" />
+    <!-- 赛程 调度业务 -->
+    <bean id="deletePastOrderTask"
+        class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="deletePastOrderJob" />
+        <property name="targetMethod" value="deletePastOrder" />
+    </bean>
+    <!-- 赛程 调度器触发器 每天早上07:00执行一次 -->
+    <bean id="deletePastOrderTaskTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="deletePastOrderTask" />
+        <property name="cronExpression" value="0 13 09 * * ? *" />
+    </bean>
+    <!-- 设置调度 -->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <!-- <ref bean="deletePastOrderTaskTrigger" /> -->
+            </list>
+        </property>
+    </bean>
+    <!-- 定时器 end -->
+    <!-- 服务器启动，初始化项目配置参数 -->
+    <bean name="InitalizeBean" class="com.parry.test.configure.impl.InitalizeBean" />
+</beans>

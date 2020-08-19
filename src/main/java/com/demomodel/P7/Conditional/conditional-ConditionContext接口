@@ -1,0 +1,50 @@
+@Conditional使用的3步骤
+自定义一个类，实现Condition或ConfigurationCondition接口，实现matches方法
+在目标对象上使用@Conditional注解，并指定value的指为自定义的Condition类型
+启动spring容器加载资源，此时@Conditional就会起作用了
+原文链接：https://blog.csdn.net/likun557/article/details/105108901
+
+
+@Target({ElementType.TYPE, ElementType.METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Conditional {
+    Class<? extends Condition>[] value();
+}
+这个注解只有一个value参数，Condition类型的数组，Condition是一个接口，表示一个条件判断，内部有个方法返回true或false，当所有Condition都成立的时候，@Conditional的结果才成立。
+
+下面我们来看一下Condition接口。
+原文链接：https://blog.csdn.net/likun557/article/details/105108901
+
+
+
+@FunctionalInterface
+public interface Condition {
+    /*** 判断条件是否匹配
+     * context:条件判断上下文
+     */
+    boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata);
+}
+是一个函数式接口，内部只有一个matches方法，用来判断条件是否成立的，2个参数：
+context：条件上下文，ConditionContext接口类型的，可以用来获取容器中的个人信息
+metadata：用来获取被@Conditional标注的对象上的所有注解信息
+原文链接：https://blog.csdn.net/likun557/article/details/105108901
+
+
+ConfigurationCondition接口
+public interface ConfigurationCondition extends Condition {
+    /*** 条件判断的阶段，是在解析配置类的时候过滤还是在创建bean的时候过滤*/
+    ConfigurationPhase getConfigurationPhase();
+    /*** 表示阶段的枚举：2个值*/
+    enum ConfigurationPhase {
+        /** *配置类解析阶段，如果条件为false，配置类将不会被解析*/
+        PARSE_CONFIGURATION,
+        /*** bean注册阶段，如果为false，bean将不会被注册  */
+        REGISTER_BEAN
+    }
+}
+原文链接：https://blog.csdn.net/likun557/article/details/105108901
+ConfigurationCondition接口相对于Condition接口多了一个getConfigurationPhase方法，
+用来指定条件判断的阶段，是在解析配置类的时候过滤还是在创建bean的时候过滤。
+
+

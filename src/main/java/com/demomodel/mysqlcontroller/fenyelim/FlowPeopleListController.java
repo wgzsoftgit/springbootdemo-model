@@ -166,7 +166,7 @@ SELECT count(1),s.hotel_name,s.type FROM irregular_hotel s where s.type in (1,2)
 SELECT count(1),s.hotel_name,s.type FROM irregular_hotel s where s.type in (1 , 2) GROUP BY s.hotel_name, s.type 
 
 SELECT a.id,a.hotel_name,a.hotel_address, a.type,b.counts ,a.check_out_date  FROM irregular_hotel a,(SELECT count(1) as counts,s.hotel_name FROM irregular_hotel s where s.type in (1,2) GROUP BY  s.hotel_name, s.type  ) b WHERE b.hotel_name=a.hotel_name and a.type in (1,2) GROUP BY a.hotel_name, a.type
-  -->
+  -->   ____________查询条件一定要一致______________
  <select id="totalCount" parameterType="com.bayee.domain.IrregularHotel"
 		resultType="java.lang.Integer">	
    select count(*) from(  SELECT count(1) FROM irregular_hotel a,( SELECT count(1) as counts,s.hotel_name ,s.type FROM irregular_hotel s 

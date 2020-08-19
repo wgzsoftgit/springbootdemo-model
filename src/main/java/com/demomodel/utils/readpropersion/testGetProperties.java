@@ -20,10 +20,10 @@ public class testGetProperties {
 
 	public static void main(String[] args) throws IOException {
 		writpro(); //文件写入内容  /resurce文件下
-		System.err.println(readSecret());
-		readProperties();
-		//readProperties2();
-		writeProperties();
+		System.err.println(readSecret());  //读取文件
+//		readProperties();
+//		//readProperties2();
+//		writeProperties();
 		
 	}
 

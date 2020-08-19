@@ -1,0 +1,9 @@
+需求
+IService接口有两个实现类Service1和Service1，这两个类会放在2个配置类中通过@Bean的方式来注册到容器，
+此时我们想加个限制，只允许有一个IService类型的bean被注册到容器。
+
+可以在@Bean标注的2个方法上面加上条件限制，当容器中不存在IService类型的bean时，才将这个方法定义的bean注册到容器，
+下面来看代码实现。
+————————————————
+版权声明：本文为CSDN博主「路人甲Java」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/likun557/article/details/105108901

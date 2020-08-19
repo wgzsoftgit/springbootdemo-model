@@ -48,7 +48,7 @@ public class ESConfig {
     @Bean
     public RestClientBuilder restClientBuilder() {
         HttpHost[] hosts = Arrays.stream(address)
-                .map(this::makeHttpHost)
+                .map(this::makeHttpHost)   //&&
                 .filter(Objects::nonNull)
                 .toArray(HttpHost[]::new);
         log.debug("hosts:{}", Arrays.toString(hosts));

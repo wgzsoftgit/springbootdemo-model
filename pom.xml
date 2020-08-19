@@ -12,9 +12,10 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.0.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository 2.1.0.RELEASE -->
 	</parent>
 	<properties>
+	    <java.version>1.8</java.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<encoding>UTF-8</encoding>
@@ -24,6 +25,24 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			 <exclusions>
+			 
+		<!-- 	    
+            <exclusion>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+            </exclusion>
+  -->
+           <!--      <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion> -->
+           
+         <!--  <exclusion>
+               <groupId>org.slf4j</groupId>
+               <artifactId>slf4j-log4j12</artifactId>
+          </exclusion> -->
+          </exclusions>
 		</dependency>
 
 
@@ -260,13 +279,13 @@
 			<artifactId>commons-lang3</artifactId>
 			<!-- <version>${apache.commons-lang3}</version> -->
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
+		<!-- 文件上传 fileutils  https://mvnrepository.com/artifact/org.apache.commons/commons-io   -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>1.3.2</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<!-- 文件上传  https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
@@ -342,7 +361,7 @@ https://blog.csdn.net/qq_22177809/article/details/86592660  -->
     <artifactId>javax.ws.rs-api</artifactId>
     <version>2.1</version>
    </dependency>
-   <!--  漏桶算法  用于限流-->
+   <!--  漏桶算法  用于限流       webmagic需要-->
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
@@ -353,6 +372,11 @@ https://blog.csdn.net/qq_22177809/article/details/86592660  -->
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.12</artifactId>
+            <!-- <version>1.1.0</version> -->
         </dependency>
           <!--quartz依赖-->
         <dependency>
@@ -398,11 +422,11 @@ https://blog.csdn.net/qq_22177809/article/details/86592660  -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-         <dependency>
+     <!--     <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.7</version>
-        </dependency>
+        </dependency> -->
         
          <!-- Java High Level REST Client -->
         <dependency>
@@ -420,7 +444,189 @@ https://blog.csdn.net/qq_22177809/article/details/86592660  -->
 			<groupId>io.searchbox</groupId>
 			<artifactId>jest</artifactId>
 		</dependency>
+		     <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+        </dependency>
+        <dependency>
+           <groupId>org.elasticsearch.client</groupId>
+           <artifactId>transport</artifactId>
+           <version>${elasticsearch.version}</version>
+        </dependency>
+
+		
+		<!-- hadoop   -->
+		<dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-common</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <!--  解决 Missing artifact jdk.tools:jdk.tools:jar:1.8-->		
+<dependency>
+            <groupId>jdk.tools</groupId>
+            <artifactId>jdk.tools</artifactId>
+            <version>1.8</version>
+            <scope>system</scope>
+            <systemPath>${JAVA_HOME}/lib/tools.jar</systemPath>
+</dependency>
+				<!-- hadoop  结束 -->
+        <!-- pdf在线预览  开始 -->
+<dependency>
+    <groupId>com.artofsolving</groupId>
+    <artifactId>jodconverter</artifactId>
+    <version>2.2.1</version>
+ <!--    <exclusions>
+    	<exclusion>
+    		<groupId>org.openoffice</groupId>
+    		<artifactId>jurt</artifactId>
+    	</exclusion>
+    </exclusions> -->
+</dependency>
+
+<!-- <dependency>
+    <groupId>org.openoffice</groupId>
+    <artifactId>juh</artifactId>
+    <version>3.2.1</version>
+</dependency>
+<dependency>
+    <groupId>org.openoffice</groupId>
+    <artifactId>ridl</artifactId>
+    <version>3.2.1</version>
+</dependency>
+<dependency>
+    <groupId>org.openoffice</groupId>
+    <artifactId>unoil</artifactId>
+    <version>3.2.1</version>
+</dependency> -->
+ <!-- pdf在线预览  结束 -->
+ 
+ <!-- jsoup解析html -->
+ <dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.11.3</version>
+</dependency>
+
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13</version>
+    <scope>test</scope>
+</dependency>
+<!-- mpp打的jar  自己打入仓库    MPP的连接
+	mvn install:install-file -Dfile=D:\text\lib\PROGRESS_DATADIRECT_JDBC_DRIVER_PIVOTAL_GREENPLUM_5.1.4.jar -DgroupId=com.Mpp -DartifactId=mppjdbc -Dversion=5.1.4 -Dpackaging=jar
+	 -->
+<!--  可以跑    <dependency>
+  <groupId>com.Mpp</groupId> 
+ <artifactId>mppjdbc</artifactId>
+<version>5.1.4</version>
+ </dependency> -->
+		<!--  <dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>42.1.4</version>
+		</dependency>   没驱动
+ -->
+   	  <dependency>
+  		<groupId>com.Mpp</groupId> 
+	    <artifactId>greenplum-jdbc</artifactId>
+	    <version>5.1.4</version>
+	 </dependency>
+	 <!--上面是自己打的包   公网没自己下载	<dependency>
+     <groupId>com.pivotal</groupId>
+     <artifactId>greenplum-jdbc</artifactId>
+       <version>5.1.4</version>  
+   </dependency> -->
+
+
+<!-- WebMagic-0.7.3   java   爬虫 -->
+<dependency>
+    <groupId>us.codecraft</groupId>
+    <artifactId>webmagic-core</artifactId>
+    <version>0.7.3</version>
+   <!--  <exclusions>
+      <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+      </exclusion>
+    </exclusions>  -->
+</dependency>
+<dependency>
+    <groupId>us.codecraft</groupId>
+    <artifactId>webmagic-extension</artifactId>
+    <version>0.7.3</version>
+<!--      <exclusions>
+             <exclusion>
+                  <groupId>org.slf4j</groupId>
+                   <artifactId>slf4j-log4j12</artifactId>
+             </exclusion>
+        </exclusions> -->
+</dependency>
+
+<dependency>
+    <groupId>com.xzixi.algorithm</groupId>
+    <artifactId>simhash-analyzer</artifactId>
+    <version>1.1.0</version>
+</dependency>
+<!-- ikanalyzer 中文分词器  -->
+        <dependency>
+            <groupId>com.janeluo</groupId>
+            <artifactId>ikanalyzer</artifactId>
+            <version>2012_u6</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-queryparser</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.lucene</groupId>
+                    <artifactId>lucene-analyzers-common</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         
+        
+         <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+        </dependency>
+        <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+    </dependency>
+
+        
+        
+        
+<!-- <dependency>
+   <groupId>ch.qos.logback</groupId>
+   <artifactId>logback-classic</artifactId>
+   <version>1.2.3</version>
+</dependency> -->
         
 	</dependencies>
 	
@@ -436,6 +642,20 @@ https://blog.csdn.net/qq_22177809/article/details/86592660  -->
 					<addResources>true</addResources>
 				</configuration>
 			</plugin>
+			
+		
+         <!-- MyBatis代码生成 -->
+		  <plugin>
+			  <groupId>org.mybatis.generator</groupId>
+			  <artifactId>mybatis-generator-maven-plugin</artifactId>
+			  <version>1.3.2</version>
+			  <configuration>
+				  <verbose>true</verbose>
+				  <overwrite>true</overwrite>
+			  </configuration>
+		  </plugin>
+
+
 		</plugins>
 	</build>
 

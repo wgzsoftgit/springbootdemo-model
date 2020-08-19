@@ -1,0 +1,2 @@
+RSA、Elgamal、背包算法、Rabin、D-H、ECC（椭圆曲线加密算法）。
+使用最广泛的是RSA算法，Elgamal是另一种常用的非对称加密算法

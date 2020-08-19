@@ -1,19 +1,16 @@
 package com.demomodel.filter.handlerInterceptor.use.controller;
 import java.io.IOException;
 
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demomodel.filter.handlerInterceptor.use.annotation.UserAuthenticate;
 import com.demomodel.filter.handlerInterceptor.use.annotation.UserId;
 import com.demomodel.filter.handlerInterceptor.use.annotation.UserMobile;
-import com.demomodel.utils.httpHelp.HttpHelper;
+import com.demomodel.utils.httpHelp.file.HttpHelper;
 
 /**
  * 浏览器输入地址 后台打印

@@ -14,6 +14,7 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
@@ -30,8 +31,8 @@ public class ObjectMapperDemo {
 	public static void main(String[] args) throws JsonGenerationException, JsonMappingException, IOException {
 		//testObj();
 		//testList();
-		testMap() ;
-		//testOther();
+	//	testMap() ;
+		testOther();
 	}
 	/**
 	 * Object  => String
@@ -48,16 +49,16 @@ public class ObjectMapperDemo {
 	        mapper.writeValue(new File("D:/test.txt"), user); // 写到文件中
 	        // mapper.writeValue(System.out, user); //写到控制台
 
-	        String jsonStr = mapper.writeValueAsString(user);
+	        String jsonStr = mapper.writeValueAsString(user);//对象转为字符串
 	        System.out.println("对象转为字符串：" + jsonStr);
 
-	        byte[] byteArr = mapper.writeValueAsBytes(user);
+	        byte[] byteArr = mapper.writeValueAsBytes(user);//对象转为byte数组
 	        System.out.println("对象转为byte数组：" + byteArr);
 
-	        XwjUser userDe = mapper.readValue(jsonStr, XwjUser.class);
+	        XwjUser userDe = mapper.readValue(jsonStr, XwjUser.class);//json字符串转为对象
 	        System.out.println("json字符串转为对象：" + userDe);
 
-	        XwjUser useDe2 = mapper.readValue(byteArr, XwjUser.class);
+	        XwjUser useDe2 = mapper.readValue(byteArr, XwjUser.class);//byte数组转为对象
 	        System.out.println("byte数组转为对象：" + useDe2);
 	        /*
 	         对象转为字符串：{
@@ -87,10 +88,10 @@ byte数组转为对象：XwjUser [id=1, message=Hello World, sendTime=Wed Jun 24
 	        userList.add(new XwjUser(3, "ccc", new Date()));
 	        userList.add(new XwjUser(4, "ddd", new Date()));
 
-	        String jsonStr = mapper.writeValueAsString(userList);
+	        String jsonStr = mapper.writeValueAsString(userList);//集合转为字符串
 	        System.out.println("集合转为字符串：" + jsonStr);
 	        
-	        List<XwjUser> userListDes = mapper.readValue(jsonStr, List.class);
+	        List<XwjUser> userListDes = mapper.readValue(jsonStr, List.class);//字符串转集合
 	        System.out.println("字符串转集合：" + userListDes);
 	        /**
 	        集合转为字符串：[ {
@@ -182,6 +183,10 @@ byte数组转为对象：XwjUser [id=1, message=Hello World, sendTime=Wed Jun 24
   "nodeName" : null
 }
 	         */
+	        
+	        String arrStr="[{\"cbf\":\"0\",\"id\":\"J_100007090657\",\"m\":\"6000.00\",\"op\":\"1999.00\",\"p\":\"1699.00\"}]";
+	       double asDouble = mapper.readTree(arrStr).get(0).get("p").asDouble(); //获取0的p并转double
+	       System.err.println(asDouble);
 	    }
 
 }

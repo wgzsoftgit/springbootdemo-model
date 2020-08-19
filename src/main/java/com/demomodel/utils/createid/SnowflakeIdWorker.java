@@ -185,9 +185,9 @@ public class SnowflakeIdWorker {
     //==============================Test=============================================
     /** 测试 */
     public static void main(String[] args) {
-        System.out.println(System.currentTimeMillis());
+        System.out.println(System.currentTimeMillis()); //13位
         long startTime = System.nanoTime();
-        for (int i = 0; i < 50000; i++) {
+        for (int i = 0; i < 2; i++) {
             long id = SnowflakeIdWorker.generateId();
             System.out.println(id);
             System.err.println( UUID.randomUUID().toString());

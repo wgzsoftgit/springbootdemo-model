@@ -6,7 +6,7 @@ package com.demomodel.utils.de;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
+/**使用正则
  * @author shawnkuo
  *
  */

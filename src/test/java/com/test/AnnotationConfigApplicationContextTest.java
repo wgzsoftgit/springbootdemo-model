@@ -14,7 +14,7 @@ public class AnnotationConfigApplicationContextTest {
 		//发布事件；
 		applicationContext.publishEvent(new ApplicationEvent(new String("我发布的时间")){});
 		
-		applicationContext.close();
+		//applicationContext.close();
 	}
 //https://blog.csdn.net/lizhiqiang1217/java/article/details/92383578
 }

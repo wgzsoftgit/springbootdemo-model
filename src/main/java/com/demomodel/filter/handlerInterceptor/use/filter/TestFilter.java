@@ -1,4 +1,10 @@
 package com.demomodel.filter.handlerInterceptor.use.filter;
+import java.lang.reflect.Method;
+import java.util.Objects;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.method.HandlerMethod;
@@ -7,13 +13,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.demomodel.filter.handlerInterceptor.use.annotation.UserAuthenticate;
 import com.demomodel.filter.handlerInterceptor.use.handler.HeaderCons;
-import com.demomodel.utils.httpHelp.HttpHelper;
-
-import javax.servlet.ServletInputStream;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.Method;
-import java.util.Objects;
+import com.demomodel.utils.httpHelp.file.HttpHelper;
 
 
 public class TestFilter extends HandlerInterceptorAdapter {

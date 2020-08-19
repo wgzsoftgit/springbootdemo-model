@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.demomodel.WebApplication;
 
 @RunWith(SpringRunner.class)
+//springboot的测试类      引导的启动类
 @SpringBootTest(classes = WebApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class HelloControllerTest {
 

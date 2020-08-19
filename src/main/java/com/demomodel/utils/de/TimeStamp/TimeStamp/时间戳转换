@@ -1,0 +1,35 @@
+13位是毫秒时间戳
+10位是秒时间戳
+
+
+时间戳用long类型
+将当前时间（new Date()）set进bean中,然后使用fastjson将bean转换成json，存放在redis中，
+但问题就来了，首先时间yyyy-mm-dd hh:mm:ss格式转换成json会自动转成时间戳，13位的，
+而ios端只能解析10wei的时间戳。
+
+
+
+问题1：为什么会生成13位的时间戳，13位的时间戳和10时间戳分别是怎么来的
+经过百度得知，原来java的date默认精度是毫秒，也就是说生成的时间戳就是13位的，而像c++或者php生成的时间戳默认就是10位的，因为其精度是秒。
+问题2：13位时间戳如何转换成10位时间戳
+本来以为java中有设置可以修改其时间精度，后来在百度上没有找到，就只能采用其它方法来转化，这里提供两种方式来转换。
+第一种：通过substring方法，将13位的时间戳最后三位数字截取
+第二种：将13位时间戳除以1000取整。
+————————————————
+版权声明：本文为CSDN博主「小糖豆巴拉巴拉」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_28483283/article/details/80583197
+
+1594022476000 毫秒  2020-07-06 16:01:16
+1594022476    秒      2020-07-06 16:01:16
+js时间戳转化成日期格式
+timestampToTime(1594022476);
+function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+       var Y = date.getFullYear() + '-';
+       var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+       var D = (date.getDate() < 10 ? '0'+date.getDate() : date.getDate()) + ' ';
+       var h = (date.getHours() < 10 ? '0'+date.getHours() : date.getHours()) + ':';
+       var m = (date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes()) + ':';
+       var s = (date.getSeconds() < 10 ? '0'+date.getSeconds() : date.getSeconds());
+        return Y+M+D+h+m+s;
+    }

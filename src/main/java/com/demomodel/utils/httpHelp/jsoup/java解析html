@@ -1,0 +1,5 @@
+1. 从一个URL，文件或字符串中解析HTML；
+2. 使用DOM或CSS选择器来查找、取出数据；
+3. 可操作HTML元素、属性、文本；
+
+com.test.jsonupDemo.JsoupFirstTest  测试用例

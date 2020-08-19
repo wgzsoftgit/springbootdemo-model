@@ -17,3 +17,6 @@
 SnowFlake可以保证：
         ●  所有生成的id按时间趋势递增
         ●  整个分布式系统内不会产生重复id（因为有datacenterId和workerId来做区分）
+   double类型  是16位  
+   雪花算法  生成18位     
+        

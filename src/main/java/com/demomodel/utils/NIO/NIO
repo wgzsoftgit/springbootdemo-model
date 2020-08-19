@@ -1,0 +1,2 @@
+NIO支持面向缓冲区(Buffer)的、基于通道(Channel)的IO操作
+client  <--> Buffer <--> channel <---> Buffer <--> service

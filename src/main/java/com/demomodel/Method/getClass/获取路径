@@ -1,5 +1,8 @@
  ClassLoader cl = GetClass.getClass().getClassLoader();
-	        InputStream inputStream = cl.getResourceAsStream("date1.json");
+	        InputStream inputStream = cl.getResourceAsStream("/config/date1.json");
 	        String jsontext = IOUtils.toString(inputStream, "utf8");
 	获取配置文件转化成 String    com.demomodel.utils.de.alibabaFastJson.TestFastJosn
-	       
+	 
+	 
+//打印的文件/D:/workspace-eclipse/tspringbootdemo/target/classes//
+		  System.err.println(GetClass.class.getResource("/").getPath() + "/");

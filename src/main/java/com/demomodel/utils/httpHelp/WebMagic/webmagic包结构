@@ -1,0 +1,8 @@
+webmagic-core  只包含爬虫基本模块和基本抽取器
+ webmagic-extension  编写的爬虫工具，包含注解格式定义爬虫，json、分布式等支持
+ 
+ 扩展包
+ webmagic-saxon  saxon是一个XPath、XSLT的解析工具
+ webmagic- Selenium  Selenium是一个模拟浏览器进行页面渲染的工具。进行动态页面抓取
+ 
+ 

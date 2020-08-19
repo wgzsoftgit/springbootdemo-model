@@ -31,10 +31,12 @@ public class mapgroup {
 		list.add(new User(2, 3));
 		list.add(new User(2, 2));
 		list.add(new User(3, 1));
-		Map<Integer, List<User>> map = new HashMap<>();
-	
+		
+		Map<Integer, List<User>> map = new HashMap<>();//往map中存入list<>数据
 		for(User user : list){
-			if(map.containsKey(user.getId())){//map中存在此id，将数据存放当前key的map中
+			if(map.containsKey(user.getId())){
+				
+				//map中存在此id，将数据存放当前key的map中
 				map.get(user.getId()).add(user);
 			}else{//map中不存在，新建key，用来存放数据
 				List<User> tmpList = new ArrayList<>();
@@ -42,6 +44,7 @@ public class mapgroup {
 				map.put(user.getI(), tmpList);
 			}
 		}
+		
 		System.out.println(map.toString());
 		Map<Integer, Integer> map2 = new HashMap<>();
 		for(User user : list){
@@ -67,15 +70,16 @@ public class mapgroup {
 	//	map4.clear();//清空map
 		System.out.println("请空后"+map4.toString());
 		list2.add(map4);
-		Map<String, List<Map<String, Object>>> map3= transition(list2);//分组排序
+		Map<String, List<Map<String, Object>>> map3= transition(list2);//分组排序list  List<Map<String, Object>>
 		System.out.println(map3.toString());
 		listsort();
 		List<String> listtest= Arrays.asList("a", "B", "c", "d"); //初始化数组
   
+		//转大小写  返回list
 		List collect =listtest.stream().map(String::toUpperCase).collect(Collectors.toList());
 		List collect2 =listtest.stream().map(String::toLowerCase).collect(Collectors.toList());
 		System.out.println(collect); //[A, B, C, D]
-		System.out.println(collect2); //[A, B, C, D]
+		System.out.println(collect2); //[a, b, c, d]
 	}
 	
 	public static void listsort() {
@@ -89,22 +93,26 @@ public class mapgroup {
 		Collections.sort(list, new Comparator<String>() {
 		public int compare(String str1, String str2) {
 
-		/**
-		* 升序排的话就是第一个参数.compareTo(第二个参数);
-		* 降序排的话就是第二个参数.compareTo(第一个参数);
-		*/
-
-		// 按首字母升序排
-		// return str1.compareTo(str2);
-		// 按第二个字母升序排
-		char c1 = str1.charAt(1);
-		char c2 = str2.charAt(1);
-		return c1 - c2;
+			/**
+			* 升序排的话就是第一个参数.compareTo(第二个参数);
+			* 降序排的话就是第二个参数.compareTo(第一个参数);
+			*/
+	
+			// 按首字母升序排
+			// return str1.compareTo(str2);
+			// 按第二个字母升序排
+			char c1 = str1.charAt(1);
+			char c2 = str2.charAt(1);
+			return c1 - c2;
 		}
 		});
 		System.out.println(list);
 		}
-//	分组排序
+/**
+ * 	分组排序
+ * @param list   List<Map<String, Object>>
+ * @return  Map<String, List<Map<String, Object>>>
+ */
 	public static Map<String, List<Map<String, Object>>> transition(List<Map<String, Object>> list){
 
         Map<String, List<Map<String, Object>>> map = new HashMap<>();
@@ -127,18 +135,23 @@ public class mapgroup {
                     // 获取原来存在的数据                   
                 	List<Map<String, Object>> lm = map.get(entity.getKey());
 
+                	
+                	//   __________________创建hashMap__________________
                     lm.add(new HashMap<String, Object>() {{
 
                         put(entity.getKey(), entity.getValue());
 
                     }});
 
+     //list的排序   ----------------------------------------------------
                     Collections.sort(lm, (param1, param2) ->
 
                             (param2.get(entity.getKey()).toString().compareTo(param1.get(entity.getKey()).toString()))
 
                     );
+//java8  在指定的键已经存在并且有与之相关的映射值时才会将指定的键映射到指定的值（新值）
 
+    //     在指定的键不存在时，方法会return回来一个null
                     map.replace(entity.getKey(), lm);
 
                 } else {
