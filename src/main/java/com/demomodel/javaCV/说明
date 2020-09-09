@@ -1,0 +1,56 @@
+https://blog.csdn.net/u010724965/article/details/72569930
+基本的流程：推流-编码-拉流-解码
+
+
+red5的view页面绝对不是我们所想要的，也不是我们所想呈现给用户看的界面，这时我们就需要去重写一个客户端去承载流的显示
+EasyPlayer.js H5播放器，是一款能够同时支持HTTP、RTMP、HTTP-FLV、HLS（m3u8）直播与点播等多种协议，
+支持H.264、H.265、AAC等多种音视频编码格式，支持mse、asm、wasm等多种解码方式，支持Windows、Linux、Android、iOS
+全平台终端的H5播放器。
+EasyPlayer.js：https://github.com/tsingsee/EasyPlayer.js
+
+video.js是一款基于HTML5的网络视频播放器。实时播放rtmp流的,它支持HTML5和Flash视频，以及YouTube和Vimeo（通过插件）。支持在桌面和移动设备上播放视频
+<html>
+    <head>
+        <title>Video.js直播</title>
+        <meta charset="utf-8">
+        <link href="http://vjs.zencdn.net/5.5.3/video-js.css" rel="stylesheet">
+        <!-- If you'd like to support IE8 -->
+        <script src="http://vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js"></script>
+    </head>
+    <body>
+        <h1>直播间</h1>
+        <video 
+            id="my-video" 
+            class="video-js" 
+            controls 
+            preload="auto"
+            width="640" 
+            height="300"
+            poster="http://ppt.downhot.com/d/file/p/2014/08/12/9d92575b4962a981bd9af247ef142449.jpg"
+            data-setup="{}">
+
+            <!-- 直播地址 -->
+            <source src="rtmp://cyberplayerplay.kaywang.cn/cyberplayer/demo201711-L1" type="rtmp/flv">
+
+        </video>
+
+        <!-- 引入video.js -->
+        <script src="http://vjs.zencdn.net/5.5.3/video.js"></script>
+
+        <!-- 自动播放 -->
+        <script type="text/javascript">
+            var myPlayer = videojs('my-video');
+            videojs("my-video").ready(function(){
+                var myPlayer = this;
+                myPlayer.play();
+            });
+        </script> 
+    </body>
+</html>
+video更多的帮助文档请查阅http://docs.videojs.com/module-videojs.html
+
+
+音视频处理 MCT    -- 百度智能云
+音视频处理MCT（Multimedia Cloud Transcoder），结合百度智能云平台，为开发者和企业用户提供包括
+音视频存储、转码、CDN加速、多端安全播放器（Web/Android/iOS）、DRM（Digital Rights Management）数字版权管理等服务。
+

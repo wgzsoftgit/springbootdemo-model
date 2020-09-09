@@ -51,7 +51,7 @@ public class CookiesUtil  {
         return cookieMap;
     }
 
-    /**
+    /**参考 com.demomodel.controller.requestheader.getrequest.GetHttpServletRequest
      * 保存Cookies
      * 
      * @param response

@@ -6,7 +6,8 @@ import org.springframework.context.annotation.ConfigurationClassPostProcessor;
 import org.springframework.context.annotation.ConfigurationCondition;
 import org.springframework.core.type.AnnotatedTypeMetadata;
 
-import com.demomodel.P7.Conditional.ConfigurationCondition.Service;
+import com.demomodel.P7.Conditional.ConfigurationCondition.ServiceCon;
+
 /**
  * 让条件判断在bean注册阶段才起效。
  * @author wgz
@@ -24,7 +25,7 @@ public class MyConfigurationCondition1 implements ConfigurationCondition{
 		//获取spring容器
 		ConfigurableListableBeanFactory beanFactory=context.getBeanFactory();
 		//判断容器中是否存在Service类型的bean
-		boolean existsService=!beanFactory.getBeansOfType(Service.class).isEmpty();
+		boolean existsService=!beanFactory.getBeansOfType(ServiceCon.class).isEmpty();
 		return existsService;
 		}
 		}

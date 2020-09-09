@@ -15,7 +15,7 @@ import com.google.gson.JsonParser;
 
 public class Gsonutil {
 
-	/**
+	/**  com.demomodel.utils.de.json.gson.Gsondemo
 	 * post请求数据 json格式转化成
 	 * @param request  HttpServletRequest
 	 * @throws IOException

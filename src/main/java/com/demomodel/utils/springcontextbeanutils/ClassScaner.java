@@ -38,6 +38,7 @@ public class ClassScaner implements ResourceLoaderAware {
 
         if (ArrayUtils.isNotEmpty(annotations)) {
             for (Class anno : annotations) {
+            	  //                     new 注解
                 cs.addIncludeFilter(new AnnotationTypeFilter(anno));
             }
         }
@@ -88,8 +89,7 @@ public class ClassScaner implements ResourceLoaderAware {
                     .convertClassNameToResourcePath(SystemPropertyUtils
                             .resolvePlaceholders(basePackage))
                     + "/**/*.class";
-            Resource[] resources = this.resourcePatternResolver
-                    .getResources(packageSearchPath);
+            Resource[] resources = this.resourcePatternResolver.getResources(packageSearchPath);
 
             for (int i = 0; i < resources.length; i++) {
                 Resource resource = resources[i];

@@ -1,0 +1,64 @@
+#视频的流程
+https://img-blog.csdn.net/20171029194653985
+1、视音频的采集：通过调用摄像头、麦克风直接采集视音频数据，一般视频采集的数据用RGB或者YUV格式、音频采集数据采用PCM格式，由于采集的原始数据体积非常大，需要经过压缩技术处理来提高传输效率。并且对于采集的视频可以做一些前处理，比如美颜、水印等等。
+2、数据编码：为了便于手机视频的推流、拉流以及存储，通常采用视音频编码压缩技术来减少体积，编码方式：CBR、VBR,
+视频-编码格式：H.265、H.264、MPEG-4等，封装容器有TS、MKV、AVI、MP4等。现在比较常用的视频编码是H.264。
+音频-编码格式：G.711μ、AAC、Opus等，封装有MP3、OGG、AAC等，比较常用的是AAC编码格式。
+视频经过编码压缩大大提高了视频的存储和传输效率，当然，经过压缩后的视频在播放时必须进行解码。
+3、数据传输：将编码完成后的音视频数据进行传输，早期的音视频通过同轴电缆之类的线缆进行传输，IP网络发展后，使用IP网络优传输
+
+1.推流:将录制视频进行采集、编码、美颜处理后推送给直播服务器进行处理。将视频推送到服务器的这一过程就叫做推流。
+2.拉流:服务器对传送过来的视频进行处理例如转码、录制、截图、鉴黄后将视频分发给正在观看直播的客户(播放器)。服务器将视频分发给客户端的这一过程就叫做拉流咯。
+
+
+
+
+ #网络摄像头协议（一般网络摄像头支持协议有GB/T28181和RTSP协议）
+1）.GB/T28181 国标
+GB/T28181-2011是由公安部科技信息化局提出，国家标准。该标准规定了城市监控报警联网系统中信息传输、交换、
+控制的互联结构。该标准适用于安全防范监控报警联网系统的方案设计、系统检测、验收以及与之相关的设备研发、生
+产，其他信息系统可参考采用。
+2).RTSP协议
+实时流协议RTSP实时流协议。由谷歌公司开发，RTSP协议一般与RTP/RTCP和RSVP等底层协议一起协同工作，提供
+基于Internet的整套的流服务。
+
+使用JavaCV开发的rtsp流转rtmp流并进行推流到nginx，采用,前端使用EasyPlayer.js实现
+https://blog.csdn.net/a158s168/article/details/105951299?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.edu_weight
+直播协议
+RTMP：
+ 实时消息传输协议，是 Adobe Systems 公司为 Flash 播放器和服务器之间音频、视频和数据传输开发的开放协议。协
+ 议基于 TCP，是一个协议族，包括 RTMP 基本协议及 RTMPT/RTMPS/RTMPE 等多种变种。RTMP 是一种设计用来
+ 进行实时数据通信的网络协议，主要用来在 Flash/AIR 平台和支持RTMP协议的流媒体/交互服务器之间进行音视频和
+ 数据通信。这种方式的实时性比较强，基本能保证延迟在1-2s内，是现在国内直播主要采用的方式之一！因为延时问
+ 题，采用RTMP实现
+ 
+ 缺点： 不过使用这种协议，就必须安装flash，而H5、IOS、Android并不能原生支持flash，因此这种协议能流行多
+ 久，就不得而知了，毕竟移动端才是现在的主流。
+ 1）、工作在TCP之上的明文协议，使用端口1935；
+2）、RTMPT封装在HTTP请求之中，可穿越防火墙；
+3）、RTMPS类似RTMPT，但使用的是HTTPS连接；
+ 
+ HLS：
+ hls是Apple推出的直播协议，是通过视频流切片成文件片段来直播的。客户端首先会请求一个m3u8文件，里面会有不
+ 同码率的流，或者直接是ts文件列表，通过给出的ts文件地址去依次播放。在直播的时候，客户端会不断请求m3u8文
+ 件，检查ts列表是否有新的ts切片。这种方式的实时性较差，不过优势是H5、IOS、Android都原生支持。
+ 
+ HTTP-FLV：
+  HTTP-FLV就是对RTMP协议的封装，相比于RTMP，它是一个开放的协议。因此他具备了RTMP的实时性和RTMP不
+  具备的开发性，而且随着flv.js出现（感谢B站），使得浏览器在不依赖flash的情况下，播放flv视频，从而兼容了移动
+  端，所以现在很多直播平台，尤其是手机直播平台，都会选择它
+  
+  
+  EasyPlayer RTSP Windows专用播放器   视频编码支持H.264，H.265，MPEG4，MJPEG，音频支持
+  G711A，G711U，G726，AAC，支持RTSP over TCP/UDP协议，支持软/硬解码，是一套极佳的安防流媒体平
+  台播放组件一款RTSP播放器
+  Windows RTSP播放器：https://github.com/EasyDSS/EasyPlayer-RTSP-Win/releases
+  EasyPlayerPro是一款全功能的流媒体播放器，支持RTSP、RTMP、HTTP、HLS、UDP、RTP、File等多种流媒体协议播放、
+  支持本地文件播放，支持本地抓拍、本地录像、播放旋转、多屏播放、倍数播放等多种功能特性，核心基于ffmpeg，
+  稳定、高效、可靠、可控，支持Windows、Android、iOS三个平台
+  EasyPlayerPro-Win：https://github.com/tsingsee/EasyPlayerPro-Win
+EasyPlayerPro-Android：https://github.com/tsingsee/EasyPlayerPro-Android
+EasyPlayerPro-iOS：https://github.com/tsingsee/EasyPlayerPro-iOS
+
+  
+ 

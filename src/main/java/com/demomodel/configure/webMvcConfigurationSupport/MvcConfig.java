@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 //配置本地目录为映射文件
@@ -29,7 +30,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 //@Component
 public class MvcConfig implements WebMvcConfigurer  /* extends WebMvcConfigurationSupport */ {
 
-	
+	WebMvcConfigurerAdapter bb;
 	
 	/**
      * 添加静态资源文件，外部可以直接访问地址
@@ -40,6 +41,7 @@ public class MvcConfig implements WebMvcConfigurer  /* extends WebMvcConfigurati
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
     	System.err.println("静态文件配置");
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+
     }
 //https://blog.csdn.net/wenxingchen/java/article/details/84139845
 	

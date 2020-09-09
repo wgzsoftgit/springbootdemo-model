@@ -1,0 +1,8 @@
+判断上传的是否是图片
+	通过后缀名进行判断
+	通过文件头
+	通过ImageIO判断
+	图片文件的安全检查处理
+	给图片加水印
+上传的文件校验
+	com.demomodel.utils.demo.imgpngcheck.checkPnoto

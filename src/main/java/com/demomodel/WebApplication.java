@@ -7,6 +7,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
 
 import javax.servlet.Filter;
+import javax.servlet.MultipartConfigElement;
 
 import org.springframework.boot.Banner;
 import org.apache.catalina.Context;
@@ -19,6 +20,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
@@ -47,7 +49,7 @@ import com.demomodel.utils.httpHelp.file.HttpServletRequestReplacedFilter;
 @EnableFeignClients   //启动fegin
 @ComponentScan(basePackages = { "com" })
 @EnableTransactionManagement //开启事务支持
-@EnableWebMvc 
+//@EnableWebMvc 
 public class WebApplication {    
 
 	public static void main(String[] args) {
@@ -75,6 +77,15 @@ public class WebApplication {
         };
     }
 //https://blog.csdn.net/yu_xinghui/java/article/details/106428519
+//	@Bean 
+//    public MultipartConfigElement multipartConfigElement() {  
+//        MultipartConfigFactory factory = new MultipartConfigFactory();  
+//        //允许上传的文件最大值
+//        factory.setMaxFileSize("50MB"); //KB,MB  
+//        /// 设置总上传数据总大小  
+//        factory.setMaxRequestSize("50MB");  
+//        return factory.createMultipartConfig();  
+//    } 
 	//配置拦截器    防止流丢失的拦截器
 //	@Bean
 //	public FilterRegistrationBean httpServletRequestReplacedRegistration() {

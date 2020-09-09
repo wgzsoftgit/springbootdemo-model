@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.demomodel.bean.Pet;
 
-
+@Controller
 public class RequestHeaders {
 	//-----------------------------1.headers
 	//Accept=application/json ：表示客户端希望接受的数据类型是json
@@ -28,7 +29,7 @@ public class RequestHeaders {
 	
 	
 	//content-type =application/json ：表示客户端发送的数据格式是json
-	@RequestMapping(value = "/test/ContentType", headers = {"content-type = application/json"})  
+	@RequestMapping(value = "/test/ContentType2", headers = {"content-type = application/json"})  
 	public void test2(@RequestBody Pet pet) throws IOException {  
 	    // TODO
 	}
@@ -42,13 +43,13 @@ public class RequestHeaders {
 	}
 	
 	//处理request Content-Type，定义的2种类型的请求1
-	@RequestMapping(consumes = {"application/json","application/x-www-form-urlencoded"})
+	@RequestMapping(value = "/test/ContentType3",consumes = {"application/json","application/x-www-form-urlencoded"})
 	public void test2(@RequestBody Pet pet, Model model) {      
 	    // TODO
 	}
 
 	//处理request Content-Type中，除了以下2种类型的请求2
-	@RequestMapping(consumes = {"!application/json","!application/x-www-form-urlencoded"})
+	@RequestMapping(value = "/test/ContentType4",consumes = {"!application/json","!application/x-www-form-urlencoded"})
 	public void test3(@RequestBody Pet pet, Model model) {      
 	    // TODO
 	}

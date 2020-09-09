@@ -149,7 +149,7 @@
 			<artifactId>gson</artifactId>
 		</dependency>
 		
-
+  
 		<!-- swagger2管理接口 -->
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -327,7 +327,11 @@
 		    <artifactId>jxl</artifactId>
 		    <version>2.6.12</version>
 		</dependency>
-		
+		  <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.15-beta2</version>
+        </dependency>
 		<!-- 健康监测   待定-->
 		<dependency>
             <groupId>org.springframework.boot</groupId>
@@ -413,11 +417,7 @@ https://blog.csdn.net/qq_22177809/article/details/86592660  -->
             <version>2.4</version>
             <classifier>jdk15</classifier>
         </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>3.15-beta2</version>
-        </dependency>
+      
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>

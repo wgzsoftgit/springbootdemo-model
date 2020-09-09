@@ -1,0 +1,13 @@
+https://blog.csdn.net/qq_26788593/article/details/85062168
+https://blog.csdn.net/fenglibing/article/details/7728275?utm_medium=distribute.pc_relevant.none-task-blog-title-1&spm=1001.2101.3001.4242
+
+
+
+com.demomodel.utils.Excel.fileUpText.FileUpController  包含页面测试
+
+判断上传的是否是图片
+	通过后缀名进行判断
+	通过文件头
+	通过ImageIO判断
+	图片文件的安全检查处理
+	给图片加水印

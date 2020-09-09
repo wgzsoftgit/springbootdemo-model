@@ -20,8 +20,8 @@ public class SeckillOrderServiceImpl implements SeckillOrderService {
     private CreateOrder createOrder;
 
     //注入调度对象
-    @Autowired
-    private ThreadPoolTaskExecutor taskExecutor;
+//    @Autowired
+//    private ThreadPoolTaskExecutor taskExecutor;
 
 
     /**

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+ <html layout:decorator="fregments/layout">
+ <head>
+<meta charset="UTF-8" />
+<title> 懒加载图片</title>
+	
+</head>
+<body>
+	<div class="container">
+	<!-- 图片加载替换 -->
+	<div class="img-area2">
+	   <img class="my-photo" alt="loading" src="http://img11.360buyimg.com/cms/jfs/t12118/41/1394617476/43413/2253395a/5a1f7569N63f38100.jpg" data-idnum="222">
+	  </div>
+	  
+	  <!-- 图片懒加载  -->
+	  <div class="img-area">
+	  <!-- alt 属性是一个必需的属性，它规定在图像无法显示时的替代文本。
+data-* 全局属性：构成一类名称为自定义数据属性的属性，可以通过HTMLElement.dataset来访问。 -->
+	   <img class="my-photo" alt="loading" data-src="http://img11.360buyimg.com/cms/jfs/t12118/41/1394617476/43413/2253395a/5a1f7569N63f38100.jpg">
+	  </div>
+	  <div class="img-area">
+	   <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img2.png">
+	  </div>
+	  <div class="img-area">
+	   <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img3.png">
+	  </div>
+	  <div class="img-area">
+	   <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img4.png">
+	  </div>
+	  <div class="img-area">
+	   <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img5.png">
+	  </div>
+	  <div class="img-area">
+	   <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img6.png">
+	  </div>
+	  <div class="img-area">
+	   <img class="my-photo" alt="loading" data-src="http://axuebin.com/lazyload/img/img7.png">
+	  </div>
+	 </div>
+</body>
+
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+//什么情况下图片进入可视区域。
+function isInSight(el) {
+	  const bound = el.getBoundingClientRect();//来表示图片到可视区域顶部距离； 获取屏幕可视窗口高度
+	  const clientHeight = window.innerHeight;//来表示可视区域的高度
+	  //如果只考虑向下滚动加载
+	  //const clientWidth=window.innerWeight;
+	  return bound.top <= clientHeight + 100;//+100是为了提前加载
+	}
+	
+	
+//页面打开时需要对所有图片进行检查，是否在可视区域内，如果是就加载。
+	let index = 0;//设一个标识符标识已经加载图片的index，当滚动条滚动时就不需要遍历所有的图片，只需要遍历未加载的图片即可。
+	function checkImgs() {
+	  const imgs = document.querySelectorAll('.my-photo');// 获取图片列表，即img标签列表
+	  for (let i = index; i < imgs.length; i++) {
+	    if (isInSight(imgs[i])) {
+	      loadImg(imgs[i]);
+	      index = i;
+	    }
+	  }
+	  // Array.from(imgs).forEach(el => {
+	  //   if (isInSight(el)) {
+	  //     loadImg(el);
+	  //   }
+	  // })
+	}
+
+	function loadImg(el) {
+	  if (!el.src) {
+	    const source = el.dataset.src;
+	    el.src = source;
+	  }
+	}
+
+	
+	
+	
+	
+	/* 函数节流
+	在类似于滚动条滚动等频繁的DOM操作时，总会提到“函数节流、函数去抖”。
+	所谓的函数节流，也就是让一个函数不要执行的太频繁，减少一些过快的调用来节流。
+	基本步骤：
+	获取第一次触发事件的时间戳
+	获取第二次触发事件的时间戳
+	时间差如果大于某个阈值就执行事件，然后重置第一个时间 */
+	function throttle(fn, mustRun = 500) {
+	  const timer = null;
+	  let previous = null;
+	  return function() {
+	    const now = new Date();
+	    const context = this;
+	    const args = arguments;
+	    if (!previous) {
+	      previous = now;
+	    }
+	    const remaining = now - previous;
+	    if (mustRun && remaining >= mustRun) {
+	      fn.apply(context, args);
+	      previous = now;
+	    }
+	  }
+	}
+
+</script>
+
+<script type="text/javascript">
+
+window.onload=checkImgs;
+window.onscroll = throttle(checkImgs);
+
+//原图替换
+$(".img-area2").find("img").each(function(e){
+	var img=$(this);
+	img.attr("src","http://axuebin.com/lazyload/img/img1.png").attr("width","100%").attr("height","100%");
+	 $.ajax({
+	 	 type : "POST",
+	   	 url :  "/implicitTerrorists2/updtaControlS?idNUm="+img.data('idnum'),
+		 dataType: "json", 
+	        success : function(jsonData) {  console.log("ok"); },
+	        error : function(errorMsg) { 
+	        	console.log("err");
+	        }
+			});
+	 img.removeAttr("width").removeAttr("height")
+	
+});
+</script>
+
+
+<style type="text/css">
+/*  */
+  .container{
+  width:100%;
+}
+.img-area{
+  height:600px;
+  text-align: center
+}
+</style>
+
+</html> 
+

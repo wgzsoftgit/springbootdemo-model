@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class OrderDTO {
 private String code;
 private BigDecimal price;
-/**
+/**简单方式
  * 订单类型 
  * 1、普通订单
  * 2、团购订单

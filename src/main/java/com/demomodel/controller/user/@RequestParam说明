@@ -1,0 +1,6 @@
+ @RequestParam("icon") MultipartFile icon
+ @RequestParam(required = false,defaultValue = "1")Integer  page
+ @RequestParam(value="id",defaultValue="1",required=true) int id
+ request : http://localhost:8080/springDemo/controllerTest?id=2; 在这儿传入的参数名为id
+ required=true  表示当前参数必须传入
+ defaultValue="aaa"  默认值

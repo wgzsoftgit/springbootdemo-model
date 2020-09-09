@@ -2,7 +2,7 @@ package com.demomodel.utils.de;
 
 public interface StaticUrl {
 	
-    //wgz
+   
 	
 	public final static String DATA_CENTER_3RD_HOST = "http://41.220.41.240:8888";
 
@@ -39,7 +39,6 @@ public interface StaticUrl {
 	// 各类预警总数
 	public final String RECORD_TYPES_URL ="/multiDataMiningService/rest/alarm/recordTypes";
 	
-	//ysw
 	
 	//测试接口
 	public static  String RFIDANDMAC =VEHICLE_FACE_PORT+ "/videoService/devicesManager/intelligent/channels";

@@ -14,7 +14,9 @@ public class DispatcherConfig extends WebMvcConfigurerAdapter {
 
 	@Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-       registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");//成功
+		 registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+		 
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");//成功
         registry.addResourceHandler("swagger-ui.html")
        .addResourceLocations("classpath:/META-INF/resources/");
 

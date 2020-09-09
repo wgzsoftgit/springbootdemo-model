@@ -33,7 +33,7 @@ public class ScheduleSetting implements SchedulingConfigurer {
         System.out.println("com.demomodel.query.Schedulequery.conf.ScheduleSetting"+scheduleList.size());
          for (ScheduleConfig s : scheduleList){
         	 if(s.getStatus()==0) { 
-        		 //  && getRunnable()    && getTrigger()
+        		                                //  && getRunnable()    && getTrigger()
                  scheduledTaskRegistrar.addTriggerTask(getRunnable(s), getTrigger(s)); 
         	 }
         	

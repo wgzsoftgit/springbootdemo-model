@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class BeanConfig1f {
     @Bean
-    public Service service() {
-        return new Service();
+    public ServiceCon serviceCon() {
+        return new ServiceCon();
     }
 }

@@ -28,18 +28,18 @@ import com.demomodel.filter.handlerInterceptor.ReqInterceptor;
 import com.demomodel.filter.handlerInterceptor.SessionInterceptor;
 import com.demomodel.filter.midengFile.config.IdempotentFilter;
 
-//@Configuration
+@Configuration
 public class WebConfighander implements WebMvcConfigurer {
 	
 	private static final List<String> EXCLUDE_PATH= Arrays.asList("/","/resources/**","/static/**","/query/**","/media/**","/view/**","/WEB-INF/**");
-    @Autowired
-    SessionInterceptor sessionInterceptor;
+//    @Autowired
+//    SessionInterceptor sessionInterceptor;
 
     
     
 	@Override
 	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-		 configurer.favorPathExtension(false);
+		configurer.favorPathExtension(false);
 		WebMvcConfigurer.super.configureContentNegotiation(configurer);
 	}
 
@@ -55,7 +55,7 @@ public class WebConfighander implements WebMvcConfigurer {
     	/*
          *  对根目录和静态文件不需要进行拦截，如果对根目录（即登录页面）进行拦截，将会导致循环重定向
          */
-      // registry.addInterceptor(sessionInterceptor).addPathPatterns("/**") .excludePathPatterns(EXCLUDE_PATH);
+ //     registry.addInterceptor(new SessionInterceptor()).addPathPatterns("/**") .excludePathPatterns(EXCLUDE_PATH);
 //https://blog.csdn.net/qq_41773240/java/article/details/93321854  	   
     	
     	
@@ -83,30 +83,30 @@ public class WebConfighander implements WebMvcConfigurer {
      * 添加静态资源--过滤swagger-api (开源的在线API文档)  配置静态文件映射
      * @param registry
      */
-//    @Override  
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//		registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-//		registry.addResourceHandler("/static/**").addResourceLocations("/resources/"); 
-//		registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/resources/");
-//    	//过滤swagger
-//        registry.addResourceHandler("swagger-ui.html")
-//                .addResourceLocations("classpath:/META-INF/resources/");
-//
-//        registry.addResourceHandler("/webjars/**")
-//                .addResourceLocations("classpath:/META-INF/resources/webjars/");
-//
-//        registry.addResourceHandler("/swagger-resources/**")
-//                .addResourceLocations("classpath:/META-INF/resources/swagger-resources/");
-//
-//        registry.addResourceHandler("/swagger/**")
-//                .addResourceLocations("classpath:/META-INF/resources/swagger*");
-//
-//        registry.addResourceHandler("/v2/api-docs/**")
-//                .addResourceLocations("classpath:/META-INF/resources/v2/api-docs/");
-//       
-//    //    registry.addResourceHandler("/**").addResourceLocations("/WEB-INF/static/");
-//      //  WebMvcConfigurer.super.addResourceHandlers(registry); 
-//    }
+    @Override  
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+		registry.addResourceHandler("/static/**").addResourceLocations("/resources/"); 
+		registry.addResourceHandler("/static/**").addResourceLocations("/WEB-INF/resources/");
+    	//过滤swagger
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+
+        registry.addResourceHandler("/swagger-resources/**")
+                .addResourceLocations("classpath:/META-INF/resources/swagger-resources/");
+
+        registry.addResourceHandler("/swagger/**")
+                .addResourceLocations("classpath:/META-INF/resources/swagger*");
+
+        registry.addResourceHandler("/v2/api-docs/**")
+                .addResourceLocations("classpath:/META-INF/resources/v2/api-docs/");
+       
+    //    registry.addResourceHandler("/**").addResourceLocations("/WEB-INF/static/");
+      //  WebMvcConfigurer.super.addResourceHandlers(registry); 
+    }
     
 	
     /**

@@ -2,6 +2,7 @@ package com.demomodel.interfaceDesign.shejimodel.delifelse.orderService.strategy
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.curator.shaded.com.google.common.collect.Maps;
 import org.springframework.beans.BeansException;
@@ -27,7 +28,19 @@ public class HandlerProcessor implements BeanFactoryPostProcessor {
 	            String type = clazz.getAnnotation(HandlerType.class).value();
 	            handlerMap.put(type, clazz);
 	        });
-	        HandlerContext context = new HandlerContext(handlerMap);
+		 for(Entry<String, Class> entry : handlerMap.entrySet()){
+
+			    String mapKey = entry.getKey();
+
+			    Class mapValue = entry.getValue();
+
+			    System.out.println(
+			   "com.demomodel.interfaceDesign.shejimodel.delifelse.orderService.strategy.HandlerTypeANDAbstractHandler.toSpring.HandlerProcessor"
+			    +mapKey+":"+mapValue);
+
+			}
+		 
+		 HandlerContext context = new HandlerContext(handlerMap);
 	        beanFactory.registerSingleton(HandlerContext.class.getName(), context);	
 	}
 

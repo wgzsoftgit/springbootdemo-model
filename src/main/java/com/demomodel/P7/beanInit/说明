@@ -1,0 +1,17 @@
+@Autowired：注入依赖对象
+作用
+实现依赖注入，spring容器会对bean中所有字段、方法进行遍历，标注有@Autowired注解的，都会进行注入。
+看一下其定义：
+@Target({ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.PARAMETER, ElementType.FIELD, ElementType.ANNOTATION_TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+public @interface Autowired {
+    boolean required() default true;
+}
+可以用在构造器、方法、方法参数、字段、注解上。
+参数：
+required：标注的对象是否必须注入，可能这个对象在容器中不存在，如果为true的时候，找不到匹配的候选者就会报错，
+为false的时候，找不到也没关系 。
+
+spring使用下面这个类处理@Autowired注解
+org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor

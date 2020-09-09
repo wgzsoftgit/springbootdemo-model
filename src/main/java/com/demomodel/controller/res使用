@@ -42,12 +42,7 @@ public Response addUser(@FormParam("username") String userName, @DefaultValue("0
     ...
 }
 1
-2
-3
-4
-5
-6
-7
+
 注意：DefaultValue指定的值在解析过程中出错时(@DefaultValue(“test”) @QueryParam(“age”) int age)，将返回404错误。
 ————————————————
 版权声明：本文为CSDN博主「七乘563」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。

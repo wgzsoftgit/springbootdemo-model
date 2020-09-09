@@ -1,6 +1,7 @@
 1.如果前后端传的数据都是json，那么后台接数据，传数据都可以用@JsonFormat。
 
-2.@DateTimeFormat适合后端  接收   前端传来的数据，不管是不是json都可以正确转换成Date型数据，只要前端传来的格式正确且后端@DateTimeFormat的pattern写正确了，但是这个注解无法将Date型数据用json传到后端去。
+2.@DateTimeFormat适合后端  接收   前端传来的数据，不管是不是json都可以正确转换成Date型数据，只要前端传来的格式正确
+且后端@DateTimeFormat的pattern写正确了，但是这个注解无法将Date型数据用json传到后端去。
 //：https://blog.csdn.net/qq_41570658/java/article/details/89379557
 从数据库查询出的  结果为 时间戳
    在该字段上加

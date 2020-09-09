@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.demomodel.query.Asyncquery.TaskComponent;
 
 @RunWith(SpringRunner.class)
 // 引入SpringBootTest并生成随机接口
@@ -19,8 +18,7 @@ public class AsyncTest {
  @LocalServerPort
  private int port;
   
- @Autowired
- private TaskComponent taskComponent;
+
   
  @Test
  public void testTask() {

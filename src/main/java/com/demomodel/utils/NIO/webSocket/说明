@@ -1,0 +1,13 @@
+TomDog类：
+     main()函数，参数可指定端口号，启动start。
+     start函数，启动对应端口号，监听socket请求，创建线程池处理
+
+HandlerRquestThread类: 实现runnable接口（线程）定义网站根目录。
+     构造函数，拿到socket，处理得到输入和输出流in/out
+     paresRequestHead(),处理请求头，获得请求文件，并返回
+     getFile,打印目标文件，即找到相应文件转向输出流
+     Dirshow,用于罗列目录，可以404禁止
+     sendError（），发送错误信息
+     run（），线程函数题，调用上面函数拿到文件命，并把文件输出到输出流
+     ⎛⎝
+     ⎛⎝

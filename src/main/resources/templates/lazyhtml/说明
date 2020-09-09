@@ -1,0 +1,20 @@
+如何判断元素是否在可视区域
+方法一
+网上看到好多这种方法，稍微记录一下。
+
+通过document.documentElement.clientHeight获取屏幕可视窗口高度
+通过element.offsetTop获取元素相对于文档顶部的距离
+通过document.documentElement.scrollTop获取浏览器窗口顶部与文档顶部之间的距离，也就是滚动条滚动的距离
+然后判断②-③<①是否成立，如果成立，元素就在可视区域内。
+
+方法二（推荐）
+通过getBoundingClientRect()方法来获取元素的大小以及位置，MDN上是这样描述
+这个方法返回一个名为ClientRect的DOMRect对象，包含了top、right、botton、left、width、height这些值。
+我们思考一下，什么情况下图片进入可视区域。
+
+假设const bound = el.getBoundingClientRect();来表示图片到可视区域顶部距离；
+并设 const clientHeight = window.innerHeight;来表示可视区域的高度。
+
+随着滚动条的向下滚动，bound.top会越来越小，也就是图片到可视区域顶部的距离越来越小，当bound.top===clientHeight时，图片的上沿应该是位于可视区域下沿的位置的临界点，再滚动一点点，图片就会进入可视区域。
+
+也就是说，在bound.top<=clientHeight时，图片是在可视区域内的。

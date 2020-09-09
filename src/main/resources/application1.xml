@@ -15,7 +15,7 @@
  <!-- 配置es的连接 -->
  <elasticsearch:transport-client id="client" cluster-nodes="127.0.0.1:9300" />  
   <!--配置es模板  -->
-  <bean id="elasticsearchTemplate"
+  <bean id="elasticsearchTemplate"  
    class="org.springframework.data.elasticsearch.core.ElasticsearchTemplate">
      <constructor-arg  name="client" ref="client" />
   </bean>

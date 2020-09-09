@@ -38,7 +38,9 @@ spring对传入的多个配置类进行解析
 可以在被注册的bean上面加上@Conditional注解，来控制这个bean是否需要注册到spring容器中
 如果配置类不会被注册到容器，那么这个配置类解析所产生的所有新的配置类及所产生的所有新的bean都不会被注册到容器
 一个配置类被spring处理有2个阶段：配置类解析阶段、bean注册阶段（将配置类作为bean被注册到spring容器)。
-如果将Condition接口的实现类作为配置类上@Conditional中，那么这个条件会对两个阶段都有效，此时通过Condition是无法精细的控制某个阶段的，如果想控制某个阶段，比如可以让他解析，但是不能让他注册，此时就就需要用到另外一个接口了：ConfigurationCondition
+如果将Condition接口的实现类作为配置类上@Conditional中，那么这个条件会对两个阶段都有效，此时通过Condition是
+无法精细的控制某个阶段的，如果想控制某个阶段，比如可以让他解析，但是不能让他注册，
+此时就就需要用到另外一个接口了：ConfigurationCondition
 原文链接：https://blog.csdn.net/likun557/article/details/105108901
 
 

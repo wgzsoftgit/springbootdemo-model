@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
@@ -15,6 +17,7 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -87,4 +90,39 @@ public class BasePostAndParameterFirst2 {
 				
 	  
 	}
+	
+	public static Boolean checkText(String accessToken,String textConetnt) {
+
+        try {
+            CloseableHttpClient httpclient = HttpClients.createDefault();
+
+            CloseableHttpResponse response = null;
+            HttpPost request = new HttpPost("https://api.weixin.qq.com/wxa/msg_sec_check?access_token=" + accessToken);
+            request.addHeader("Content-Type", "application/json;charset=UTF-8");
+
+            Map<String, String> paramMap = new HashMap<String, String>();
+            paramMap.put("content", textConetnt);
+            request.setEntity(new StringEntity(com.alibaba.fastjson.JSONObject.toJSONString(paramMap), ContentType.create("application/json", "utf-8")));
+            
+            response = httpclient.execute(request);
+            HttpEntity httpEntity = response.getEntity();
+            String result = EntityUtils.toString(httpEntity, "UTF-8");// 转成string
+            com.alibaba.fastjson.JSONObject jso = com.alibaba.fastjson.JSONObject.parseObject(result);
+            System.out.println(jso);
+            Object errcode = jso.get("errcode");
+            int errCode = (int) errcode;
+            if (errCode == 0) {
+                return true;
+            } else if (errCode == 87014) {
+                System.out.println("内容违规-----------" + textConetnt);
+                return false;
+            }
+
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("----------------调用腾讯内容过滤系统出错------------------");
+            return true;
+        }
+  }	 
 }

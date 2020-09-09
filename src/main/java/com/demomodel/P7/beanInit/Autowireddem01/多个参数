@@ -1,0 +1,11 @@
+
+@Autowired
+public void injectService1(Service1 service1, @Autowired(required = false) String name) { //@1
+    System.out.println(String.format("%s.injectService1(),{service1=%s,name=%s}", this.getClass().getName(), service1, name));
+    this.service1 = service1;
+}
+多个参数的时候，方法上面的@Autowire默认对方法中所有参数起效，如果我们想对某个参数进行特定的配置，
+可以在参数上加上@Autowired，这个配置会覆盖方法上面的@Autowired配置。
+
+在第二个参数上面加上@Autowired，设置required为false：表示这个bean不是强制注入的，能找到就注入，
+找不到就注入一个null对象

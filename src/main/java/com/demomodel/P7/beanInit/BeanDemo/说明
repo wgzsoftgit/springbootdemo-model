@@ -1,0 +1,4 @@
+常见3种方式
+硬编码方式
+@Autowired、@Resource的方式
+@Bean标注的方法参数的方式

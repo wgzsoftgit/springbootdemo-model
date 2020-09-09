@@ -179,6 +179,7 @@ public class Gsondemotx {
 	 * 但是如果设置为“application/json;charset=utf-8”，会报上述错误
 	 * 报一个String parameter “xxx” is not present的错误。
 	 * ajax传JSON时设置的contenttype 如果是application/json或者text/json时，
+	 
 	 * JAVA中request.getParameter("")怎么也接收不到数据。这是因为，Tomcat的HttpServletRequest类的实现类
 	 * 为org.apache.catalina.connector.Request（实际上是org.apache.coyote.Request）。
 	 * @RequestParam 底层是通过request.getParameter方式获得参数的，也就是说，
@@ -187,6 +188,8 @@ public class Gsondemotx {
 	 * @RequestParam可以处理get 方式中queryString的值，也可以处理post方式中 body data的值。
 	 * @RequestParam用来处理Content-Type: 为 application/x-www-form-urlencoded编码的内容，
 	 * 提交方式GET、POST。
+	 * 
+	 * 
 	 * 
 	 * 前端请求传Json对象则后端使用@RequestParam；
                    前端请求传Json对象的字符串则后端使用@RequestBody。

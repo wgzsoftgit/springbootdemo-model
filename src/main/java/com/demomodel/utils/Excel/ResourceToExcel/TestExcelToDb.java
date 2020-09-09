@@ -14,7 +14,7 @@ import com.demomodel.utils.Excel.map.Demotxt2Mapper;
 
 import jxl.Sheet;
 import jxl.Workbook;
-
+//得到表格中所有的数据   存入到mysql
 @RestController
 @RequestMapping("TestExcelToDb")
 public class TestExcelToDb {
@@ -35,7 +35,7 @@ public class TestExcelToDb {
 	
 	@RequestMapping("Tomysql")
     public  void Tomysql() {
-        //得到表格中所有的数据
+        //得到表格中所有的数据                                         &&
         List<Demotxt2> listExcel=TestExcelToDb.getAllByExcel("d://book.xls");
         /*//得到数据库表中所有的数据
         List<StuEntity> listDb=StuService.getAllByDb();*/
@@ -58,13 +58,21 @@ public class TestExcelToDb {
 	
 	 /**
      * 查询指定目录中电子表格中所有的数据
+     * 读取excel的表格的数据
      * @param file 文件完整路径
      * @return
      */
     public static List<Demotxt2> getAllByExcel(String file){
         List<Demotxt2> list=new ArrayList<Demotxt2>();
+        Workbook rwb=null;
         try {
-            Workbook rwb=Workbook.getWorkbook(new File(file));
+        	
+        	//导入已存在的Excel文件，获得只读的工作薄对象   可以获取文件流 
+//            FileInputStream fis=new FileInputStream(xlsPath);
+//            Workbook wk=Workbook.getWorkbook(fis);
+        	//1:创建workbook
+             rwb=Workbook.getWorkbook(new File(file));
+             // 2:获取第一个工作表sheet
             Sheet rs=rwb.getSheet("Test Shee 1");//或者rwb.getSheet(0)
             int clos=rs.getColumns();//得到所有的列
             int rows=rs.getRows();//得到所有的行
@@ -85,7 +93,10 @@ public class TestExcelToDb {
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        } 
+        } finally {
+        	 //最后一步：关闭资源
+        	rwb.close();
+		}
         return list;
         
     }

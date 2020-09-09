@@ -20,6 +20,7 @@ public class TestController2 {
     }
     @RequestMapping("/webhtml")
     public String jspindex2() {
+    	//https://github.com/simonsfan/springboot-quartz-demo
         return "query/index";
     }
 

@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -150,5 +151,30 @@ public class FileUploadController {
         }
     }
 //https://blog.csdn.net/qq_36159851/article/details/79968433
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, java.io.IOException {
+	  //  logger.info("ajax download file");
+	    String fileName = req.getParameter("fileName");
+	    File file = new File(System.getProperty("user.home"), fileName);
+	    
+	    resp.setContentType("application/octet-stream");
+	    resp.setHeader("Content-Disposition","attachment;filename=" + fileName);
+	    resp.setContentLength((int) file.length());
+	    
+	    FileInputStream fis = null;
+	    try {
+	        fis = new FileInputStream(file);
+	        byte[] buffer = new byte[128];
+	        int count = 0;
+	        while ((count = fis.read(buffer)) > 0) {
+	            resp.getOutputStream().write(buffer, 0, count);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        resp.getOutputStream().flush();
+	        resp.getOutputStream().close();
+	        fis.close();
+	    }
+	}
 }
 //：https://blog.csdn.net/qq_34350964/article/details/84028262

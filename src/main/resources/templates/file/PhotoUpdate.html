@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JS判断上传图片格式是否正确</title>
+       <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<input type="file" id="file"/>
+<input id="btn" type="button" value="button"/>
+<script>
+    //测试文件末尾
+    function isPicFile(fileName) {
+        //lastIndexOf如果没有搜索到则返回为 -1
+        if (fileName.lastIndexOf(".") != -1) {
+            var fileType = (fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length)).toLowerCase();
+            var suppotFile = new Array();
+                suppotFile[0] = "jpg";
+                suppotFile[1] = "gif";
+                suppotFile[2] = "bmp";
+                suppotFile[3] = "png";
+                suppotFile[4] = "jpeg";
+            for ( var i = 0; i < suppotFile.length; i++) {
+                if (suppotFile[i] == fileType) {
+                    return true;
+                } else {
+                    continue;
+                }
+            }
+            alert("文件类型不合法,只能是jpg、gif、bmp、png、jpeg、png类型！");
+            return false;
+        } else {
+            alert("文件类型不合法,只能是 jpg、gif、bmp、png、jpeg、png类型！");
+            return false;
+        }
+    }
+
+ 
+    
+  //上传图片
+    function AjaxFileUpload(url, fileinput) {
+        try {
+            if (fileinput.files.length <= 0) {
+                alert('请选择图片');
+                return false;
+            }
+            var file = fileinput.files[0];
+            var re = /^.*?\.(jpg|gif|png)$/i;
+            if (!re.test(file.name)) {
+                alert('未被允许的图片格式');
+                return false;
+            }
+            if (file.size > 1024 * 1024 * 2) {//2M
+                $(fileinput).val('');
+                alert("图片文件须小于2M");
+                return false;
+            }
+        } catch (err) {
+        }
+        try {
+            validateImageSize(url,fileinput);
+        } catch (err) {
+            doUpload(url);//也要上传，走后台验证
+        }
+    };
+    function validateImageSize(url,fileinput) {
+        var f = fileinput.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var data = e.target.result;
+            //加载图片获取图片真实宽度和高度
+            var image = new Image();
+            image.onload = function () {
+                var width = image.width;
+                var height = image.height;
+                if (width < 640 || height < 360) {
+                    $(fileinput).val('');
+                    alert("尺寸须大于640*360像素！");
+                    return;
+                }
+                if (width > 5000 || height > 5000) {
+                    $(fileinput).val('');
+                    alert("尺寸须小于5000*5000像素！");
+                    return;
+                }
+                doUpload(url);          
+            };
+            image.src = data;
+        };
+        reader.readAsDataURL(f);
+    }
+    function doUpload(url) {
+        $.ajax({
+            url: url,
+            secureuri: false,
+            fileElementId: 'UploadFile',
+            dataType: 'json',
+            beforeSend: function () {  //请求前处理
+                $("#loading").show();
+            },
+            complete: function () {  //请求完成后处理
+                $("#loading").hide();
+            },
+            success: function (data, status) {
+                if (data ==null) {
+                    $("#showImg").attr("src", data.Message);
+                    $("#ImageUrl").val(data.Message);
+                }
+                else
+                    alert(data);
+                	console.log(data)
+            },
+            error: function (data, status, e) {
+                alert(e);
+                console.log("请求异常",e)
+            }
+        });
+    }
+    
+    var oFile = document.getElementById('file');
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function () {
+        isPicFile( oFile.value );
+        AjaxFileUpload("http://localhost:9093/",oFile);
+    };
+    
+</script>
+</body>
+</html>
