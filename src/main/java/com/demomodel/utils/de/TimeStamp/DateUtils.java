@@ -132,7 +132,11 @@ public class DateUtils {
 		
 		return hourLabel+":"+minLabel;
 	}
-	
+	/**
+	 * 根据时间判断星期几
+	 * @param date  Date类型的
+	 * @return
+	 */
 	public static String dayOfWeekName (Date date) {
 		Calendar c = Calendar.getInstance();
 		c.setTime(date);
@@ -156,7 +160,11 @@ public class DateUtils {
 				return "";
 		}
 	}
-	
+	/**
+	 *  根据时间字符串  判断星期几
+	 * @param dateStr
+	 * @return
+	 */
 	public static String dayOfWeekName (String dateStr) {
 		try {
 			Date date = DATE_FORMAT.parse(dateStr);

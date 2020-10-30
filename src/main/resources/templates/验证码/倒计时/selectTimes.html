@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+<title> 倒计时,抢购</title>
+	
+    </head>
+    <body>
+        <p></p>
+        <script type="text/javascript">
+            showTime();
+            var timer = setInterval(showTime,1000);
+            function showTime(){
+                var end = Date.parse('2020/09/015 10:00:00');
+                // 获取当前时间
+                var now = Date.now();
+                // 计算差值
+                var offset = Math.floor((end - now)/1000);//毫秒
+ 
+                if(offset <= 0){
+ocument.querySelector('p').innerHTML  = "团购已结束";
+                    // 清除定时器
+                    clearInterval(timer);
+                }
+ 
+                var sec = offset%60;
+                var min = Math.floor(offset/60)%60;
+                var hour = Math.floor(offset/60/60)%24;
+                var day = Math.floor(offset/60/60/24);
+ 
+                sec = sec<10? '0'+sec : sec;
+                min = min<10? '0'+min : min;
+                hour = hour<10? '0'+hour : hour;
+                day = day<10? '0'+day : day;
+ 
+ 
+                document.querySelector('p').innerHTML = day + '天' + hour + '时' + min + '分' + sec + '秒';
+            }
+ 
+           
+ 
+        </script>
+    </body>
+</html>

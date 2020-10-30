@@ -1,0 +1,1 @@
+前端一个JSON.stringify()传来的json字符串，后端一般用@RequestBody标签来定义一个参数接收

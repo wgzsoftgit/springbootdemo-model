@@ -1,129 +1,122 @@
 package com.demomodel.utils.netip;
-import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.util.Enumeration;
- 
 import javax.servlet.http.HttpServletRequest;
-
-import org.apache.commons.lang3.StringUtils;
- 
 /**
- * IP工具类
- * @author geeksun
- * 2011-9-23
- */
+* IP地址工具类
+* @author xudongdong
+*
+*/
 public class IpUtil {
- public static void main(String[] args) throws SocketException {
-	 System.err.println(getLocalRealIp());
-}
-	
+    
     /**
-     * @param 获取远程IP
-     * @return IP Address
+     * 私有化构造器
      */
-    public static String getIpAddrByRequest(HttpServletRequest request) {
-        String ip = request.getHeader("x-forwarded-for");
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getHeader("Proxy-Client-IP");
-        }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getHeader("WL-Proxy-Client-IP");
-        }
-        if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getRemoteAddr();
-        }
-        return ip;
+    private IpUtil() {
     }
-     
     /**
-     * @return 获取本机IP
-     * @throws SocketException
+     * 获取真实IP地址
+     * <p>使用getRealIP代替该方法</p>
+     * @param request req
+     * @return ip
      */
-    public static String getLocalRealIp() throws SocketException {
-        String localip = null;// 本地IP，如果没有配置外网IP则返回它
-        String netip = null;// 外网IP
- 
-        Enumeration<NetworkInterface> netInterfaces = 
-            NetworkInterface.getNetworkInterfaces();
-        InetAddress ip = null;
-        boolean finded = false;// 是否找到外网IP
-        while (netInterfaces.hasMoreElements() && !finded) {
-            NetworkInterface ni = netInterfaces.nextElement();
-            Enumeration<InetAddress> address = ni.getInetAddresses();
-            while (address.hasMoreElements()) {
-                ip = address.nextElement();
-                if (!ip.isSiteLocalAddress() 
-                        && !ip.isLoopbackAddress() 
-                        && ip.getHostAddress().indexOf(":") == -1) {// 外网IP
-                    netip = ip.getHostAddress();
-                    finded = true;
+    @Deprecated
+    public static String getClinetIpByReq(HttpServletRequest request) {
+        // 获取客户端ip地址
+        String clientIp = request.getHeader("x-forwarded-for");
+        if (clientIp == null || clientIp.length() == 0 || "unknown".equalsIgnoreCase(clientIp)) {
+            clientIp = request.getHeader("Proxy-Client-IP");
+        }
+        if (clientIp == null || clientIp.length() == 0 || "unknown".equalsIgnoreCase(clientIp)) {
+            clientIp = request.getHeader("WL-Proxy-Client-IP");
+        }
+        if (clientIp == null || clientIp.length() == 0 || "unknown".equalsIgnoreCase(clientIp)) {
+            clientIp = request.getRemoteAddr();
+        }
+        /*
+         * 对于获取到多ip的情况下，找到公网ip.
+         */
+        String sIP = null;
+        if (clientIp != null && !clientIp.contains("unknown") && clientIp.indexOf(",") > 0) {
+            String[] ipsz = clientIp.split(",");
+            for (String anIpsz : ipsz) {
+                if (!isInnerIP(anIpsz.trim())) {  //&&判断IP是否是内网地址
+                    sIP = anIpsz.trim();
                     break;
-                } else if (ip.isSiteLocalAddress() 
-                        && !ip.isLoopbackAddress() 
-                        && ip.getHostAddress().indexOf(":") == -1) {// 内网IP
-                    localip = ip.getHostAddress();
                 }
             }
-        }
-     
-        if (netip != null && !"".equals(netip)) {
-            return netip;
-        } else {
-            return localip;
-        }
-    }
-    /**
-     * X-Forwarded-For
-这是一个 Squid 开发的字段，只有在通过了HTTP代理或者负载均衡服务器时才会添加该项。
-
-格式为X-Forwarded-For:client1,proxy1,proxy2，一般情况下，第一个ip为客户端真实ip，后面的为经过的代理服务器ip。现在大部分的代理都会加上这个请求头。
-
-Proxy-Client-IP/WL- Proxy-Client-IP
-这个一般是经过apache http服务器的请求才会有，用apache http做代理时一般会加上Proxy-Client-IP请求头，而WL-Proxy-Client-IP是他的weblogic插件加上的头。
-
-HTTP_CLIENT_IP
-有些代理服务器会加上此请求头。
-
-X-Real-IP
-nginx代理一般会加上此请求头。
-     * @param request
-     * @return
-     */
-    public static String getIp2(HttpServletRequest request) {
-        String ip = request.getHeader("X-Forwarded-For");
-        if(StringUtils.isNotEmpty(ip) && !"unKnown".equalsIgnoreCase(ip)){
-            //多次反向代理后会有多个ip值，第一个ip才是真实ip
-            int index = ip.indexOf(",");
-            if(index != -1){
-                return ip.substring(0,index);
-            }else{
-                return ip;
+            /*
+             * 如果多ip都是内网ip，则取第一个ip.
+             */
+            if (null == sIP) {
+                sIP = ipsz[0].trim();
             }
+            clientIp = sIP;
         }
-        ip = request.getHeader("X-Real-IP");
-        if(StringUtils.isNotEmpty(ip) && !"unKnown".equalsIgnoreCase(ip)){
-            return ip;
+        if (clientIp != null && clientIp.contains("unknown")){
+            clientIp =clientIp.replaceAll("unknown,", "");
+            clientIp = clientIp.trim();
         }
-        return request.getRemoteAddr();
+        if ("".equals(clientIp) || null == clientIp){
+            clientIp = "127.0.0.1";
+        }
+        return clientIp;
     }
-
-public static String getIpAddress(HttpServletRequest request) {
-    String ip = request.getHeader("x-forwarded-for");
-    if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-        ip = request.getHeader("Proxy-Client-IP");
+    
+    /**
+     * 判断IP是否是内网地址
+     * @param ipAddress ip地址
+     * @return 是否是内网地址
+     */
+    public static boolean isInnerIP(String ipAddress) {
+        boolean isInnerIp;
+        long ipNum = getIpNum(ipAddress);
+        /**   
+        私有IP：A类  10.0.0.0-10.255.255.255   
+               B类  172.16.0.0-172.31.255.255   
+               C类  192.168.0.0-192.168.255.255   
+        当然，还有127这个网段是环回地址   
+        **/
+        long aBegin = getIpNum("10.0.0.0");
+        long aEnd = getIpNum("10.255.255.255");
+        
+        long bBegin = getIpNum("172.16.0.0");
+        long bEnd = getIpNum("172.31.255.255");
+        
+        long cBegin = getIpNum("192.168.0.0");
+        long cEnd = getIpNum("192.168.255.255");
+        isInnerIp = isInner(ipNum, aBegin, aEnd) || isInner(ipNum, bBegin, bEnd) || isInner(ipNum, cBegin, cEnd)
+                || ipAddress.equals("127.0.0.1");
+        return isInnerIp;
     }
-    if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-        ip = request.getHeader("WL-Proxy-Client-IP");
+    private static long getIpNum(String ipAddress) {
+        String[] ip = ipAddress.split("\\.");
+        long a = Integer.parseInt(ip[0]);
+        long b = Integer.parseInt(ip[1]);
+        long c = Integer.parseInt(ip[2]);
+        long d = Integer.parseInt(ip[3]);
+        return a * 256 * 256 * 256 + b * 256 * 256 + c * 256 + d;
     }
-    if (ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-        ip = request.getRemoteAddr();
+    
+    private static boolean isInner(long userIp, long begin, long end) {
+        return (userIp >= begin) && (userIp <= end);
     }
-    if (ip.contains(",")) {
-        return ip.split(",")[0];
-    } else {
-        return ip;
+    public static String getRealIP(HttpServletRequest request){
+        // 获取客户端ip地址
+        String clientIp = request.getHeader("x-forwarded-for");
+        if (clientIp == null || clientIp.length() == 0 || "unknown".equalsIgnoreCase(clientIp)) {
+            clientIp = request.getRemoteAddr();
+        }
+        String[] clientIps = clientIp.split(",");
+        if(clientIps.length <= 1) return clientIp.trim();
+        // 判断是否来自CDN
+        if(isComefromCDN(request)){
+            if(clientIps.length>=2) return clientIps[clientIps.length-2].trim();
+        }
+        return clientIps[clientIps.length-1].trim();
     }
-}
-
+    private static boolean isComefromCDN(HttpServletRequest request) {
+        String host = request.getHeader("host");
+        return host.contains("www.189.cn") ||host.contains("shouji.189.cn") || host.contains(
+                "image2.chinatelecom-ec.com") || host.contains(
+                "image1.chinatelecom-ec.com");
+    }
 }

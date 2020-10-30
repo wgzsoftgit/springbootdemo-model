@@ -1,0 +1,5 @@
+
+spring  可以识别aop需要注入
+注入的bean
+org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator
+注入RequestParameterAop自定义aop类

@@ -8,6 +8,7 @@ public class Md5Encode {
 	 * constructors
 	 */
 	private Md5Encode() {
+	
 	}
 
 	/**

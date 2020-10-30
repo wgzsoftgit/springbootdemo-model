@@ -10,6 +10,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.demomodel.utils.netip.IpUtil;
+import com.demomodel.utils.netip.IpUtil2;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
@@ -38,8 +39,8 @@ public class CdrAsept {
         // 白名单校验
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest httpServletRequest = attributes.getRequest();
-        String localIp = IpUtil.getLocalRealIp();
-        String remoteIp = IpUtil.getIpAddrByRequest(httpServletRequest);
+        String localIp = IpUtil2.getLocalRealIp();
+        String remoteIp = IpUtil2.getIpAddrByRequest(httpServletRequest);
       //  TranslateCdr cdr = new TranslateCdr();
       //  cdr.setRemoteIp(remoteIp);  //存入远程ip
       //  CdrThreadLocal.setTranslateCdr(cdr);

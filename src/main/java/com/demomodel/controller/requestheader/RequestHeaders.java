@@ -2,6 +2,7 @@ package com.demomodel.controller.requestheader;
 
 import java.io.IOException;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
@@ -50,8 +51,9 @@ public class RequestHeaders {
 
 	//处理request Content-Type中，除了以下2种类型的请求2
 	@RequestMapping(value = "/test/ContentType4",consumes = {"!application/json","!application/x-www-form-urlencoded"})
-	public void test3(@RequestBody Pet pet, Model model) {      
+	public void test3(HttpServletRequest request,@RequestBody Pet pet, Model model) {      
 	    // TODO
+	
 	}
 	
 	//produces

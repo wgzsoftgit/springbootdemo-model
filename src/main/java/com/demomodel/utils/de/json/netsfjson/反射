@@ -1,0 +1,2 @@
+Method[] methods = javabean.getClass().getDeclaredMethods();
+获取类的方法

@@ -1,1 +1,11 @@
 https://blog.csdn.net/qq_42650988/article/details/96431078
+cmd   ==> ython.exe  
+执行安装
+
+Java -jar 【此处是下载的jython jar包名】，或者双击jar包夜可以
+
+3、配置环境变量
+
+新增JYTHON_THOME的环境变量，并设置为安装路径。
+
+配置classpath和path路径分别为%JYTHON_HOME%\Lib和%JYTHON_HOME%\bin

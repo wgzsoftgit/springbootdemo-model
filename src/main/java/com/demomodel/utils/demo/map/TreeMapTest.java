@@ -3,6 +3,7 @@ package com.demomodel.utils.demo.map;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +44,7 @@ public class TreeMapTest {
 //      c:ccccc
 //      d:ddddd
 	}  
+	//map排序
     public static void ByMapKey() {
         Map<String, String> map = new TreeMap<String, String>(
                 new Comparator<String>() {
@@ -66,5 +68,21 @@ public class TreeMapTest {
 //        c:ccccc
 //        b:bbbbb
 //        a:aaaaa
+    }
+    
+    
+    public void removeByIterator(){//正确的删除方式
+        HashMap<Integer, String> map = new HashMap<Integer, String>();
+        map.put(1, "one");
+        map.put(2, "two");
+        map.put(3, "three");
+        System.out.println(map);
+        Iterator<Map.Entry<Integer, String>> it = map.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry<Integer, String> entry = it.next();
+            if(entry.getKey() == 2)
+                it.remove();//使用迭代器的remove()方法删除元素
+        }
+        System.out.println(map);
     }
 }

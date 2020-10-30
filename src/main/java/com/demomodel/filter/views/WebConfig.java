@@ -31,7 +31,7 @@ import com.demomodel.filter.handlerInterceptor.ReqInterceptor;
  * @author wgz
  * @date 创建时间：2020年5月28日 下午4:38:25
  */
-//@Configuration
+@Configuration
 public class WebConfig  implements WebMvcConfigurer{
 
    
@@ -39,7 +39,7 @@ public class WebConfig  implements WebMvcConfigurer{
 	    public InternalResourceViewResolver htmlViewResolver() {
 	        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 	        viewResolver.setPrefix("/WEB-INF/templates/view/");
-	        viewResolver.setViewClass(HandleResourceViewExists.class); //设置检查器
+	        viewResolver.setViewClass(HandleResourceViewExists.class); //&& 设置检查器
 	        viewResolver.setSuffix(".html"); 
 	        viewResolver.setOrder(0);
 	        viewResolver.setContentType("text/html;charset=UTF-8");
@@ -58,11 +58,22 @@ public class WebConfig  implements WebMvcConfigurer{
 	        viewResolver.setContentType("text/html;charset=UTF-8");
 	        return viewResolver;
 	    }
+	    @Bean
+	    public InternalResourceViewResolver viewResolver2() {
+	    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+	        viewResolver.setViewClass(HandleResourceViewExists.class); //设置检查器
+	        viewResolver.setPrefix("/WEB-INF/templates/redisPage/");//配置放置jsp文件夹
+	        viewResolver.setSuffix(".jsp");
+	        viewResolver.setOrder(0);
+	        viewResolver.setContentType("text/html;charset=UTF-8");
+	        return viewResolver;
+	    }
 	    @Override
 	    public void configureViewResolvers(ViewResolverRegistry registry) {
 	     //   super.configureViewResolvers(registry);
 	        registry.viewResolver(htmlViewResolver());
 	        registry.viewResolver(viewResolver());
+	        registry.viewResolver(viewResolver2());
 //	        registry.jsp("/jsp/",".jsp");  
 		}
 //----------------------Thymeleaf--------------------

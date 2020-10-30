@@ -6,6 +6,8 @@
     <result column="sname" property="sname" />
     <result column="sex" property="sex" />
   </resultMap>
+  
+  <!-- TStudent selectUserByMap(@Param("params") Map<String, Object> parameterMap) -->
     <select id="selectUserByMap" resultMap="BaseResultMap" parameterType="Map">
      select * from t_student
      <where>
@@ -14,4 +16,76 @@
       	   </if>
     </where>
   </select>
+  <!-- void update1(@Param("listds")list<String> selectrow) -->
+  <update id="update1" parameterType="java.util.List">
+    update  t_student set status=1   where id in
+    <foreach collection="listds" index="index" item="item" 
+              separator="," open="(" close=")">
+              #{item}
+    </foreach>
+   </update>
+   
+    <!-- void insert1(list<User> list) -->
+   <insert id="insert1" parameterType="java.util.List">
+      insert user(id, name, age) values
+      <foreach collection="list" item="i" index="index" separator=",">
+      (null , #{i.name} , #{i.age})   
+      </foreach>
+   </insert>
+   
+   
+      <!--  list<User> selectUserlist2(User user)-->
+      <select id="selectUserlist2" parameterType="com.demomodel.mybatisPlus.bean.TStudent" resultMap="BaseResultMap">
+        select * from user
+        <where>
+          <if test="idNum !=null  and idNum !='' ">
+          and idNum=#{idNum}
+          </if>
+           <if test="name !=null  and name !='' ">
+          and name like concat('%',#{name},'%')
+          </if>
+            <if test="age !=null  and age !='' ">
+          and age &gt;  &lt; #{age}
+          </if>
+        </where>
+           
+      </select>
+      
+   <!--  list<User> selectUserlist(String idNum)-->
+   <select id="selectUserlist" parameterType="java.lang.String" resultMap="BaseResultMap">
+     select * from user where idNum=#{idNum} 
+   </select>
+  
+  
+  
+  <!-- List<User> selectUser(); -->
+  <select id="selectUser" parameterType="com.demomodel.mybatisPlus.bean.TStudent" 
+    resultMap="BaseResultMap">
+    select * from user
+  </select>
+  <!--  list<String> selectuserlist() -->
+  <select id="selectuserlist"  resultType="java.lang.String" >
+    select id_num from user
+  </select>
+  
+  
+  <!-- int count() -->
+   <select id="count"  resultType="java.lang.Integer" >
+    select count(1) from (   select id_num from user )cc
+  </select>
+  
+  
+  <!-- 删除  trancat    delete   drop(一般不用,用于删除表) -->
+  <!--  void drouptableMap()-->
+  <update id="drouptableMap">
+    truncate table hetable_room
+    <!-- void deleteByExample(String id) -->
+  </update>
+    <delete id="deleteByExample" parameterType="java.lang.String">
+    delete from involved_terror_points
+    where id=#{id}
+  </delete>
+  
+  
+  
 </mapper>

@@ -1,0 +1,1270 @@
+2020-09-19 10:49:11.417 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-19 10:49:11.681 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$9b9e835a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:49:12.379 [restartedMain] INFO  com.demomodel.WebApplication - The following profiles are active: dev
+2020-09-19 10:49:20.203 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'demotxtMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.master.map.DemotxtMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:49:20.205 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'usertimesMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map.UsertimesMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:49:20.211 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskErrorsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskErrorsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:49:20.211 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskInformationsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskInformationsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:49:20.211 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskRecordsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskRecordsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:49:20.795 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:49:20.798 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:49:21.211 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 407ms. Found 1 repository interfaces.
+2020-09-19 10:49:21.222 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:49:21.224 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:49:21.312 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 10:49:21.312 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84ms. Found 0 repository interfaces.
+2020-09-19 10:49:21.329 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:49:21.331 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:49:21.481 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 10:49:21.481 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 72ms. Found 0 repository interfaces.
+2020-09-19 10:49:21.950 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1f' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 10:49:21.951 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 10:49:22.366 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=280bc466-fca8-3fbc-8d97-05f67505a4e8
+2020-09-19 10:49:22.613 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.demomodel.query.Asyncquery.method.config.AsyncConfig$$EnhancerBySpringCGLIB$$2c022cfa] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:49:22.709 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$533691e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:49:22.872 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7f84805d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:49:23.258 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$9b9e835a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:49:36.109 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-19 10:49:36.541 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cb8bf384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:49:37.473 [restartedMain] INFO  com.demomodel.WebApplication - The following profiles are active: dev
+2020-09-19 10:49:47.227 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'demotxtMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.master.map.DemotxtMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:49:47.228 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'usertimesMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map.UsertimesMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:49:47.234 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskErrorsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskErrorsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:49:47.234 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskInformationsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskInformationsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:49:47.234 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskRecordsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskRecordsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:49:47.915 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:49:47.919 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:49:48.326 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 398ms. Found 1 repository interfaces.
+2020-09-19 10:49:48.339 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:49:48.341 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:49:48.430 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 10:49:48.431 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85ms. Found 0 repository interfaces.
+2020-09-19 10:49:48.452 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:49:48.455 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:49:48.565 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 10:49:48.566 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 93ms. Found 0 repository interfaces.
+2020-09-19 10:49:48.914 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1f' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 10:49:48.914 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 10:49:49.457 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=280bc466-fca8-3fbc-8d97-05f67505a4e8
+2020-09-19 10:49:52.989 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.demomodel.query.Asyncquery.method.config.AsyncConfig$$EnhancerBySpringCGLIB$$5bef9d24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:49:53.117 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$8324020a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:49:55.558 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$af71f087] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:49:55.986 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cb8bf384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:49:58.054 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9093 (http)
+2020-09-19 10:49:58.086 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9093"]
+2020-09-19 10:49:58.103 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-19 10:49:58.104 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-09-19 10:49:58.128 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk1.8.0_171/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_171/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_171/bin/../jre/lib/amd64;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.8.0_171\bin;C:\Program Files\Java\jdk1.8.0_171\jre\bin;C:\jython2.7.2;C:\jython2.7.2\bin;C:\Users\zbj\AppData\Local\Microsoft\WindowsApps;C:\Users\zbj\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\zbj\AppData\Local\GitHubDesktop\bin;C:\Users\zbj\eclipse\java-2019-09\eclipse;;.]
+2020-09-19 10:49:58.893 [restartedMain] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-19 10:49:58.900 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-19 10:49:58.901 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 21383 ms
+2020-09-19 10:50:01.059 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - no modules loaded
+2020-09-19 10:50:01.060 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+2020-09-19 10:50:01.060 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2020-09-19 10:50:01.060 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2020-09-19 10:50:01.060 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+2020-09-19 10:50:01.060 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2020-09-19 10:50:03.824 [restartedMain] INFO  o.s.d.e.client.TransportClientFactoryBean - Adding transport node : 127.0.0.1:9300
+2020-09-19 10:50:07.328 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-09-19 10:50:07.329 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2020-09-19 10:50:07.330 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-09-19 10:50:07.330 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-09-19 10:50:07.330 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-09-19 10:50:07.330 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2020-09-19 10:50:07.330 [restartedMain] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-09-19 10:50:07.333 [restartedMain] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet com.demomodel.utils.de.json.gson.RequestDemo mapped to [/RequestDemo]
+2020-09-19 10:50:07.612 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-09-19 10:50:07.988 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-09-19 10:50:08.246 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-09-19 10:50:08.397 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.3.7.Final}
+2020-09-19 10:50:08.401 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2020-09-19 10:50:09.008 [restartedMain] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2020-09-19 10:50:09.430 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-09-19 10:50:09.797 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-19 10:50:09.825 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2020-09-19 10:50:09.832 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2020-09-19 10:50:14.968 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2020-09-19 10:50:14.974 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2020-09-19 10:50:16.286 [restartedMain] INFO  io.searchbox.client.AbstractJestClient - Setting server pool to a list of 1 servers: [http://localhost:9200]
+2020-09-19 10:50:16.288 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Using multi thread/connection supporting pooling connection manager
+2020-09-19 10:50:16.333 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Using custom GSON instance
+2020-09-19 10:50:16.334 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Node Discovery disabled...
+2020-09-19 10:50:16.334 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Idle connection reaping disabled...
+2020-09-19 10:50:17.790 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2020-09-19 10:50:17.793 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2020-09-19 10:50:19.256 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-09-19 10:50:19.292 [restartedMain] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-19 10:50:19.292 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.0 created.
+2020-09-19 10:50:19.294 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2020-09-19 10:50:19.296 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-19 10:50:19.296 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-09-19 10:50:19.296 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.0
+2020-09-19 10:50:19.297 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@530eedf8
+2020-09-19 10:50:20.573 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-09-19 10:50:21.231 [restartedMain] ERROR o.s.d.e.r.support.AbstractElasticsearchRepository - failed to load elasticsearch nodes : org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [{#transport#-1}{9E711DmvSOqvXALYHcOz9g}{127.0.0.1}{127.0.0.1:9300}]
+2020-09-19 10:50:21.621 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation is not supported on static fields: static org.springframework.data.redis.core.RedisTemplate com.demomodel.utils.redis.RedisTemplate.text.redisTransaction.redisTemplate
+2020-09-19 10:50:22.276 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-19 10:50:23.686 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-09-19 10:50:24.196 [restartedMain] WARN  o.s.c.netflix.archaius.ArchaiusAutoConfiguration - No spring.application.name found, defaulting to 'application'
+2020-09-19 10:50:24.203 [restartedMain] INFO  com.netflix.config.sources.URLConfigurationSource - URLs to be used as dynamic configuration source: [file:/D:/workspace-eclipse/tspringbootdemo/target/classes/config.properties]
+2020-09-19 10:50:24.220 [restartedMain] INFO  com.netflix.config.sources.URLConfigurationSource - URLs to be used as dynamic configuration source: [file:/D:/workspace-eclipse/tspringbootdemo/target/classes/config.properties]
+2020-09-19 10:50:25.089 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-09-19 10:50:27.662 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-09-19 10:50:27.702 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-09-19 10:50:27.747 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-09-19 10:50:28.590 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jsonToObjectUsingPOST_1
+2020-09-19 10:50:28.667 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingGET_1
+2020-09-19 10:50:28.667 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingHEAD_1
+2020-09-19 10:50:28.668 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPOST_1
+2020-09-19 10:50:28.669 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPUT_1
+2020-09-19 10:50:28.670 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPATCH_1
+2020-09-19 10:50:28.671 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingDELETE_1
+2020-09-19 10:50:28.671 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingOPTIONS_1
+2020-09-19 10:50:28.672 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingTRACE_1
+2020-09-19 10:50:28.699 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingGET_1
+2020-09-19 10:50:28.702 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingHEAD_1
+2020-09-19 10:50:28.704 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPOST_1
+2020-09-19 10:50:28.706 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPUT_1
+2020-09-19 10:50:28.709 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPATCH_1
+2020-09-19 10:50:28.711 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingDELETE_1
+2020-09-19 10:50:28.714 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingOPTIONS_1
+2020-09-19 10:50:28.716 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingTRACE_1
+2020-09-19 10:50:28.773 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: testUsingPOST_1
+2020-09-19 10:50:28.859 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updtaControlStateUsingPOST_1
+2020-09-19 10:50:28.925 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingGET_1
+2020-09-19 10:50:28.926 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingHEAD_1
+2020-09-19 10:50:28.927 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPOST_1
+2020-09-19 10:50:28.929 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPUT_1
+2020-09-19 10:50:28.931 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPATCH_1
+2020-09-19 10:50:28.932 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingDELETE_1
+2020-09-19 10:50:28.934 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingOPTIONS_1
+2020-09-19 10:50:28.935 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingTRACE_1
+2020-09-19 10:50:28.948 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: testUsingPOST_2
+2020-09-19 10:50:28.951 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingGET_1
+2020-09-19 10:50:28.953 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingHEAD_1
+2020-09-19 10:50:28.954 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPOST_1
+2020-09-19 10:50:28.958 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPUT_1
+2020-09-19 10:50:28.960 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPATCH_1
+2020-09-19 10:50:28.960 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingDELETE_1
+2020-09-19 10:50:28.961 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingOPTIONS_1
+2020-09-19 10:50:28.963 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingTRACE_1
+2020-09-19 10:50:28.969 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingGET_1
+2020-09-19 10:50:28.971 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingHEAD_1
+2020-09-19 10:50:28.972 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPOST_1
+2020-09-19 10:50:28.974 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPUT_1
+2020-09-19 10:50:28.977 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPATCH_1
+2020-09-19 10:50:28.979 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingDELETE_1
+2020-09-19 10:50:28.981 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingOPTIONS_1
+2020-09-19 10:50:28.984 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingTRACE_1
+2020-09-19 10:50:28.989 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingGET_2
+2020-09-19 10:50:28.991 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingHEAD_2
+2020-09-19 10:50:28.994 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPOST_2
+2020-09-19 10:50:28.995 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPUT_2
+2020-09-19 10:50:28.998 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPATCH_2
+2020-09-19 10:50:29.000 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingDELETE_2
+2020-09-19 10:50:29.002 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingOPTIONS_2
+2020-09-19 10:50:29.003 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingTRACE_2
+2020-09-19 10:50:29.007 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingGET_1
+2020-09-19 10:50:29.009 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingHEAD_1
+2020-09-19 10:50:29.011 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPOST_1
+2020-09-19 10:50:29.013 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPUT_1
+2020-09-19 10:50:29.015 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPATCH_1
+2020-09-19 10:50:29.017 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingDELETE_1
+2020-09-19 10:50:29.020 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingOPTIONS_1
+2020-09-19 10:50:29.022 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingTRACE_1
+2020-09-19 10:50:29.031 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPOST_2
+2020-09-19 10:50:29.053 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingGET_1
+2020-09-19 10:50:29.053 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingHEAD_1
+2020-09-19 10:50:29.054 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPOST_1
+2020-09-19 10:50:29.054 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPUT_1
+2020-09-19 10:50:29.055 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPATCH_1
+2020-09-19 10:50:29.056 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingDELETE_1
+2020-09-19 10:50:29.057 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingOPTIONS_1
+2020-09-19 10:50:29.058 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingTRACE_1
+2020-09-19 10:50:29.077 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingGET_1
+2020-09-19 10:50:29.078 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingHEAD_1
+2020-09-19 10:50:29.080 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPOST_1
+2020-09-19 10:50:29.081 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPUT_1
+2020-09-19 10:50:29.082 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPATCH_1
+2020-09-19 10:50:29.083 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingDELETE_1
+2020-09-19 10:50:29.084 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingOPTIONS_1
+2020-09-19 10:50:29.084 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingTRACE_1
+2020-09-19 10:50:29.118 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingGET_1
+2020-09-19 10:50:29.119 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingHEAD_1
+2020-09-19 10:50:29.120 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPOST_1
+2020-09-19 10:50:29.121 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPUT_1
+2020-09-19 10:50:29.121 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPATCH_1
+2020-09-19 10:50:29.122 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingDELETE_1
+2020-09-19 10:50:29.123 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingOPTIONS_1
+2020-09-19 10:50:29.124 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingTRACE_1
+2020-09-19 10:50:29.157 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_1
+2020-09-19 10:50:29.160 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_1
+2020-09-19 10:50:29.163 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_1
+2020-09-19 10:50:29.166 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_1
+2020-09-19 10:50:29.169 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_1
+2020-09-19 10:50:29.172 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_1
+2020-09-19 10:50:29.175 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_1
+2020-09-19 10:50:29.178 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_1
+2020-09-19 10:50:29.205 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_2
+2020-09-19 10:50:29.205 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_2
+2020-09-19 10:50:29.206 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_2
+2020-09-19 10:50:29.207 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_2
+2020-09-19 10:50:29.207 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_2
+2020-09-19 10:50:29.208 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_2
+2020-09-19 10:50:29.208 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_2
+2020-09-19 10:50:29.209 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_2
+2020-09-19 10:50:29.223 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_3
+2020-09-19 10:50:29.227 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_3
+2020-09-19 10:50:29.230 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_3
+2020-09-19 10:50:29.234 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_3
+2020-09-19 10:50:29.239 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_3
+2020-09-19 10:50:29.244 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_3
+2020-09-19 10:50:29.249 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_3
+2020-09-19 10:50:29.254 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_3
+2020-09-19 10:50:29.257 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingGET_1
+2020-09-19 10:50:29.258 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingHEAD_1
+2020-09-19 10:50:29.259 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPOST_1
+2020-09-19 10:50:29.260 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPUT_1
+2020-09-19 10:50:29.262 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPATCH_1
+2020-09-19 10:50:29.263 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingDELETE_1
+2020-09-19 10:50:29.264 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingOPTIONS_1
+2020-09-19 10:50:29.265 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingTRACE_1
+2020-09-19 10:50:29.441 [restartedMain] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2020-09-19 10:50:29.441 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-09-19 10:50:31.959 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9093"]
+2020-09-19 10:50:31.961 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-09-19 10:50:32.028 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9093 (http) with context path ''
+2020-09-19 10:50:32.032 [restartedMain] INFO  com.demomodel.WebApplication - Started WebApplication in 57.822 seconds (JVM running for 60.124)
+2020-09-19 10:51:16.143 [http-nio-9093-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-19 10:51:16.144 [http-nio-9093-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-19 10:51:16.181 [http-nio-9093-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 37 ms
+2020-09-19 10:54:25.000 [Thread-9] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-09-19 10:54:25.033 [Thread-9] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2020-09-19 10:54:25.033 [Thread-9] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-09-19 10:54:25.033 [Thread-9] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-09-19 10:54:25.034 [Thread-9] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-09-19 10:54:25.036 [Thread-9] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-09-19 10:54:25.041 [Thread-9] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-19 10:54:25.058 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2020-09-19 10:54:25.068 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2020-09-19 10:54:25.068 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2020-09-19 10:54:25.078 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2020-09-19 10:54:25.079 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-09-19 10:54:25.081 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-09-19 10:54:33.617 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cb8bf384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:54:34.152 [restartedMain] INFO  com.demomodel.WebApplication - The following profiles are active: dev
+2020-09-19 10:54:40.625 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'demotxtMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.master.map.DemotxtMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:54:40.627 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'usertimesMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map.UsertimesMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:54:40.632 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskErrorsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskErrorsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:54:40.632 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskInformationsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskInformationsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:54:40.632 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskRecordsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskRecordsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:54:40.892 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:54:40.892 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:54:41.062 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 170ms. Found 1 repository interfaces.
+2020-09-19 10:54:41.067 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:54:41.067 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:54:41.136 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 10:54:41.136 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 69ms. Found 0 repository interfaces.
+2020-09-19 10:54:41.138 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:54:41.138 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:54:41.203 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 10:54:41.203 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65ms. Found 0 repository interfaces.
+2020-09-19 10:54:41.331 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1f' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 10:54:41.331 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 10:54:41.458 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=280bc466-fca8-3fbc-8d97-05f67505a4e8
+2020-09-19 10:55:36.078 [http-nio-9093-exec-1] ERROR com.demomodel.aop.aspe.RequestParameterAop - 参数获取失败: null
+2020-09-19 10:55:36.133 [http-nio-9093-exec-1] ERROR org.apache.coyote.http11.Http11Processor - Error processing request
+java.lang.NullPointerException: null
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-19 10:55:36.134 [http-nio-9093-exec-1] WARN  org.apache.catalina.connector.CoyoteAdapter - Exception while attempting to add an entry to the access log
+java.lang.NullPointerException: null
+	at org.apache.catalina.connector.CoyoteAdapter.log(CoyoteAdapter.java:490)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:438)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-19 10:55:36.137 [http-nio-9093-exec-1] ERROR org.apache.coyote.http11.Http11Processor - Error finishing response
+java.lang.NullPointerException: null
+	at org.apache.coyote.http11.Http11OutputBuffer.commit(Http11OutputBuffer.java:306)
+	at org.apache.coyote.http11.Http11Processor.prepareResponse(Http11Processor.java:985)
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:351)
+	at org.apache.coyote.http11.Http11Processor.endRequest(Http11Processor.java:1110)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:448)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-19 10:55:36.982 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.demomodel.query.Asyncquery.method.config.AsyncConfig$$EnhancerBySpringCGLIB$$5bef9d24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:55:36.996 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$8324020a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:55:37.711 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$af71f087] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:55:37.751 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cb8bf384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:55:38.283 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9093 (http)
+2020-09-19 10:55:38.284 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9093"]
+2020-09-19 10:55:38.285 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-19 10:55:38.285 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-09-19 10:55:38.511 [restartedMain] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-19 10:55:38.513 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-19 10:55:38.513 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 64355 ms
+2020-09-19 10:55:39.124 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - no modules loaded
+2020-09-19 10:55:39.125 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+2020-09-19 10:55:39.125 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2020-09-19 10:55:39.125 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2020-09-19 10:55:39.125 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+2020-09-19 10:55:39.125 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2020-09-19 10:55:39.147 [restartedMain] INFO  o.s.d.e.client.TransportClientFactoryBean - Adding transport node : 127.0.0.1:9300
+2020-09-19 10:55:41.531 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-09-19 10:55:41.531 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2020-09-19 10:55:41.531 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-09-19 10:55:41.531 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-09-19 10:55:41.531 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-09-19 10:55:41.531 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2020-09-19 10:55:41.532 [restartedMain] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-09-19 10:55:41.532 [restartedMain] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet com.demomodel.utils.de.json.gson.RequestDemo mapped to [/RequestDemo]
+2020-09-19 10:55:41.596 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2020-09-19 10:55:41.622 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2020-09-19 10:55:41.704 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-09-19 10:55:41.872 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-09-19 10:55:41.899 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-19 10:55:41.921 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2020-09-19 10:55:41.925 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2020-09-19 10:55:46.329 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2020-09-19 10:55:46.332 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2020-09-19 10:55:46.571 [restartedMain] INFO  io.searchbox.client.AbstractJestClient - Setting server pool to a list of 1 servers: [http://localhost:9200]
+2020-09-19 10:55:46.571 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Using multi thread/connection supporting pooling connection manager
+2020-09-19 10:55:46.573 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Using custom GSON instance
+2020-09-19 10:55:46.573 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Node Discovery disabled...
+2020-09-19 10:55:46.573 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Idle connection reaping disabled...
+2020-09-19 10:55:47.706 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2020-09-19 10:55:47.706 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2020-09-19 10:55:48.767 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-09-19 10:55:48.769 [restartedMain] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-19 10:55:48.769 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.0 created.
+2020-09-19 10:55:48.769 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2020-09-19 10:55:48.769 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-19 10:55:48.769 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-09-19 10:55:48.769 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.0
+2020-09-19 10:55:48.769 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3b12ac01
+2020-09-19 10:55:49.812 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-09-19 10:55:50.227 [restartedMain] ERROR o.s.d.e.r.support.AbstractElasticsearchRepository - failed to load elasticsearch nodes : org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [{#transport#-1}{cWSWTRQdTqSeT2toTbDcmQ}{127.0.0.1}{127.0.0.1:9300}]
+2020-09-19 10:55:50.459 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation is not supported on static fields: static org.springframework.data.redis.core.RedisTemplate com.demomodel.utils.redis.RedisTemplate.text.redisTransaction.redisTemplate
+2020-09-19 10:55:50.752 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-19 10:55:52.627 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-09-19 10:55:52.970 [restartedMain] WARN  o.s.c.netflix.archaius.ArchaiusAutoConfiguration - No spring.application.name found, defaulting to 'application'
+2020-09-19 10:55:52.970 [restartedMain] INFO  com.netflix.config.sources.URLConfigurationSource - URLs to be used as dynamic configuration source: [file:/D:/workspace-eclipse/tspringbootdemo/target/classes/config.properties]
+2020-09-19 10:55:53.349 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-09-19 10:55:54.818 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-09-19 10:55:54.819 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-09-19 10:55:54.827 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-09-19 10:55:55.123 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jsonToObjectUsingPOST_1
+2020-09-19 10:55:55.180 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingGET_1
+2020-09-19 10:55:55.180 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingHEAD_1
+2020-09-19 10:55:55.181 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPOST_1
+2020-09-19 10:55:55.181 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPUT_1
+2020-09-19 10:55:55.182 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPATCH_1
+2020-09-19 10:55:55.182 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingDELETE_1
+2020-09-19 10:55:55.182 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingOPTIONS_1
+2020-09-19 10:55:55.183 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingTRACE_1
+2020-09-19 10:55:55.200 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingGET_1
+2020-09-19 10:55:55.202 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingHEAD_1
+2020-09-19 10:55:55.203 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPOST_1
+2020-09-19 10:55:55.205 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPUT_1
+2020-09-19 10:55:55.206 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPATCH_1
+2020-09-19 10:55:55.208 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingDELETE_1
+2020-09-19 10:55:55.209 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingOPTIONS_1
+2020-09-19 10:55:55.211 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingTRACE_1
+2020-09-19 10:55:55.247 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: testUsingPOST_1
+2020-09-19 10:55:55.276 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updtaControlStateUsingPOST_1
+2020-09-19 10:55:55.309 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingGET_1
+2020-09-19 10:55:55.310 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingHEAD_1
+2020-09-19 10:55:55.310 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPOST_1
+2020-09-19 10:55:55.311 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPUT_1
+2020-09-19 10:55:55.311 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPATCH_1
+2020-09-19 10:55:55.312 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingDELETE_1
+2020-09-19 10:55:55.312 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingOPTIONS_1
+2020-09-19 10:55:55.313 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingTRACE_1
+2020-09-19 10:55:55.318 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: testUsingPOST_2
+2020-09-19 10:55:55.320 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingGET_1
+2020-09-19 10:55:55.320 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingHEAD_1
+2020-09-19 10:55:55.321 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPOST_1
+2020-09-19 10:55:55.322 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPUT_1
+2020-09-19 10:55:55.323 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPATCH_1
+2020-09-19 10:55:55.324 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingDELETE_1
+2020-09-19 10:55:55.324 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingOPTIONS_1
+2020-09-19 10:55:55.325 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingTRACE_1
+2020-09-19 10:55:55.327 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingGET_1
+2020-09-19 10:55:55.328 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingHEAD_1
+2020-09-19 10:55:55.329 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPOST_1
+2020-09-19 10:55:55.330 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPUT_1
+2020-09-19 10:55:55.331 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPATCH_1
+2020-09-19 10:55:55.332 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingDELETE_1
+2020-09-19 10:55:55.333 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingOPTIONS_1
+2020-09-19 10:55:55.334 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingTRACE_1
+2020-09-19 10:55:55.335 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingGET_2
+2020-09-19 10:55:55.337 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingHEAD_2
+2020-09-19 10:55:55.338 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPOST_2
+2020-09-19 10:55:55.339 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPUT_2
+2020-09-19 10:55:55.340 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPATCH_2
+2020-09-19 10:55:55.341 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingDELETE_2
+2020-09-19 10:55:55.342 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingOPTIONS_2
+2020-09-19 10:55:55.343 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingTRACE_2
+2020-09-19 10:55:55.345 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingGET_1
+2020-09-19 10:55:55.347 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingHEAD_1
+2020-09-19 10:55:55.348 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPOST_1
+2020-09-19 10:55:55.349 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPUT_1
+2020-09-19 10:55:55.350 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPATCH_1
+2020-09-19 10:55:55.351 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingDELETE_1
+2020-09-19 10:55:55.352 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingOPTIONS_1
+2020-09-19 10:55:55.353 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingTRACE_1
+2020-09-19 10:55:55.356 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPOST_2
+2020-09-19 10:55:55.365 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingGET_1
+2020-09-19 10:55:55.365 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingHEAD_1
+2020-09-19 10:55:55.365 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPOST_1
+2020-09-19 10:55:55.366 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPUT_1
+2020-09-19 10:55:55.366 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPATCH_1
+2020-09-19 10:55:55.366 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingDELETE_1
+2020-09-19 10:55:55.366 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingOPTIONS_1
+2020-09-19 10:55:55.366 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingTRACE_1
+2020-09-19 10:55:55.374 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingGET_1
+2020-09-19 10:55:55.375 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingHEAD_1
+2020-09-19 10:55:55.375 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPOST_1
+2020-09-19 10:55:55.375 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPUT_1
+2020-09-19 10:55:55.376 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPATCH_1
+2020-09-19 10:55:55.376 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingDELETE_1
+2020-09-19 10:55:55.377 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingOPTIONS_1
+2020-09-19 10:55:55.377 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingTRACE_1
+2020-09-19 10:55:55.396 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingGET_1
+2020-09-19 10:55:55.397 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingHEAD_1
+2020-09-19 10:55:55.397 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPOST_1
+2020-09-19 10:55:55.397 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPUT_1
+2020-09-19 10:55:55.398 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPATCH_1
+2020-09-19 10:55:55.398 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingDELETE_1
+2020-09-19 10:55:55.398 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingOPTIONS_1
+2020-09-19 10:55:55.398 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingTRACE_1
+2020-09-19 10:55:55.421 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_1
+2020-09-19 10:55:55.423 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_1
+2020-09-19 10:55:55.425 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_1
+2020-09-19 10:55:55.427 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_1
+2020-09-19 10:55:55.429 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_1
+2020-09-19 10:55:55.430 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_1
+2020-09-19 10:55:55.432 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_1
+2020-09-19 10:55:55.434 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_1
+2020-09-19 10:55:55.452 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_2
+2020-09-19 10:55:55.452 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_2
+2020-09-19 10:55:55.452 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_2
+2020-09-19 10:55:55.453 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_2
+2020-09-19 10:55:55.453 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_2
+2020-09-19 10:55:55.454 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_2
+2020-09-19 10:55:55.454 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_2
+2020-09-19 10:55:55.454 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_2
+2020-09-19 10:55:55.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_3
+2020-09-19 10:55:55.466 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_3
+2020-09-19 10:55:55.468 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_3
+2020-09-19 10:55:55.471 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_3
+2020-09-19 10:55:55.474 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_3
+2020-09-19 10:55:55.477 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_3
+2020-09-19 10:55:55.479 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_3
+2020-09-19 10:55:55.482 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_3
+2020-09-19 10:55:55.483 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingGET_1
+2020-09-19 10:55:55.483 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingHEAD_1
+2020-09-19 10:55:55.483 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPOST_1
+2020-09-19 10:55:55.483 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPUT_1
+2020-09-19 10:55:55.484 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPATCH_1
+2020-09-19 10:55:55.484 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingDELETE_1
+2020-09-19 10:55:55.484 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingOPTIONS_1
+2020-09-19 10:55:55.484 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingTRACE_1
+2020-09-19 10:55:55.590 [restartedMain] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2020-09-19 10:55:55.590 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-09-19 10:55:59.081 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9093"]
+2020-09-19 10:55:59.082 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-09-19 10:55:59.087 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9093 (http) with context path ''
+2020-09-19 10:55:59.089 [restartedMain] INFO  com.demomodel.WebApplication - Started WebApplication in 86.043 seconds (JVM running for 387.181)
+2020-09-19 10:55:59.096 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-09-19 10:56:23.947 [http-nio-9093-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-19 10:56:23.947 [http-nio-9093-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-19 10:56:23.984 [http-nio-9093-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 37 ms
+2020-09-19 10:57:23.159 [Thread-15] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-09-19 10:57:23.171 [Thread-15] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2020-09-19 10:57:23.171 [Thread-15] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-09-19 10:57:23.171 [Thread-15] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-09-19 10:57:23.171 [Thread-15] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-09-19 10:57:23.172 [Thread-15] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-09-19 10:57:23.176 [Thread-15] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-19 10:57:24.293 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2020-09-19 10:57:24.304 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2020-09-19 10:57:24.304 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2020-09-19 10:57:24.323 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2020-09-19 10:57:24.324 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2020-09-19 10:57:24.327 [Thread-15] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2020-09-19 10:57:25.744 [http-nio-9093-exec-2] INFO  com.demomodel.aop.aspe.SystemLogAspect - before execution(String com.demomodel.aop.aspe.AoptextController.aop(test1))
+2020-09-19 10:57:25.757 [http-nio-9093-exec-2] INFO  com.demomodel.aop.aspe.SystemLogAspect - around execution(String com.demomodel.aop.aspe.AoptextController.aop(test1))	Use time : 775 ms!
+2020-09-19 10:57:27.468 [http-nio-9093-exec-2] INFO  com.demomodel.aop.aspe.SystemLogAspect - afterReturn execution(String com.demomodel.aop.aspe.AoptextController.aop(test1))
+2020-09-19 10:57:27.469 [http-nio-9093-exec-2] ERROR com.demomodel.aop.aspe.RequestParameterAop - 请求源IP【127.0.0.1】 -> 请求URL【http://localhost:9093/aopRequest/aop】
+57684 -> ["user"] -> 请求耗时：[[{"name":"'as'","age":"12"}]]毫秒 
+请求参数：null -> {}
+请求结果：{}
+2020-09-19 10:57:28.892 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cb8bf384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:57:29.397 [restartedMain] INFO  com.demomodel.WebApplication - The following profiles are active: dev
+2020-09-19 10:57:35.041 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'demotxtMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.master.map.DemotxtMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:57:35.042 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'usertimesMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map.UsertimesMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:57:35.046 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskErrorsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskErrorsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:57:35.046 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskInformationsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskInformationsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:57:35.046 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskRecordsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskRecordsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:57:35.242 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:57:35.243 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:57:35.432 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 189ms. Found 1 repository interfaces.
+2020-09-19 10:57:35.436 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:57:35.436 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:57:35.503 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 10:57:35.503 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 67ms. Found 0 repository interfaces.
+2020-09-19 10:57:35.507 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:57:35.507 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:57:35.575 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 10:57:35.575 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68ms. Found 0 repository interfaces.
+2020-09-19 10:57:35.698 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1f' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 10:57:35.698 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 10:57:35.782 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=280bc466-fca8-3fbc-8d97-05f67505a4e8
+2020-09-19 10:57:37.129 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.demomodel.query.Asyncquery.method.config.AsyncConfig$$EnhancerBySpringCGLIB$$5bef9d24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:57:37.142 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$8324020a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:57:37.670 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$af71f087] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:57:37.706 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cb8bf384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:57:38.187 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9093 (http)
+2020-09-19 10:57:38.188 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9093"]
+2020-09-19 10:57:38.188 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-19 10:57:38.189 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-09-19 10:57:38.405 [restartedMain] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-19 10:57:38.407 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-19 10:57:38.407 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 9004 ms
+2020-09-19 10:57:38.897 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - no modules loaded
+2020-09-19 10:57:38.897 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+2020-09-19 10:57:38.897 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2020-09-19 10:57:38.897 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2020-09-19 10:57:38.897 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+2020-09-19 10:57:38.898 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2020-09-19 10:57:38.915 [restartedMain] INFO  o.s.d.e.client.TransportClientFactoryBean - Adding transport node : 127.0.0.1:9300
+2020-09-19 10:57:41.286 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-09-19 10:57:41.286 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2020-09-19 10:57:41.286 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-09-19 10:57:41.286 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-09-19 10:57:41.286 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-09-19 10:57:41.286 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2020-09-19 10:57:41.287 [restartedMain] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-09-19 10:57:41.287 [restartedMain] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet com.demomodel.utils.de.json.gson.RequestDemo mapped to [/RequestDemo]
+2020-09-19 10:57:41.348 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2020-09-19 10:57:41.357 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2020-09-19 10:57:41.441 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-09-19 10:57:41.590 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-09-19 10:57:41.611 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-19 10:57:41.631 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+2020-09-19 10:57:41.638 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+2020-09-19 10:57:44.250 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+2020-09-19 10:57:44.253 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+2020-09-19 10:57:44.489 [restartedMain] INFO  io.searchbox.client.AbstractJestClient - Setting server pool to a list of 1 servers: [http://localhost:9200]
+2020-09-19 10:57:44.490 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Using multi thread/connection supporting pooling connection manager
+2020-09-19 10:57:44.492 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Using custom GSON instance
+2020-09-19 10:57:44.492 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Node Discovery disabled...
+2020-09-19 10:57:44.492 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Idle connection reaping disabled...
+2020-09-19 10:57:45.357 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2020-09-19 10:57:45.357 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2020-09-19 10:57:46.169 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-09-19 10:57:46.170 [restartedMain] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-19 10:57:46.170 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.0 created.
+2020-09-19 10:57:46.170 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2020-09-19 10:57:46.170 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-19 10:57:46.170 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-09-19 10:57:46.170 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.0
+2020-09-19 10:57:46.170 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@742b1afe
+2020-09-19 10:57:47.080 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-09-19 10:57:47.449 [restartedMain] ERROR o.s.d.e.r.support.AbstractElasticsearchRepository - failed to load elasticsearch nodes : org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [{#transport#-1}{Bb8PDE_uR0mE9rVzHlLlrA}{127.0.0.1}{127.0.0.1:9300}]
+2020-09-19 10:57:47.547 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation is not supported on static fields: static org.springframework.data.redis.core.RedisTemplate com.demomodel.utils.redis.RedisTemplate.text.redisTransaction.redisTemplate
+2020-09-19 10:57:47.798 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-19 10:57:48.864 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-09-19 10:57:49.226 [restartedMain] WARN  o.s.c.netflix.archaius.ArchaiusAutoConfiguration - No spring.application.name found, defaulting to 'application'
+2020-09-19 10:57:49.226 [restartedMain] INFO  com.netflix.config.sources.URLConfigurationSource - URLs to be used as dynamic configuration source: [file:/D:/workspace-eclipse/tspringbootdemo/target/classes/config.properties]
+2020-09-19 10:57:49.674 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-09-19 10:57:51.021 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-09-19 10:57:51.023 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-09-19 10:57:51.029 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-09-19 10:57:51.253 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jsonToObjectUsingPOST_1
+2020-09-19 10:57:51.302 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingGET_1
+2020-09-19 10:57:51.302 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingHEAD_1
+2020-09-19 10:57:51.302 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPOST_1
+2020-09-19 10:57:51.303 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPUT_1
+2020-09-19 10:57:51.303 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPATCH_1
+2020-09-19 10:57:51.303 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingDELETE_1
+2020-09-19 10:57:51.304 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingOPTIONS_1
+2020-09-19 10:57:51.304 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingTRACE_1
+2020-09-19 10:57:51.318 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingGET_1
+2020-09-19 10:57:51.319 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingHEAD_1
+2020-09-19 10:57:51.320 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPOST_1
+2020-09-19 10:57:51.321 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPUT_1
+2020-09-19 10:57:51.322 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPATCH_1
+2020-09-19 10:57:51.323 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingDELETE_1
+2020-09-19 10:57:51.324 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingOPTIONS_1
+2020-09-19 10:57:51.325 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingTRACE_1
+2020-09-19 10:57:51.354 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: testUsingPOST_1
+2020-09-19 10:57:51.426 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updtaControlStateUsingPOST_1
+2020-09-19 10:57:51.446 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingGET_1
+2020-09-19 10:57:51.447 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingHEAD_1
+2020-09-19 10:57:51.447 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPOST_1
+2020-09-19 10:57:51.447 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPUT_1
+2020-09-19 10:57:51.448 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPATCH_1
+2020-09-19 10:57:51.448 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingDELETE_1
+2020-09-19 10:57:51.449 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingOPTIONS_1
+2020-09-19 10:57:51.449 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingTRACE_1
+2020-09-19 10:57:51.453 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: testUsingPOST_2
+2020-09-19 10:57:51.454 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingGET_1
+2020-09-19 10:57:51.454 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingHEAD_1
+2020-09-19 10:57:51.455 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPOST_1
+2020-09-19 10:57:51.456 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPUT_1
+2020-09-19 10:57:51.456 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPATCH_1
+2020-09-19 10:57:51.456 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingDELETE_1
+2020-09-19 10:57:51.457 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingOPTIONS_1
+2020-09-19 10:57:51.457 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingTRACE_1
+2020-09-19 10:57:51.458 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingGET_1
+2020-09-19 10:57:51.459 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingHEAD_1
+2020-09-19 10:57:51.459 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPOST_1
+2020-09-19 10:57:51.459 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPUT_1
+2020-09-19 10:57:51.460 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPATCH_1
+2020-09-19 10:57:51.460 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingDELETE_1
+2020-09-19 10:57:51.461 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingOPTIONS_1
+2020-09-19 10:57:51.462 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingTRACE_1
+2020-09-19 10:57:51.462 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingGET_2
+2020-09-19 10:57:51.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingHEAD_2
+2020-09-19 10:57:51.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPOST_2
+2020-09-19 10:57:51.464 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPUT_2
+2020-09-19 10:57:51.464 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPATCH_2
+2020-09-19 10:57:51.464 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingDELETE_2
+2020-09-19 10:57:51.465 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingOPTIONS_2
+2020-09-19 10:57:51.465 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingTRACE_2
+2020-09-19 10:57:51.466 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingGET_1
+2020-09-19 10:57:51.467 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingHEAD_1
+2020-09-19 10:57:51.467 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPOST_1
+2020-09-19 10:57:51.468 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPUT_1
+2020-09-19 10:57:51.468 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPATCH_1
+2020-09-19 10:57:51.468 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingDELETE_1
+2020-09-19 10:57:51.469 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingOPTIONS_1
+2020-09-19 10:57:51.469 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingTRACE_1
+2020-09-19 10:57:51.471 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPOST_2
+2020-09-19 10:57:51.476 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingGET_1
+2020-09-19 10:57:51.476 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingHEAD_1
+2020-09-19 10:57:51.477 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPOST_1
+2020-09-19 10:57:51.477 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPUT_1
+2020-09-19 10:57:51.477 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPATCH_1
+2020-09-19 10:57:51.477 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingDELETE_1
+2020-09-19 10:57:51.477 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingOPTIONS_1
+2020-09-19 10:57:51.478 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingTRACE_1
+2020-09-19 10:57:51.484 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingGET_1
+2020-09-19 10:57:51.485 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingHEAD_1
+2020-09-19 10:57:51.485 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPOST_1
+2020-09-19 10:57:51.485 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPUT_1
+2020-09-19 10:57:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPATCH_1
+2020-09-19 10:57:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingDELETE_1
+2020-09-19 10:57:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingOPTIONS_1
+2020-09-19 10:57:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingTRACE_1
+2020-09-19 10:57:51.508 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingGET_1
+2020-09-19 10:57:51.508 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingHEAD_1
+2020-09-19 10:57:51.509 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPOST_1
+2020-09-19 10:57:51.509 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPUT_1
+2020-09-19 10:57:51.509 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPATCH_1
+2020-09-19 10:57:51.509 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingDELETE_1
+2020-09-19 10:57:51.510 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingOPTIONS_1
+2020-09-19 10:57:51.510 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingTRACE_1
+2020-09-19 10:57:51.527 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_1
+2020-09-19 10:57:51.529 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_1
+2020-09-19 10:57:51.530 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_1
+2020-09-19 10:57:51.532 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_1
+2020-09-19 10:57:51.534 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_1
+2020-09-19 10:57:51.536 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_1
+2020-09-19 10:57:51.538 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_1
+2020-09-19 10:57:51.540 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_1
+2020-09-19 10:57:51.553 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_2
+2020-09-19 10:57:51.553 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_2
+2020-09-19 10:57:51.553 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_2
+2020-09-19 10:57:51.554 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_2
+2020-09-19 10:57:51.554 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_2
+2020-09-19 10:57:51.554 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_2
+2020-09-19 10:57:51.554 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_2
+2020-09-19 10:57:51.554 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_2
+2020-09-19 10:57:51.561 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_3
+2020-09-19 10:57:51.564 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_3
+2020-09-19 10:57:51.566 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_3
+2020-09-19 10:57:51.568 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_3
+2020-09-19 10:57:51.570 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_3
+2020-09-19 10:57:51.572 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_3
+2020-09-19 10:57:51.575 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_3
+2020-09-19 10:57:51.577 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_3
+2020-09-19 10:57:51.578 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingGET_1
+2020-09-19 10:57:51.578 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingHEAD_1
+2020-09-19 10:57:51.578 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPOST_1
+2020-09-19 10:57:51.579 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPUT_1
+2020-09-19 10:57:51.579 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPATCH_1
+2020-09-19 10:57:51.579 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingDELETE_1
+2020-09-19 10:57:51.579 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingOPTIONS_1
+2020-09-19 10:57:51.579 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingTRACE_1
+2020-09-19 10:57:51.684 [restartedMain] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2020-09-19 10:57:51.684 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-09-19 10:57:53.931 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9093"]
+2020-09-19 10:57:53.932 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-09-19 10:57:53.937 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9093 (http) with context path ''
+2020-09-19 10:57:53.938 [restartedMain] INFO  com.demomodel.WebApplication - Started WebApplication in 25.613 seconds (JVM running for 502.03)
+2020-09-19 10:57:53.946 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-09-19 10:58:09.306 [http-nio-9093-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-19 10:58:09.309 [http-nio-9093-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-19 10:58:09.349 [http-nio-9093-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 39 ms
+2020-09-19 10:58:30.176 [Thread-26] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-09-19 10:58:30.181 [Thread-26] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2020-09-19 10:58:30.181 [Thread-26] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-09-19 10:58:30.181 [Thread-26] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-09-19 10:58:30.181 [Thread-26] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-09-19 10:58:30.182 [Thread-26] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-09-19 10:58:30.185 [Thread-26] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-19 10:58:30.924 [http-nio-9093-exec-1] INFO  com.demomodel.aop.aspe.SystemLogAspect - before execution(String com.demomodel.aop.aspe.AoptextController.aop(test1))
+2020-09-19 10:58:30.934 [http-nio-9093-exec-1] INFO  com.demomodel.aop.aspe.SystemLogAspect - around execution(String com.demomodel.aop.aspe.AoptextController.aop(test1))	Use time : 157 ms!
+2020-09-19 10:58:31.194 [Thread-26] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+2020-09-19 10:58:31.209 [Thread-26] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+2020-09-19 10:58:31.209 [Thread-26] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+2020-09-19 10:58:31.224 [Thread-26] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+2020-09-19 10:58:31.225 [Thread-26] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2020-09-19 10:58:31.227 [Thread-26] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2020-09-19 10:58:31.528 [http-nio-9093-exec-1] INFO  com.demomodel.aop.aspe.SystemLogAspect - afterReturn execution(String com.demomodel.aop.aspe.AoptextController.aop(test1))
+2020-09-19 10:58:31.529 [http-nio-9093-exec-1] ERROR com.demomodel.aop.aspe.RequestParameterAop - 请求源IP【127.0.0.1】 -> 请求URL【http://localhost:9093/aopRequest/aop】
+18602 -> ["user"] -> 请求耗时：[[{"name":"'as'","age":"12"}]]毫秒 
+请求参数：null -> {}
+请求结果：{}
+2020-09-19 10:58:33.079 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cb8bf384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:58:33.607 [restartedMain] INFO  com.demomodel.WebApplication - The following profiles are active: dev
+2020-09-19 10:58:39.907 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'demotxtMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.master.map.DemotxtMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:58:39.908 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'usertimesMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map.UsertimesMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:58:39.911 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskErrorsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskErrorsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:58:39.911 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskInformationsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskInformationsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:58:39.911 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskRecordsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskRecordsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 10:58:40.115 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:58:40.115 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:58:40.280 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 165ms. Found 1 repository interfaces.
+2020-09-19 10:58:40.285 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:58:40.285 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:58:40.357 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 10:58:40.358 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 73ms. Found 0 repository interfaces.
+2020-09-19 10:58:40.361 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 10:58:40.361 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 10:58:40.431 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 10:58:40.431 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 70ms. Found 0 repository interfaces.
+2020-09-19 10:58:40.628 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1f' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 10:58:40.628 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 10:58:40.717 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=280bc466-fca8-3fbc-8d97-05f67505a4e8
+2020-09-19 10:58:42.200 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.demomodel.query.Asyncquery.method.config.AsyncConfig$$EnhancerBySpringCGLIB$$5bef9d24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:58:42.215 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$8324020a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:58:42.918 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$af71f087] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:58:42.957 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cb8bf384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 10:58:43.399 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9093 (http)
+2020-09-19 10:58:43.399 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9093"]
+2020-09-19 10:58:43.399 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-19 10:58:43.400 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-09-19 10:58:43.589 [restartedMain] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-19 10:58:43.590 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-19 10:58:43.590 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 9975 ms
+2020-09-19 10:58:44.111 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - no modules loaded
+2020-09-19 10:58:44.111 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+2020-09-19 10:58:44.111 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2020-09-19 10:58:44.111 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2020-09-19 10:58:44.111 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+2020-09-19 10:58:44.111 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2020-09-19 10:58:44.129 [restartedMain] INFO  o.s.d.e.client.TransportClientFactoryBean - Adding transport node : 127.0.0.1:9300
+2020-09-19 10:58:46.580 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-09-19 10:58:46.580 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2020-09-19 10:58:46.580 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-09-19 10:58:46.580 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-09-19 10:58:46.580 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-09-19 10:58:46.580 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2020-09-19 10:58:46.580 [restartedMain] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-09-19 10:58:46.581 [restartedMain] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet com.demomodel.utils.de.json.gson.RequestDemo mapped to [/RequestDemo]
+2020-09-19 10:58:46.670 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+2020-09-19 10:58:46.676 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+2020-09-19 10:58:46.757 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-09-19 10:58:46.906 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-09-19 10:58:46.924 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-19 10:58:46.945 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Starting...
+2020-09-19 10:58:46.948 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Start completed.
+2020-09-19 10:58:49.660 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Starting...
+2020-09-19 10:58:49.664 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Start completed.
+2020-09-19 10:58:49.886 [restartedMain] INFO  io.searchbox.client.AbstractJestClient - Setting server pool to a list of 1 servers: [http://localhost:9200]
+2020-09-19 10:58:49.886 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Using multi thread/connection supporting pooling connection manager
+2020-09-19 10:58:49.888 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Using custom GSON instance
+2020-09-19 10:58:49.888 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Node Discovery disabled...
+2020-09-19 10:58:49.888 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Idle connection reaping disabled...
+2020-09-19 10:58:50.962 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2020-09-19 10:58:50.963 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2020-09-19 10:58:52.045 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-09-19 10:58:52.046 [restartedMain] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-19 10:58:52.046 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.0 created.
+2020-09-19 10:58:52.046 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2020-09-19 10:58:52.046 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-19 10:58:52.046 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-09-19 10:58:52.046 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.0
+2020-09-19 10:58:52.046 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@6e272048
+2020-09-19 10:58:52.986 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-09-19 10:58:53.309 [restartedMain] ERROR o.s.d.e.r.support.AbstractElasticsearchRepository - failed to load elasticsearch nodes : org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [{#transport#-1}{V-Hv0Mu_StaT9Ed3WdsFqg}{127.0.0.1}{127.0.0.1:9300}]
+2020-09-19 10:58:53.422 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation is not supported on static fields: static org.springframework.data.redis.core.RedisTemplate com.demomodel.utils.redis.RedisTemplate.text.redisTransaction.redisTemplate
+2020-09-19 10:58:53.672 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-19 10:58:54.582 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-09-19 10:58:54.980 [restartedMain] WARN  o.s.c.netflix.archaius.ArchaiusAutoConfiguration - No spring.application.name found, defaulting to 'application'
+2020-09-19 10:58:54.980 [restartedMain] INFO  com.netflix.config.sources.URLConfigurationSource - URLs to be used as dynamic configuration source: [file:/D:/workspace-eclipse/tspringbootdemo/target/classes/config.properties]
+2020-09-19 10:58:55.351 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-09-19 10:58:56.739 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-09-19 10:58:56.741 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-09-19 10:58:56.748 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-09-19 10:58:56.897 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jsonToObjectUsingPOST_1
+2020-09-19 10:58:56.934 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingGET_1
+2020-09-19 10:58:56.935 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingHEAD_1
+2020-09-19 10:58:56.935 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPOST_1
+2020-09-19 10:58:56.935 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPUT_1
+2020-09-19 10:58:56.936 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPATCH_1
+2020-09-19 10:58:56.936 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingDELETE_1
+2020-09-19 10:58:56.936 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingOPTIONS_1
+2020-09-19 10:58:56.936 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingTRACE_1
+2020-09-19 10:58:56.953 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingGET_1
+2020-09-19 10:58:56.954 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingHEAD_1
+2020-09-19 10:58:56.955 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPOST_1
+2020-09-19 10:58:56.956 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPUT_1
+2020-09-19 10:58:56.958 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPATCH_1
+2020-09-19 10:58:56.959 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingDELETE_1
+2020-09-19 10:58:56.960 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingOPTIONS_1
+2020-09-19 10:58:56.961 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingTRACE_1
+2020-09-19 10:58:56.989 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: testUsingPOST_1
+2020-09-19 10:58:57.007 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updtaControlStateUsingPOST_1
+2020-09-19 10:58:57.034 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingGET_1
+2020-09-19 10:58:57.035 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingHEAD_1
+2020-09-19 10:58:57.035 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPOST_1
+2020-09-19 10:58:57.035 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPUT_1
+2020-09-19 10:58:57.036 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPATCH_1
+2020-09-19 10:58:57.036 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingDELETE_1
+2020-09-19 10:58:57.037 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingOPTIONS_1
+2020-09-19 10:58:57.037 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingTRACE_1
+2020-09-19 10:58:57.044 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: testUsingPOST_2
+2020-09-19 10:58:57.045 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingGET_1
+2020-09-19 10:58:57.045 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingHEAD_1
+2020-09-19 10:58:57.046 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPOST_1
+2020-09-19 10:58:57.047 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPUT_1
+2020-09-19 10:58:57.047 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPATCH_1
+2020-09-19 10:58:57.048 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingDELETE_1
+2020-09-19 10:58:57.048 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingOPTIONS_1
+2020-09-19 10:58:57.048 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingTRACE_1
+2020-09-19 10:58:57.050 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingGET_1
+2020-09-19 10:58:57.051 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingHEAD_1
+2020-09-19 10:58:57.052 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPOST_1
+2020-09-19 10:58:57.052 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPUT_1
+2020-09-19 10:58:57.053 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPATCH_1
+2020-09-19 10:58:57.053 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingDELETE_1
+2020-09-19 10:58:57.054 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingOPTIONS_1
+2020-09-19 10:58:57.055 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingTRACE_1
+2020-09-19 10:58:57.056 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingGET_2
+2020-09-19 10:58:57.056 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingHEAD_2
+2020-09-19 10:58:57.057 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPOST_2
+2020-09-19 10:58:57.057 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPUT_2
+2020-09-19 10:58:57.058 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPATCH_2
+2020-09-19 10:58:57.058 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingDELETE_2
+2020-09-19 10:58:57.059 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingOPTIONS_2
+2020-09-19 10:58:57.060 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingTRACE_2
+2020-09-19 10:58:57.060 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingGET_1
+2020-09-19 10:58:57.061 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingHEAD_1
+2020-09-19 10:58:57.061 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPOST_1
+2020-09-19 10:58:57.062 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPUT_1
+2020-09-19 10:58:57.062 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPATCH_1
+2020-09-19 10:58:57.063 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingDELETE_1
+2020-09-19 10:58:57.063 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingOPTIONS_1
+2020-09-19 10:58:57.064 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingTRACE_1
+2020-09-19 10:58:57.067 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPOST_2
+2020-09-19 10:58:57.074 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingGET_1
+2020-09-19 10:58:57.074 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingHEAD_1
+2020-09-19 10:58:57.074 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPOST_1
+2020-09-19 10:58:57.074 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPUT_1
+2020-09-19 10:58:57.074 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPATCH_1
+2020-09-19 10:58:57.075 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingDELETE_1
+2020-09-19 10:58:57.075 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingOPTIONS_1
+2020-09-19 10:58:57.075 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingTRACE_1
+2020-09-19 10:58:57.082 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingGET_1
+2020-09-19 10:58:57.083 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingHEAD_1
+2020-09-19 10:58:57.083 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPOST_1
+2020-09-19 10:58:57.083 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPUT_1
+2020-09-19 10:58:57.084 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPATCH_1
+2020-09-19 10:58:57.084 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingDELETE_1
+2020-09-19 10:58:57.084 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingOPTIONS_1
+2020-09-19 10:58:57.084 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingTRACE_1
+2020-09-19 10:58:57.104 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingGET_1
+2020-09-19 10:58:57.104 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingHEAD_1
+2020-09-19 10:58:57.104 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPOST_1
+2020-09-19 10:58:57.104 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPUT_1
+2020-09-19 10:58:57.105 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPATCH_1
+2020-09-19 10:58:57.105 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingDELETE_1
+2020-09-19 10:58:57.105 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingOPTIONS_1
+2020-09-19 10:58:57.105 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingTRACE_1
+2020-09-19 10:58:57.119 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_1
+2020-09-19 10:58:57.120 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_1
+2020-09-19 10:58:57.121 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_1
+2020-09-19 10:58:57.123 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_1
+2020-09-19 10:58:57.125 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_1
+2020-09-19 10:58:57.126 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_1
+2020-09-19 10:58:57.128 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_1
+2020-09-19 10:58:57.129 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_1
+2020-09-19 10:58:57.141 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_2
+2020-09-19 10:58:57.141 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_2
+2020-09-19 10:58:57.141 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_2
+2020-09-19 10:58:57.141 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_2
+2020-09-19 10:58:57.142 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_2
+2020-09-19 10:58:57.142 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_2
+2020-09-19 10:58:57.142 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_2
+2020-09-19 10:58:57.142 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_2
+2020-09-19 10:58:57.147 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_3
+2020-09-19 10:58:57.149 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_3
+2020-09-19 10:58:57.151 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_3
+2020-09-19 10:58:57.152 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_3
+2020-09-19 10:58:57.154 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_3
+2020-09-19 10:58:57.156 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_3
+2020-09-19 10:58:57.157 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_3
+2020-09-19 10:58:57.159 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_3
+2020-09-19 10:58:57.160 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingGET_1
+2020-09-19 10:58:57.160 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingHEAD_1
+2020-09-19 10:58:57.160 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPOST_1
+2020-09-19 10:58:57.161 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPUT_1
+2020-09-19 10:58:57.161 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPATCH_1
+2020-09-19 10:58:57.161 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingDELETE_1
+2020-09-19 10:58:57.161 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingOPTIONS_1
+2020-09-19 10:58:57.161 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingTRACE_1
+2020-09-19 10:58:57.233 [restartedMain] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2020-09-19 10:58:57.233 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-09-19 10:58:58.976 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9093"]
+2020-09-19 10:58:58.977 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-09-19 10:58:58.982 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9093 (http) with context path ''
+2020-09-19 10:58:58.983 [restartedMain] INFO  com.demomodel.WebApplication - Started WebApplication in 26.485 seconds (JVM running for 567.076)
+2020-09-19 10:58:58.989 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-09-19 10:59:12.876 [http-nio-9093-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-19 10:59:12.879 [http-nio-9093-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-09-19 10:59:12.919 [http-nio-9093-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 39 ms
+2020-09-19 11:14:19.239 [Thread-37] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-09-19 11:14:19.245 [Thread-37] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+2020-09-19 11:14:19.245 [Thread-37] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-09-19 11:14:19.245 [Thread-37] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-09-19 11:14:19.245 [Thread-37] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-09-19 11:14:19.246 [Thread-37] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+2020-09-19 11:14:19.248 [Thread-37] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-19 11:14:19.259 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown initiated...
+2020-09-19 11:14:19.282 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown completed.
+2020-09-19 11:14:19.282 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown initiated...
+2020-09-19 11:14:19.300 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown completed.
+2020-09-19 11:14:19.301 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown initiated...
+2020-09-19 11:14:19.312 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown completed.
+2020-09-19 11:14:28.137 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cb8bf384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-19 11:14:28.597 [restartedMain] INFO  com.demomodel.WebApplication - The following profiles are active: dev
+2020-09-19 11:14:34.104 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'demotxtMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.master.map.DemotxtMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 11:14:34.105 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'usertimesMapper' and 'com.demomodel.configure.doubledatasource.textdoubledatasource.secondary.map.UsertimesMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 11:14:34.108 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskErrorsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskErrorsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 11:14:34.108 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskInformationsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskInformationsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 11:14:34.108 [restartedMain] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - Skipping MapperFactoryBean with name 'quartzTaskRecordsMapper' and 'com.demomodel.query.quartzdemo.dao.QuartzTaskRecordsMapper' mapperInterface. Bean already defined with the same name!
+2020-09-19 11:14:34.261 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 11:14:34.261 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 11:14:34.409 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 147ms. Found 1 repository interfaces.
+2020-09-19 11:14:34.413 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 11:14:34.413 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 11:14:34.478 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JPA - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 11:14:34.478 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65ms. Found 0 repository interfaces.
+2020-09-19 11:14:34.480 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-09-19 11:14:34.480 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-09-19 11:14:34.543 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.demomodel.utils.httpHelp.WebMagic.es.dao.ItemRepository.
+2020-09-19 11:14:34.543 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63ms. Found 0 repository interfaces.
+2020-09-19 11:14:34.641 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1f' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 11:14:34.641 [restartedMain] INFO  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'beanConfig1' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-09-19 11:14:34.730 [restartedMain] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=280bc466-fca8-3fbc-8d97-05f67505a4e8
+2020-09-21 10:45:23.038 [http-nio-9093-exec-3] ERROR com.demomodel.aop.aspe.RequestParameterAop - 参数获取失败: null
+2020-09-21 10:45:23.735 [http-nio-9093-exec-3] ERROR org.apache.coyote.http11.Http11Processor - Error processing request
+java.lang.NullPointerException: null
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-21 10:45:23.737 [http-nio-9093-exec-3] WARN  org.apache.catalina.connector.CoyoteAdapter - Exception while attempting to add an entry to the access log
+java.lang.NullPointerException: null
+	at org.apache.catalina.connector.CoyoteAdapter.log(CoyoteAdapter.java:490)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:438)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-21 10:45:23.775 [http-nio-9093-exec-3] ERROR org.apache.coyote.http11.Http11Processor - Error finishing response
+java.lang.NullPointerException: null
+	at org.apache.coyote.http11.Http11OutputBuffer.commit(Http11OutputBuffer.java:306)
+	at org.apache.coyote.http11.Http11Processor.prepareResponse(Http11Processor.java:985)
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:351)
+	at org.apache.coyote.http11.Http11Processor.endRequest(Http11Processor.java:1110)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:448)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-09-21 10:45:25.034 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncConfig' of type [com.demomodel.query.Asyncquery.method.config.AsyncConfig$$EnhancerBySpringCGLIB$$5bef9d24] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-21 10:45:25.122 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$8324020a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-21 10:45:26.289 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$af71f087] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-21 10:45:26.606 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cb8bf384] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-09-21 10:45:30.624 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9093 (http)
+2020-09-21 10:45:30.644 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9093"]
+2020-09-21 10:45:30.645 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-21 10:45:30.645 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+2020-09-21 10:45:31.875 [restartedMain] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-21 10:45:31.878 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-21 10:45:31.878 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 171063274 ms
+2020-09-21 10:45:32.844 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - no modules loaded
+2020-09-21 10:45:32.845 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+2020-09-21 10:45:32.845 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+2020-09-21 10:45:32.845 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+2020-09-21 10:45:32.845 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+2020-09-21 10:45:32.845 [restartedMain] INFO  org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+2020-09-21 10:45:32.917 [restartedMain] INFO  o.s.d.e.client.TransportClientFactoryBean - Adding transport node : 127.0.0.1:9300
+2020-09-21 10:45:35.562 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-09-21 10:45:35.562 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2020-09-21 10:45:35.562 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-09-21 10:45:35.562 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+2020-09-21 10:45:35.562 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2020-09-21 10:45:35.562 [restartedMain] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpTraceFilter' to: [/*]
+2020-09-21 10:45:35.562 [restartedMain] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+2020-09-21 10:45:35.563 [restartedMain] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Servlet com.demomodel.utils.de.json.gson.RequestDemo mapped to [/RequestDemo]
+2020-09-21 10:45:35.677 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Starting...
+2020-09-21 10:45:36.156 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Start completed.
+2020-09-21 10:45:36.365 [restartedMain] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-09-21 10:45:37.316 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-09-21 10:45:37.380 [restartedMain] INFO  o.s.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-21 10:45:37.405 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Starting...
+2020-09-21 10:45:37.409 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Start completed.
+2020-09-21 10:45:42.144 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Starting...
+2020-09-21 10:45:42.148 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Start completed.
+2020-09-21 10:45:42.512 [restartedMain] INFO  io.searchbox.client.AbstractJestClient - Setting server pool to a list of 1 servers: [http://localhost:9200]
+2020-09-21 10:45:42.513 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Using multi thread/connection supporting pooling connection manager
+2020-09-21 10:45:42.516 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Using custom GSON instance
+2020-09-21 10:45:42.516 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Node Discovery disabled...
+2020-09-21 10:45:42.516 [restartedMain] INFO  io.searchbox.client.JestClientFactory - Idle connection reaping disabled...
+2020-09-21 10:45:43.808 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService
+2020-09-21 10:45:43.808 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2020-09-21 10:45:44.851 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-09-21 10:45:44.854 [restartedMain] INFO  org.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-09-21 10:45:44.854 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.0 created.
+2020-09-21 10:45:44.854 [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+2020-09-21 10:45:44.854 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-09-21 10:45:44.854 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-09-21 10:45:44.854 [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.0
+2020-09-21 10:45:44.854 [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@24249b7
+2020-09-21 10:45:45.967 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-09-21 10:45:46.384 [restartedMain] ERROR o.s.d.e.r.support.AbstractElasticsearchRepository - failed to load elasticsearch nodes : org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [{#transport#-1}{cTHBTuAuThiq-2b02jWObQ}{127.0.0.1}{127.0.0.1:9300}]
+2020-09-21 10:45:46.512 [restartedMain] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowired annotation is not supported on static fields: static org.springframework.data.redis.core.RedisTemplate com.demomodel.utils.redis.RedisTemplate.text.redisTransaction.redisTemplate
+2020-09-21 10:45:46.956 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration$JpaWebMvcConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-21 10:45:48.348 [restartedMain] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-09-21 10:45:48.708 [restartedMain] WARN  o.s.c.netflix.archaius.ArchaiusAutoConfiguration - No spring.application.name found, defaulting to 'application'
+2020-09-21 10:45:48.717 [restartedMain] INFO  com.netflix.config.sources.URLConfigurationSource - URLs to be used as dynamic configuration source: [file:/D:/workspace-eclipse/tspringbootdemo/target/classes/config.properties]
+2020-09-21 10:45:49.220 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-09-21 10:45:50.728 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-09-21 10:45:50.730 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-09-21 10:45:50.737 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-09-21 10:45:50.925 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jsonToObjectUsingPOST_1
+2020-09-21 10:45:50.984 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingGET_1
+2020-09-21 10:45:50.985 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingHEAD_1
+2020-09-21 10:45:50.985 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPOST_1
+2020-09-21 10:45:50.985 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPUT_1
+2020-09-21 10:45:50.986 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingPATCH_1
+2020-09-21 10:45:50.986 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingDELETE_1
+2020-09-21 10:45:50.986 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingOPTIONS_1
+2020-09-21 10:45:50.986 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: helloUsingTRACE_1
+2020-09-21 10:45:51.003 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingGET_1
+2020-09-21 10:45:51.005 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingHEAD_1
+2020-09-21 10:45:51.007 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPOST_1
+2020-09-21 10:45:51.008 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPUT_1
+2020-09-21 10:45:51.010 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingPATCH_1
+2020-09-21 10:45:51.012 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingDELETE_1
+2020-09-21 10:45:51.013 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingOPTIONS_1
+2020-09-21 10:45:51.014 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: implicitTerroristsUsingTRACE_1
+2020-09-21 10:45:51.058 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: testUsingPOST_1
+2020-09-21 10:45:51.079 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: updtaControlStateUsingPOST_1
+2020-09-21 10:45:51.355 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingGET_1
+2020-09-21 10:45:51.356 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingHEAD_1
+2020-09-21 10:45:51.356 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPOST_1
+2020-09-21 10:45:51.356 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPUT_1
+2020-09-21 10:45:51.356 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingPATCH_1
+2020-09-21 10:45:51.356 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingDELETE_1
+2020-09-21 10:45:51.357 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingOPTIONS_1
+2020-09-21 10:45:51.357 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getRedisUsingTRACE_1
+2020-09-21 10:45:51.361 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: testUsingPOST_2
+2020-09-21 10:45:51.362 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingGET_1
+2020-09-21 10:45:51.363 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingHEAD_1
+2020-09-21 10:45:51.363 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPOST_1
+2020-09-21 10:45:51.364 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPUT_1
+2020-09-21 10:45:51.364 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingPATCH_1
+2020-09-21 10:45:51.365 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingDELETE_1
+2020-09-21 10:45:51.365 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingOPTIONS_1
+2020-09-21 10:45:51.366 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test1UsingTRACE_1
+2020-09-21 10:45:51.367 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingGET_1
+2020-09-21 10:45:51.368 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingHEAD_1
+2020-09-21 10:45:51.368 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPOST_1
+2020-09-21 10:45:51.369 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPUT_1
+2020-09-21 10:45:51.370 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPATCH_1
+2020-09-21 10:45:51.372 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingDELETE_1
+2020-09-21 10:45:51.373 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingOPTIONS_1
+2020-09-21 10:45:51.374 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingTRACE_1
+2020-09-21 10:45:51.376 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingGET_2
+2020-09-21 10:45:51.377 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingHEAD_2
+2020-09-21 10:45:51.377 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPOST_2
+2020-09-21 10:45:51.378 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPUT_2
+2020-09-21 10:45:51.378 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingPATCH_2
+2020-09-21 10:45:51.379 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingDELETE_2
+2020-09-21 10:45:51.379 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingOPTIONS_2
+2020-09-21 10:45:51.380 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test2UsingTRACE_2
+2020-09-21 10:45:51.381 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingGET_1
+2020-09-21 10:45:51.382 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingHEAD_1
+2020-09-21 10:45:51.382 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPOST_1
+2020-09-21 10:45:51.383 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPUT_1
+2020-09-21 10:45:51.384 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPATCH_1
+2020-09-21 10:45:51.385 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingDELETE_1
+2020-09-21 10:45:51.385 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingOPTIONS_1
+2020-09-21 10:45:51.386 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingTRACE_1
+2020-09-21 10:45:51.388 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: test3UsingPOST_2
+2020-09-21 10:45:51.395 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingGET_1
+2020-09-21 10:45:51.395 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingHEAD_1
+2020-09-21 10:45:51.396 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPOST_1
+2020-09-21 10:45:51.396 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPUT_1
+2020-09-21 10:45:51.396 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingPATCH_1
+2020-09-21 10:45:51.396 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingDELETE_1
+2020-09-21 10:45:51.396 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingOPTIONS_1
+2020-09-21 10:45:51.397 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: contextGetUsingTRACE_1
+2020-09-21 10:45:51.405 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingGET_1
+2020-09-21 10:45:51.406 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingHEAD_1
+2020-09-21 10:45:51.406 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPOST_1
+2020-09-21 10:45:51.406 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPUT_1
+2020-09-21 10:45:51.406 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingPATCH_1
+2020-09-21 10:45:51.407 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingDELETE_1
+2020-09-21 10:45:51.407 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingOPTIONS_1
+2020-09-21 10:45:51.407 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: indexUsingTRACE_1
+2020-09-21 10:45:51.426 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingGET_1
+2020-09-21 10:45:51.427 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingHEAD_1
+2020-09-21 10:45:51.427 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPOST_1
+2020-09-21 10:45:51.427 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPUT_1
+2020-09-21 10:45:51.428 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingPATCH_1
+2020-09-21 10:45:51.428 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingDELETE_1
+2020-09-21 10:45:51.428 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingOPTIONS_1
+2020-09-21 10:45:51.428 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: jspindex2UsingTRACE_1
+2020-09-21 10:45:51.442 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_1
+2020-09-21 10:45:51.443 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_1
+2020-09-21 10:45:51.444 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_1
+2020-09-21 10:45:51.445 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_1
+2020-09-21 10:45:51.446 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_1
+2020-09-21 10:45:51.447 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_1
+2020-09-21 10:45:51.448 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_1
+2020-09-21 10:45:51.449 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_1
+2020-09-21 10:45:51.462 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_2
+2020-09-21 10:45:51.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_2
+2020-09-21 10:45:51.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_2
+2020-09-21 10:45:51.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_2
+2020-09-21 10:45:51.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_2
+2020-09-21 10:45:51.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_2
+2020-09-21 10:45:51.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_2
+2020-09-21 10:45:51.463 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_2
+2020-09-21 10:45:51.471 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingGET_3
+2020-09-21 10:45:51.473 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingHEAD_3
+2020-09-21 10:45:51.475 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPOST_3
+2020-09-21 10:45:51.477 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPUT_3
+2020-09-21 10:45:51.479 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingPATCH_3
+2020-09-21 10:45:51.481 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingDELETE_3
+2020-09-21 10:45:51.483 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingOPTIONS_3
+2020-09-21 10:45:51.485 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: mainUsingTRACE_3
+2020-09-21 10:45:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingGET_1
+2020-09-21 10:45:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingHEAD_1
+2020-09-21 10:45:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPOST_1
+2020-09-21 10:45:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPUT_1
+2020-09-21 10:45:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingPATCH_1
+2020-09-21 10:45:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingDELETE_1
+2020-09-21 10:45:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingOPTIONS_1
+2020-09-21 10:45:51.486 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: primaryDataSourceUsingTRACE_1
+2020-09-21 10:45:51.560 [restartedMain] INFO  o.s.scheduling.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+2020-09-21 10:45:51.560 [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-09-21 10:45:57.651 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9093"]
+2020-09-21 10:45:57.652 [restartedMain] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-09-21 10:45:57.659 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 9093 (http) with context path ''
+2020-09-21 10:45:57.712 [restartedMain] INFO  com.demomodel.WebApplication - Started WebApplication in 171090.043 seconds (JVM running for 172603.681)
+2020-09-21 10:45:57.723 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged

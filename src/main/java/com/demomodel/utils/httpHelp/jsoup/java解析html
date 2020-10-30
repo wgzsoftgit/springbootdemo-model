@@ -3,3 +3,21 @@
 3. 可操作HTML元素、属性、文本；
 
 com.test.jsonupDemo.JsoupFirstTest  测试用例
+
+
+◇使用DOM的方式来取得
+
+getElementById(String id)：通过id来获取
+　　getElementsByTag(String tagName)：通过标签名字来获取
+　　getElementsByClass(String className)：通过类名来获取
+　　getElementsByAttribute(String key)：通过属性名字来获取
+　　getElementsByAttributeValue(String key, String value)：通过指定的属性名字，属性值来获取
+　　getAllElements()：获取所有元素
+链接：https://www.jianshu.com/p/fd5caaaa950d
+
+
+Elements links = doc.select("a[href]"); //带有href属性的a元素
+Elements pngs = doc.select("img[src$=.png]");//扩展名为.png的图片
+Element masthead = doc.select("div.masthead").first();//class等于masthead的div标签
+Elements resultLinks = doc.select("h3.r > a"); //在h3元素之后的a元素
+

@@ -1,0 +1,7 @@
+https://blog.csdn.net/a491857321/article/details/50616323
+我们创建3个绑定：Q1绑定键是“*.orange.*”，Q2绑定键是“*.*.rabbit”，Q3绑定键是“lazy.#”。
+这些绑定可以概括为：Q1只对橙色的动物感兴趣。Q2则是关注兔子和所有懒的动物。
+
+路由键为“quick.orange.rabbit”的消息会被路由到2个队列中去。
+而“lazy.orange.elephant”的消息同样会发往2个队列。另外“quick.orange.fox” 仅仅发往第一个队列，
+而"lazy.brown.fox"则只发往第二个队列。“quick.brown.fox”则所有的绑定键都不匹配而被丢弃。

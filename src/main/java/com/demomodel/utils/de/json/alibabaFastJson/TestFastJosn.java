@@ -12,6 +12,11 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.demomodel.utils.de.json.alibabaFastJson.Bean.User;
+import com.demomodel.utils.de.json.alibabaFastJson.Bean.UserGroup;
+import com.demomodel.utils.de.json.alibabaFastJson.Bean.info_array_Util;
+import com.demomodel.utils.de.json.alibabaFastJson.Bean.info_data_util;
+import com.demomodel.utils.de.json.alibabaFastJson.Bean.info_util;
 
 /**
  * JSONArray : 相当于List </br>
@@ -34,7 +39,8 @@ public class TestFastJosn {
     public void objectToJson() {
         // 简单java类转json字符串
         User user = new User("dmego", "123456");
-        String UserJson = JSON.toJSONString(user);
+        System.err.println(JSON.toJSON(user));  //******对象/list<对象>***************
+        String UserJson = JSON.toJSONString(user);//*********************
         System.out.println("简单java类转json字符串:" + UserJson);
 
         // List<Object>转json字符串
@@ -93,8 +99,9 @@ public class TestFastJosn {
     public  void parserJsonTxt() throws IOException{
         ClassLoader cl = this.getClass().getClassLoader();
         InputStream inputStream = cl.getResourceAsStream("date1.json");
-        String jsontext = IOUtils.toString(inputStream, "utf8");
+        String jsontext = IOUtils.toString(inputStream, "utf8"); //读取文本文件转String
 
+        //String    ==>jsonObject
         JSONObject obj=JSONObject.parseObject(jsontext);//获取jsonobject对象 ***********
        // obj.put("key", "value");
         

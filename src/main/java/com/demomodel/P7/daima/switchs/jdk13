@@ -1,0 +1,43 @@
+https://blog.csdn.net/qing_gee/article/details/104586826?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.edu_weight
+jdk12以后
+private static String createPlayer(PlayerTypes playerType) {
+   return switch (playerType) {
+        case TENNIS -> "网球运动员费德勒";
+        case FOOTBALL -> "足球运动员C罗";
+        case BASKETBALL -> "篮球运动员詹姆斯";
+        case UNKNOWN ->  throw new IllegalArgumentException("未知");
+    };
+}
+
+private static String createPlayer(PlayerTypes playerType) {
+        return switch (playerType) {
+            case TENNIS -> "网球运动员费德勒";
+            case FOOTBALL -> "足球运动员C罗";
+            case BASKETBALL -> "篮球运动员詹姆斯";
+            case PINGPANG -> "乒乓球运动员马龙";
+            case UNKNOWN -> throw new IllegalArgumentException("未知");
+        };
+    }
+    
+    
+    private static String createPlayer(PlayerTypes playerType) {
+    return switch (playerType) {
+        case TENNIS -> {
+            System.out.println("网球");
+            yield "网球运动员费德勒";
+        }
+        case FOOTBALL -> {
+            System.out.println("足球");
+            yield "足球运动员C罗";
+        }
+        case BASKETBALL -> {
+            System.out.println("篮球");
+            yield "篮球运动员詹姆斯";
+        }
+        case PINGPANG -> {
+            System.out.println("乒乓球");
+            yield "乒乓球运动员马龙";
+        }
+        case UNKNOWN -> throw new IllegalArgumentException("未知");
+    };
+}

@@ -1,4 +1,5 @@
 
+var str=`<div><div>${tem[0].check}</div></div>`;  //动态拼接字符串 
 
     //退出登录，清空所有子系统的cookie
     $("#loginout").click (function (event) {

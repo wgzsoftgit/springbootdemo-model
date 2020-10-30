@@ -15,7 +15,9 @@ import net.sf.json.JSONObject;
 
 
 public class JsonUtils {
-	//json转map
+	
+
+	//json转map     解析前端传的json
 		public static Map<String, Object> parseJSON2Map(JSONObject json) {
 		        Map<String, Object> map = new HashMap<String, Object>();
 		        // 最外层解析

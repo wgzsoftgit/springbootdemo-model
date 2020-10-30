@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 
@@ -13,7 +15,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 // 引入SpringBootTest并生成随机接口
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class AsyncTest {
-  
+//	ApplicationContext ctx  = new ClassPathXmlApplicationContext("./config/applicationContext.xml");
+  //  University ust = (University) ctx.getBean("university1");
  // 注入随机接口
  @LocalServerPort
  private int port;

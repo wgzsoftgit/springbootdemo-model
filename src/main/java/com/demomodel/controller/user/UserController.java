@@ -31,6 +31,12 @@ import com.demomodel.bean.User;
 @RequestMapping("/user")
 public class UserController {
 
+	@RequestMapping("index") //@RequestParam("idNum") 或者@Param("idNum")
+	public String text(@RequestParam(value = "idNum",defaultValue = "123") String userId) {
+		
+		return "ok";
+	}
+	
     @RequestMapping("/{id}")
     public ModelAndView view(@PathVariable("id") Long id, HttpServletRequest req) {
        

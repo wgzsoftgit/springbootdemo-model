@@ -36,7 +36,9 @@ public class Demo2 {
             this.flowRateNanosTime = flowRateUnit.toNanos(1) / flowRate;
             Thread thread = new Thread(this::bucketWork);
             thread.setName("漏桶线程-" + threadNum.getAndIncrement());
+            
             thread.start();
+            System.out.println("threadGroup1线程组名称:"+ thread.getName());
         }
 
         //漏桶线程开始工作
@@ -52,7 +54,13 @@ public class Demo2 {
             }
         }
 
-        //返回一个漏桶
+        /**
+         * 
+         * @param capcity  容量
+         * @param flowRate  流速
+         * @param flowRateUnit 流速时间单位
+         * @return 返回一个漏桶  BucketLimit
+         */
         public static BucketLimit build(int capcity, int flowRate, TimeUnit flowRateUnit) {
             if (capcity < 0 || flowRate < 0) {
                 throw new IllegalArgumentException("capcity、flowRate必须大于0！");

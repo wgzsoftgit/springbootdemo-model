@@ -1,11 +1,13 @@
 package com.demomodel.mybatisPlus.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.demomodel.bean.User;
 import com.demomodel.mybatisPlus.bean.TStudent;
 
 /**
@@ -27,5 +29,7 @@ public interface TStudentMapper extends BaseMapper<TStudent> {
      * @throws Exception
      */
 	TStudent selectUserByMap(@Param("params") Map<String, Object> parameterMap) throws Exception;
+
+List<User> selectUser();
 }
 //https://blog.csdn.net/zhouzhiwengang/java/article/details/81059086

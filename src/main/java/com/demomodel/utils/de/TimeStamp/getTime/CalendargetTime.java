@@ -14,7 +14,7 @@ public class CalendargetTime {
 //		2020-04-13 00:00:00
 //		2020-04-01 00:00:00
 //		2020-05-01 00:00:00
-		System.out.println(getDate6(1));//2020-04-16 16:09:09
+		System.out.println("减8个小时"+getDate6(-8));//2020-04-16 16:09:09
 		getDA();
 		System.err.println("明天"+getDateToTomorrow());
 	}
@@ -55,7 +55,7 @@ public class CalendargetTime {
  * @return String
  */
 	public static String getDate6(int count) {
-		Calendar cal = Calendar.getInstance();
+		Calendar cal = Calendar.getInstance();  
 		cal.setTime(new Date());//获取当前时间
 		cal.set(Calendar.HOUR_OF_DAY,cal.get(Calendar.HOUR_OF_DAY)+count ); //减一个小时
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

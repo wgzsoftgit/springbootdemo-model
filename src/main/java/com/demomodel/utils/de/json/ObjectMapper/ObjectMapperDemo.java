@@ -135,10 +135,10 @@ byte数组转为对象：XwjUser [id=1, message=Hello World, sendTime=Wed Jun 24
 	        testMap.put("user", new XwjUser(1, "Hello World", new Date()));
 
 	        try {
-	            String jsonStr = mapper.writeValueAsString(testMap);
+	            String jsonStr = mapper.writeValueAsString(testMap);  //************
 	            System.out.println("Map转为字符串：" + jsonStr);
 	            try {
-	                Map<String, Object> testMapDes = mapper.readValue(jsonStr, Map.class);
+	                Map<String, Object> testMapDes = mapper.readValue(jsonStr, Map.class); //************
 	                System.out.println("字符串转Map：" + testMapDes);
 	            } catch (IOException e) {
 	                e.printStackTrace();
@@ -172,7 +172,7 @@ byte数组转为对象：XwjUser [id=1, message=Hello World, sendTime=Wed Jun 24
 	        XwjUser user = new XwjUser(1, "Hello World", new Date());
 	        user.setIntList(Arrays.asList(1, 2, 3));
 
-	        String jsonStr = mapper.writeValueAsString(user);
+	        String jsonStr = mapper.writeValueAsString(user); 
 	        System.out.println("对象转为字符串：" + jsonStr);
 	        /**
 	         对象转为字符串：{

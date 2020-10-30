@@ -1,6 +1,7 @@
 package com.demomodel.controller.requestheader.getrequest;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.Enumeration;
 
 import javax.servlet.http.Cookie;
@@ -52,8 +53,11 @@ public class GetHttpServletRequest {
 	//https://blog.csdn.net/zeal9s/java/article/details/85986943
 		
 		
-		
-		
+		//clientStr 中参数空格转+	
+	String a4=request.getParameter("clientStr").replace(' ','+');
+	a4=URLEncoder.encode(a4);//将空格转+和/转%20
+	//request.getParameter(name)
+	
 		
 		System.err.println("11111111111s");
 	 //   Gsonutil.jsonToObject(request);  //post request获取消息的json 

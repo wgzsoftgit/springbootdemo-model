@@ -63,8 +63,7 @@ public class RequestTimesAop {
             if (count == 1) {
             	//TimeUnit.SECONDS（5）线程等待五秒    TimeUnit.MILLISECONDS(5000)线程等待五秒. 内部都是Thread.sleep实现
                 redisTemplate.expire(key, times.time(), TimeUnit.MILLISECONDS);//TimeUnit.MILLISECONDS
-            }
-            if (count > times.count()) {
+            } if (count > times.count()) {
                 request.setAttribute("ifovertimes", "true");
             } else {
                 request.setAttribute("ifovertimes", "false");

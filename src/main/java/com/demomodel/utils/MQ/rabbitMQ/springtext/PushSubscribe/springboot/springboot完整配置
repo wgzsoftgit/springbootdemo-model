@@ -1,0 +1,14 @@
+application.properties
+spring.application.name=springcloud-mq
+spring.rabbitmq.host=192.168.70.131
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=oldlu
+spring.rabbitmq.password=123456
+#设置交换器的名称
+mq.config.exchange=log.topic
+#info 队列名称
+mq.config.queue.info=log.info
+#error 队列名称
+mq.config.queue.error=log.error
+#log 队列名称
+mq.config.queue.logs=log.all

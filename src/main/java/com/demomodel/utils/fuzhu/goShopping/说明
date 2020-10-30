@@ -1,0 +1,30 @@
+Usage:
+
+    C:\Users\14199\AppData\Local\Mozilla Firefox\geckodriver.exe [OPTIONS]
+
+C:\Users\14199\AppData\Local\Mozilla Firefox\geckodriver.exe: Unknown option --port=31153
+
+
+
+org.openqa.selenium.WebDriverException: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:31153
+
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+
+System info: host: 'DESKTOP-UENJT9H', ip: '192.168.1.200', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_73'
+
+Driver info: driver.version: FirefoxDriver
+应该是驱动geckodriver.exe版本问题，换个与selenium匹配的版本；
+火狐需要驱动geckodriver.exe
+https://github.com/mozilla/geckodriver/releases/tag/v0.27.0
+
+
+
+
+chrom浏览器的web driver（chromedriver.exe），可以在下面网址访问：
+http://npm.taobao.org/mirrors/chromedriver/
+
+firefox（火狐浏览器）的web driver （geckodriver.exe）在这里访问：
+https://github.com/mozilla/geckodriver/releases
+
+链接：https://www.jianshu.com/p/1b63c5f3c98e
+
