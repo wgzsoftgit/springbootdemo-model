@@ -1,0 +1,23 @@
+解决拦截器       报错java.io.IOException: Stream closed
+request.getInputStream();的消费     多次消费
+新建RequestReaderHttpServletRequestWrapper（防止流丢失）
+新建过滤器com.demomodel.utils.httpHelp.file.HttpServletRequestReplacedFilter
+
+最后我们只需要在Application.java中加上如下代码注入过滤器即可
+@Bean
+	public FilterRegistrationBean httpServletRequestReplacedRegistration() {
+		FilterRegistrationBean registration = new FilterRegistrationBean();
+		registration.setFilter(new HttpServletRequestReplacedFilter());
+		registration.addUrlPatterns("/*");
+        registration.addInitParameter("paramName", "paramValue");
+		registration.setName("httpServletRequestReplacedFilter");
+		registration.setOrder(1);
+		return registration;
+	}
+————————————————
+版权声明：本文为CSDN博主「韭韭韭韭菜」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/zhibo_lv/java/article/details/81875705
+如下代码即可在拦截其中获取body且保证了controller中依旧可以再次获取
+
+ HttpHelper.getBodyString(request);
+

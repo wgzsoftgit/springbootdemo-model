@@ -65,6 +65,6 @@
 		 <table tableName="travel_trajectory_table"></table> --> 
 		<!--  <table tableName="violatewealth_fled_people"></table> -->
 		 <table tableName="involved_terror_points"></table>
-		  <table tableName="accessory" domainObjectName="Accessory" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table> 
+		 
 	</context>
 </generatorConfiguration>

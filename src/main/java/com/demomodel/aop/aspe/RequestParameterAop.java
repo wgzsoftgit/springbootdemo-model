@@ -39,15 +39,18 @@ public class RequestParameterAop {
      * @Return: void
      **/
     @Pointcut("execution(* com.demomodel.aop.aspe.*Controller.*(..))")
-    public void methodArgs() {}
-    
+    public void methodArgs() {
+
+    }
     // 所有被注解@LogTime的方法
    	@Pointcut("@annotation(LogTime)")
-      public void LogTimePoint() {}
+      public void LogTimePoint() {
+      }
       
       // 组合以上所有切入点
       @Pointcut("servicePoint()||daoPoint()||LogTimePoint()")
-      public void allPoints() {}
+      public void allPoints() {
+      }
 
     @Around("methodArgs()")
     public Object invoke(ProceedingJoinPoint joinPoint) throws Throwable {

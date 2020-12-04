@@ -665,8 +665,13 @@ https://blog.csdn.net/qq_22177809/article/details/86592660  -->
             <artifactId>javacv-platform</artifactId>
             <version>1.5.2</version>
         </dependency>
+        
+        
+        
 	</dependencies>
 	
+	
+
 	
 	 
 	

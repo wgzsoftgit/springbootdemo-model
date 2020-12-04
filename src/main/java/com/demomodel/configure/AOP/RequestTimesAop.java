@@ -10,8 +10,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import java.util.concurrent.TimeUnit;
 
 //使用@Aspect注解将一个java类定义为切面类
@@ -50,9 +48,6 @@ public class RequestTimesAop {
 //                }
 //            }
             //####################################################################
-        	//HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-
-        	HttpServletResponse response = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
             /**
              * 另一种获取request
              */

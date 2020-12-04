@@ -2,7 +2,7 @@ package com.demomodel.P7.beanInit.Resource.ResourceDemo01;
 
 import javax.annotation.Resource;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
 

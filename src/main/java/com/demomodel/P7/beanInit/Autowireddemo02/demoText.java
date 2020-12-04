@@ -1,6 +1,6 @@
 package com.demomodel.P7.beanInit.Autowireddemo02;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
