@@ -522,7 +522,7 @@ https://blog.csdn.net/qq_22177809/article/details/86592660  -->
 <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
-    <version>4.13</version>
+    <version>4.13.1</version>
     <scope>test</scope>
 </dependency>
 <!-- mpp打的jar  自己打入仓库    MPP的连接
